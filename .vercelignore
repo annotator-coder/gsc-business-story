@@ -1,0 +1,9 @@
+*.pdf
+번역검수/
+*.zip
+수정/
+공문수정/
+data/
+menu/og/
+*.docx
+.DS_Store

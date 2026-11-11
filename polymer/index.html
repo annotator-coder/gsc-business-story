@@ -1,0 +1,1033 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>폴리머 — GS칼텍스 사업부문</title>
+<meta name="description" content="연간 폴리머 98만 톤, 1988년 하이프린부터 MFC까지 — GS칼텍스 폴리머 사업 스토리">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="GS Caltex Business Story">
+<meta property="og:title" content="폴리머 — GS칼텍스 사업부문">
+<meta property="og:description" content="연간 폴리머 98만 톤, 1988년 하이프린부터 MFC까지 — GS칼텍스 폴리머 사업 스토리">
+<meta property="og:url" content="https://gsc-business-story.vercel.app/polymer">
+<meta property="og:image" content="https://gsc-business-story.vercel.app/polymer/img/band-ship.jpg">
+<meta property="og:locale" content="ko_KR">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:        #0A0B0D;
+  --bg-2:      #0D1310;
+  --ink:       #EDE8DC;
+  --ink-dim:   #B9B3A6;
+  --ink-faint: #8E887C;
+  --accent:      #6FBF9E;
+  --accent-deep: #35664F;
+  --amber:     #E0A63E;
+  --line:      #26292E;
+  --font-kr: 'Pretendard', -apple-system, 'Apple SD Gothic Neo', sans-serif;
+  --font-en: 'Archivo', 'Pretendard', sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, monospace;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: auto; }
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-kr);
+  font-weight: 400;
+  line-height: 1.6;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}
+::selection { background: var(--accent); color: var(--bg); }
+
+/* ---------- 공통 ---------- */
+.label {
+  font-family: var(--font-mono); font-weight: 500;
+  font-size: 0.72rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+.label--dim { color: var(--ink-faint); }
+.section { position: relative; }
+.inner { max-width: 1280px; margin: 0 auto; padding: 0 6vw; }
+.num {
+  font-family: var(--font-en);
+  font-variation-settings: "wdth" 75, "wght" 800;
+  font-variant-numeric: tabular-nums;
+  line-height: 0.95;
+  letter-spacing: -0.02em;
+}
+
+/* ---------- 진행 내비 / 탑바 ---------- */
+.progress-nav {
+  position: fixed; right: 24px; top: 50%;
+  transform: translateY(-50%);
+  z-index: 90; display: flex; flex-direction: column; gap: 14px;
+}
+.progress-nav a {
+  display: block; width: 6px; height: 6px;
+  background: var(--ink-faint);
+  transition: background .3s, transform .3s;
+}
+.progress-nav a.active { background: var(--accent); transform: scale(1.5); }
+@media (max-width: 720px) { .progress-nav { display: none; } }
+
+.topbar {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 95;
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 20px 4vw;
+  mix-blend-mode: difference;
+}
+.topbar .brand {
+  font-family: var(--font-en);
+  font-variation-settings: "wdth" 80, "wght" 700;
+  font-size: 0.85rem; letter-spacing: 0.18em; color: #fff;
+  text-decoration: none;
+}
+.topbar .chapter { font-family: var(--font-mono); font-weight: 500; font-size: 0.7rem; letter-spacing: 0.2em; color: #fff; opacity: .7; }
+.tb-right { display: flex; align-items: center; gap: 16px; }
+.lang {
+  font-family: var(--font-mono); font-weight: 500; font-size: .68rem; letter-spacing: .15em;
+  color: #fff; text-decoration: none; opacity: .8;
+  border: 1px solid rgba(255,255,255,.45); padding: 3px 9px;
+}
+.lang:hover { opacity: 1; }
+.lang-sw { display: inline-flex; border: 1px solid rgba(255,255,255,.45); font-family: var(--font-mono); font-weight: 500; font-size: .64rem; letter-spacing: .06em; }
+.lang-sw a { color: #fff; text-decoration: none; opacity: .5; padding: 3px 7px; border-left: 1px solid rgba(255,255,255,.28); }
+.lang-sw a:first-child { border-left: 0; }
+.lang-sw a:hover { opacity: .85; }
+.lang-sw a[aria-current="page"] { opacity: 1; background: rgba(255,255,255,.18); }
+
+/* ---------- HERO ---------- */
+.hero {
+  height: 100vh; height: 100svh;
+  position: relative; overflow: hidden;
+  display: flex; align-items: center; justify-content: center;
+}
+#bead-canvas { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+.hero-content { position: relative; z-index: 2; text-align: center; padding: 0 5vw; }
+.hero-eyebrow { margin-bottom: 28px; }
+.hero-title {
+  font-family: var(--font-en);
+  font-variation-settings: "wdth" 68, "wght" 850;
+  font-size: clamp(3.4rem, 11.5vw, 10.5rem);
+  line-height: 1; letter-spacing: -0.015em;
+  color: var(--ink);
+}
+.hero-title .row { display: block; overflow: hidden; padding: 0.03em 0; }
+.hero-title .row > span { display: inline-block; }
+.hero-title .row--kr { font-family: var(--font-kr); font-weight: 800; font-size: 0.72em; line-height: 1.15; letter-spacing: 0.06em; color: var(--accent); }
+.hero-sub {
+  margin-top: 36px;
+  font-size: clamp(1rem, 1.6vw, 1.25rem);
+  color: var(--ink-dim); font-weight: 400;
+  letter-spacing: 0.04em;
+}
+.hero-sub strong { color: var(--ink); font-weight: 600; }
+.scroll-cue {
+  position: absolute; bottom: 36px; left: 50%;
+  transform: translateX(-50%);
+  z-index: 2; display: flex; flex-direction: column; align-items: center; gap: 10px;
+}
+.scroll-cue .line {
+  width: 1px; height: 48px;
+  background: linear-gradient(to bottom, transparent, var(--accent));
+  animation: cue 2s ease-in-out infinite;
+}
+@keyframes cue {
+  0% { transform: scaleY(0); transform-origin: top; }
+  50% { transform: scaleY(1); transform-origin: top; }
+  51% { transform-origin: bottom; }
+  100% { transform: scaleY(0); transform-origin: bottom; }
+}
+
+/* ---------- 인트로 문장 ---------- */
+.manifesto { padding: 24vh 0; }
+.manifesto p {
+  font-size: clamp(1.6rem, 4vw, 3.2rem);
+  font-weight: 350; line-height: 1.5;
+  max-width: 20em;
+  color: var(--ink-faint);
+}
+.manifesto p .w { display: inline; white-space: nowrap; }
+.manifesto p strong { font-weight: 600; }
+
+/* ---------- 이름의 유래 ---------- */
+.origin { padding: 4vh 0 22vh; }
+.origin-grid {
+  display: grid; grid-template-columns: minmax(0, 2fr) minmax(0, 3fr);
+  gap: 6vw; align-items: center;
+}
+.origin-word {
+  font-family: var(--font-en);
+  font-variation-settings: "wdth" 70, "wght" 850;
+  font-size: clamp(2.6rem, 6.6vw, 6rem);
+  line-height: 1.02;
+  color: transparent; -webkit-text-stroke: 1.5px var(--accent-deep);
+  user-select: none;
+}
+.origin-word span { display: block; white-space: nowrap; }
+.origin-word span:nth-child(2) { color: var(--accent); -webkit-text-stroke: 0; margin-left: 0.5em; }
+.origin-word small {
+  display: block;
+  font-family: var(--font-mono); font-size: max(0.13em, 10px); font-weight: 400;
+  letter-spacing: 0.3em; color: var(--ink-faint);
+  -webkit-text-stroke: 0; margin-top: 1.2em;
+}
+.origin-copy h2 {
+  font-size: clamp(1.7rem, 3.4vw, 2.8rem);
+  font-weight: 700; line-height: 1.3; letter-spacing: -0.01em;
+  margin: 16px 0 10px;
+}
+.origin-copy h2 em { font-style: normal; color: var(--accent); }
+.origin-copy p:not(.label) {
+  margin-top: 16px; max-width: 36em;
+  color: var(--ink-dim); font-weight: 400;
+  font-size: clamp(0.98rem, 1.35vw, 1.15rem);
+}
+.origin-copy p strong { color: var(--ink); font-weight: 600; }
+
+/* ---------- 흑백 이미지 밴드 ---------- */
+.img-band { position: relative; height: 58vh; min-height: 380px; overflow: hidden; }
+.img-band .media {
+  position: absolute; inset: -14% 0;
+  background-size: cover; background-position: center;
+  filter: grayscale(1) brightness(0.6) contrast(1.06);
+  will-change: transform;
+}
+.img-band::after {
+  content: ''; position: absolute; inset: 0; pointer-events: none;
+  background: linear-gradient(to bottom, var(--fade-top, var(--bg)) 0%, transparent 30%, transparent 68%, var(--fade-bottom, var(--bg)) 100%),
+              linear-gradient(to right, rgba(10,11,13,.45), transparent 40%);
+}
+.img-band .caption { position: absolute; left: 6vw; bottom: 32px; z-index: 2; }
+.img-band .caption .cap-text {
+  display: block; margin-top: 10px;
+  color: var(--ink-dim); font-weight: 400;
+  font-size: clamp(0.95rem, 1.3vw, 1.15rem);
+}
+.img-band .caption .cap-text strong { color: var(--ink); font-weight: 600; }
+
+/* ---------- 중합 (핀 시퀀스) ---------- */
+.poly-section { background: var(--bg-2); }
+.poly-stage {
+  position: relative;
+  height: 100vh; height: 100svh;
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 4fr);
+  gap: 4vw;
+  max-width: 1280px; margin: 0 auto; padding: 0 6vw;
+  align-items: center;
+  overflow: hidden;
+}
+.poly-visual { position: relative; height: 82vh; display: flex; align-items: center; justify-content: center; z-index: 1; }
+.poly-visual svg { height: 100%; width: auto; max-width: 100%; overflow: visible; }
+.poly-copy { position: relative; height: 60vh; z-index: 1; }
+.poly-step {
+  position: absolute; inset: 0;
+  display: flex; flex-direction: column; justify-content: center;
+  opacity: 0; visibility: hidden;
+}
+.poly-step h3 {
+  font-size: clamp(1.8rem, 3.4vw, 3rem);
+  font-weight: 700; line-height: 1.25; letter-spacing: -0.01em;
+  margin: 18px 0 20px;
+}
+.poly-step h3 em { font-style: normal; color: var(--accent); }
+.poly-step p {
+  color: var(--ink-dim); font-weight: 400;
+  font-size: clamp(0.95rem, 1.25vw, 1.1rem);
+  max-width: 30em;
+}
+.poly-step p strong { color: var(--ink); font-weight: 600; }
+.badge {
+  display: inline-flex; align-items: center; gap: 10px;
+  border: 1px solid var(--accent-deep);
+  padding: 8px 16px; margin-top: 24px;
+  font-family: var(--font-mono); font-weight: 500; font-size: .75rem; letter-spacing: .15em;
+  color: var(--accent);
+}
+.svg-label { font-family: var(--font-mono); font-weight: 500; font-size: 12px; fill: var(--ink-dim); letter-spacing: .08em; }
+.svg-formula { font-family: var(--font-mono); font-weight: 500; font-size: 15px; fill: var(--ink); letter-spacing: .06em; }
+.svg-cap { font-family: var(--font-mono); font-weight: 500; font-size: 13px; fill: var(--ink-dim); letter-spacing: .08em; }
+
+/* ---------- 생산능력 ---------- */
+.capacity { padding: 20vh 0 14vh; }
+.capacity-head h2 {
+  font-size: clamp(2rem, 4.5vw, 4rem);
+  font-weight: 700; line-height: 1.25; letter-spacing: -0.015em;
+  margin-top: 18px;
+}
+.capacity-head h2 em { font-style: normal; color: var(--accent); }
+.prop-bar {
+  display: flex; height: 56px; margin-top: 6vh;
+  border: 1px solid var(--line);
+}
+.prop-bar .seg { position: relative; height: 100%; transform-origin: left center; }
+.prop-bar .seg span {
+  position: absolute; left: 10px; top: 50%; transform: translateY(-50%);
+  font-family: var(--font-mono); font-size: .68rem; letter-spacing: .06em;
+  color: var(--bg); white-space: nowrap; font-weight: 500;
+}
+.prop-bar .seg--pe { background: var(--accent); }
+.prop-bar .seg--mr { background: #4E8A72; }
+.prop-bar .seg--pp { background: #35594A; }
+.prop-bar .seg--pp span { color: var(--ink); }
+.prop-caption {
+  display: flex; justify-content: space-between; margin-top: 12px;
+  font-family: var(--font-mono); font-weight: 500; font-size: .7rem; color: var(--ink-faint); letter-spacing: .08em;
+}
+.product-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 1px; background: var(--line); border: 1px solid var(--line);
+  margin-top: 10vh;
+}
+.product-cell { background: var(--bg); padding: clamp(24px, 3vw, 44px); }
+.product-cell .p-top { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; flex-wrap: wrap; }
+.product-cell .p-code {
+  font-family: var(--font-mono); font-weight: 500;
+  font-size: clamp(1rem, 1.4vw, 1.2rem); letter-spacing: .1em; color: var(--accent);
+}
+.product-cell .p-cap { font-family: var(--font-mono); font-weight: 500; font-size: .72rem; color: var(--ink-faint); letter-spacing: .08em; }
+.product-cell h4 { font-size: clamp(1.1rem, 1.6vw, 1.35rem); font-weight: 600; margin-top: 10px; }
+.product-cell .p-num { font-size: clamp(2.4rem, 5vw, 4rem); color: var(--ink); margin: 14px 0 10px; }
+.product-cell .p-num .unit { font-family: var(--font-kr); font-size: .32em; font-weight: 400; color: var(--ink-dim); }
+.product-cell p.desc { color: var(--ink-dim); font-weight: 400; font-size: 0.92rem; }
+.chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
+.chips span {
+  font-family: var(--font-mono); font-weight: 500; font-size: 0.7rem; letter-spacing: 0.06em;
+  padding: 5px 10px; border: 1px solid var(--line); color: var(--ink-dim);
+}
+.chips span.out { border-color: var(--accent-deep); color: var(--accent); }
+
+/* ---------- 기술 경쟁력 ---------- */
+.tech { padding: 20vh 0 14vh; }
+.tech-head h2 {
+  font-size: clamp(2rem, 4.5vw, 4rem);
+  font-weight: 700; line-height: 1.25; letter-spacing: -0.015em;
+  margin-top: 18px; max-width: 22em;
+}
+.tech-head h2 em { font-style: normal; color: var(--accent); }
+.tech-intro {
+  margin-top: 20px; max-width: 34em;
+  color: var(--ink-dim); font-weight: 400;
+  font-size: clamp(1rem, 1.4vw, 1.15rem);
+}
+.tech-grid {
+  display: grid; grid-template-columns: repeat(2, 1fr);
+  gap: 1px; background: var(--line); border: 1px solid var(--line);
+  margin-top: 8vh;
+}
+.tech-intro + .tech-intro { margin-top: 12px; }
+.tech-group { margin-top: 8vh; margin-bottom: 14px; color: var(--accent); }
+.tech-grid--grouped { margin-top: 0; }
+.tech-cell { background: var(--bg); padding: clamp(24px, 3vw, 44px); }
+.tech-cell .p-top { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; flex-wrap: wrap; margin-bottom: 14px; }
+.tech-cell .p-code {
+  font-family: var(--font-mono); font-weight: 500;
+  font-size: clamp(1rem, 1.4vw, 1.2rem); letter-spacing: .1em; color: var(--accent);
+}
+.tech-cell .p-cap { font-family: var(--font-mono); font-weight: 500; font-size: .72rem; color: var(--ink-faint); letter-spacing: .08em; }
+.tech-cell p.desc { color: var(--ink-dim); font-weight: 400; font-size: 0.92rem; max-width: 34em; }
+
+/* ---------- 헤리티지 ---------- */
+.heritage { padding: 20vh 0 14vh; }
+.heritage-head h2 {
+  font-size: clamp(2rem, 4.5vw, 4rem);
+  font-weight: 700; line-height: 1.25; letter-spacing: -0.015em;
+  margin-top: 18px;
+}
+.heritage-head h2 em { font-style: normal; color: var(--accent); }
+.heritage-quote {
+  margin-top: 24px; max-width: 34em;
+  color: var(--ink-dim); font-weight: 400;
+  font-size: clamp(1rem, 1.4vw, 1.2rem);
+}
+.heritage-quote strong { color: var(--ink); font-weight: 600; }
+.timeline { margin-top: 10vh; }
+.tl-row {
+  display: grid; grid-template-columns: minmax(0,1fr) minmax(0,4fr);
+  gap: clamp(16px, 4vw, 56px); align-items: baseline;
+  padding: clamp(20px, 3vw, 34px) 0;
+  border-top: 1px solid var(--line);
+}
+.tl-row:last-child { border-bottom: 1px solid var(--line); }
+.tl-row .year { font-size: clamp(1.8rem, 3.6vw, 3rem); color: var(--accent); }
+.tl-row .what { font-weight: 600; font-size: clamp(1.05rem, 1.6vw, 1.3rem); }
+.tl-row .what small { display: block; font-weight: 400; font-size: .92rem; color: var(--ink-dim); margin-top: 6px; }
+.tl-row .what small a { color: var(--ink-dim); }
+
+/* ---------- 글로벌 ---------- */
+.global { padding: 20vh 0 16vh; }
+.global .label + h2 {
+  font-size: clamp(2rem, 4.5vw, 4rem);
+  font-weight: 700; line-height: 1.25; letter-spacing: -0.015em;
+  margin-top: 18px; max-width: 24em;
+}
+.global .label + h2 em { font-style: normal; color: var(--accent); }
+.global-intro {
+  margin-top: 20px; max-width: 34em;
+  color: var(--ink-dim); font-weight: 400;
+  font-size: clamp(1rem, 1.4vw, 1.15rem);
+}
+.global-stats {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 1px; background: var(--line); border: 1px solid var(--line);
+  margin-top: 8vh;
+}
+.global-stats .cell { background: var(--bg); padding: clamp(20px, 2.6vw, 40px); }
+.global-stats .cell .v { font-size: clamp(1.9rem, 3.8vw, 3.4rem); color: var(--ink); }
+.global-stats .cell .v .unit { font-family: var(--font-kr); font-size: .4em; font-weight: 400; color: var(--ink-dim); }
+.global-stats .cell .k { margin-top: 12px; color: var(--ink-dim); font-weight: 400; font-size: .9rem; }
+.global-stats .cell .k small { display: block; font-family: var(--font-mono); font-weight: 500; font-size: .68rem; color: var(--ink-faint); letter-spacing: .08em; margin-top: 4px; }
+.global-places { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 32px; }
+.global-places span {
+  font-family: var(--font-mono); font-weight: 500; font-size: .72rem; letter-spacing: .08em;
+  padding: 7px 13px; border: 1px solid var(--line); color: var(--ink-dim);
+}
+.global-places span.hq { border-color: var(--accent-deep); color: var(--accent); }
+.marquee {
+  margin-top: 14vh; overflow: hidden; white-space: nowrap;
+  border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);
+  padding: 22px 0;
+}
+.marquee-track { display: inline-block; will-change: transform; }
+.marquee-track span {
+  font-family: var(--font-en);
+  font-variation-settings: "wdth" 70, "wght" 750;
+  font-size: clamp(1.6rem, 3.5vw, 3rem);
+  color: transparent;
+  -webkit-text-stroke: 1px var(--ink-faint);
+  margin-right: 6vw; letter-spacing: .02em;
+}
+.marquee-track span.solid { color: var(--accent); -webkit-text-stroke: 0; }
+
+/* ---------- 아우트로 ---------- */
+.outro {
+  padding: 24vh 0 12vh; position: relative; overflow: hidden;
+  background: linear-gradient(to bottom, var(--bg), #07080A);
+}
+.outro-bg {
+  position: absolute; inset: 0 0 auto 0; height: 64vh;
+  z-index: 0; pointer-events: none;
+  background-image:
+    linear-gradient(to bottom, rgba(10,11,13,.55) 0%, rgba(10,11,13,.75) 60%, #0A0B0D 100%),
+    url('/polymer/img/outro-bg.jpg');
+  background-size: cover; background-position: center 40%;
+  filter: grayscale(1) contrast(1.05);
+  opacity: .5;
+}
+.outro .inner { position: relative; z-index: 1; }
+.outro-line {
+  font-size: clamp(1.4rem, 3vw, 2.4rem); font-weight: 350;
+  color: var(--ink-dim); max-width: 26em; line-height: 1.6;
+}
+.outro-line strong { color: var(--ink); font-weight: 600; }
+.next-chapters { margin-top: 14vh; }
+.next-chapters .row-item {
+  display: flex; justify-content: space-between; align-items: baseline;
+  padding: 22px 0; border-top: 1px solid var(--line);
+  color: var(--ink-faint); text-decoration: none;
+  transition: color .3s, padding-left .3s;
+}
+.next-chapters .row-item:last-child { border-bottom: 1px solid var(--line); }
+.next-chapters .row-item .name { font-size: clamp(1.3rem, 2.6vw, 2.2rem); font-weight: 600; }
+.next-chapters .row-item .en {
+  font-family: var(--font-mono); font-weight: 500; font-size: .72rem; letter-spacing: .2em; text-transform: uppercase;
+}
+.next-chapters .row-item.current { color: var(--ink); }
+.next-chapters .row-item.current .en { color: var(--accent); }
+.next-chapters a.row-item.done { color: var(--ink-dim); }
+.next-chapters a.row-item.done:hover { color: var(--ink); padding-left: 12px; }
+.next-chapters a.row-item.done .en { color: var(--amber); }
+.next-chapters .row-item.soon:hover { color: var(--ink-dim); padding-left: 12px; }
+.footer-note {
+  margin-top: 12vh;
+  font-family: var(--font-mono); font-weight: 500; font-size: .7rem; line-height: 2;
+  color: var(--ink-faint); letter-spacing: .04em;
+}
+.footer-note a { color: var(--ink-dim); }
+
+@media (max-width: 720px) {
+  .hero-sub br { display: none; }
+  .label { letter-spacing: 0.16em; font-size: 0.68rem; }
+}
+@media (max-width: 880px) {
+  .poly-stage { grid-template-columns: 1fr; grid-template-rows: 38vh 1fr; gap: 0; padding-top: 8vh; }
+  .poly-visual { height: 100%; }
+  .poly-visual svg { width: 100%; height: 100%; }
+  .svg-label { font-size: 16px; }
+  .svg-formula { font-size: 18px; }
+  .svg-cap { font-size: 16px; }
+  .poly-copy { height: 100%; }
+  .poly-step { justify-content: flex-start; padding-top: 2vh; }
+  .poly-step h3 { font-size: clamp(1.4rem, 6vw, 1.9rem); margin: 12px 0 14px; }
+  .badge { margin-top: 14px; }
+  .product-grid { grid-template-columns: 1fr; }
+  .global-stats { grid-template-columns: 1fr; }
+  .tl-row { grid-template-columns: 1fr; gap: 6px; }
+  .origin-grid { grid-template-columns: 1fr; gap: 4vh; }
+  .prop-bar .seg--pp span { display: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .scroll-cue .line { animation: none; }
+}
+@media (max-width: 560px) {
+  /* 모바일 터치 영역 확대 (상단바) */
+  .lang-sw a { padding-top: 8px; padding-bottom: 8px; }
+}
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <a class="brand" href="/">GS CALTEX — BUSINESS</a>
+  <span class="tb-right"><span class="chapter">CH.04 / POLYMER</span><span class="lang-sw"><a href="/polymer" aria-current="page">KR</a><a href="/en/polymer">EN</a><a href="/zh/polymer">中</a><a href="/ja/polymer">日</a></span></span>
+</header>
+
+<nav class="progress-nav" aria-label="섹션 이동">
+  <a href="#top" data-nav="hero" aria-label="처음"></a>
+  <a href="#poly" data-nav="poly" aria-label="중합"></a>
+  <a href="#capacity" data-nav="capacity" aria-label="생산능력"></a>
+  <a href="#tech" data-nav="tech" aria-label="기술"></a>
+  <a href="#heritage" data-nav="heritage" aria-label="히스토리"></a>
+  <a href="#global" data-nav="global" aria-label="글로벌"></a>
+  <a href="#outro" data-nav="outro" aria-label="다음 장"></a>
+</nav>
+
+<!-- ========== HERO ========== -->
+<section class="hero section" id="top" data-nav-target="hero">
+  <canvas id="bead-canvas" aria-hidden="true"></canvas>
+  <div class="hero-content">
+    <p class="label hero-eyebrow">GS CALTEX BUSINESS — CHAPTER 04</p>
+    <h1 class="hero-title" aria-label="폴리머 POLYMER">
+      <span class="row"><span data-hero-row>POLYMER</span></span>
+      <span class="row row--kr"><span data-hero-row>폴리머</span></span>
+    </h1>
+    <p class="hero-sub" data-hero-sub>
+      에틸렌과 프로필렌에서 다양한 산업 소재로<br>
+      연간 <strong>98만 톤</strong>의 폴리머 생산능력을 갖추고 있습니다
+    </p>
+  </div>
+  <div class="scroll-cue" aria-hidden="true">
+    <span class="label label--dim">SCROLL</span>
+    <span class="line"></span>
+  </div>
+</section>
+
+<!-- ========== 인트로 문장 ========== -->
+<section class="section manifesto">
+  <div class="inner">
+    <p data-manifesto>
+      <span class="w">에틸렌과</span> <span class="w">프로필렌</span> <span class="w">등</span> <span class="w">기초</span> <span class="w">석유화학</span> <span class="w">제품은</span>
+      <span class="w">중합공정을</span> <span class="w">거쳐</span>
+      <span class="w"><strong>폴리에틸렌(PE)과</strong></span> <span class="w"><strong>폴리프로필렌(PP)</strong></span> <span class="w">등</span>
+      <span class="w">다양한</span> <span class="w">폴리머</span> <span class="w">제품으로</span> <span class="w">전환됩니다.</span>
+    </p>
+  </div>
+</section>
+
+<!-- ========== 이름의 유래 ========== -->
+<section class="section origin">
+  <div class="inner origin-grid">
+    <div class="origin-word" aria-hidden="true" data-reveal>
+      <span>POLY</span><span>MEROS</span>
+    </div>
+    <div class="origin-copy">
+      <p class="label" data-reveal>ORIGIN — 이름의 유래</p>
+      <h2 data-reveal>여러 단량체가 결합해 만들어지는<br><em>고분자 물질</em></h2>
+      <p data-reveal>폴리머(Polymer)는 그리스어로 '많다'를 뜻하는 <strong>poly</strong>와 '부분'을 뜻하는 <strong>meros</strong>에서 유래했습니다. 작은 분자인 단량체(Monomer)가 반복적으로 결합해 만들어지는 고분자 물질을 의미합니다.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ========== 이미지 밴드: 구조 ========== -->
+<section class="img-band" style="--fade-top: var(--bg); --fade-bottom: #0D1310" aria-label="플랜트 구조 사진">
+  <div class="media" data-band style="background-image: url('/polymer/img/band-lattice.jpg')"></div>
+</section>
+
+<!-- ========== 중합 시퀀스 ========== -->
+<section class="section poly-section" id="poly" data-nav-target="poly">
+  <div class="poly-stage">
+    <div class="poly-visual" aria-hidden="true">
+      <svg viewBox="0 0 400 640" fill="none">
+        <!-- 촉매 -->
+        <g id="catalyst" opacity="0">
+          <rect x="186" y="96" width="28" height="28" transform="rotate(45 200 110)" stroke="#6FBF9E" stroke-width="2" fill="#0D1310"/>
+          <text class="svg-label" x="200" y="66" text-anchor="middle" fill="#6FBF9E">촉매 CATALYST</text>
+        </g>
+        <!-- 사슬 연결선 -->
+        <polyline id="chain-link" points="48,300 82,340 116,300 150,340 184,300 218,340 252,300 286,340 320,300 352,340"
+                  stroke="#EDE8DC" stroke-width="1.5" opacity="0"/>
+        <!-- 모노머 비즈 10개 (흩어짐 → 사슬 → 펠릿) -->
+        <g id="beads" fill="#6FBF9E">
+          <circle class="bead" cx="72"  cy="182" r="9"/>
+          <circle class="bead" cx="152" cy="140" r="9"/>
+          <circle class="bead" cx="242" cy="172" r="9"/>
+          <circle class="bead" cx="322" cy="132" r="9"/>
+          <circle class="bead" cx="92"  cy="302" r="9"/>
+          <circle class="bead" cx="202" cy="262" r="9"/>
+          <circle class="bead" cx="312" cy="282" r="9"/>
+          <circle class="bead" cx="132" cy="402" r="9"/>
+          <circle class="bead" cx="252" cy="392" r="9"/>
+          <circle class="bead" cx="332" cy="422" r="9"/>
+        </g>
+        <!-- 얽힌 사슬(중합 후 폴리머 덩어리) -->
+        <g id="tangle" stroke="#6FBF9E" stroke-width="1.4" fill="none" opacity="0">
+          <path d="M108 236 C140 196 176 290 210 238 S268 196 292 252"/>
+          <path d="M118 286 C150 238 182 300 214 262 S262 222 288 280"/>
+          <path d="M126 210 C170 250 152 300 204 290 S270 240 280 214"/>
+          <path d="M104 262 C150 300 200 200 236 232 S288 300 296 230"/>
+          <path d="M140 300 C150 250 230 300 248 206 S200 196 170 222"/>
+          <path d="M112 222 C180 210 170 270 240 262 S290 214 270 296"/>
+        </g>
+        <!-- 압출·냉각·절단 -->
+        <g id="process-arrow" opacity="0">
+          <path d="M200 316 V372" stroke="#EDE8DC" stroke-width="1.5"/>
+          <path d="M193 364 L200 374 L207 364" stroke="#EDE8DC" stroke-width="1.5" fill="none"/>
+          <text class="svg-cap" x="214" y="342">압출 · 냉각 · 절단</text>
+        </g>
+        <!-- 펠릿(쌀알 모양) -->
+        <g id="pellets" fill="#6FBF9E">
+          <g transform="rotate(35 150 410)"><ellipse class="pellet" cx="150" cy="410" rx="10" ry="5.5"/></g>
+          <g transform="rotate(-15 176 402)"><ellipse class="pellet" cx="176" cy="402" rx="10" ry="5.5"/></g>
+          <g transform="rotate(55 204 408)"><ellipse class="pellet" cx="204" cy="408" rx="10" ry="5.5"/></g>
+          <g transform="rotate(-50 232 401)"><ellipse class="pellet" cx="232" cy="401" rx="10" ry="5.5"/></g>
+          <g transform="rotate(-30 258 410)"><ellipse class="pellet" cx="258" cy="410" rx="10" ry="5.5"/></g>
+          <g transform="rotate(110 140 432)"><ellipse class="pellet" cx="140" cy="432" rx="10" ry="5.5"/></g>
+          <g transform="rotate(-30 166 428)"><ellipse class="pellet" cx="166" cy="428" rx="10" ry="5.5"/></g>
+          <g transform="rotate(35 194 434)"><ellipse class="pellet" cx="194" cy="434" rx="10" ry="5.5"/></g>
+          <g transform="rotate(140 222 428)"><ellipse class="pellet" cx="222" cy="428" rx="10" ry="5.5"/></g>
+          <g transform="rotate(-50 250 434)"><ellipse class="pellet" cx="250" cy="434" rx="10" ry="5.5"/></g>
+          <g transform="rotate(110 274 428)"><ellipse class="pellet" cx="274" cy="428" rx="10" ry="5.5"/></g>
+          <g transform="rotate(0 158 454)"><ellipse class="pellet" cx="158" cy="454" rx="10" ry="5.5"/></g>
+          <g transform="rotate(-50 186 456)"><ellipse class="pellet" cx="186" cy="456" rx="10" ry="5.5"/></g>
+          <g transform="rotate(-30 214 452)"><ellipse class="pellet" cx="214" cy="452" rx="10" ry="5.5"/></g>
+          <g transform="rotate(55 242 458)"><ellipse class="pellet" cx="242" cy="458" rx="10" ry="5.5"/></g>
+          <g transform="rotate(55 268 452)"><ellipse class="pellet" cx="268" cy="452" rx="10" ry="5.5"/></g>
+          <g transform="rotate(-30 198 476)"><ellipse class="pellet" cx="198" cy="476" rx="10" ry="5.5"/></g>
+          <g transform="rotate(0 228 474)"><ellipse class="pellet" cx="228" cy="474" rx="10" ry="5.5"/></g>
+          <g transform="rotate(-30 172 476)"><ellipse class="pellet" cx="172" cy="476" rx="10" ry="5.5"/></g>
+        </g>
+        <text id="poly-formula" class="svg-formula" x="200" y="528" text-anchor="middle" opacity="0">PE (C₂H₄)ₙ · PP (C₃H₆)ₙ</text>
+        <!-- 하단 캡션 -->
+        <text id="cap-0" class="svg-cap" x="200" y="612" text-anchor="middle" opacity="0">MONOMER — 흩어진 단량체</text>
+        <text id="cap-1" class="svg-cap" x="200" y="612" text-anchor="middle" opacity="0">POLYMERIZATION — 중합</text>
+        <text id="cap-2" class="svg-cap" x="200" y="612" text-anchor="middle" opacity="0">PELLET — 손에 잡히는 소재</text>
+      </svg>
+    </div>
+
+    <div class="poly-copy">
+      <div class="poly-step" data-step="0">
+        <p class="label">01 — MONOMER · 단량체</p>
+        <h3>폴리머를 만드는<br><em>기초 원료</em></h3>
+        <p>에틸렌과 프로필렌은 폴리에틸렌(PE)과 폴리프로필렌(PP)을 생산하는 대표적인 <strong>단량체</strong>입니다.</p>
+      </div>
+      <div class="poly-step" data-step="1">
+        <p class="label">01 — POLYMERIZATION · 중합</p>
+        <h3>단량체를 결합해<br><em>고분자</em>를 만듭니다</h3>
+        <p>단량체를 촉매와 반응시켜 긴 사슬 형태의 고분자로 전환합니다. 촉매와 공정 조건에 따라 <strong>강성·투명성·유연성</strong> 등 다양한 물성을 구현할 수 있습니다.</p>
+      </div>
+      <div class="poly-step" data-step="2">
+        <p class="label">01 — PELLET · 펠릿</p>
+        <h3>가공하기 쉬운<br><em>펠릿 형태</em>로 생산합니다</h3>
+        <p>중합된 폴리머는 긴 사슬이 무수히 얽혀 있는 상태입니다. 이를 <strong>압출·냉각·절단</strong>해 쌀알 크기의 <strong>펠릿</strong>으로 만들며, 이후 다양한 가공공정을 거쳐 필름·용기·파이프·자동차 부품 등에 활용됩니다.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== 생산능력 ========== -->
+<section class="section capacity" id="capacity" data-nav-target="capacity">
+  <div class="inner">
+    <div class="capacity-head">
+      <p class="label" data-reveal>02 — CAPACITY · 생산능력</p>
+      <h2 data-reveal>3개 주요 제품,<br><em>연간 98만 톤</em>의 생산능력</h2>
+    </div>
+    <div class="prop-bar" data-reveal aria-label="제품별 생산능력 비중">
+      <div class="seg seg--pe" style="width:51%" data-seg><span>폴리에틸렌 50</span></div>
+      <div class="seg seg--mr" style="width:30.6%" data-seg><span>복합수지 30</span></div>
+      <div class="seg seg--pp" style="width:18.4%" data-seg><span>폴리프로필렌 18</span></div>
+    </div>
+    <div class="prop-caption" data-reveal><span>단위: 만 톤/년</span><span>50 + 30 + 18 = 98</span></div>
+
+    <div class="product-grid">
+      <div class="product-cell" data-reveal>
+        <div class="p-top"><span class="p-code">PE</span><span class="p-cap">SINCE 2022</span></div>
+        <h4>폴리에틸렌</h4>
+        <div class="p-num num"><span data-count="50">0</span><span class="unit">만 톤 / 년</span></div>
+        <p class="desc">폴리에틸렌(PE)은 에틸렌을 중합해 생산하는 대표적인 합성수지입니다. GS칼텍스는 CPChem의 Advanced Dual Loop(ADL) 공정을 적용해 연간 50만 톤의 고밀도 폴리에틸렌(HDPE)을 생산하고 있습니다. 생활용품부터 포장재·파이프·건축 및 산업용 소재까지 다양한 분야에 활용됩니다.</p>
+        <div class="chips"><span class="out">생활용품</span><span class="out">포장재</span><span class="out">파이프</span><span class="out">산업용 소재</span></div>
+      </div>
+      <div class="product-cell" data-reveal>
+        <div class="p-top"><span class="p-code">COMPOUND</span><span class="p-cap">SINCE 1992</span></div>
+        <h4>복합수지</h4>
+        <div class="p-num num"><span data-count="30">0</span><span class="unit">만 톤 / 년</span></div>
+        <p class="desc">복합수지는 PP 등의 합성수지에 고무·충진제·첨가제 등을 혼합해 특정 용도에 필요한 물성을 구현한 소재입니다. 강성·내충격성·내열성 등 다양한 특성을 구현할 수 있어 자동차 내·외장재와 가전제품 부품 등 다양한 분야에 활용됩니다.</p>
+        <div class="chips"><span class="out">자동차 내·외장재</span><span class="out">가전제품 부품</span><span class="out">산업용 소재</span></div>
+      </div>
+      <div class="product-cell" data-reveal>
+        <div class="p-top"><span class="p-code">PP</span><span class="p-cap">SINCE 1988</span></div>
+        <h4>폴리프로필렌</h4>
+        <div class="p-num num"><span data-count="18">0</span><span class="unit">만 톤 / 년</span></div>
+        <p class="desc">폴리프로필렌(PP)은 프로필렌을 중합해 생산하는 대표적인 합성수지입니다. GS칼텍스는 1988년 폴리프로필렌 생산을 시작해 연간 18만 톤의 생산능력을 갖추고 있으며, 다양한 용도와 특성에 맞는 제품을 생산하고 있습니다. 자동차 내·외장재와 가전제품 부품을 비롯해 식품용기·필름·섬유 등 다양한 분야의 소재로 활용됩니다.</p>
+        <div class="chips"><span class="out">자동차 내·외장재</span><span class="out">가전제품 부품</span><span class="out">식품용기</span><span class="out">필름</span><span class="out">섬유</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== 이미지 밴드: 제어실 ========== -->
+<section class="img-band" style="--fade-top: var(--bg); --fade-bottom: var(--bg)" aria-label="제어실 사진">
+  <div class="media" data-band style="background-image: url('/polymer/img/band-control.jpg')"></div>
+</section>
+
+<!-- ========== 기술 경쟁력 ========== -->
+<section class="section tech" id="tech" data-nav-target="tech">
+  <div class="inner">
+    <div class="tech-head">
+      <p class="label" data-reveal>03 — TECHNOLOGY · 기술 경쟁력</p>
+      <h2 data-reveal>축적된 기술을 바탕으로<br><em>다양한 고기능성 및 친환경 소재</em>를 개발합니다</h2>
+      <p class="tech-intro" data-reveal>GS칼텍스는 폴리머 사업에서 축적해 온 연구개발 역량을 바탕으로 다양한 용도와 고객 요구에 맞는 고기능성 소재를 개발하고 있습니다.</p>
+      <p class="tech-intro" data-reveal>이와 함께 GS칼텍스는 버려지는 자원에 새로운 가치를 더한 친환경 소재를 개발하여 자원 순환을 실현하고, 소재 산업의 Green Transformation(GX)에 기여하고 있습니다.</p>
+    </div>
+    <p class="tech-group label" data-reveal>고기능성 소재</p>
+    <div class="tech-grid tech-grid--grouped">
+      <div class="tech-cell" data-reveal>
+        <div class="p-top"><span class="p-code">LFT</span><span class="p-cap">장섬유 강화 열가소성수지</span></div>
+        <p class="desc">LFT(Long Fiber Reinforced Thermoplastics)는 열가소성수지를 장섬유로 강화해 기계적·열적 특성을 높인 복합소재입니다. 우수한 강성과 경량성을 바탕으로 금속을 대체할 수 있는 소재로 활용되며, 자동차 부품 등 다양한 분야에 적용됩니다.</p>
+      </div>
+      <div class="tech-cell" data-reveal>
+        <div class="p-top"><span class="p-code">TPE</span><span class="p-cap">열가소성 탄성중합체</span></div>
+        <p class="desc">TPE(Thermoplastic Elastomer)는 고무의 탄성과 플라스틱의 가공성을 동시에 구현한 소재입니다. 우수한 유연성과 복원력, 성형성을 바탕으로 가전제품을 비롯한 자동차, 로봇 등 폭넓은 산업 분야에 적용됩니다.</p>
+      </div>
+    </div>
+    <p class="tech-group label" data-reveal>친환경 소재</p>
+    <div class="tech-grid tech-grid--grouped">
+      <div class="tech-cell" data-reveal>
+        <div class="p-top"><span class="p-code">LOW-CARBON MR</span><span class="p-cap">저탄소 MR 복합수지</span></div>
+        <p class="desc">폐플라스틱을 기계적으로 재활용한 원료를 활용해 생산하는 복합수지입니다. GS칼텍스는 2010년부터 저탄소 MR 복합수지를 생산하고 있으며, 자동차·가전·생활계 폐플라스틱을 활용한 고품질 재활용 소재 개발과 공급을 확대하고 있습니다. 2025년에는 폐자동차 플라스틱 소재의 전체 밸류체인에 대해 아시아 최초로 RecyClass 인증을 획득했습니다.</p>
+      </div>
+      <div class="tech-cell" data-reveal>
+        <div class="p-top"><span class="p-code">MASS BALANCE CR</span><span class="p-cap">Mass Balance CR 폴리머</span></div>
+        <p class="desc">폐플라스틱, 폐유 등 다양한 폐기물에서 유래한 화학적 재활용 원료를 기존 원료와 함께 활용해 생산되는 지속가능한 폴리머 제품입니다. GS칼텍스는 ISCC PLUS 인증을 바탕으로 재활용 원료의 투입량과 제품에 배분되는 사용량을 체계적으로 관리하며, 기존의 우수한 물성과 가공성을 유지하면서 자원순환과 저탄소 전환에 기여합니다.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== 히스토리 ========== -->
+<section class="section heritage" id="heritage" data-nav-target="heritage">
+  <div class="inner">
+    <div class="heritage-head">
+      <p class="label" data-reveal>04 — HISTORY · 폴리머 사업의 성장</p>
+      <h2 data-reveal>1988년 폴리프로필렌에서 시작해<br><em>폴리에틸렌과 고기능성 소재</em>로 확장해 왔습니다</h2>
+    </div>
+    <div class="timeline">
+      <div class="tl-row" data-reveal>
+        <div class="year num">1988</div>
+        <div class="what">폴리프로필렌 사업 시작<small>폴리프로필렌 생산을 시작하고 지속적인 기술개발과 설비 확장을 통해 사업 기반을 구축했습니다</small></div>
+      </div>
+      <div class="tl-row" data-reveal>
+        <div class="year num">1998</div>
+        <div class="what">대덕 중앙기술연구소 준공<small>연구개발 역량을 강화하고 다양한 고기능성 폴리머 소재 개발을 확대했습니다</small></div>
+      </div>
+      <div class="tl-row" data-reveal>
+        <div class="year num">2001</div>
+        <div class="what">프로필렌 자체 조달 기반 강화<small>정유 고도화공정에서 생산되는 프로필렌을 활용하며 정유와 폴리머 사업 간 연계를 강화했습니다</small></div>
+      </div>
+      <div class="tl-row" data-reveal>
+        <div class="year num">2022</div>
+        <div class="what">폴리에틸렌 사업 확대<small>MFC 가동과 함께 자체 생산한 에틸렌을 원료로 연간 50만 톤 규모의 HDPE 생산을 시작했습니다. 이를 통해 올레핀에서 폴리머까지 이어지는 사업 경쟁력을 강화했습니다</small></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== 이미지 밴드: 수출 ========== -->
+<section class="img-band" style="--fade-top: var(--bg); --fade-bottom: var(--bg)" aria-label="수출 항만 사진">
+  <div class="media" data-band style="background-image: url('/polymer/img/band-ship.jpg')"></div>
+</section>
+
+<!-- ========== 글로벌 ========== -->
+<section class="section global" id="global" data-nav-target="global">
+  <div class="inner">
+    <p class="label" data-reveal>05 — GLOBAL · 글로벌 사업</p>
+    <h2 data-reveal>국내에서 축적한 기술과 생산 경쟁력을 바탕으로<br><em>글로벌 시장</em>으로 사업을 확대하고 있습니다</h2>
+    <p class="global-intro" data-reveal>GS칼텍스는 국내 생산거점과 연구개발 역량을 기반으로 중국·체코 등 해외 생산법인을 구축하며 복합수지 사업의 글로벌 경쟁력을 강화해 왔습니다. 자동차·가전 등 글로벌 고객의 수요에 대응해 현지 생산과 공급 역량을 지속적으로 확대하고 있습니다.</p>
+    <div class="global-stats">
+      <div class="cell" data-reveal>
+        <div class="v num"><span data-count="9.5" data-decimals="1">0</span><span class="unit">억 달러</span></div>
+        <p class="k">폴리머 총 매출액<small>2025년 기준</small></p>
+      </div>
+      <div class="cell" data-reveal>
+        <div class="v num"><span data-count="84.4" data-decimals="1">0</span><span class="unit">만 톤</span></div>
+        <p class="k">연간 총 판매량<small>2025년 기준</small></p>
+      </div>
+      <div class="cell" data-reveal>
+        <div class="v num"><span data-count="3">0</span><span class="unit">개</span></div>
+        <p class="k">해외 생산법인<small>중국 2 · 체코</small></p>
+      </div>
+    </div>
+    <div class="global-places" data-reveal>
+      <span class="hq">여수·진주 공장</span><span>중국 랑팡</span><span>중국 쑤저우</span><span>체코 카르비나</span><span>이탈리아 밀라노</span><span>일본 도쿄</span><span>인도 첸나이</span><span>중국 상하이</span>
+    </div>
+  </div>
+</section>
+
+<!-- ========== 아우트로 ========== -->
+<section class="section outro" id="outro" data-nav-target="outro">
+  <div class="outro-bg" aria-hidden="true"></div>
+  <div class="inner">
+    <p class="outro-line" data-reveal>
+      정유공정에서 생산된 원료가 <strong>고품질 베이스오일</strong>로 이어집니다.
+      다음 장에서는 정유 고도화공정에서 생산된 미전환유를 원료로 고품질 윤활유의 기초 원료를 생산하는 베이스오일 사업을 살펴봅니다.
+    </p>
+    <div class="next-chapters" data-reveal>
+      <a class="row-item done" href="/process"><span class="name">생산 공정</span><span class="en">CH.00 — Process Map · Read</span></a>
+      <a class="row-item done" href="/refining"><span class="name">정유</span><span class="en">CH.01 — Refining · Read</span></a>
+      <a class="row-item done" href="/aromatics"><span class="name">방향족</span><span class="en">CH.02 — Aromatics · Read</span></a>
+      <a class="row-item done" href="/olefins"><span class="name">올레핀</span><span class="en">CH.03 — Olefins · Read</span></a>
+      <div class="row-item current"><span class="name">폴리머</span><span class="en">CH.04 — Polymer · Now</span></div>
+      <a class="row-item done" href="/baseoil"><span class="name">베이스오일</span><span class="en">CH.05 — Base Oil · Read →</span></a>
+      <a class="row-item done" href="/lubricants"><span class="name">윤활유</span><span class="en">CH.06 — Lubricants · Read →</span></a>
+    </div>
+    <p class="footer-note">
+      DATA — <a href="https://www.gspolymer.com/kor/main/index.do" target="_blank" rel="noopener">gspolymer.com</a> (사업안내·사업성과 2025년 기준) · <a href="https://www.gscaltex.com/kr/Business/Polymer" target="_blank" rel="noopener">gscaltex.com/kr/Business/Polymer</a> · GS Caltex Sustainability Report 2025<br>
+      생산능력(보고서 기준) 폴리에틸렌 50만 · 복합수지 30만 · 폴리프로필렌 18만 = 98만 톤/년 · 매출 9.5억 달러 · 판매 84.4만 톤(gspolymer 2025년 기준)<br>
+      PHOTO — <a href="https://gscaltexmediahub.com/gsc-exhibition/" target="_blank" rel="noopener">GS칼텍스 미디어허브 사진전</a>
+    </p>
+  </div>
+</section>
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+<script>
+gsap.registerPlugin(ScrollTrigger);
+const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+/* ============ 히어로: 모노머 비즈 캔버스 ============ */
+(function () {
+  const canvas = document.getElementById('bead-canvas');
+  const ctx = canvas.getContext('2d');
+  let w, h, raf;
+
+  function resize() {
+    const dpr = Math.min(window.devicePixelRatio || 1, 2);
+    w = canvas.clientWidth; h = canvas.clientHeight;
+    canvas.width = w * dpr; canvas.height = h * dpr;
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+  }
+  resize();
+  window.addEventListener('resize', resize);
+
+  // 흩어진 비즈 + 이어진 구슬 사슬이 함께 떠다닌다
+  const dots = Array.from({ length: 26 }, () => ({
+    x: Math.random(), y: Math.random() * 1.2,
+    r: 1.6 + Math.random() * 2.6,
+    vy: 0.00008 + Math.random() * 0.0002,
+    a: 0.1 + Math.random() * 0.16
+  }));
+  const chains = Array.from({ length: 6 }, () => ({
+    x: Math.random(), y: Math.random() * 1.2,
+    n: 4 + Math.floor(Math.random() * 4),
+    seg: 14 + Math.random() * 14,
+    rot: Math.random() * Math.PI,
+    vr: (Math.random() - 0.5) * 0.0012,
+    vy: 0.0001 + Math.random() * 0.0002,
+    a: 0.1 + Math.random() * 0.14
+  }));
+
+  function draw() {
+    ctx.clearRect(0, 0, w, h);
+    const bg = ctx.createRadialGradient(w / 2, h * 0.45, 0, w / 2, h * 0.45, Math.max(w, h) * 0.8);
+    bg.addColorStop(0, '#0E1310');
+    bg.addColorStop(1, '#0A0B0D');
+    ctx.fillStyle = bg;
+    ctx.fillRect(0, 0, w, h);
+
+    dots.forEach(d => {
+      d.y -= d.vy;
+      if (d.y < -0.1) { d.y = 1.1; d.x = Math.random(); }
+      ctx.beginPath();
+      ctx.arc(d.x * w, d.y * h, d.r, 0, Math.PI * 2);
+      ctx.fillStyle = 'rgba(154, 149, 138, ' + d.a * 0.7 + ')';
+      ctx.fill();
+    });
+
+    chains.forEach(c => {
+      c.y -= c.vy; c.rot += c.vr;
+      if (c.y < -0.15) { c.y = 1.15; c.x = Math.random(); }
+      ctx.save();
+      ctx.translate(c.x * w, c.y * h);
+      ctx.rotate(c.rot);
+      ctx.beginPath();
+      for (let k = 0; k < c.n; k++) {
+        const px = (k - (c.n - 1) / 2) * c.seg;
+        const py = (k % 2 === 0 ? 1 : -1) * c.seg * 0.3;
+        k === 0 ? ctx.moveTo(px, py) : ctx.lineTo(px, py);
+      }
+      ctx.strokeStyle = 'rgba(111, 191, 158, ' + c.a * 0.8 + ')';
+      ctx.lineWidth = 1;
+      ctx.stroke();
+      for (let k = 0; k < c.n; k++) {
+        const px = (k - (c.n - 1) / 2) * c.seg;
+        const py = (k % 2 === 0 ? 1 : -1) * c.seg * 0.3;
+        ctx.beginPath();
+        ctx.arc(px, py, 2.6, 0, Math.PI * 2);
+        ctx.fillStyle = 'rgba(111, 191, 158, ' + c.a * 1.3 + ')';
+        ctx.fill();
+      }
+      ctx.restore();
+    });
+    raf = requestAnimationFrame(draw);
+  }
+  if (reduceMotion) { draw(); cancelAnimationFrame(raf); }
+  else draw();
+
+  gsap.to(canvas, {
+    opacity: 0.25, ease: 'none',
+    scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: true }
+  });
+})();
+
+/* ============ 히어로 등장 ============ */
+gsap.from('[data-hero-row]', {
+  yPercent: 110, duration: 1.2, stagger: 0.12, ease: 'power4.out', delay: 0.15
+});
+gsap.from('[data-hero-sub], .hero-eyebrow', {
+  opacity: 0, y: 24, duration: 1, stagger: 0.1, ease: 'power2.out', delay: 0.7
+});
+gsap.to('.hero-content', {
+  yPercent: -18, opacity: 0, ease: 'none',
+  scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom 30%', scrub: true }
+});
+
+/* ============ 매니페스토 ============ */
+gsap.to('[data-manifesto] .w', {
+  color: '#EDE8DC', stagger: 0.6, ease: 'none',
+  scrollTrigger: { trigger: '.manifesto', start: 'top 75%', end: 'bottom 55%', scrub: true }
+});
+
+/* ============ 중합 핀 시퀀스 ============ */
+/* 주의: 핀 이후 요소들의 트리거 위치 보정을 위해 공통 리빌보다 먼저 생성해야 한다 */
+(function () {
+  const steps = gsap.utils.toArray('.poly-step');
+  const beads = gsap.utils.toArray('#beads .bead');
+  const link = document.getElementById('chain-link');
+  const linkLen = link.getTotalLength();
+  link.style.strokeDasharray = linkLen;
+  link.style.strokeDashoffset = linkLen;
+
+  // 사슬 위치 (지그재그)
+  const chainPos = [[48,300],[82,340],[116,300],[150,340],[184,300],[218,340],[252,300],[286,340],[320,300],[352,340]];
+  const pellets = gsap.utils.toArray('#pellets .pellet');
+  gsap.set(pellets, { opacity: 0, scale: 0, transformOrigin: 'center', transformBox: 'fill-box' });
+
+  const tl = gsap.timeline({
+    scrollTrigger: {
+      trigger: '.poly-section',
+      start: 'top top',
+      end: '+=300%',
+      pin: '.poly-stage',
+      scrub: 0.6,
+      anticipatePin: 1
+    }
+  });
+
+  // STEP 0 — 흩어진 단량체
+  tl.set(steps[0], { autoAlpha: 1 });
+  tl.from(beads, { scale: 0, transformOrigin: 'center', opacity: 0, stagger: 0.12, duration: 0.5 }, 0.1);
+  tl.to('#cap-0', { opacity: 1, duration: 0.4 }, 0.6);
+
+  // STEP 0 → 1 (중합: 촉매 등장, 비즈가 사슬로 정렬)
+  tl.to(steps[0], { autoAlpha: 0, y: -28, duration: 0.5 }, 2.6);
+  tl.fromTo(steps[1], { autoAlpha: 0, y: 28 }, { autoAlpha: 1, y: 0, duration: 0.5 }, 3.1);
+  tl.to('#cap-0', { opacity: 0, duration: 0.3 }, 3.0);
+  tl.to('#catalyst', { opacity: 1, duration: 0.5 }, 3.2);
+  beads.forEach((b, i) => {
+    tl.to(b, { attr: { cx: chainPos[i][0], cy: chainPos[i][1] }, duration: 0.9, ease: 'power2.inOut' }, 3.5 + i * 0.07);
+  });
+  tl.to(link, { opacity: 1, duration: 0.2 }, 4.5);
+  tl.to(link, { strokeDashoffset: 0, duration: 1.1, ease: 'none' }, 4.6);
+  tl.to('#cap-1', { opacity: 1, duration: 0.4 }, 4.6);
+
+  // STEP 1 → 2 (펠릿: 무수히 얽힌 사슬 → 압출·냉각·절단 → 쌀알 모양 펠릿)
+  tl.to(steps[1], { autoAlpha: 0, y: -28, duration: 0.5 }, 6.2);
+  tl.fromTo(steps[2], { autoAlpha: 0, y: 28 }, { autoAlpha: 1, y: 0, duration: 0.5 }, 6.7);
+  tl.to('#cap-1', { opacity: 0, duration: 0.3 }, 6.6);
+  tl.to('#catalyst', { opacity: 0, duration: 0.4 }, 6.6);
+  tl.to(link, { opacity: 0, duration: 0.4 }, 6.7);
+  tl.to(beads, { opacity: 0, scale: 0.4, transformOrigin: 'center', duration: 0.4 }, 6.7);
+  tl.to('#tangle', { opacity: 1, duration: 0.6 }, 6.9);
+  tl.to('#process-arrow', { opacity: 1, duration: 0.4 }, 7.4);
+  tl.to(pellets, { opacity: 1, scale: 1, duration: 0.3, stagger: 0.03, ease: 'back.out(2)' }, 7.6);
+  tl.to('#poly-formula', { opacity: 1, duration: 0.5 }, 7.9);
+  tl.to('#cap-2', { opacity: 1, duration: 0.4 }, 7.9);
+  tl.to({}, { duration: 1.0 });
+})();
+
+/* ============ 이미지 밴드 패럴랙스 ============ */
+gsap.utils.toArray('[data-band]').forEach(m => {
+  gsap.fromTo(m, { yPercent: -7 }, {
+    yPercent: 7, ease: 'none',
+    scrollTrigger: { trigger: m.parentElement, start: 'top bottom', end: 'bottom top', scrub: true }
+  });
+});
+
+/* ============ 공통 리빌 ============ */
+document.querySelectorAll('[data-reveal]').forEach(el => {
+  gsap.from(el, {
+    opacity: 0, y: 44, duration: 1, ease: 'power3.out',
+    scrollTrigger: { trigger: el, start: 'top 82%' }
+  });
+});
+
+/* ============ 비율 바 ============ */
+gsap.utils.toArray('[data-seg]').forEach((seg, i) => {
+  gsap.from(seg, {
+    scaleX: 0, duration: 1.1, delay: i * 0.14, ease: 'power3.inOut',
+    scrollTrigger: { trigger: '.prop-bar', start: 'top 85%' }
+  });
+});
+
+/* ============ 카운트업 ============ */
+document.querySelectorAll('[data-count]').forEach(el => {
+  const target = parseFloat(el.dataset.count);
+  const decimals = parseInt(el.dataset.decimals || '0', 10);
+  const obj = { v: 0 };
+  const fmt = v => v.toLocaleString('ko-KR', { minimumFractionDigits: decimals, maximumFractionDigits: decimals });
+  el.textContent = fmt(0);
+  ScrollTrigger.create({
+    trigger: el, start: 'top 85%', once: true,
+    onEnter: () => gsap.to(obj, {
+      v: target, duration: 1.8, ease: 'power2.out',
+      onUpdate: () => { el.textContent = fmt(obj.v); }
+    })
+  });
+});
+
+/* ============ 진행 내비 ============ */
+document.querySelectorAll('[data-nav-target]').forEach(sec => {
+  ScrollTrigger.create({
+    trigger: sec, start: 'top 50%', end: 'bottom 50%',
+    onToggle: self => {
+      if (self.isActive) {
+        document.querySelectorAll('.progress-nav a').forEach(a =>
+          a.classList.toggle('active', a.dataset.nav === sec.dataset.navTarget));
+      }
+    }
+  });
+});
+</script>
+</body>
+</html>

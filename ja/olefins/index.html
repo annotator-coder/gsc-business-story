@@ -1,0 +1,894 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>オレフィン — GS Caltex ビジネス</title>
+<meta name="description" content="年産90万トンのエチレン、MFCは社史上最大の投資 — GS Caltex オレフィンストーリー">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="GS Caltex Business Story">
+<meta property="og:title" content="オレフィン — GS Caltex ビジネス">
+<meta property="og:description" content="年産90万トンのエチレン、MFCは社史上最大の投資 — GS Caltex オレフィンストーリー">
+<meta property="og:url" content="https://gsc-business-story.vercel.app/ja/olefins">
+<meta property="og:image" content="https://gsc-business-story.vercel.app/olefins/img/band-plant.jpg">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:        #0A0B0D;
+  --bg-2:      #14100D;
+  --ink:       #EDE8DC;
+  --ink-dim:   #B9B3A6;
+  --ink-faint: #8E887C;
+  --accent:      #E07A4A;
+  --accent-deep: #8A4626;
+  --amber:     #E0A63E;
+  --blue:      #7FA8C9;
+  --line:      #26292E;
+  --font-kr: 'Pretendard', -apple-system, 'Apple SD Gothic Neo', sans-serif;
+  --font-en: 'Archivo', 'Pretendard', sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, monospace;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: auto; }
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-kr);
+  font-weight: 400;
+  line-height: 1.6;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  word-break: normal; line-break: strict; overflow-wrap: anywhere;
+  overflow-wrap: break-word;
+}
+::selection { background: var(--accent); color: var(--bg); }
+
+/* ---------- 공통 ---------- */
+.label {
+  font-family: var(--font-mono); font-weight: 500;
+  font-size: 0.72rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+.label--dim { color: var(--ink-faint); }
+.section { position: relative; }
+.inner { max-width: 1280px; margin: 0 auto; padding: 0 6vw; }
+.num {
+  font-family: var(--font-en);
+  font-variation-settings: "wdth" 75, "wght" 800;
+  font-variant-numeric: tabular-nums;
+  line-height: 0.95;
+  letter-spacing: -0.02em;
+}
+
+/* ---------- 진행 내비 / 탑바 ---------- */
+.progress-nav {
+  position: fixed; right: 24px; top: 50%;
+  transform: translateY(-50%);
+  z-index: 90; display: flex; flex-direction: column; gap: 14px;
+}
+.progress-nav a {
+  display: block; width: 6px; height: 6px;
+  background: var(--ink-faint);
+  transition: background .3s, transform .3s;
+}
+.progress-nav a.active { background: var(--accent); transform: scale(1.5); }
+@media (max-width: 720px) { .progress-nav { display: none; } }
+
+.topbar {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 95;
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 20px 4vw;
+  mix-blend-mode: difference;
+}
+.topbar .brand {
+  font-family: var(--font-en);
+  font-variation-settings: "wdth" 80, "wght" 700;
+  font-size: 0.85rem; letter-spacing: 0.18em; color: #fff;
+  text-decoration: none;
+}
+.topbar .chapter { font-family: var(--font-mono); font-weight: 500; font-size: 0.7rem; letter-spacing: 0.2em; color: #fff; opacity: .7; }
+.tb-right { display: flex; align-items: center; gap: 16px; }
+.lang {
+  font-family: var(--font-mono); font-weight: 500; font-size: .68rem; letter-spacing: .15em;
+  color: #fff; text-decoration: none; opacity: .8;
+  border: 1px solid rgba(255,255,255,.45); padding: 3px 9px;
+}
+.lang:hover { opacity: 1; }
+.lang-sw { display: inline-flex; border: 1px solid rgba(255,255,255,.45); font-family: var(--font-mono); font-weight: 500; font-size: .64rem; letter-spacing: .06em; }
+.lang-sw a { color: #fff; text-decoration: none; opacity: .5; padding: 3px 7px; border-left: 1px solid rgba(255,255,255,.28); }
+.lang-sw a:first-child { border-left: 0; }
+.lang-sw a:hover { opacity: .85; }
+.lang-sw a[aria-current="page"] { opacity: 1; background: rgba(255,255,255,.18); }
+
+/* ---------- HERO ---------- */
+.hero {
+  height: 100vh; height: 100svh;
+  position: relative; overflow: hidden;
+  display: flex; align-items: center; justify-content: center;
+}
+#chain-canvas { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+.hero-content { position: relative; z-index: 2; text-align: center; padding: 0 5vw; }
+.hero-eyebrow { margin-bottom: 28px; }
+.hero-title {
+  font-family: var(--font-en);
+  font-variation-settings: "wdth" 68, "wght" 850;
+  font-size: clamp(3.4rem, 11.5vw, 10.5rem);
+  line-height: 1; letter-spacing: -0.015em;
+  color: var(--ink);
+}
+.hero-title .row { display: block; overflow: hidden; padding: 0.03em 0; }
+.hero-title .row > span { display: inline-block; }
+.hero-title .row--kr { font-family: var(--font-kr); font-weight: 800; font-size: 0.72em; line-height: 1.15; letter-spacing: 0.06em; color: var(--accent); }
+.hero-sub {
+  margin-top: 36px;
+  font-size: clamp(1rem, 1.6vw, 1.25rem);
+  color: var(--ink-dim); font-weight: 400;
+  letter-spacing: 0.04em;
+}
+.hero-sub strong { color: var(--ink); font-weight: 600; }
+.scroll-cue {
+  position: absolute; bottom: 36px; left: 50%;
+  transform: translateX(-50%);
+  z-index: 2; display: flex; flex-direction: column; align-items: center; gap: 10px;
+}
+.scroll-cue .line {
+  width: 1px; height: 48px;
+  background: linear-gradient(to bottom, transparent, var(--accent));
+  animation: cue 2s ease-in-out infinite;
+}
+@keyframes cue {
+  0% { transform: scaleY(0); transform-origin: top; }
+  50% { transform: scaleY(1); transform-origin: top; }
+  51% { transform-origin: bottom; }
+  100% { transform: scaleY(0); transform-origin: bottom; }
+}
+
+/* ---------- 인트로 문장 ---------- */
+.manifesto { padding: 24vh 0; }
+.manifesto p {
+  font-size: clamp(1.6rem, 4vw, 3.2rem);
+  font-weight: 350; line-height: 1.5;
+  max-width: 20em;
+  color: var(--ink-faint);
+}
+.manifesto p .w { display: inline; }
+.manifesto p strong { font-weight: 600; }
+
+/* ---------- 이름의 유래 ---------- */
+.origin { padding: 4vh 0 22vh; }
+.origin-grid {
+  display: grid; grid-template-columns: minmax(0, 2fr) minmax(0, 3fr);
+  gap: 6vw; align-items: center;
+}
+.origin-word {
+  font-family: var(--font-en);
+  font-variation-settings: "wdth" 70, "wght" 850;
+  font-size: clamp(3.4rem, 8vw, 7rem);
+  line-height: 1.02;
+  color: transparent; -webkit-text-stroke: 1.5px var(--accent-deep);
+  user-select: none;
+}
+.origin-word span { display: block; }
+.origin-word span:nth-child(2) { color: var(--accent); -webkit-text-stroke: 0; margin-left: 0.5em; }
+.origin-word small {
+  display: block;
+  font-family: var(--font-mono); font-size: max(0.13em, 10px); font-weight: 400;
+  letter-spacing: 0.3em; color: var(--ink-faint);
+  -webkit-text-stroke: 0; margin-top: 1.2em;
+}
+.origin-copy h2 {
+  font-size: clamp(1.7rem, 3.4vw, 2.8rem);
+  font-weight: 700; line-height: 1.3; letter-spacing: -0.01em;
+  margin: 16px 0 10px;
+}
+.origin-copy h2 em { font-style: normal; color: var(--accent); }
+.origin-copy p:not(.label) {
+  margin-top: 16px; max-width: 36em;
+  color: var(--ink-dim); font-weight: 400;
+  font-size: clamp(0.98rem, 1.35vw, 1.15rem);
+}
+.origin-copy p strong { color: var(--ink); font-weight: 600; }
+
+/* ---------- 흑백 이미지 밴드 ---------- */
+.img-band { position: relative; height: 58vh; min-height: 380px; overflow: hidden; }
+.img-band .media {
+  position: absolute; inset: -14% 0;
+  background-size: cover; background-position: center;
+  filter: grayscale(1) brightness(0.6) contrast(1.06);
+  will-change: transform;
+}
+.img-band::after {
+  content: ''; position: absolute; inset: 0; pointer-events: none;
+  background: linear-gradient(to bottom, var(--fade-top, var(--bg)) 0%, transparent 30%, transparent 68%, var(--fade-bottom, var(--bg)) 100%),
+              linear-gradient(to right, rgba(10,11,13,.45), transparent 40%);
+}
+.img-band .caption { position: absolute; left: 6vw; bottom: 32px; z-index: 2; }
+.img-band .caption .cap-text {
+  display: block; margin-top: 10px;
+  color: var(--ink-dim); font-weight: 400;
+  font-size: clamp(0.95rem, 1.3vw, 1.15rem);
+}
+.img-band .caption .cap-text strong { color: var(--ink); font-weight: 600; }
+
+/* ---------- 크래킹 (핀 시퀀스) ---------- */
+.crack-section { background: var(--bg-2); }
+.crack-stage {
+  position: relative;
+  height: 100vh; height: 100svh;
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 4fr);
+  gap: 4vw;
+  max-width: 1280px; margin: 0 auto; padding: 0 6vw;
+  align-items: center;
+  overflow: hidden;
+}
+.crack-visual { position: relative; height: 82vh; display: flex; align-items: center; justify-content: center; z-index: 1; }
+.crack-visual svg { height: 100%; width: auto; max-width: 100%; overflow: visible; }
+.crack-copy { position: relative; height: 60vh; z-index: 1; }
+.crack-step {
+  position: absolute; inset: 0;
+  display: flex; flex-direction: column; justify-content: center;
+  opacity: 0; visibility: hidden;
+}
+.crack-step h3 {
+  font-size: clamp(1.8rem, 3.4vw, 3rem);
+  font-weight: 700; line-height: 1.25; letter-spacing: -0.01em;
+  margin: 18px 0 20px;
+}
+.crack-step h3 em { font-style: normal; color: var(--accent); }
+.crack-step p {
+  color: var(--ink-dim); font-weight: 400;
+  font-size: clamp(0.95rem, 1.25vw, 1.1rem);
+  max-width: 30em;
+}
+.crack-step p strong { color: var(--ink); font-weight: 600; }
+.badge {
+  display: inline-flex; align-items: center; gap: 10px;
+  border: 1px solid var(--accent-deep);
+  padding: 8px 16px; margin-top: 24px;
+  font-family: var(--font-mono); font-weight: 500; font-size: .75rem; letter-spacing: .15em;
+  color: var(--accent);
+}
+.svg-label { font-family: var(--font-mono); font-weight: 500; font-size: 12px; fill: var(--ink-dim); letter-spacing: .08em; }
+.svg-label--faint { fill: var(--ink-faint); font-size: 10px; }
+.svg-formula { font-family: var(--font-mono); font-weight: 500; font-size: 14px; fill: var(--ink); letter-spacing: .06em; }
+.svg-cap { font-family: var(--font-mono); font-weight: 500; font-size: 13px; fill: var(--ink-dim); letter-spacing: .08em; }
+
+/* ---------- 산출물 / 원료 ---------- */
+.capacity { padding: 20vh 0 14vh; }
+.capacity-head h2 {
+  font-size: clamp(2rem, 4.5vw, 4rem);
+  font-weight: 700; line-height: 1.25; letter-spacing: -0.015em;
+  margin-top: 18px;
+}
+.capacity-head h2 em { font-style: normal; color: var(--accent); }
+.product-grid {
+  display: grid; grid-template-columns: repeat(2, 1fr);
+  gap: 1px; background: var(--line); border: 1px solid var(--line);
+  margin-top: 8vh;
+}
+.product-cell { background: var(--bg); padding: clamp(24px, 3vw, 44px); }
+.product-cell .p-top { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; flex-wrap: wrap; }
+.product-cell .p-code {
+  font-family: var(--font-mono); font-weight: 500;
+  font-size: clamp(1rem, 1.5vw, 1.25rem); letter-spacing: .1em; color: var(--accent);
+}
+.product-cell .p-cap { font-family: var(--font-mono); font-weight: 500; font-size: .72rem; color: var(--ink-faint); letter-spacing: .08em; }
+.product-cell h4 { font-size: clamp(1.1rem, 1.6vw, 1.35rem); font-weight: 600; margin-top: 10px; }
+.product-cell .p-num { font-size: clamp(2.4rem, 5vw, 4rem); color: var(--ink); margin: 14px 0 10px; }
+.product-cell .p-num .unit { font-family: var(--font-kr); font-size: .32em; font-weight: 400; color: var(--ink-dim); }
+.product-cell p.desc { color: var(--ink-dim); font-weight: 400; font-size: 0.92rem; max-width: 34em; }
+.chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
+.chips span {
+  font-family: var(--font-mono); font-weight: 500; font-size: 0.7rem; letter-spacing: 0.06em;
+  padding: 5px 10px; border: 1px solid var(--line); color: var(--ink-dim);
+}
+.chips span.out { border-color: var(--accent-deep); color: var(--accent); }
+.chips span.link { border-color: #3F5D77; color: var(--blue); }
+
+.feed-table { margin-top: 12vh; }
+.feed-table h3 {
+  font-size: clamp(1.4rem, 2.6vw, 2.2rem); font-weight: 700; letter-spacing: -0.01em;
+  margin-top: 14px;
+}
+.feed-table h3 em { font-style: normal; color: var(--accent); }
+.feed-row {
+  display: grid; grid-template-columns: minmax(0,2fr) minmax(0,2fr) minmax(0,3fr);
+  gap: clamp(12px, 3vw, 40px); align-items: baseline;
+  padding: clamp(18px, 2.6vw, 30px) 0;
+  border-top: 1px solid var(--line);
+}
+.feed-row:last-child { border-bottom: 1px solid var(--line); }
+.feed-row .f-name { font-weight: 600; font-size: clamp(1.05rem, 1.6vw, 1.3rem); }
+.feed-row .f-name small { display: block; font-family: var(--font-mono); font-weight: 400; font-size: .7rem; color: var(--ink-faint); letter-spacing: .1em; margin-top: 4px; }
+.feed-row .f-num { font-size: clamp(1.7rem, 3.4vw, 2.8rem); color: var(--ink); }
+.feed-row .f-num .unit { font-family: var(--font-kr); font-size: .42em; font-weight: 400; color: var(--ink-dim); }
+.feed-row .f-desc { color: var(--ink-dim); font-weight: 400; font-size: .92rem; }
+.marquee {
+  margin-top: 14vh; overflow: hidden; white-space: nowrap;
+  border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);
+  padding: 22px 0;
+}
+.marquee-track { display: inline-block; will-change: transform; }
+.marquee-track span {
+  font-family: var(--font-en);
+  font-variation-settings: "wdth" 70, "wght" 750;
+  font-size: clamp(1.6rem, 3.5vw, 3rem);
+  color: transparent;
+  -webkit-text-stroke: 1px var(--ink-faint);
+  margin-right: 6vw; letter-spacing: .02em;
+}
+.marquee-track span.solid { color: var(--accent); -webkit-text-stroke: 0; }
+
+/* ---------- MFC 스토리 ---------- */
+.mfc { padding: 20vh 0 16vh; }
+.mfc-head { max-width: none; }
+.mfc-head h2 {
+  font-size: clamp(2rem, 4.5vw, 4rem);
+  font-weight: 700; line-height: 1.25; letter-spacing: -0.015em;
+  margin-top: 18px;
+}
+.mfc-head h2 em { font-style: normal; color: var(--accent); }
+.mfc-copy + .mfc-copy { margin-top: 14px; }
+.mfc-copy {
+  margin-top: 24px; max-width: 36em;
+  color: var(--ink-dim); font-weight: 400;
+  font-size: clamp(1rem, 1.4vw, 1.2rem);
+}
+.mfc-copy strong { color: var(--ink); font-weight: 600; }
+.mfc-stats {
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  gap: 1px; background: var(--line); border: 1px solid var(--line);
+  margin-top: 8vh;
+}
+.mfc-stats .cell { background: var(--bg); padding: clamp(20px, 2.6vw, 40px); }
+.mfc-stats .cell .v { font-size: clamp(1.9rem, 3.8vw, 3.4rem); color: var(--ink); }
+.mfc-stats .cell .v .unit { font-family: var(--font-kr); font-size: .4em; font-weight: 400; color: var(--ink-dim); }
+.mfc-stats .cell .k {
+  margin-top: 12px; color: var(--ink-dim); font-weight: 400; font-size: .9rem;
+}
+.mfc-stats .cell .k small { display: block; font-family: var(--font-mono); font-weight: 500; font-size: .68rem; color: var(--ink-faint); letter-spacing: .08em; margin-top: 4px; }
+
+/* ---------- 아우트로 ---------- */
+.outro {
+  padding: 24vh 0 12vh; position: relative; overflow: hidden;
+  background: linear-gradient(to bottom, var(--bg), #07080A);
+}
+.outro-bg {
+  position: absolute; inset: 0 0 auto 0; height: 64vh;
+  z-index: 0; pointer-events: none;
+  background-image:
+    linear-gradient(to bottom, rgba(10,11,13,.55) 0%, rgba(10,11,13,.75) 60%, #0A0B0D 100%),
+    url('/olefins/img/outro-bg.jpg');
+  background-size: cover; background-position: center 40%;
+  filter: grayscale(1) contrast(1.05);
+  opacity: .5;
+}
+.outro .inner { position: relative; z-index: 1; }
+.outro-line {
+  font-size: clamp(1.4rem, 3vw, 2.4rem); font-weight: 350;
+  color: var(--ink-dim); max-width: 26em; line-height: 1.6;
+}
+.outro-line strong { color: var(--ink); font-weight: 600; }
+.next-chapters { margin-top: 14vh; }
+.next-chapters .row-item {
+  display: flex; justify-content: space-between; align-items: baseline;
+  padding: 22px 0; border-top: 1px solid var(--line);
+  color: var(--ink-faint); text-decoration: none;
+  transition: color .3s, padding-left .3s;
+}
+.next-chapters .row-item:last-child { border-bottom: 1px solid var(--line); }
+.next-chapters .row-item .name { font-size: clamp(1.3rem, 2.6vw, 2.2rem); font-weight: 600; }
+.next-chapters .row-item .en {
+  font-family: var(--font-mono); font-weight: 500; font-size: .72rem; letter-spacing: .2em; text-transform: uppercase;
+}
+.next-chapters .row-item.current { color: var(--ink); }
+.next-chapters .row-item.current .en { color: var(--accent); }
+.next-chapters a.row-item.done { color: var(--ink-dim); }
+.next-chapters a.row-item.done:hover { color: var(--ink); padding-left: 12px; }
+.next-chapters a.row-item.done .en { color: var(--amber); }
+.next-chapters .row-item.soon:hover { color: var(--ink-dim); padding-left: 12px; }
+.footer-note {
+  margin-top: 12vh;
+  font-family: var(--font-mono); font-weight: 500; font-size: .7rem; line-height: 2;
+  color: var(--ink-faint); letter-spacing: .04em;
+}
+.footer-note a { color: var(--ink-dim); }
+
+@media (max-width: 720px) {
+  .hero-sub br { display: none; }
+  .label { letter-spacing: 0.16em; font-size: 0.68rem; }
+}
+@media (max-width: 880px) {
+  .crack-stage { grid-template-columns: 1fr; grid-template-rows: 40vh 1fr; gap: 0; padding-top: 8vh; }
+  .crack-visual { height: 100%; }
+  .crack-visual svg { width: 100%; height: 100%; }
+  .svg-label { font-size: 16px; }
+  .svg-label--faint { font-size: 13px; }
+  .svg-formula { font-size: 17px; }
+  .svg-cap { font-size: 16px; }
+  .crack-copy { height: 100%; }
+  .crack-step { justify-content: flex-start; padding-top: 2vh; }
+  .crack-step h3 { font-size: clamp(1.4rem, 6vw, 1.9rem); margin: 12px 0 14px; }
+  .badge { margin-top: 14px; }
+  .product-grid { grid-template-columns: 1fr; }
+  .feed-row { grid-template-columns: 1fr; gap: 6px; }
+  .mfc-stats { grid-template-columns: 1fr 1fr; }
+  .origin-grid { grid-template-columns: 1fr; gap: 4vh; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .scroll-cue .line { animation: none; }
+}
+@media (max-width: 560px) {
+  /* 모바일 터치 영역 확대 (상단바) */
+  .lang-sw a { padding-top: 8px; padding-bottom: 8px; }
+}
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <a class="brand" href="/ja">GS CALTEX — BUSINESS</a>
+  <span class="tb-right"><span class="chapter">CH.03 / OLEFINS</span><span class="lang-sw"><a href="/olefins">KR</a><a href="/en/olefins">EN</a><a href="/zh/olefins">中</a><a href="/ja/olefins" aria-current="page">日</a></span></span>
+</header>
+
+<nav class="progress-nav" aria-label="章の移動">
+  <a href="#top" data-nav="hero" aria-label="冒頭"></a>
+  <a href="#cracking" data-nav="cracking" aria-label="分解"></a>
+  <a href="#capacity" data-nav="capacity" aria-label="産出物"></a>
+  <a href="#mfc" data-nav="mfc" aria-label="MFC"></a>
+  <a href="#outro" data-nav="outro" aria-label="次の章"></a>
+</nav>
+
+<!-- ========== HERO ========== -->
+<section class="hero section" id="top" data-nav-target="hero">
+  <canvas id="chain-canvas" aria-hidden="true"></canvas>
+  <div class="hero-content">
+    <p class="label hero-eyebrow">GS CALTEX BUSINESS — CHAPTER 03</p>
+    <h1 class="hero-title" aria-label="オレフィン">
+      <span class="row"><span data-hero-row>OLEFINS</span></span>
+    </h1>
+    <p class="hero-sub" data-hero-sub>
+ナフサやLPG、石油精製工程の副生ガスなどを原料に、<br>
+      年間<strong>90万トンのエチレン</strong>を生産します。
+    </p>
+  </div>
+  <div class="scroll-cue" aria-hidden="true">
+    <span class="label label--dim">SCROLL</span>
+    <span class="line"></span>
+  </div>
+</section>
+
+<!-- ========== 인트로 문장 ========== -->
+<section class="section manifesto">
+  <div class="inner">
+    <p data-manifesto>
+      <span class="w">GS Caltexは</span> <span class="w">ナフサだけでなく</span> <span class="w">LPGと</span> <span class="w">精製工程の</span> <span class="w">副生ガスなど</span> <span class="w"><strong>多様な</strong></span> <span class="w"><strong>原料に</strong></span> <span class="w">対応する</span> <span class="w">MFC(Mixed</span> <span class="w">Feed</span> <span class="w">Cracker)で、</span> <span class="w">エチレン・プロピレンなどの</span> <span class="w">基礎</span> <span class="w">石油化学製品を</span> <span class="w">生産しています。</span>
+      <span class="w">多様な</span> <span class="w">原料を</span> <span class="w">柔軟に</span> <span class="w">活用することで、</span> <span class="w"><strong>原料調達の</strong></span> <span class="w"><strong>競争力を</strong></span> <span class="w">高め、</span> <span class="w">石油精製事業と</span> <span class="w">石油化学事業の</span> <span class="w"><strong>シナジーを</strong></span> <span class="w">強化しています。</span>
+    </p>
+  </div>
+</section>
+
+<!-- ========== 이름의 유래 ========== -->
+<section class="section origin">
+  <div class="inner origin-grid">
+    <div class="origin-word" aria-hidden="true" data-reveal>
+      <span>OLE-</span><span>FIANT</span>
+      <small>GAZ OLÉFIANT — OIL-MAKING GAS</small>
+    </div>
+    <div class="origin-copy">
+      <p class="label" data-reveal>ORIGIN</p>
+      <h2 data-reveal>なぜ<em>「オレフィン(Olefin)」</em><br>と呼ぶのか</h2>
+      <p data-reveal>オレフィンという名前は、<strong>エチレンが塩素と反応して油のような液体を生じる現象</strong>に由来します。</p>
+      <p data-reveal>現在、オレフィンは<strong>炭素間に二重結合（C=C）を持つ炭化水素</strong>を指し、エチレンやプロピレンが代表例です。その高い反応性を生かし、さまざまな化学製品やプラスチック素材をつくる基礎原料として利用されています。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ========== 이미지 밴드: 플랜트 ========== -->
+<section class="img-band" style="--fade-top: var(--bg); --fade-bottom: #14100D" aria-label="オレフィン生産施設の写真">
+  <div class="media" data-band style="background-image: url('/olefins/img/band-plant.jpg')"></div>
+</section>
+
+<!-- ========== 크래킹 시퀀스 ========== -->
+<section class="section crack-section" id="cracking" data-nav-target="cracking">
+  <div class="crack-stage">
+    <div class="crack-visual" aria-hidden="true">
+      <svg viewBox="0 0 400 640" fill="none">
+        <defs>
+          <marker id="feed-arrow" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+            <path d="M0 0 L8 4 L0 8 Z" fill="#9A958A"/>
+          </marker>
+        </defs>
+        <!-- 분해로 -->
+        <g id="furnace">
+          <rect id="furnace-box" x="240" y="52" width="120" height="120" stroke="#8A4626" stroke-width="2" fill="#1A120C"/>
+          <rect id="furnace-glow" x="252" y="64" width="96" height="96" fill="#E07A4A" opacity="0.12"/>
+          <text class="svg-label" x="300" y="118" text-anchor="middle" fill="#E07A4A">FURNACE</text>
+          <text class="svg-label--faint svg-label" x="300" y="136" text-anchor="middle">CRACKER</text>
+          <!-- 분해로 후단(출구) -->
+          <path d="M360 112 H396" stroke="#8A4626" stroke-width="2"/>
+        </g>
+        <!-- 원료 3종: 라벨은 선 위, 실선 화살표로 통일 -->
+        <g id="feed-1" opacity="0">
+          <path d="M30 80 H234" stroke="#9A958A" stroke-width="1.5" marker-end="url(#feed-arrow)"/>
+          <text class="svg-label" x="30" y="66">NAPHTHA (LIQUID)</text>
+        </g>
+        <g id="feed-2" opacity="0">
+          <path d="M30 140 H234" stroke="#9A958A" stroke-width="1.5" marker-end="url(#feed-arrow)"/>
+          <text class="svg-label" x="30" y="126">ETHANE · LPG (GAS)</text>
+        </g>
+        <g id="feed-3" opacity="0">
+          <path d="M30 210 H380 V120" stroke="#9A958A" stroke-width="1.5" fill="none" marker-end="url(#feed-arrow)"/>
+          <text class="svg-label" x="30" y="196">REFINERY OFF-GAS (GAS)</text>
+          <text class="svg-label--faint svg-label" x="372" y="228" text-anchor="end">分解炉後段へ投入</text>
+        </g>
+
+        <!-- 긴 사슬 -->
+        <g id="chain" opacity="0">
+          <g id="chainL">
+            <polyline points="52,330 90,306 128,330 166,306" stroke="#EDE8DC" stroke-width="2" fill="none"/>
+            <circle cx="52" cy="330" r="6" fill="#E07A4A"/><circle cx="90" cy="306" r="6" fill="#E07A4A"/>
+            <circle cx="128" cy="330" r="6" fill="#E07A4A"/><circle cx="166" cy="306" r="6" fill="#E07A4A"/>
+          </g>
+          <line id="break-bond" x1="166" y1="306" x2="204" y2="330" stroke="#EDE8DC" stroke-width="2"/>
+          <g id="chainR">
+            <polyline points="204,330 242,306 280,330 318,306" stroke="#EDE8DC" stroke-width="2" fill="none"/>
+            <circle cx="204" cy="330" r="6" fill="#E07A4A"/><circle cx="242" cy="306" r="6" fill="#E07A4A"/>
+            <circle cx="280" cy="330" r="6" fill="#E07A4A"/><circle cx="318" cy="306" r="6" fill="#E07A4A"/>
+          </g>
+          <g id="spark" opacity="0">
+            <line x1="185" y1="300" x2="185" y2="336" stroke="#E07A4A" stroke-width="1.5"/>
+            <line x1="167" y1="318" x2="203" y2="318" stroke="#E07A4A" stroke-width="1.5"/>
+            <line x1="172" y1="305" x2="198" y2="331" stroke="#E07A4A" stroke-width="1"/>
+            <line x1="198" y1="305" x2="172" y2="331" stroke="#E07A4A" stroke-width="1"/>
+          </g>
+        </g>
+
+        <!-- 산출: 에틸렌 / 프로필렌 -->
+        <g id="prod-ethylene" opacity="0">
+          <line x1="90" y1="486" x2="150" y2="486" stroke="#E07A4A" stroke-width="2.5"/>
+          <line x1="90" y1="494" x2="150" y2="494" stroke="#E07A4A" stroke-width="2.5"/>
+          <circle cx="90" cy="490" r="8" fill="#EDE8DC"/>
+          <circle cx="150" cy="490" r="8" fill="#EDE8DC"/>
+          <text class="svg-formula" x="120" y="530" text-anchor="middle">C₂H₄</text>
+          <text class="svg-label" x="120" y="552" text-anchor="middle">ETHYLENE</text>
+        </g>
+        <g id="prod-propylene" opacity="0">
+          <line x1="240" y1="486" x2="296" y2="486" stroke="#E07A4A" stroke-width="2.5"/>
+          <line x1="240" y1="494" x2="296" y2="494" stroke="#E07A4A" stroke-width="2.5"/>
+          <line x1="296" y1="490" x2="340" y2="466" stroke="#EDE8DC" stroke-width="2"/>
+          <circle cx="240" cy="490" r="8" fill="#EDE8DC"/>
+          <circle cx="296" cy="490" r="8" fill="#EDE8DC"/>
+          <circle cx="340" cy="466" r="8" fill="#EDE8DC"/>
+          <text class="svg-formula" x="290" y="530" text-anchor="middle">C₃H₆</text>
+          <text class="svg-label" x="290" y="552" text-anchor="middle">PROPYLENE</text>
+        </g>
+
+        <!-- 하단 캡션 -->
+        <text id="cap-0" class="svg-cap" x="200" y="612" text-anchor="middle" opacity="0">MIXED FEED</text>
+        <text id="cap-1" class="svg-cap" x="200" y="612" text-anchor="middle" opacity="0">CRACKING</text>
+        <text id="cap-2" class="svg-cap" x="200" y="612" text-anchor="middle" opacity="0">OLEFINS — BIRTH OF THE DOUBLE BOND</text>
+      </svg>
+    </div>
+
+    <div class="crack-copy">
+      <div class="crack-step" data-step="0">
+        <p class="label">01 — MIXED FEED</p>
+        <h3>多様な原料を<br><em>柔軟に活用</em></h3>
+        <p>MFCは液体状のナフサだけでなく、<strong>LPGや石油精製工程の副生ガス</strong>など、多様な原料を活用できます。これにより、原料選択の柔軟性を高め、石油精製工程との連携を通じて、原料調達の競争力を確保しています。</p>
+      </div>
+      <div class="crack-step" data-step="1">
+        <p class="label">01 — CRACKING</p>
+        <h3>高温で<br><em>炭化水素を分解</em></h3>
+        <p>ナフサやLPGなどの炭化水素を<strong>高温で熱分解</strong>し、より小さな分子に変えます。その後、急冷・圧縮・分離の各工程を経て、エチレンやプロピレンなど、さまざまな基礎石油化学製品を生産します。</p>
+      </div>
+      <div class="crack-step" data-step="2">
+        <p class="label">01 — OLEFINS</p>
+        <h3>エチレンやプロピレンなど<br><em>基礎石油化学製品</em>を生産</h3>
+        <p>エチレンとプロピレンは、炭素間に<strong>二重結合（C=C）</strong>を持つ代表的なオレフィンです。反応性が高く、ポリエチレン（PE）・ポリプロピレン（PP）をはじめ、さまざまな石油化学製品をつくる基礎原料として利用されています。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== 산출물 ========== -->
+<section class="section capacity" id="capacity" data-nav-target="capacity">
+  <div class="inner">
+    <div class="capacity-head">
+      <p class="label" data-reveal>02 — OUTPUT</p>
+      <h2 data-reveal>MFCで生産される<br><em>主要製品</em></h2>
+    </div>
+    <div class="product-grid">
+      <div class="product-cell" data-reveal>
+        <div class="p-top"><span class="p-code">ETHYLENE</span><span class="p-cap"> さまざまな石油化学製品の基礎原料</span></div>
+        <h4>エチレン</h4>
+        <div class="p-num num"><span data-count="900">0</span><span class="unit">K tons / yr</span></div>
+        <p class="desc">ポリエチレン（PE）・ポリスチレン（PS）・PVC・EVAなどさまざまな石油化学製品の基礎原料として利用されています。</p>
+        <div class="chips"><span class="out">PE</span><span class="out">PS</span><span class="out">PVC</span><span class="out">EVA</span></div>
+      </div>
+      <div class="product-cell" data-reveal>
+        <div class="p-top"><span class="p-code">PROPYLENE</span><span class="p-cap">ポリプロピレンなどさまざまな素材の基礎原料</span></div>
+        <h4>プロピレン</h4>
+        <div class="p-num num"><span data-count="470">0</span><span class="unit">K tons / yr</span></div>
+        <p class="desc">ポリプロピレン（PP）・コンパウンド樹脂・プロピレンオキサイド（PO）・アクリロニトリル（AN）などの原料として利用されています。</p>
+        <div class="chips"><span class="out">PP</span><span class="out">コンパウンド樹脂</span><span class="out">PO</span><span class="out">AN</span></div>
+      </div>
+      <div class="product-cell" data-reveal>
+        <div class="p-top"><span class="p-code">MIXED C4</span><span class="p-cap">合成ゴムと合成樹脂につながる基礎原料</span></div>
+        <h4>混合C4</h4>
+        <div class="p-num num"><span data-count="300">0</span><span class="unit">K tons / yr</span></div>
+        <p class="desc">合成ゴムやABS・ナイロンなどの原料となるブタジエンの生産に利用されています。</p>
+        <div class="chips"><span class="out">合成ゴム</span><span class="out">ABS</span><span class="out">ナイロン</span></div>
+      </div>
+      <div class="product-cell" data-reveal>
+        <div class="p-top"><span class="p-code">PYGAS</span><span class="p-cap">芳香族製品の原料</span></div>
+        <h4>分解ガソリン</h4>
+        <div class="p-num num"><span data-count="450">0</span><span class="unit">K tons / yr</span></div>
+        <p class="desc">ベンゼン・トルエン・キシレンなどの芳香族製品を生産する原料として利用されています。</p>
+        <div class="chips"><span class="out">ベンゼン</span><span class="out">トルエン</span><span class="out">キシレン</span><span class="link">→ CH.02 芳香族</span></div>
+      </div>
+    </div>
+
+    <div class="feed-table">
+      <p class="label" data-reveal>03 — FEED</p>
+      <h3 data-reveal>多様な原料を活用する<em>MFCの競争力</em></h3>
+      <div class="feed-row" data-reveal>
+        <div class="f-name">ナフサ<small>LIQUID</small></div>
+        <div class="f-num num"><span data-count="2300">0</span><span class="unit">K tons/yr (max)</span></div>
+        <div class="f-desc">石油精製工程で生産されるナフサは、MFCの主要原料として利用されています。</div>
+      </div>
+      <div class="feed-row" data-reveal>
+        <div class="f-name">LPG<small>GAS</small></div>
+        <div class="f-num num"><span data-count="180">0</span><span class="unit">K tons/yr (max)</span></div>
+        <div class="f-desc">プロパン（C3）などのLPGもMFCの原料として活用できる。</div>
+      </div>
+      <div class="feed-row" data-reveal>
+        <div class="f-name">石油精製工程の副生ガス <small>FCC OFF-GAS</small></div>
+        <div class="f-num num"><span data-count="320">0</span><span class="unit">K tons/yr (max)</span></div>
+        <div class="f-desc">FCC工程で発生する副生ガスもMFCの原料として活用され、石油精製工程と石油化学工程の連携を強化しています。</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== 이미지 밴드: 스케일 ========== -->
+<section class="img-band" style="--fade-top: var(--bg); --fade-bottom: var(--bg)" aria-label="設備規模の写真">
+  <div class="media" data-band style="background-image: url('/olefins/img/band-scale.jpg')"></div>
+</section>
+
+<!-- ========== MFC 스토리 ========== -->
+<section class="section mfc" id="mfc" data-nav-target="mfc">
+  <div class="inner">
+    <div class="mfc-head">
+      <p class="label" data-reveal>04 — MFC</p>
+      <h2 data-reveal>石油精製から石油化学へ<br><em>事業の競争力</em>を強化</h2>
+      <p class="mfc-copy" data-reveal>GS Caltexは約<strong>2兆7千億ウォン</strong>を投資して麗水工場にMFCを建設し、2022年11月に竣工しました。</p>
+      <p class="mfc-copy" data-reveal>MFCの稼働により年間<strong>90万トンのエチレン生産能力</strong>を確保しました。石油精製工程と石油化学工程を連携させ、原料の活用範囲と事業ポートフォリオを広げました。</p>
+    </div>  </div>
+</section>
+
+<!-- ========== 이미지 밴드: 야간 ========== -->
+<section class="img-band" style="--fade-top: var(--bg); --fade-bottom: var(--bg)" aria-label="夜間設備の写真">
+  <div class="media" data-band style="background-image: url('/olefins/img/band-night.jpg')"></div>
+</section>
+
+<!-- ========== 아우트로 ========== -->
+<section class="section outro" id="outro" data-nav-target="outro">
+  <div class="outro-bg" aria-hidden="true"></div>
+  <div class="inner">
+    <p class="outro-line" data-reveal>
+      MFCで生産されたエチレンやプロピレンは、重合などの工程を経て、<strong>ポリエチレンやポリプロピレン</strong>など、さまざまなポリマーへと姿を変えます。次の章では、オレフィンを起点に、自動車・家電・包装材など、暮らしや産業を支える多様な素材へとつながる<strong>ポリマー事業</strong>をご紹介します。
+    </p>
+    <div class="next-chapters" data-reveal>
+      <a class="row-item done" href="/ja/process"><span class="name">生産工程</span><span class="en">CH.00 — Read</span></a>
+      <a class="row-item done" href="/ja/refining"><span class="name">石油精製</span><span class="en">CH.01 — Read</span></a>
+      <a class="row-item done" href="/ja/aromatics"><span class="name">芳香族</span><span class="en">CH.02 — Read</span></a>
+      <div class="row-item current"><span class="name">オレフィン</span><span class="en">CH.03 — Now</span></div>
+      <a class="row-item done" href="/ja/polymer"><span class="name">ポリマー</span><span class="en">CH.04 — Read →</span></a>
+      <a class="row-item done" href="/ja/baseoil"><span class="name">ベースオイル</span><span class="en">CH.05 — Read →</span></a>
+      <a class="row-item done" href="/ja/lubricants"><span class="name">潤滑油</span><span class="en">CH.06 — Read →</span></a>
+    </div>
+    <p class="footer-note">
+      DATA — <a href="https://www.gscaltex.com/kr/business/mfc" target="_blank" rel="noopener">gscaltex.com/kr/business/mfc</a> · <a href="https://gscaltexmediahub.com/news/press_jump-to-total-energy-company/" target="_blank" rel="noopener">Media Hub MFC完成プレスリリース</a> · GS Caltex Sustainability Report 2025<br>
+      Ethylene 900K · Propylene 470K · Mixed C4 300K · Pygas 450K tons/yr · Feed (max): naphtha 2.3M · LPG 180K · off-gas 320K tons/yr · ₩2.7T invested · Completed Nov 2022<br>
+      PHOTO — <a href="https://gscaltexmediahub.com/gsc-exhibition/" target="_blank" rel="noopener">GS Caltex Media Hub photo exhibition</a>
+    </p>
+  </div>
+</section>
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+<script>
+gsap.registerPlugin(ScrollTrigger);
+const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+/* ============ 히어로: 분자 조각 캔버스 ============ */
+(function () {
+  const canvas = document.getElementById('chain-canvas');
+  const ctx = canvas.getContext('2d');
+  let w, h, raf;
+
+  function resize() {
+    const dpr = Math.min(window.devicePixelRatio || 1, 2);
+    w = canvas.clientWidth; h = canvas.clientHeight;
+    canvas.width = w * dpr; canvas.height = h * dpr;
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+  }
+  resize();
+  window.addEventListener('resize', resize);
+
+  const N = 14;
+  const frags = Array.from({ length: N }, (_, i) => ({
+    x: Math.random(), y: Math.random() * 1.2,
+    n: 2 + Math.floor(Math.random() * 4),
+    seg: 16 + Math.random() * 26,
+    rot: Math.random() * Math.PI,
+    vr: (Math.random() - 0.5) * 0.0014,
+    vy: 0.0001 + Math.random() * 0.00024,
+    a: 0.07 + Math.random() * 0.13,
+    hot: i % 4 === 0
+  }));
+
+  function draw() {
+    ctx.clearRect(0, 0, w, h);
+    const bg = ctx.createRadialGradient(w / 2, h * 0.45, 0, w / 2, h * 0.45, Math.max(w, h) * 0.8);
+    bg.addColorStop(0, '#12100E');
+    bg.addColorStop(1, '#0A0B0D');
+    ctx.fillStyle = bg;
+    ctx.fillRect(0, 0, w, h);
+
+    frags.forEach(f => {
+      f.y -= f.vy; f.rot += f.vr;
+      if (f.y < -0.15) { f.y = 1.15; f.x = Math.random(); }
+      const cx = f.x * w, cy = f.y * h;
+      ctx.save();
+      ctx.translate(cx, cy);
+      ctx.rotate(f.rot);
+      ctx.beginPath();
+      for (let k = 0; k < f.n; k++) {
+        const px = (k - (f.n - 1) / 2) * f.seg;
+        const py = (k % 2 === 0 ? 1 : -1) * f.seg * 0.32;
+        k === 0 ? ctx.moveTo(px, py) : ctx.lineTo(px, py);
+      }
+      ctx.strokeStyle = f.hot
+        ? 'rgba(224, 122, 74, ' + f.a + ')'
+        : 'rgba(154, 149, 138, ' + f.a * 0.8 + ')';
+      ctx.lineWidth = 1;
+      ctx.stroke();
+      for (let k = 0; k < f.n; k++) {
+        const px = (k - (f.n - 1) / 2) * f.seg;
+        const py = (k % 2 === 0 ? 1 : -1) * f.seg * 0.32;
+        ctx.beginPath();
+        ctx.arc(px, py, 1.8, 0, Math.PI * 2);
+        ctx.fillStyle = f.hot ? 'rgba(224, 122, 74, ' + (f.a * 1.4) + ')' : 'rgba(154, 149, 138, ' + f.a + ')';
+        ctx.fill();
+      }
+      ctx.restore();
+    });
+    raf = requestAnimationFrame(draw);
+  }
+  if (reduceMotion) { draw(); cancelAnimationFrame(raf); }
+  else draw();
+
+  gsap.to(canvas, {
+    opacity: 0.25, ease: 'none',
+    scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: true }
+  });
+})();
+
+/* ============ 히어로 등장 ============ */
+gsap.from('[data-hero-row]', {
+  yPercent: 110, duration: 1.2, stagger: 0.12, ease: 'power4.out', delay: 0.15
+});
+gsap.from('[data-hero-sub], .hero-eyebrow', {
+  opacity: 0, y: 24, duration: 1, stagger: 0.1, ease: 'power2.out', delay: 0.7
+});
+gsap.to('.hero-content', {
+  yPercent: -18, opacity: 0, ease: 'none',
+  scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom 30%', scrub: true }
+});
+
+/* ============ 매니페스토 ============ */
+gsap.to('[data-manifesto] .w', {
+  color: '#EDE8DC', stagger: 0.6, ease: 'none',
+  scrollTrigger: { trigger: '.manifesto', start: 'top 75%', end: 'bottom 55%', scrub: true }
+});
+
+/* ============ 크래킹 핀 시퀀스 ============ */
+(function () {
+  const steps = gsap.utils.toArray('.crack-step');
+  const tl = gsap.timeline({
+    scrollTrigger: {
+      trigger: '.crack-section',
+      start: 'top top',
+      end: '+=300%',
+      pin: '.crack-stage',
+      scrub: 0.6,
+      anticipatePin: 1
+    }
+  });
+
+  tl.set(steps[0], { autoAlpha: 1 });
+  tl.to('#feed-1', { opacity: 1, duration: 0.5 }, 0.1);
+  tl.to('#feed-2', { opacity: 1, duration: 0.5 }, 0.6);
+  tl.to('#feed-3', { opacity: 1, duration: 0.5 }, 1.1);
+  tl.to('#furnace-glow', { opacity: 0.5, duration: 1.2 }, 1.4);
+  tl.to('#cap-0', { opacity: 1, duration: 0.4 }, 0.3);
+
+  tl.to(steps[0], { autoAlpha: 0, y: -28, duration: 0.5 }, 2.8);
+  tl.fromTo(steps[1], { autoAlpha: 0, y: 28 }, { autoAlpha: 1, y: 0, duration: 0.5 }, 3.3);
+  tl.to('#cap-0', { opacity: 0, duration: 0.3 }, 3.2);
+  tl.to('#chain', { opacity: 1, duration: 0.6 }, 3.4);
+  tl.to('#cap-1', { opacity: 1, duration: 0.4 }, 3.6);
+  tl.to('#break-bond', { opacity: 0, duration: 0.2 }, 4.4);
+  tl.to('#spark', { opacity: 1, duration: 0.25 }, 4.4);
+  tl.to('#spark', { opacity: 0, duration: 0.5 }, 4.9);
+  tl.to('#chainL', { x: -26, duration: 0.9, ease: 'power2.out' }, 4.5);
+  tl.to('#chainR', { x: 26, duration: 0.9, ease: 'power2.out' }, 4.5);
+
+  tl.to(steps[1], { autoAlpha: 0, y: -28, duration: 0.5 }, 5.8);
+  tl.fromTo(steps[2], { autoAlpha: 0, y: 28 }, { autoAlpha: 1, y: 0, duration: 0.5 }, 6.3);
+  tl.to('#cap-1', { opacity: 0, duration: 0.3 }, 6.2);
+  tl.to('#chain', { opacity: 0.22, duration: 0.6 }, 6.3);
+  tl.to('#prod-ethylene', { opacity: 1, duration: 0.6 }, 6.4);
+  tl.to('#prod-propylene', { opacity: 1, duration: 0.6 }, 6.8);
+  tl.to('#cap-2', { opacity: 1, duration: 0.4 }, 7.0);
+  tl.to({}, { duration: 1.2 });
+})();
+
+/* ============ 이미지 밴드 패럴랙스 ============ */
+gsap.utils.toArray('[data-band]').forEach(m => {
+  gsap.fromTo(m, { yPercent: -7 }, {
+    yPercent: 7, ease: 'none',
+    scrollTrigger: { trigger: m.parentElement, start: 'top bottom', end: 'bottom top', scrub: true }
+  });
+});
+
+/* ============ 공통 리빌 ============ */
+document.querySelectorAll('[data-reveal]').forEach(el => {
+  gsap.from(el, {
+    opacity: 0, y: 44, duration: 1, ease: 'power3.out',
+    scrollTrigger: { trigger: el, start: 'top 82%' }
+  });
+});
+
+/* ============ 카운트업 ============ */
+document.querySelectorAll('[data-count]').forEach(el => {
+  const target = parseFloat(el.dataset.count);
+  const decimals = parseInt(el.dataset.decimals || '0', 10);
+  const obj = { v: 0 };
+  const fmt = v => v.toLocaleString('en-US', { minimumFractionDigits: decimals, maximumFractionDigits: decimals });
+  el.textContent = fmt(0);
+  ScrollTrigger.create({
+    trigger: el, start: 'top 85%', once: true,
+    onEnter: () => gsap.to(obj, {
+      v: target, duration: 1.8, ease: 'power2.out',
+      onUpdate: () => { el.textContent = fmt(obj.v); }
+    })
+  });
+});
+
+/* ============ 진행 내비 ============ */
+document.querySelectorAll('[data-nav-target]').forEach(sec => {
+  ScrollTrigger.create({
+    trigger: sec, start: 'top 50%', end: 'bottom 50%',
+    onToggle: self => {
+      if (self.isActive) {
+        document.querySelectorAll('.progress-nav a').forEach(a =>
+          a.classList.toggle('active', a.dataset.nav === sec.dataset.navTarget));
+      }
+    }
+  });
+});
+</script>
+</body>
+</html>

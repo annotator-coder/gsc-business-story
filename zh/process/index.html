@@ -1,0 +1,1151 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>生产工序 — GS Caltex 事业</title>
+<meta name="description" content="从原油码头到产品码头，以四条线描绘丽水工厂生产工序 — GS Caltex 事业故事">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="GS Caltex Business Story">
+<meta property="og:title" content="生产工序 — GS Caltex 事业">
+<meta property="og:description" content="从原油码头到产品码头，以四条线描绘丽水工厂生产工序 — GS Caltex 事业故事">
+<meta property="og:url" content="https://gsc-business-story.vercel.app/zh/process">
+<meta property="og:image" content="https://gsc-business-story.vercel.app/refining/img/band-pipes.jpg">
+<meta property="og:locale" content="zh_CN">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:        #0A0B0D;
+  --bg-2:      #101318;
+  --ink:       #EDE8DC;
+  --ink-dim:   #B9B3A6;
+  --ink-faint: #8E887C;
+  --amber:     #E0A63E;
+  --line:      #26292E;
+  --g1: #E0A63E;  /* 일반정유 */
+  --g2: #C96F45;  /* 고도화 */
+  --g3: #7FA8C9;  /* 석유화학 */
+  --g4: #8FB98B;  /* 베이스오일 */
+  --font-kr: 'Pretendard', -apple-system, 'Apple SD Gothic Neo', sans-serif;
+  --font-en: 'Archivo', 'Pretendard', sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, monospace;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: auto; }
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-kr);
+  font-weight: 400;
+  line-height: 1.6;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  word-break: normal; line-break: strict; overflow-wrap: anywhere;
+  overflow-wrap: break-word;
+}
+::selection { background: var(--amber); color: var(--bg); }
+
+/* ---------- 공통 ---------- */
+.label {
+  font-family: var(--font-mono); font-weight: 500;
+  font-size: 0.72rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--amber);
+}
+.label--dim { color: var(--ink-faint); }
+.section { position: relative; }
+.inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 6vw;
+}
+.num {
+  font-family: var(--font-en);
+  font-variation-settings: "wdth" 75, "wght" 800;
+  font-variant-numeric: tabular-nums;
+  line-height: 0.95;
+  letter-spacing: -0.02em;
+}
+
+/* ---------- 진행 내비 / 탑바 ---------- */
+.progress-nav {
+  position: fixed; right: 24px; top: 50%;
+  transform: translateY(-50%);
+  z-index: 90; display: flex; flex-direction: column; gap: 14px;
+}
+.progress-nav a {
+  display: block; width: 6px; height: 6px;
+  background: var(--ink-faint);
+  transition: background .3s, transform .3s;
+}
+.progress-nav a.active { background: var(--amber); transform: scale(1.5); }
+@media (max-width: 720px) { .progress-nav { display: none; } }
+
+.topbar {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 95;
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 20px 4vw;
+  mix-blend-mode: difference;
+  transition: opacity .3s;
+}
+.topbar.is-hidden { opacity: 0; pointer-events: none; }
+.topbar .brand {
+  font-family: var(--font-en);
+  font-variation-settings: "wdth" 80, "wght" 700;
+  font-size: 0.85rem; letter-spacing: 0.18em; color: #fff;
+  text-decoration: none;
+}
+.topbar .chapter { font-family: var(--font-mono); font-weight: 500; font-size: 0.7rem; letter-spacing: 0.2em; color: #fff; opacity: .7; }
+.tb-right { display: flex; align-items: center; gap: 16px; }
+.lang-sw { display: inline-flex; border: 1px solid rgba(255,255,255,.45); font-family: var(--font-mono); font-weight: 500; font-size: .64rem; letter-spacing: .06em; }
+.lang-sw a { color: #fff; text-decoration: none; opacity: .5; padding: 3px 7px; border-left: 1px solid rgba(255,255,255,.28); }
+.lang-sw a:first-child { border-left: 0; }
+.lang-sw a:hover { opacity: .85; }
+.lang-sw a[aria-current="page"] { opacity: 1; background: rgba(255,255,255,.18); }
+
+/* ---------- HERO ---------- */
+.hero {
+  min-height: 92vh; min-height: 92svh;
+  position: relative; overflow: hidden;
+  display: flex; align-items: center; justify-content: center;
+  padding: 18vh 0 10vh;
+}
+.hero::before {
+  content: ''; position: absolute; inset: 0;
+  background: radial-gradient(ellipse at 50% 30%, #14181d 0%, var(--bg) 70%);
+}
+.hero-content { position: relative; z-index: 2; text-align: center; padding: 0 5vw; max-width: 900px; }
+.hero-eyebrow { margin-bottom: 28px; }
+.hero-title {
+  font-family: var(--font-en);
+  font-variation-settings: "wdth" 68, "wght" 850;
+  font-size: clamp(2.6rem, 8vw, 6.4rem);
+  line-height: 1; letter-spacing: -0.015em;
+  color: var(--ink);
+}
+.hero-title .row { display: block; overflow: hidden; padding: 0.03em 0; }
+.hero-title .row > span { display: inline-block; }
+.hero-title .row--kr { font-family: var(--font-kr); font-weight: 800; font-size: 0.5em; line-height: 1.15; letter-spacing: 0.06em; color: var(--amber); margin-top: 6px; }
+.hero-sub {
+  margin-top: 36px;
+  font-size: clamp(1rem, 1.6vw, 1.25rem);
+  color: var(--ink-dim); font-weight: 400;
+  letter-spacing: 0.02em;
+}
+.hero-sub strong { color: var(--ink); font-weight: 600; }
+.scroll-cue {
+  position: absolute; bottom: 36px; left: 50%;
+  transform: translateX(-50%);
+  z-index: 2; display: flex; flex-direction: column; align-items: center; gap: 10px;
+}
+.scroll-cue .line {
+  width: 1px; height: 48px;
+  background: linear-gradient(to bottom, transparent, var(--amber));
+  animation: cue 2s ease-in-out infinite;
+}
+@keyframes cue {
+  0% { transform: scaleY(0); transform-origin: top; }
+  50% { transform: scaleY(1); transform-origin: top; }
+  51% { transform-origin: bottom; }
+  100% { transform: scaleY(0); transform-origin: bottom; }
+}
+@media (prefers-reduced-motion: reduce) { .scroll-cue .line { animation: none; } }
+
+/* ---------- 생산 공정 맵 ---------- */
+.process { padding: 14vh 0 16vh; }
+.process-title {
+  font-size: clamp(2rem, 4.5vw, 4rem);
+  font-weight: 700; line-height: 1.25; letter-spacing: -0.015em;
+  margin-top: 18px;
+}
+.process-title em { font-style: normal; color: var(--amber); }
+.process-intro {
+  margin-top: 24px; max-width: 30em;
+  color: var(--ink-dim); font-weight: 400;
+  font-size: clamp(1rem, 1.4vw, 1.2rem);
+}
+.process-intro strong { color: var(--ink); font-weight: 600; }
+
+.flow-hero { margin-top: 8vh; }
+.flow-hero svg { width: 100%; height: auto; overflow: visible; }
+.fh-node rect {
+  fill: var(--bg-2); stroke: var(--c); stroke-width: 1.5;
+  transform-box: fill-box; transform-origin: center;
+}
+.fh-node text {
+  font-family: var(--font-kr); font-size: 15px; font-weight: 600; fill: var(--ink);
+}
+.fh-node .fh-no {
+  font-family: var(--font-mono); font-size: 10px; font-weight: 400;
+  fill: var(--c); letter-spacing: .1em;
+}
+.fh-node .fh-en {
+  font-family: var(--font-mono); font-size: 9px; font-weight: 400;
+  fill: var(--ink-faint); letter-spacing: .1em;
+}
+.fh-edge { stroke-width: 1.5; fill: none; }
+.fh-caption {
+  margin-top: 20px; max-width: 46em;
+  color: var(--ink-faint); font-size: .82rem; font-weight: 400; line-height: 1.7;
+}
+.fh-caption .label { margin-right: 8px; }
+
+.legend-bar {
+  position: sticky; top: 0; z-index: 60;
+  background: rgba(10, 11, 13, 0.92);
+  -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px);
+  border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);
+  margin-top: 8vh;
+}
+.legend-bar .legend-inner {
+  max-width: 1280px; margin: 0 auto; padding: 0 6vw;
+  display: flex; gap: 4px; overflow-x: auto; scrollbar-width: none;
+}
+.legend-bar .legend-inner::-webkit-scrollbar { display: none; }
+.legend-chip {
+  flex: 1 0 auto; display: flex; align-items: center; gap: 10px;
+  padding: 16px 18px; text-decoration: none; white-space: nowrap;
+  font-family: var(--font-mono); font-weight: 500; font-size: 0.72rem; letter-spacing: 0.12em;
+  color: var(--ink-faint); border-bottom: 2px solid transparent;
+  transition: color .3s, border-color .3s;
+}
+.legend-chip .swatch { width: 8px; height: 8px; background: currentColor; opacity: .5; }
+.legend-chip.active { color: var(--c, var(--amber)); border-bottom-color: var(--c, var(--amber)); }
+.legend-chip.active .swatch { opacity: 1; }
+
+.flow-map { position: relative; padding-top: 10vh; }
+.flow-map .spine {
+  position: absolute; top: 0; bottom: 0; left: calc(6vw + 5px);
+  width: 1px; background: var(--line);
+}
+.flow-map .spine-fill {
+  position: absolute; inset: 0;
+  background: linear-gradient(to bottom, var(--g1), var(--g2) 45%, var(--g3) 75%, var(--g4));
+  transform: scaleY(0); transform-origin: top;
+}
+.pterminal, .pgroup { position: relative; padding-left: clamp(36px, 5vw, 64px); }
+.pgroup { margin-bottom: 12vh; }
+.pgroup-head { margin-bottom: 40px; position: relative; }
+.pgroup-head .pgroup-idx {
+  position: absolute; right: 0; top: -0.1em;
+  font-size: clamp(3.4rem, 7vw, 6rem);
+  color: transparent; -webkit-text-stroke: 1px var(--ink-faint);
+}
+.pgroup-head h3 {
+  font-size: clamp(1.5rem, 2.8vw, 2.4rem); font-weight: 700;
+  color: var(--gc, var(--ink)); letter-spacing: -0.01em;
+}
+.pgroup-head .pgroup-en {
+  font-family: var(--font-mono); font-weight: 500; font-size: 0.7rem; letter-spacing: 0.24em;
+  color: var(--ink-faint); margin-top: 6px; text-transform: uppercase;
+}
+.pgroup-head .pgroup-desc {
+  margin-top: 16px; max-width: 32em;
+  color: var(--ink-dim); font-weight: 400; font-size: 0.95rem;
+}
+.pgroup--g1 { --gc: var(--g1); }
+.pgroup--g2 { --gc: var(--g2); }
+.pgroup--g3 { --gc: var(--g3); }
+.pgroup--g4 { --gc: var(--g4); }
+
+.pnode { position: relative; margin-bottom: 20px; }
+.pnode .pnode-dot {
+  position: absolute; top: 26px;
+  left: calc(-1 * clamp(36px, 5vw, 64px) + 1px);
+  width: 9px; height: 9px; background: var(--gc);
+  transform: translateX(-4px);
+}
+.pnode-card {
+  border: 1px solid var(--line); border-left: 2px solid var(--gc);
+  background: var(--bg-2); padding: clamp(18px, 2.5vw, 28px);
+}
+.pnode-top {
+  display: flex; justify-content: space-between; align-items: baseline; gap: 12px;
+  margin-bottom: 10px; flex-wrap: wrap;
+}
+.pnode-icon {
+  display: inline-flex; width: 34px; height: 34px; margin-right: 10px;
+  color: var(--gc); vertical-align: middle; flex-shrink: 0;
+}
+.pnode-icon svg {
+  width: 100%; height: 100%; fill: none; stroke: currentColor; stroke-width: 1.6;
+  stroke-linecap: round; stroke-linejoin: round;
+}
+.pnode-code-row { display: flex; align-items: center; }
+.pnode-code {
+  font-family: var(--font-mono); font-weight: 500;
+  font-size: clamp(1rem, 1.6vw, 1.3rem); letter-spacing: 0.1em;
+  color: var(--gc);
+}
+.pnode-from {
+  font-family: var(--font-mono); font-weight: 500; font-size: 0.7rem; letter-spacing: 0.08em;
+  color: var(--ink-faint);
+}
+.pnode-card h4 { font-size: clamp(1.05rem, 1.5vw, 1.25rem); font-weight: 600; color: var(--ink); }
+.pnode-card > p {
+  margin-top: 8px; color: var(--ink-dim); font-weight: 400;
+  font-size: 0.92rem; max-width: 44em;
+}
+
+/* ---------- 공정 미니 다이어그램 ---------- */
+.proc-diagram { margin-top: 18px; max-width: 34em; }
+.proc-diagram svg { width: 100%; height: auto; overflow: visible; color: var(--gc); }
+.proc-diagram .pd-label {
+  font-family: var(--font-mono); font-weight: 500; font-size: 8.5px; letter-spacing: .03em;
+  fill: var(--ink-faint);
+}
+.proc-diagram .pd-path, .proc-diagram .pd-tray,
+.proc-diagram .pd-branch, .proc-diagram .pd-trunk,
+.proc-diagram .pd-h2, .proc-diagram .pd-impurity-out,
+.proc-diagram .pd-gas, .proc-diagram .pd-gas-out, .proc-diagram .pd-sulfur-drop,
+.proc-diagram .pd-mesh {
+  stroke: currentColor; stroke-width: 1.4; fill: none; stroke-linecap: round;
+}
+.proc-diagram .pd-mesh { stroke: var(--ink-faint); stroke-width: 1; opacity: .6; }
+.proc-diagram .pd-tower { stroke: currentColor; stroke-width: 1.4; fill: url(#pd-tower-grad); opacity: .9; }
+.proc-diagram .pd-bed { stroke: currentColor; stroke-width: 1.4; fill: var(--bg-2); }
+.proc-diagram .pd-ring, .proc-diagram .pd-drop { stroke: currentColor; stroke-width: 1.4; fill: none; }
+.proc-diagram .pd-in, .proc-diagram .pd-out, .proc-diagram .pd-atom,
+.proc-diagram .pd-chain-dot, .proc-diagram .pd-cat, .proc-diagram .pd-sulfur {
+  fill: currentColor; stroke: none;
+}
+.proc-diagram .pd-mol { fill: var(--bg-2); stroke: currentColor; stroke-width: 1.4; }
+.proc-diagram .pd-frag circle { fill: currentColor; stroke: none; }
+.proc-diagram .pd-frag path { stroke: currentColor; stroke-width: 1.4; fill: none; stroke-linecap: round; }
+.proc-diagram .pd-impurity, .proc-diagram .pd-impurity-end { fill: var(--amber); stroke: none; }
+.proc-diagram .pd-impurity-label { fill: var(--amber); }
+.chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
+.chips span {
+  font-family: var(--font-mono); font-weight: 500; font-size: 0.7rem; letter-spacing: 0.06em;
+  padding: 5px 10px; border: 1px solid var(--line); color: var(--ink-dim);
+}
+.chips span.out { border-color: var(--gc); color: var(--gc); }
+.chips .chips-label {
+  border: none; padding: 5px 0; color: var(--ink-faint);
+}
+.pterminal { padding-bottom: 4vh; }
+.pterminal .pnode-card { border-left-color: var(--ink); }
+.pterminal .pnode-dot { background: var(--ink); }
+.pterminal .pnode-code { color: var(--ink); }
+
+/* ---------- 아우트로 ---------- */
+.outro {
+  padding: 24vh 0 12vh; position: relative; overflow: hidden;
+  background: linear-gradient(to bottom, var(--bg), #07080A);
+}
+.outro-bg {
+  position: absolute; inset: 0 0 auto 0; height: 64vh;
+  z-index: 0; pointer-events: none;
+  background-image:
+    linear-gradient(to bottom, rgba(10,11,13,.55) 0%, rgba(10,11,13,.75) 60%, #0A0B0D 100%),
+    url('/refining/img/band-pipes.jpg');
+  background-size: cover; background-position: center 40%;
+  filter: grayscale(1) contrast(1.05);
+  opacity: .5;
+}
+.outro .inner { position: relative; z-index: 1; }
+.outro-line {
+  font-size: clamp(1.4rem, 3vw, 2.4rem); font-weight: 350;
+  color: var(--ink-dim); max-width: 26em; line-height: 1.6;
+}
+.outro-line strong { color: var(--ink); font-weight: 600; }
+.next-chapters { margin-top: 14vh; }
+.next-chapters .row-item {
+  display: flex; justify-content: space-between; align-items: baseline;
+  padding: 22px 0; border-top: 1px solid var(--line);
+  color: var(--ink-faint); text-decoration: none;
+  transition: color .3s, padding-left .3s;
+}
+.next-chapters .row-item:last-child { border-bottom: 1px solid var(--line); }
+.next-chapters .row-item .name { font-size: clamp(1.3rem, 2.6vw, 2.2rem); font-weight: 600; }
+.next-chapters .row-item .en {
+  font-family: var(--font-mono); font-weight: 500; font-size: .72rem; letter-spacing: .2em; text-transform: uppercase;
+}
+.next-chapters .row-item.current { color: var(--ink); }
+.next-chapters .row-item.current .en { color: var(--amber); }
+.next-chapters a.row-item.done { color: var(--ink-dim); }
+.next-chapters a.row-item.done:hover { color: var(--ink); padding-left: 12px; }
+.next-chapters a.row-item.done .en { color: var(--amber); }
+.footer-note {
+  margin-top: 12vh;
+  font-family: var(--font-mono); font-weight: 500; font-size: .7rem; line-height: 2;
+  color: var(--ink-faint); letter-spacing: .04em;
+}
+.footer-note a { color: var(--ink-dim); }
+
+@media (max-width: 880px) {
+  .legend-bar { margin-top: 4vh; }
+}
+@media (max-width: 560px) {
+  /* 모바일 터치 영역 확대 (상단바) */
+  .lang-sw a { padding-top: 8px; padding-bottom: 8px; }
+}
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <a class="brand" href="/zh">GS CALTEX — BUSINESS</a>
+  <span class="tb-right"><span class="chapter">CH.00 / PROCESS MAP</span><span class="lang-sw"><a href="/process">KR</a><a href="/en/process">EN</a><a href="/zh/process" aria-current="page">中</a><a href="/ja/process">日</a></span></span>
+</header>
+
+<nav class="progress-nav" aria-label="章节导航">
+  <a href="#top" data-nav="hero" aria-label="开头"></a>
+  <a href="#process" data-nav="process" aria-label="生产工序"></a>
+  <a href="#outro" data-nav="outro" aria-label="下一章"></a>
+</nav>
+
+<!-- ========== HERO ========== -->
+<section class="hero section" id="top" data-nav-target="hero">
+  <div class="hero-content">
+    <p class="label hero-eyebrow">GS CALTEX BUSINESS — PROLOGUE</p>
+    <h1 class="hero-title" aria-label="生产工序">
+      <span class="row"><span data-hero-row>PROCESS MAP</span></span>
+      <span class="row row--kr"><span data-hero-row>生产工序</span></span>
+    </h1>
+    <p class="hero-sub" data-hero-sub>
+      看似复杂的工序，拆解为<strong>四条线</strong>来理解——<br>
+      从原油码头到产品码头，了解丽水工厂的整体地图
+    </p>
+  </div>
+  <div class="scroll-cue" aria-hidden="true">
+    <span class="label label--dim">SCROLL</span>
+    <span class="line"></span>
+  </div>
+</section>
+
+<!-- ========== 생산 공정 맵 ========== -->
+<section class="section process" id="process" data-nav-target="process">
+  <div class="inner">
+    <p class="label" data-reveal>MAP — PROCESS MAP</p>
+    <h2 class="process-title" data-reveal>流程图看似繁杂，<br>实则<em>四条线</em></h2>
+    <p class="process-intro" data-reveal>从原油码头到产品码头，丽水工厂的生产工序可重新梳理为四个阶段：<strong>炼油 → 升级 → 石油化工 → 基础油</strong>。每张卡片上，<strong>←</strong> 表示原料来自何处；彩色标签表示生产品。</p>
+
+    <div class="flow-hero" data-reveal>
+      <svg viewBox="0 0 1000 300" fill="none" aria-label="四条线工序总览图">
+        <path class="fh-edge" data-fedge stroke="var(--ink-faint)" d="M108 130 L172 130"/>
+        <path class="fh-edge" data-fedge stroke="var(--g1)" d="M322 112 C356 90 356 65 392 65"/>
+        <path class="fh-edge" data-fedge stroke="var(--g1)" d="M322 150 C356 175 356 200 392 200"/>
+        <path class="fh-edge" data-fedge stroke="var(--g2)" d="M542 65 L608 65"/>
+        <path class="fh-edge" data-fedge stroke="var(--g4)" d="M758 74 C800 90 812 108 838 122"/>
+        <path class="fh-edge" data-fedge stroke="var(--g3)" d="M542 200 C800 200 812 165 838 148"/>
+
+        <g class="fh-node" style="--c: var(--ink-faint)">
+          <rect x="18" y="105" width="90" height="50" rx="1"/>
+          <text x="63" y="134" text-anchor="middle">原油</text>
+        </g>
+        <g class="fh-node" style="--c: var(--g1)">
+          <rect x="172" y="95" width="150" height="70" rx="1"/>
+          <text x="247" y="119" text-anchor="middle" class="fh-no">01</text>
+          <text x="247" y="140" text-anchor="middle">炼油</text>
+          <text x="247" y="155" text-anchor="middle" class="fh-en">REFINING</text>
+        </g>
+        <g class="fh-node" style="--c: var(--g2)">
+          <rect x="392" y="30" width="150" height="70" rx="1"/>
+          <text x="467" y="54" text-anchor="middle" class="fh-no">02</text>
+          <text x="467" y="75" text-anchor="middle">升级</text>
+          <text x="467" y="90" text-anchor="middle" class="fh-en">UPGRADING</text>
+        </g>
+        <g class="fh-node" style="--c: var(--g3)">
+          <rect x="392" y="165" width="150" height="70" rx="1"/>
+          <text x="467" y="189" text-anchor="middle" class="fh-no">03</text>
+          <text x="467" y="210" text-anchor="middle">石油化工</text>
+          <text x="467" y="225" text-anchor="middle" class="fh-en">PETROCHEMICAL</text>
+        </g>
+        <g class="fh-node" style="--c: var(--g4)">
+          <rect x="608" y="39" width="150" height="70" rx="1"/>
+          <text x="683" y="63" text-anchor="middle" class="fh-no">04</text>
+          <text x="683" y="84" text-anchor="middle">基础油</text>
+          <text x="683" y="99" text-anchor="middle" class="fh-en">BASE OIL</text>
+        </g>
+        <g class="fh-node" style="--c: var(--ink)">
+          <rect x="838" y="112" width="144" height="60" rx="1"/>
+          <text x="910" y="139" text-anchor="middle">产品</text>
+          <text x="910" y="156" text-anchor="middle" class="fh-en">END</text>
+        </g>
+      </svg>
+      <p class="fh-caption"><span class="label label--dim">HOW TO READ</span> 原油进入炼油过程后分流，再经升级、石油化工、基础油三条线汇聚为最终产品。在实际生产过程当中，部分产品也会在各工序中直接出厂。</p>
+    </div>
+  </div>
+
+  <div class="legend-bar">
+    <div class="legend-inner">
+      <a class="legend-chip" href="#pg-g1" style="--c: var(--g1)" data-legend="g1"><span class="swatch"></span>01 BASICS</a>
+      <a class="legend-chip" href="#pg-g2" style="--c: var(--g2)" data-legend="g2"><span class="swatch"></span>02 UPGRADING</a>
+      <a class="legend-chip" href="#pg-g3" style="--c: var(--g3)" data-legend="g3"><span class="swatch"></span>03 PETROCHEM</a>
+      <a class="legend-chip" href="#pg-g4" style="--c: var(--g4)" data-legend="g4"><span class="swatch"></span>04 BASE OIL</a>
+    </div>
+  </div>
+
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <linearGradient id="pd-tower-grad" x1="0" y1="1" x2="0" y2="0">
+        <stop offset="0" stop-color="var(--amber-deep, #8A5F1C)"/>
+        <stop offset="1" stop-color="var(--bg-2)"/>
+      </linearGradient>
+      <symbol id="icon-tank" viewBox="0 0 48 48">
+        <path d="M8 14 Q24 6 40 14 V34 Q24 42 8 34 Z"/>
+        <path d="M8 14 Q24 22 40 14" opacity="0.5"/>
+      </symbol>
+      <symbol id="icon-tower" viewBox="0 0 48 48">
+        <rect x="16" y="6" width="16" height="36" rx="2"/>
+        <line x1="16" y1="16" x2="32" y2="16"/>
+        <line x1="16" y1="24" x2="32" y2="24"/>
+        <line x1="16" y1="32" x2="32" y2="32"/>
+        <line x1="24" y1="42" x2="24" y2="46"/>
+      </symbol>
+      <symbol id="icon-gas" viewBox="0 0 48 48">
+        <path d="M20 6 h8 v10 l8 14 a10 10 0 1 1 -24 0 Z"/>
+        <line x1="16" y1="30" x2="32" y2="30" opacity="0.5"/>
+        <circle cx="24" cy="37" r="2.5" fill="currentColor" stroke="none"/>
+      </symbol>
+      <symbol id="icon-recover" viewBox="0 0 48 48">
+        <path d="M24 40 V14" />
+        <path d="M16 22 L24 14 L32 22" />
+        <circle cx="24" cy="8" r="4"/>
+      </symbol>
+      <symbol id="icon-reactor" viewBox="0 0 48 48">
+        <rect x="10" y="8" width="28" height="32" rx="3"/>
+        <circle cx="19" cy="20" r="2" fill="currentColor" stroke="none"/>
+        <circle cx="29" cy="24" r="2" fill="currentColor" stroke="none"/>
+        <circle cx="21" cy="30" r="2" fill="currentColor" stroke="none"/>
+        <circle cx="30" cy="16" r="2" fill="currentColor" stroke="none"/>
+        <path d="M14 8 V4 M34 8 V4" opacity="0.5"/>
+      </symbol>
+      <symbol id="icon-hex" viewBox="0 0 48 48">
+        <polygon points="24,6 39,15 39,33 24,42 9,33 9,15"/>
+        <line x1="26" y1="9" x2="35" y2="16" opacity="0.5"/>
+        <line x1="35" y1="32" x2="26" y2="39" opacity="0.5"/>
+        <line x1="13" y1="29" x2="13" y2="19" opacity="0.5"/>
+      </symbol>
+      <symbol id="icon-crack" viewBox="0 0 48 48">
+        <path d="M8 24 H20"/>
+        <path d="M20 24 L34 10"/>
+        <path d="M20 24 L34 24"/>
+        <path d="M20 24 L34 38"/>
+      </symbol>
+      <symbol id="icon-chain" viewBox="0 0 48 48">
+        <circle cx="11" cy="24" r="5"/>
+        <circle cx="24" cy="24" r="5"/>
+        <circle cx="37" cy="24" r="5"/>
+        <path d="M16 24 H19"/>
+        <path d="M29 24 H32"/>
+      </symbol>
+      <symbol id="icon-drop" viewBox="0 0 48 48">
+        <path d="M24 6 C30 18 38 26 38 33 a14 14 0 1 1 -28 0 C10 26 18 18 24 6 Z"/>
+      </symbol>
+    </defs>
+  </svg>
+
+  <div class="inner flow-map">
+    <div class="spine" aria-hidden="true"><div class="spine-fill" data-spine></div></div>
+
+    <!-- 도입 -->
+    <div class="pterminal" style="--gc: var(--ink)">
+      <div class="pnode" data-reveal>
+        <div class="pnode-dot"></div>
+        <div class="pnode-card">
+          <div class="pnode-top"><span class="pnode-code-row"><span class="pnode-icon"><svg><use href="#icon-tank"/></svg></span><span class="pnode-code">START — CRUDE WHARF · TANKS</span></span><span class="pnode-from">← 30+ 个国家, 80+ 种油种</span></div>
+          <p>从油轮卸入原油储罐，再送往常压蒸馏装置——每一道工序的起点。</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- G1 일반정유 -->
+    <div class="pgroup pgroup--g1" id="pg-g1" data-pgroup="g1">
+      <header class="pgroup-head" data-reveal>
+        <span class="pgroup-idx num">01</span>
+        <h3>炼油过程</h3>
+        <p class="pgroup-en">Refining Process</p>
+        <p class="pgroup-desc">按沸点高低区分原油，并去除其中的杂质——炼油的基本功。在此分出的馏分，供给其余三条线的原料。</p>
+      </header>
+      <div class="pnode" data-reveal>
+        <div class="pnode-dot"></div>
+        <div class="pnode-card">
+          <div class="pnode-top"><span class="pnode-code-row"><span class="pnode-icon"><svg><use href="#icon-tower"/></svg></span><span class="pnode-code">CDU</span></span><span class="pnode-from">← 原油储罐</span></div>
+          <h4>常压蒸馏装置</h4>
+          <div class="proc-diagram" data-proc="tower" data-reveal>
+            <svg viewBox="0 0 300 84" aria-hidden="true">
+              <rect class="pd-tower" x="130" y="8" width="40" height="68" rx="2"/>
+              <line class="pd-tray" x1="130" y1="24" x2="170" y2="24"/>
+              <line class="pd-tray" x1="130" y1="40" x2="170" y2="40"/>
+              <line class="pd-tray" x1="130" y1="56" x2="170" y2="56"/>
+              <path class="pd-path pd-path-in" d="M20 76 H130"/>
+              <circle class="pd-in" cx="20" cy="76" r="4"/>
+              <path class="pd-path pd-out-path-1" d="M170 24 H230"/>
+              <circle class="pd-out" cx="230" cy="24" r="4"/>
+              <path class="pd-path pd-out-path-2" d="M170 40 H230"/>
+              <circle class="pd-out" cx="230" cy="40" r="4"/>
+              <path class="pd-path pd-out-path-3" d="M170 56 H230"/>
+              <circle class="pd-out" cx="230" cy="56" r="4"/>
+              <text class="pd-label" x="20" y="66" text-anchor="middle">原油</text>
+              <text class="pd-label" x="240" y="27">LPG·石脑油</text>
+              <text class="pd-label" x="240" y="43">煤油·柴油</text>
+              <text class="pd-label" x="240" y="59">残油</text>
+            </svg>
+          </div>
+          <p>第一道关口：原油加热至360°C以上，按沸点分离。在此分出的馏分，流向以下所有工序。</p>
+          <div class="chips"><span class="chips-label">OUT →</span><span class="out">LPG</span><span class="out">石脑油</span><span class="out">燃料油</span><span>煤油·柴油 → 加氢脱硫</span><span>常压残油 → 升级</span></div>
+        </div>
+      </div>
+      <div class="pnode" data-reveal>
+        <div class="pnode-dot"></div>
+        <div class="pnode-card">
+          <div class="pnode-top"><span class="pnode-code-row"><span class="pnode-icon"><svg><use href="#icon-tower"/></svg></span><span class="pnode-code">VDU</span></span><span class="pnode-from">← CDU 常压残油</span></div>
+          <h4>减压蒸馏装置</h4>
+          <div class="proc-diagram" data-proc="tower" data-reveal>
+            <svg viewBox="0 0 300 84" aria-hidden="true">
+              <rect class="pd-tower" x="130" y="8" width="40" height="68" rx="2"/>
+              <line class="pd-tray" x1="130" y1="30" x2="170" y2="30"/>
+              <line class="pd-tray" x1="130" y1="52" x2="170" y2="52"/>
+              <path class="pd-path pd-path-in" d="M20 76 H130"/>
+              <circle class="pd-in" cx="20" cy="76" r="4"/>
+              <path class="pd-path pd-out-path-1" d="M170 30 H230"/>
+              <circle class="pd-out" cx="230" cy="30" r="4"/>
+              <path class="pd-path pd-out-path-2" d="M170 52 H230"/>
+              <circle class="pd-out" cx="230" cy="52" r="4"/>
+              <text class="pd-label" x="20" y="66" text-anchor="middle">常压残油</text>
+              <text class="pd-label" x="240" y="33">减压瓦斯油</text>
+              <text class="pd-label" x="240" y="55">减压残油</text>
+            </svg>
+          </div>
+          <p>常压下未能汽化的重油，在近乎真空的压力下再次蒸馏——升级工艺与基础油两条线的原料库。</p>
+          <div class="chips"><span class="chips-label">OUT →</span><span>减压瓦斯油 → HCR·VGOFCC</span><span>减压残油 → VRHCR</span></div>
+        </div>
+      </div>
+      <div class="pnode" data-reveal>
+        <div class="pnode-dot"></div>
+        <div class="pnode-card">
+          <div class="pnode-top"><span class="pnode-code-row"><span class="pnode-icon"><svg><use href="#icon-gas"/></svg></span><span class="pnode-code">HDS</span></span><span class="pnode-from">← CDU 煤油·柴油</span></div>
+          <h4>加氢脱硫</h4>
+          <div class="proc-diagram" data-proc="hds" data-reveal>
+            <svg viewBox="0 0 300 84" aria-hidden="true">
+              <path class="pd-path pd-path-in" d="M20 42 H120"/>
+              <circle class="pd-mol" cx="130" cy="42" r="11"/>
+              <circle class="pd-impurity" cx="130" cy="30" r="4"/>
+              <path class="pd-h2" d="M130 8 V20"/>
+              <text class="pd-label" x="130" y="6" text-anchor="middle">H₂</text>
+              <path class="pd-impurity-out" d="M132 33 Q150 55 175 66"/>
+              <circle class="pd-impurity-end" cx="175" cy="66" r="3.5"/>
+              <text class="pd-label pd-impurity-label" x="175" y="80" text-anchor="middle">脱除硫·氮</text>
+              <path class="pd-path pd-path-out" d="M141 42 H230"/>
+              <circle class="pd-out" cx="230" cy="42" r="4"/>
+              <text class="pd-label" x="55" y="60" text-anchor="middle">含硫·氮</text>
+              <text class="pd-label" x="240" y="46">煤油·柴油</text>
+            </svg>
+          </div>
+          <p>用氢气脱除硫、氮化合物等杂质——煤油与柴油在此达到产品规格。</p>
+          <div class="chips"><span class="chips-label">OUT →</span><span class="out">煤油</span><span class="out">柴油</span></div>
+        </div>
+      </div>
+      <div class="pnode" data-reveal>
+        <div class="pnode-dot"></div>
+        <div class="pnode-card">
+          <div class="pnode-top"><span class="pnode-code-row"><span class="pnode-icon"><svg><use href="#icon-recover"/></svg></span><span class="pnode-code">SRU</span></span><span class="pnode-from">← 各装置酸性气体</span></div>
+          <h4>硫磺回收装置</h4>
+          <div class="proc-diagram" data-proc="sulfur" data-reveal>
+            <svg viewBox="0 0 300 84" aria-hidden="true">
+              <path class="pd-gas" d="M15 60 Q35 34 55 60 T95 60 T135 60"/>
+              <line class="pd-mesh" x1="148" y1="12" x2="148" y2="72"/>
+              <line class="pd-mesh" x1="156" y1="12" x2="156" y2="72"/>
+              <path class="pd-gas-out" d="M165 40 Q200 16 235 16"/>
+              <path class="pd-sulfur-drop" d="M152 46 V62"/>
+              <circle class="pd-sulfur" cx="152" cy="68" r="6"/>
+              <text class="pd-label" x="55" y="76" text-anchor="middle">酸性气体</text>
+              <text class="pd-label" x="235" y="10" text-anchor="middle">净化气体</text>
+              <text class="pd-label" x="152" y="80" text-anchor="middle">硫磺 (99.9%)</text>
+            </svg>
+          </div>
+          <p>从工艺产生的酸性气体中回收99.9%的硫。这是减少大气污染物排放的核心环保设施，回收的硫磺作为独立产品对外销售。</p>
+          <div class="chips"><span class="chips-label">OUT →</span><span class="out">硫磺 (99.9% 回收)</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- G2 고도화 -->
+    <div class="pgroup pgroup--g2" id="pg-g2" data-pgroup="g2">
+      <header class="pgroup-head" data-reveal>
+        <span class="pgroup-idx num">02</span>
+        <h3>升级工艺</h3>
+        <p class="pgroup-en">Upgrading Process</p>
+        <p class="pgroup-desc">借助催化剂与氢气，将廉价重油再次裂解为汽油、柴油等高附加值轻质产品——韩国最大规模的升级装置群，日处理27.5万桶。</p>
+      </header>
+      <div class="pnode" data-reveal>
+        <div class="pnode-dot"></div>
+        <div class="pnode-card">
+          <div class="pnode-top"><span class="pnode-code-row"><span class="pnode-icon"><svg><use href="#icon-reactor"/></svg></span><span class="pnode-code">RFCC</span></span><span class="pnode-from">← CDU 常压残油</span></div>
+          <h4>渣油流化催化裂化</h4>
+          <div class="proc-diagram" data-proc="crack" data-reveal>
+            <svg viewBox="0 0 300 84" aria-hidden="true">
+              <path class="pd-path" d="M15 42 H95"/>
+              <circle class="pd-chain-dot" cx="25" cy="42" r="3"/>
+              <circle class="pd-chain-dot" cx="45" cy="42" r="3"/>
+              <circle class="pd-chain-dot" cx="65" cy="42" r="3"/>
+              <circle class="pd-chain-dot" cx="85" cy="42" r="3"/>
+              <rect class="pd-bed" x="105" y="16" width="60" height="52" rx="2"/>
+              <circle class="pd-cat" cx="120" cy="30" r="2"/>
+              <circle class="pd-cat" cx="138" cy="46" r="2"/>
+              <circle class="pd-cat" cx="152" cy="30" r="2"/>
+              <circle class="pd-cat" cx="125" cy="55" r="2"/>
+              <circle class="pd-cat" cx="150" cy="55" r="2"/>
+              <g class="pd-frag pd-frag-1"><path d="M185 24 H225"/><circle cx="195" cy="24" r="3"/><circle cx="215" cy="24" r="3"/></g>
+              <g class="pd-frag pd-frag-2"><path d="M185 42 H235"/><circle cx="195" cy="42" r="3"/><circle cx="215" cy="42" r="3"/><circle cx="235" cy="42" r="3"/></g>
+              <g class="pd-frag pd-frag-3"><path d="M185 60 H215"/><circle cx="195" cy="60" r="3"/><circle cx="210" cy="60" r="3"/></g>
+              <text class="pd-label" x="55" y="60" text-anchor="middle">常压残油</text>
+              <text class="pd-label" x="135" y="10" text-anchor="middle">催化剂</text>
+              <text class="pd-label" x="185" y="76">汽油·LPG</text>
+            </svg>
+          </div>
+          <p>将常压蒸馏塔底部残留的渣油喷入催化剂床层，裂解为更轻的油品。</p>
+          <div class="chips"><span class="chips-label">OUT →</span><span class="out">汽油</span><span class="out">LPG</span><span class="out">燃料油</span></div>
+        </div>
+      </div>
+      <div class="pnode" data-reveal>
+        <div class="pnode-dot"></div>
+        <div class="pnode-card">
+          <div class="pnode-top"><span class="pnode-code-row"><span class="pnode-icon"><svg><use href="#icon-reactor"/></svg></span><span class="pnode-code">VGOFCC</span></span><span class="pnode-from">← VDU 减压瓦斯油</span></div>
+          <h4>减压瓦斯油流化催化裂化</h4>
+          <div class="proc-diagram" data-proc="crack" data-reveal>
+            <svg viewBox="0 0 300 84" aria-hidden="true">
+              <path class="pd-path" d="M15 42 H95"/>
+              <circle class="pd-chain-dot" cx="25" cy="42" r="3"/>
+              <circle class="pd-chain-dot" cx="45" cy="42" r="3"/>
+              <circle class="pd-chain-dot" cx="65" cy="42" r="3"/>
+              <circle class="pd-chain-dot" cx="85" cy="42" r="3"/>
+              <rect class="pd-bed" x="105" y="16" width="60" height="52" rx="2"/>
+              <circle class="pd-cat" cx="120" cy="30" r="2"/>
+              <circle class="pd-cat" cx="138" cy="46" r="2"/>
+              <circle class="pd-cat" cx="152" cy="30" r="2"/>
+              <circle class="pd-cat" cx="125" cy="55" r="2"/>
+              <circle class="pd-cat" cx="150" cy="55" r="2"/>
+              <g class="pd-frag pd-frag-1"><path d="M185 24 H225"/><circle cx="195" cy="24" r="3"/><circle cx="215" cy="24" r="3"/></g>
+              <g class="pd-frag pd-frag-2"><path d="M185 42 H235"/><circle cx="195" cy="42" r="3"/><circle cx="215" cy="42" r="3"/><circle cx="235" cy="42" r="3"/></g>
+              <g class="pd-frag pd-frag-3"><path d="M185 60 H215"/><circle cx="195" cy="60" r="3"/><circle cx="210" cy="60" r="3"/></g>
+              <text class="pd-label" x="55" y="60" text-anchor="middle">减压瓦斯油(VGO)</text>
+              <text class="pd-label" x="135" y="10" text-anchor="middle">催化剂</text>
+              <text class="pd-label" x="185" y="76">汽油·LPG</text>
+            </svg>
+          </div>
+          <p>减压瓦斯油(VGO)经催化剂裂解，产出轻质产品。</p>
+          <div class="chips"><span class="chips-label">OUT →</span><span class="out">汽油</span><span class="out">LPG</span><span class="out">燃料油</span></div>
+        </div>
+      </div>
+      <div class="pnode" data-reveal>
+        <div class="pnode-dot"></div>
+        <div class="pnode-card">
+          <div class="pnode-top"><span class="pnode-code-row"><span class="pnode-icon"><svg><use href="#icon-reactor"/></svg></span><span class="pnode-code">HCR</span></span><span class="pnode-from">← VDU 减压瓦斯油</span></div>
+          <h4>加氢裂化装置</h4>
+          <div class="proc-diagram" data-proc="crack" data-reveal>
+            <svg viewBox="0 0 300 84" aria-hidden="true">
+              <path class="pd-path" d="M15 42 H95"/>
+              <circle class="pd-chain-dot" cx="25" cy="42" r="3"/>
+              <circle class="pd-chain-dot" cx="45" cy="42" r="3"/>
+              <circle class="pd-chain-dot" cx="65" cy="42" r="3"/>
+              <circle class="pd-chain-dot" cx="85" cy="42" r="3"/>
+              <rect class="pd-bed" x="105" y="16" width="60" height="52" rx="2"/>
+              <circle class="pd-cat" cx="120" cy="30" r="2"/>
+              <circle class="pd-cat" cx="138" cy="46" r="2"/>
+              <circle class="pd-cat" cx="152" cy="30" r="2"/>
+              <circle class="pd-cat" cx="125" cy="55" r="2"/>
+              <circle class="pd-cat" cx="150" cy="55" r="2"/>
+              <text class="pd-label" x="135" y="10" text-anchor="middle">氢气·催化剂</text>
+              <g class="pd-frag pd-frag-1"><path d="M185 24 H225"/><circle cx="195" cy="24" r="3"/><circle cx="215" cy="24" r="3"/></g>
+              <g class="pd-frag pd-frag-2"><path d="M185 42 H235"/><circle cx="195" cy="42" r="3"/><circle cx="215" cy="42" r="3"/><circle cx="235" cy="42" r="3"/></g>
+              <g class="pd-frag pd-frag-3"><path d="M185 60 H215"/><circle cx="195" cy="60" r="3"/><circle cx="210" cy="60" r="3"/></g>
+              <text class="pd-label" x="55" y="60" text-anchor="middle">减压瓦斯油</text>
+              <text class="pd-label" x="185" y="76">煤油·柴油·未转化油</text>
+            </svg>
+          </div>
+          <p>减压瓦斯油与氢气反应并裂解。此处产生的未转化油，作为原料继续供给基础油装置。</p>
+          <div class="chips"><span class="chips-label">OUT →</span><span class="out">煤油</span><span class="out">柴油</span><span>未转化油 → 基础油(BOP)</span></div>
+        </div>
+      </div>
+      <div class="pnode" data-reveal>
+        <div class="pnode-dot"></div>
+        <div class="pnode-card">
+          <div class="pnode-top"><span class="pnode-code-row"><span class="pnode-icon"><svg><use href="#icon-reactor"/></svg></span><span class="pnode-code">VRHCR</span></span><span class="pnode-from">← VDU 减压残油</span></div>
+          <h4>减压渣油加氢裂化</h4>
+          <div class="proc-diagram" data-proc="crack" data-reveal>
+            <svg viewBox="0 0 300 84" aria-hidden="true">
+              <path class="pd-path" d="M15 42 H95"/>
+              <circle class="pd-chain-dot" cx="20" cy="42" r="3"/>
+              <circle class="pd-chain-dot" cx="38" cy="42" r="3"/>
+              <circle class="pd-chain-dot" cx="56" cy="42" r="3"/>
+              <circle class="pd-chain-dot" cx="74" cy="42" r="3"/>
+              <circle class="pd-chain-dot" cx="90" cy="42" r="3"/>
+              <rect class="pd-bed" x="105" y="16" width="60" height="52" rx="2"/>
+              <circle class="pd-cat" cx="120" cy="30" r="2"/>
+              <circle class="pd-cat" cx="138" cy="46" r="2"/>
+              <circle class="pd-cat" cx="152" cy="30" r="2"/>
+              <circle class="pd-cat" cx="125" cy="55" r="2"/>
+              <circle class="pd-cat" cx="150" cy="55" r="2"/>
+              <text class="pd-label" x="135" y="10" text-anchor="middle">氢气·催化剂</text>
+              <g class="pd-frag pd-frag-1"><path d="M185 30 H225"/><circle cx="195" cy="30" r="3"/><circle cx="215" cy="30" r="3"/></g>
+              <g class="pd-frag pd-frag-2"><path d="M185 54 H235"/><circle cx="195" cy="54" r="3"/><circle cx="215" cy="54" r="3"/><circle cx="235" cy="54" r="3"/></g>
+              <text class="pd-label" x="55" y="60" text-anchor="middle">超重质油</text>
+              <text class="pd-label" x="235" y="70" text-anchor="middle">轻质油</text>
+            </svg>
+          </div>
+          <p>即使是最重的超重质油，也经氢气裂解转化为高附加值轻质产品。</p>
+          <div class="chips"><span class="chips-label">OUT →</span><span class="out">轻质油</span><span class="out">燃料油</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- G3 석유화학 -->
+    <div class="pgroup pgroup--g3" id="pg-g3" data-pgroup="g3">
+      <header class="pgroup-head" data-reveal>
+        <span class="pgroup-idx num">03</span>
+        <h3>石油化工</h3>
+        <p class="pgroup-en">Petrochemical Process</p>
+        <p class="pgroup-desc">来自炼油的石脑油与LPG，在此超越燃料、成为材料的分岔口——由此通向芳烃、烯烃、聚合物篇章。</p>
+      </header>
+      <div class="pnode" data-reveal>
+        <div class="pnode-dot"></div>
+        <div class="pnode-card">
+          <div class="pnode-top"><span class="pnode-code-row"><span class="pnode-icon"><svg><use href="#icon-hex"/></svg></span><span class="pnode-code">AROMATICS</span></span><span class="pnode-from">← CDU 石脑油</span></div>
+          <h4>芳烃生产</h4>
+          <div class="proc-diagram" data-proc="arom" data-reveal>
+            <svg viewBox="0 0 340 96" aria-hidden="true">
+              <path class="pd-path" d="M10 48 H50"/>
+              <rect class="pd-bed" x="56" y="22" width="56" height="52" rx="2"/>
+              <circle class="pd-cat" cx="70" cy="36" r="2"/>
+              <circle class="pd-cat" cx="86" cy="52" r="2"/>
+              <circle class="pd-cat" cx="100" cy="34" r="2"/>
+              <circle class="pd-cat" cx="72" cy="62" r="2"/>
+              <circle class="pd-cat" cx="98" cy="62" r="2"/>
+              <path class="pd-branch" d="M118 48 L140 18 H151"/>
+              <path class="pd-branch" d="M118 48 L140 48 H151"/>
+              <path class="pd-branch" d="M118 48 L140 78 H151"/>
+              <path class="pd-branch" d="M229 78 H243"/>
+              <polygon class="pd-ring" points="160,9 168,13.5 168,22.5 160,27 152,22.5 152,13.5"/>
+              <polygon class="pd-ring" points="160,39 168,43.5 168,52.5 160,57 152,52.5 152,43.5"/>
+              <polygon class="pd-ring" points="160,69 168,73.5 168,82.5 160,87 152,82.5 152,73.5"/>
+              <polygon class="pd-ring" points="253,69 261,73.5 261,82.5 253,87 245,82.5 245,73.5"/>
+              <text class="pd-label" x="30" y="64" text-anchor="middle">石脑油</text>
+              <text class="pd-label" x="84" y="14" text-anchor="middle">催化剂</text>
+              <text class="pd-label" x="178" y="21">苯</text>
+              <text class="pd-label" x="178" y="51">甲苯</text>
+              <text class="pd-label" x="178" y="81">混合二甲苯</text>
+              <text class="pd-label" x="267" y="81">对二甲苯</text>
+            </svg>
+          </div>
+          <p>石脑油重整为芳烃产品——衣物、PET与建材的起始原料。</p>
+          <div class="chips"><span class="chips-label">OUT →</span><span class="out">苯</span><span class="out">甲苯</span><span class="out">混合二甲苯</span><span class="out">对二甲苯</span></div>
+        </div>
+      </div>
+      <div class="pnode" data-reveal>
+        <div class="pnode-dot"></div>
+        <div class="pnode-card">
+          <div class="pnode-top"><span class="pnode-code-row"><span class="pnode-icon"><svg><use href="#icon-crack"/></svg></span><span class="pnode-code">MFC</span></span><span class="pnode-from">← 石脑油 · 乙烷 · LPG</span></div>
+          <h4>烯烃生产</h4>
+          <div class="proc-diagram" data-proc="split" data-reveal>
+            <svg viewBox="0 0 300 84" aria-hidden="true">
+              <path class="pd-path pd-trunk" d="M10 42 H84"/>
+              <path class="pd-branch" d="M84 42 L104 20 H128"/>
+              <path class="pd-branch" d="M84 42 L104 64 H128"/>
+              <circle class="pd-out" cx="132" cy="20" r="4"/>
+              <circle class="pd-out" cx="132" cy="64" r="4"/>
+              <text class="pd-label" x="44" y="32" text-anchor="middle">石脑油·乙烷·LPG</text>
+              <text class="pd-label" x="50" y="56" text-anchor="middle">裂解</text>
+              <text class="pd-label" x="142" y="23">乙烯</text>
+              <text class="pd-label" x="142" y="67">丙烯</text>
+            </svg>
+          </div>
+          <p>以低附加值的工序副产物为原料，生产乙烯与丙烯。</p>
+          <div class="chips"><span class="chips-label">OUT →</span><span class="out">乙烯</span><span class="out">丙烯</span></div>
+        </div>
+      </div>
+      <div class="pnode" data-reveal>
+        <div class="pnode-dot"></div>
+        <div class="pnode-card">
+          <div class="pnode-top"><span class="pnode-code-row"><span class="pnode-icon"><svg><use href="#icon-chain"/></svg></span><span class="pnode-code">POLYMER</span></span><span class="pnode-from">← MFC 乙烯 · 丙烯</span></div>
+          <h4>聚合物生产</h4>
+          <div class="proc-diagram" data-proc="crack" data-reveal>
+            <svg viewBox="0 0 300 84" aria-hidden="true">
+              <path class="pd-path" d="M15 42 H95"/>
+              <circle class="pd-chain-dot" cx="25" cy="42" r="3"/>
+              <circle class="pd-chain-dot" cx="45" cy="42" r="3"/>
+              <circle class="pd-chain-dot" cx="65" cy="42" r="3"/>
+              <circle class="pd-chain-dot" cx="85" cy="42" r="3"/>
+              <rect class="pd-bed" x="105" y="16" width="60" height="52" rx="2"/>
+              <circle class="pd-cat" cx="120" cy="30" r="2"/>
+              <circle class="pd-cat" cx="138" cy="46" r="2"/>
+              <circle class="pd-cat" cx="152" cy="30" r="2"/>
+              <circle class="pd-cat" cx="125" cy="55" r="2"/>
+              <circle class="pd-cat" cx="150" cy="55" r="2"/>
+              <g class="pd-frag pd-frag-1"><path d="M182 28 H252"/><circle cx="182" cy="28" r="3"/><circle cx="196" cy="28" r="3"/><circle cx="210" cy="28" r="3"/><circle cx="224" cy="28" r="3"/><circle cx="238" cy="28" r="3"/><circle cx="252" cy="28" r="3"/></g>
+              <g class="pd-frag pd-frag-2"><circle cx="196" cy="54" r="5"/><circle cx="214" cy="54" r="5"/><circle cx="232" cy="54" r="5"/></g>
+              <text class="pd-label" x="55" y="60" text-anchor="middle">乙烯·丙烯</text>
+              <text class="pd-label" x="135" y="10" text-anchor="middle">催化剂·聚合</text>
+              <text class="pd-label" x="214" y="76" text-anchor="middle">PE·PP 颗粒</text>
+            </svg>
+          </div>
+          <p>以催化剂将乙烯、丙烯聚合为聚乙烯（PE）、聚丙烯（PP），并加工为复合树脂供应。</p>
+          <div class="chips"><span class="chips-label">OUT →</span><span class="out">聚乙烯</span><span class="out">聚丙烯</span><span class="out">复合树脂</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- G4 베이스오일 -->
+    <div class="pgroup pgroup--g4" id="pg-g4" data-pgroup="g4">
+      <header class="pgroup-head" data-reveal>
+        <span class="pgroup-idx num">04</span>
+        <h3>基础油</h3>
+        <p class="pgroup-en">Base Oil Process</p>
+        <p class="pgroup-desc">不废弃升级装置(HCR)留下的未转化油，将之转化为润滑油原料。</p>
+      </header>
+      <div class="pnode" data-reveal>
+        <div class="pnode-dot"></div>
+        <div class="pnode-card">
+          <div class="pnode-top"><span class="pnode-code-row"><span class="pnode-icon"><svg><use href="#icon-drop"/></svg></span><span class="pnode-code">BOP</span></span><span class="pnode-from">← HCR 未转化油</span></div>
+          <h4>基础油装置</h4>
+          <div class="proc-diagram" data-proc="refine" data-reveal>
+            <svg viewBox="0 0 300 84" aria-hidden="true">
+              <path class="pd-path" d="M15 60 H100"/>
+              <path class="pd-drop" d="M150 8 C168 30 182 42 182 56 a32 32 0 1 1 -64 0 C118 42 132 30 150 8 Z"/>
+              <circle class="pd-impurity" cx="140" cy="48" r="3"/>
+              <circle class="pd-impurity" cx="162" cy="56" r="3"/>
+              <circle class="pd-impurity" cx="150" cy="64" r="3"/>
+              <text class="pd-label pd-impurity-label" x="150" y="26" text-anchor="middle">去除杂质</text>
+              <path class="pd-path" d="M200 60 H255"/>
+              <text class="pd-label" x="30" y="72" text-anchor="middle">未转化油(UCO)</text>
+              <text class="pd-label" x="255" y="72" text-anchor="middle">基础油</text>
+            </svg>
+          </div>
+          <p>以加氢裂化的未转化油为原料，日产3万桶高品质基础油。详见润滑油篇章。</p>
+          <div class="chips"><span class="chips-label">OUT →</span><span class="out">基础油</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 출하 -->
+    <div class="pterminal" style="--gc: var(--ink)">
+      <div class="pnode" data-reveal>
+        <div class="pnode-dot"></div>
+        <div class="pnode-card">
+          <div class="pnode-top"><span class="pnode-code-row"><span class="pnode-icon"><svg><use href="#icon-tank"/></svg></span><span class="pnode-code">END — PRODUCT TANKS · WHARF</span></span><span class="pnode-from">→ 国内供应 · 出口</span></div>
+          <p>四条线产出的产品汇入各自的储罐并完成品质调配，随后经由产品码头的船舶以及管道、罐车运往国内外。从原油接收到产品出运，储存与装卸作业以一体化物流体系运营。</p>
+          <div class="chips"><span class="chips-label">OUT →</span><span class="out">船舶出口</span><span class="out">管道</span><span class="out">罐车</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== 아우트로 ========== -->
+<section class="section outro" id="outro" data-nav-target="outro">
+  <div class="outro-bg" aria-hidden="true"></div>
+  <div class="inner">
+    <p class="outro-line" data-reveal>
+      看似分散的四条线，如今汇聚成一张完整的地图。
+      接下来，从这张地图的<strong>第一条线——炼油</strong>开始，
+      逐一深入了解。
+    </p>
+    <div class="next-chapters" data-reveal>
+      <div class="row-item current"><span class="name">生产工序</span><span class="en">CH.00 — Now</span></div>
+      <a class="row-item done" href="/zh/refining"><span class="name">炼油</span><span class="en">CH.01 — Read →</span></a>
+      <a class="row-item done" href="/zh/aromatics"><span class="name">芳烃</span><span class="en">CH.02 — Read →</span></a>
+      <a class="row-item done" href="/zh/olefins"><span class="name">烯烃</span><span class="en">CH.03 — Read →</span></a>
+      <a class="row-item done" href="/zh/polymer"><span class="name">聚合物</span><span class="en">CH.04 — Read →</span></a>
+      <a class="row-item done" href="/zh/baseoil"><span class="name">基础油</span><span class="en">CH.05 — Read →</span></a>
+      <a class="row-item done" href="/zh/lubricants"><span class="name">润滑油</span><span class="en">CH.06 — Read →</span></a>
+    </div>
+    <p class="footer-note">
+      DATA — <a href="https://www.gscaltex.com/kr/Business" target="_blank" rel="noopener">gscaltex.com/kr/Business</a> · GS Caltex Sustainability Report 2025<br>
+      丽水工厂生产工序四条线：炼油 → 升级 → 石油化工 → 基础油<br>
+      PHOTO — <a href="https://gscaltexmediahub.com/gsc-exhibition/" target="_blank" rel="noopener">GS Caltex Media Hub photo exhibition</a>
+    </p>
+  </div>
+</section>
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+<script>
+gsap.registerPlugin(ScrollTrigger);
+const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+/* ============ 히어로 등장 ============ */
+gsap.from('[data-hero-row]', {
+  yPercent: 110, duration: 1.2, stagger: 0.12, ease: 'power4.out', delay: 0.15
+});
+gsap.from('[data-hero-sub], .hero-eyebrow', {
+  opacity: 0, y: 24, duration: 1, stagger: 0.1, ease: 'power2.out', delay: 0.7
+});
+gsap.to('.hero-content', {
+  yPercent: -18, opacity: 0, ease: 'none',
+  scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom 30%', scrub: true }
+});
+
+/* ============ 전체 흐름도: 엣지 드로잉 ============ */
+(function () {
+  const edges = gsap.utils.toArray('[data-fedge]');
+  edges.forEach(p => {
+    const len = p.getTotalLength();
+    p.style.strokeDasharray = len;
+    p.style.strokeDashoffset = len;
+  });
+  gsap.set('.fh-node', { opacity: 0, scale: 0.94 });
+  const tl = gsap.timeline({
+    scrollTrigger: { trigger: '.flow-hero', start: 'top 78%', end: 'bottom 55%', scrub: 0.5 }
+  });
+  tl.to('.fh-node', { opacity: 1, scale: 1, duration: 0.6, stagger: 0.12, ease: 'power2.out' }, 0);
+  edges.forEach((p, i) => {
+    tl.to(p, { strokeDashoffset: 0, duration: 0.9, ease: 'none' }, 0.3 + i * 0.35);
+  });
+})();
+
+/* ============ 세부 공정 미니 다이어그램 ============ */
+document.querySelectorAll('.proc-diagram').forEach(el => {
+  const kind = el.dataset.proc;
+  const q = sel => gsap.utils.toArray(el.querySelectorAll(sel));
+  const one = sel => el.querySelector(sel);
+  const prepDraw = nodes => nodes.forEach(p => {
+    const len = p.getTotalLength();
+    p.style.strokeDasharray = len;
+    p.style.strokeDashoffset = len;
+  });
+  const tl = gsap.timeline({ paused: true });
+  ScrollTrigger.create({
+    trigger: el, start: 'top 85%', once: true,
+    onEnter: () => tl.play()
+  });
+
+  if (kind === 'tower') {
+    const inPath = one('.pd-path-in');
+    const outPaths = q('[class*="pd-out-path"]');
+    prepDraw([inPath, ...outPaths]);
+    gsap.set(q('.pd-out'), { opacity: 0, scale: 0.2, transformOrigin: 'center' });
+    tl.to(inPath, { strokeDashoffset: 0, duration: 0.5, ease: 'none' })
+      .to(outPaths, { strokeDashoffset: 0, duration: 0.4, stagger: 0.15, ease: 'none' }, '-=0.05')
+      .to(q('.pd-out'), { opacity: 1, scale: 1, duration: 0.3, stagger: 0.15, ease: 'back.out(2)' }, '-=0.6');
+  } else if (kind === 'crack') {
+    gsap.set(q('.pd-frag'), { opacity: 0, x: -8 });
+    gsap.set(q('.pd-chain-dot'), { opacity: 0.35 });
+    gsap.set(q('.pd-cat'), { opacity: 0.5 });
+    tl.to(q('.pd-chain-dot'), { opacity: 1, stagger: 0.07, duration: 0.3 })
+      .to(q('.pd-cat'), { opacity: 1, duration: 0.2, stagger: 0.04 }, '<')
+      .to(q('.pd-cat'), { scale: 1.4, transformOrigin: 'center', duration: 0.15, stagger: 0.04, yoyo: true, repeat: 1 }, '-=0.1')
+      .to(q('.pd-frag'), { opacity: 1, x: 0, stagger: 0.14, duration: 0.35 });
+  } else if (kind === 'hds') {
+    const pathIn = one('.pd-path-in');
+    const pathOut = one('.pd-path-out');
+    const h2 = one('.pd-h2');
+    const impOut = one('.pd-impurity-out');
+    prepDraw([pathIn, pathOut, h2, impOut]);
+    gsap.set(q('.pd-out'), { opacity: 0, scale: 0.2, transformOrigin: 'center' });
+    gsap.set(one('.pd-impurity-end'), { opacity: 0, scale: 0.2, transformOrigin: 'center' });
+    gsap.set(one('.pd-impurity-label'), { opacity: 0 });
+    tl.to(pathIn, { strokeDashoffset: 0, duration: 0.4, ease: 'none' })
+      .to(h2, { strokeDashoffset: 0, duration: 0.25, ease: 'none' })
+      .to(impOut, { strokeDashoffset: 0, duration: 0.35, ease: 'none' })
+      .to(one('.pd-impurity'), { opacity: 0, duration: 0.2 }, '<')
+      .to(one('.pd-impurity-end'), { opacity: 1, scale: 1, duration: 0.3, ease: 'back.out(2)' }, '-=0.15')
+      .to(one('.pd-impurity-label'), { opacity: 1, duration: 0.25 }, '-=0.1')
+      .to(pathOut, { strokeDashoffset: 0, duration: 0.35, ease: 'none' })
+      .to(q('.pd-out'), { opacity: 1, scale: 1, duration: 0.3, ease: 'back.out(2)' }, '-=0.15');
+  } else if (kind === 'sulfur') {
+    const gas = one('.pd-gas');
+    const gasOut = one('.pd-gas-out');
+    const drop = one('.pd-sulfur-drop');
+    prepDraw([gas, gasOut, drop]);
+    gsap.set(one('.pd-sulfur'), { scale: 0, transformOrigin: 'center' });
+    tl.to(gas, { strokeDashoffset: 0, duration: 0.5, ease: 'none' })
+      .to(drop, { strokeDashoffset: 0, duration: 0.25, ease: 'none' })
+      .to(one('.pd-sulfur'), { scale: 1, duration: 0.3, ease: 'back.out(2)' })
+      .to(gasOut, { strokeDashoffset: 0, duration: 0.4, ease: 'none' }, '-=0.15');
+  } else if (kind === 'ring') {
+    const paths = q('.pd-path');
+    const ring = one('.pd-ring');
+    prepDraw([...paths, ring]);
+    gsap.set(q('.pd-atom'), { opacity: 0, scale: 0, transformOrigin: 'center' });
+    tl.to(paths[0], { strokeDashoffset: 0, duration: 0.35, ease: 'none' })
+      .to(ring, { strokeDashoffset: 0, duration: 0.6, ease: 'none' })
+      .to(q('.pd-atom'), { opacity: 1, scale: 1, stagger: 0.05, duration: 0.25 }, '-=0.45')
+      .to(paths[1], { strokeDashoffset: 0, duration: 0.35, ease: 'none' });
+  } else if (kind === 'arom') {
+    const pathIn = one('.pd-path');
+    const branches = q('.pd-branch');
+    const rings = q('.pd-ring');
+    prepDraw([pathIn, ...branches, ...rings]);
+    gsap.set(q('.pd-cat'), { opacity: 0.4 });
+    tl.to(pathIn, { strokeDashoffset: 0, duration: 0.35, ease: 'none' })
+      .to(q('.pd-cat'), { opacity: 1, duration: 0.2, stagger: 0.04 })
+      .to(q('.pd-cat'), { scale: 1.4, transformOrigin: 'center', duration: 0.15, stagger: 0.04, yoyo: true, repeat: 1 }, '-=0.1')
+      .to(branches, { strokeDashoffset: 0, duration: 0.3, stagger: 0.1, ease: 'none' })
+      .to(rings, { strokeDashoffset: 0, duration: 0.4, stagger: 0.1, ease: 'none' }, '-=0.15');
+  } else if (kind === 'split') {
+    const trunk = one('.pd-trunk');
+    const branches = q('.pd-branch');
+    prepDraw([trunk, ...branches]);
+    gsap.set(q('.pd-out'), { opacity: 0, scale: 0.2, transformOrigin: 'center' });
+    tl.to(trunk, { strokeDashoffset: 0, duration: 0.35, ease: 'none' })
+      .to(branches, { strokeDashoffset: 0, duration: 0.35, stagger: 0.12, ease: 'none' })
+      .to(q('.pd-out'), { opacity: 1, scale: 1, duration: 0.3, stagger: 0.12, ease: 'back.out(2)' }, '-=0.3');
+  } else if (kind === 'refine') {
+    const drop = one('.pd-drop');
+    const paths = q('.pd-path');
+    prepDraw([drop, ...paths]);
+    gsap.set(one('.pd-impurity-label'), { opacity: 0 });
+    tl.to(paths[0], { strokeDashoffset: 0, duration: 0.3, ease: 'none' })
+      .to(drop, { strokeDashoffset: 0, duration: 0.6, ease: 'none' }, '-=0.1')
+      .to(one('.pd-impurity-label'), { opacity: 1, duration: 0.25 }, '-=0.3')
+      .to(q('.pd-impurity'), { opacity: 0, stagger: 0.13, duration: 0.25 }, '-=0.1')
+      .to(one('.pd-impurity-label'), { opacity: 0, duration: 0.3 }, '-=0.1')
+      .to(paths[1], { strokeDashoffset: 0, duration: 0.3, ease: 'none' }, '-=0.1');
+  }
+});
+
+/* ============ 공정 맵: 스파인 + 레전드 스파이 ============ */
+gsap.to('[data-spine]', {
+  scaleY: 1, ease: 'none',
+  scrollTrigger: { trigger: '.flow-map', start: 'top 65%', end: 'bottom 75%', scrub: 0.4 }
+});
+/* 레전드 바가 상단에 고정되는 동안 topbar 숨김 (겹침 방지) */
+ScrollTrigger.create({
+  trigger: '.legend-bar', start: 'top 88',
+  endTrigger: '.process', end: 'bottom 48',
+  onToggle: self => document.querySelector('.topbar').classList.toggle('is-hidden', self.isActive)
+});
+
+document.querySelectorAll('[data-pgroup]').forEach(group => {
+  ScrollTrigger.create({
+    trigger: group, start: 'top 55%', end: 'bottom 55%',
+    onToggle: self => {
+      if (self.isActive) {
+        document.querySelectorAll('.legend-chip').forEach(chip =>
+          chip.classList.toggle('active', chip.dataset.legend === group.dataset.pgroup));
+      }
+    }
+  });
+});
+
+/* ============ 공통 리빌 ============ */
+document.querySelectorAll('[data-reveal]').forEach(el => {
+  gsap.from(el, {
+    opacity: 0, y: 44, duration: 1, ease: 'power3.out',
+    scrollTrigger: { trigger: el, start: 'top 82%' }
+  });
+});
+
+/* ============ 진행 내비 ============ */
+document.querySelectorAll('[data-nav-target]').forEach(sec => {
+  ScrollTrigger.create({
+    trigger: sec, start: 'top 50%', end: 'bottom 50%',
+    onToggle: self => {
+      if (self.isActive) {
+        document.querySelectorAll('.progress-nav a').forEach(a =>
+          a.classList.toggle('active', a.dataset.nav === sec.dataset.navTarget));
+      }
+    }
+  });
+});
+</script>
+</body>
+</html>

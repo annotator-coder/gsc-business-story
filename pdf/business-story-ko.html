@@ -1,0 +1,1358 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>GS칼텍스 사업부문 — 원유에서 에너지와 소재까지</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0A0B0D; --bg-2:#101318; --bg-3:#15191F;
+  --ink:#EDE8DC; --ink-dim:#B9B3A6; --ink-faint:#8E887C;
+  --amber:#E0A63E; --amber-deep:#8A5F1C; --steel:#3E4A55; --line:#26292E;
+  --g1:#E0A63E; --g2:#C96F45; --g3:#7FA8C9; --g4:#8FB98B;
+  --font-kr:'Pretendard',-apple-system,'Apple SD Gothic Neo',sans-serif;
+  --font-en:'Archivo','Pretendard',sans-serif;
+  --font-mono:'IBM Plex Mono',ui-monospace,monospace;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{font-size:16px;}
+body{ background:#000; color:var(--ink); font-family:var(--font-kr); font-weight:400; line-height:1.55; -webkit-font-smoothing:antialiased; word-break:keep-all; }
+@page{ size:13.333in 7.5in; margin:0; }
+
+.slide{
+  position:relative; width:13.333in; height:7.5in; overflow:hidden;
+  background:var(--bg); color:var(--ink);
+  display:flex; flex-direction:column; padding:0.6in 0.78in 0.5in;
+  page-break-after:always; break-after:page;
+  -webkit-print-color-adjust:exact; print-color-adjust:exact;
+}
+.slide:last-child{ page-break-after:auto; break-after:auto; }
+
+/* 크롬 */
+.eyebrow{ font-family:var(--font-mono); font-size:11.5px; letter-spacing:.26em; text-transform:uppercase; color:var(--amber); }
+.eyebrow.dim{ color:var(--ink-faint); }
+.s-head{ display:flex; justify-content:space-between; align-items:baseline; flex:0 0 auto; }
+.s-tag{ font-family:var(--font-mono); font-size:11px; letter-spacing:.2em; color:var(--ink-faint); text-transform:uppercase; }
+.s-foot{ flex:0 0 auto; margin-top:auto; display:flex; justify-content:space-between; align-items:center; border-top:1px solid var(--line); padding-top:9px; font-family:var(--font-mono); font-size:9.5px; letter-spacing:.08em; color:var(--ink-faint); }
+.s-foot .pg{ color:var(--ink-dim); }
+.s-body{ flex:1 1 auto; display:flex; flex-direction:column; min-height:0; }
+
+em{ font-style:normal; color:var(--amber); }
+strong{ color:var(--ink); font-weight:600; }
+.amber{ color:var(--amber); }
+.kicker{ font-family:var(--font-mono); font-size:10.5px; letter-spacing:.14em; text-transform:uppercase; color:var(--amber); }
+.kicker.dim{ color:var(--ink-faint); }
+.h2{ font-size:34px; font-weight:700; line-height:1.2; letter-spacing:-.01em; margin-top:12px; }
+.h3{ font-size:22px; font-weight:700; line-height:1.28; margin-top:8px; letter-spacing:-.01em; }
+.lede{ margin-top:14px; font-size:14px; font-weight:400; color:var(--ink-dim); max-width:52em; line-height:1.7; }
+.body-p{ font-size:13px; font-weight:400; color:var(--ink-dim); margin-top:10px; line-height:1.75; }
+.body-p strong{ color:var(--ink); font-weight:600; }
+.hr{ height:1px; background:var(--line); margin:16px 0; }
+
+/* 통계 */
+.stat .v{ font-family:var(--font-en); font-variation-settings:"wdth" 75,"wght" 800; font-variant-numeric:tabular-nums; font-size:60px; line-height:.88; color:var(--ink); }
+.stat .v .u{ font-family:var(--font-kr); font-size:.26em; font-weight:400; color:var(--ink-dim); letter-spacing:.02em; margin-left:.15em; }
+.stat .l{ font-family:var(--font-mono); font-size:10px; letter-spacing:.12em; text-transform:uppercase; color:var(--ink-faint); margin-top:9px; }
+.statrow{ display:flex; gap:30px; margin-top:16px; flex-wrap:wrap; }
+.chip{ font-family:var(--font-mono); font-size:10.5px; letter-spacing:.04em; padding:4px 9px; border:1px solid var(--line); color:var(--ink-dim); display:inline-block; }
+.chip.out{ border-color:currentColor; }
+
+/* COVER */
+.cover .bg{ position:absolute; inset:0; z-index:0; background:url('../baseoil/img/fig-splash.jpg') center/cover no-repeat; filter:grayscale(1) contrast(1.06) brightness(.42); }
+.cover .scrim{ position:absolute; inset:0; z-index:1; background:linear-gradient(120deg,rgba(10,11,13,.94) 0%,rgba(10,11,13,.72) 46%,rgba(10,11,13,.5) 100%),radial-gradient(120% 80% at 15% 90%, rgba(224,166,62,.10), transparent 60%); }
+.cover .wrap{ position:relative; z-index:2; height:100%; display:flex; flex-direction:column; padding:0.6in 0.78in 0.5in; }
+.cover .en{ font-family:var(--font-en); font-variation-settings:"wdth" 66,"wght" 850; font-size:118px; line-height:.92; letter-spacing:-.015em; color:var(--ink); margin-top:auto; }
+.cover .kr{ font-family:var(--font-kr); font-weight:800; font-size:34px; letter-spacing:.08em; color:var(--amber); margin-top:14px; }
+.cover .sub{ margin-top:22px; font-size:17px; font-weight:400; color:var(--ink-dim); max-width:34em; line-height:1.7; }
+.cover .sub strong{ color:var(--ink); font-weight:600; }
+.cover-ticker{ margin-top:26px; display:flex; gap:22px; flex-wrap:wrap; font-family:var(--font-mono); font-size:11px; letter-spacing:.14em; color:var(--ink-faint); text-transform:uppercase; }
+.cover-ticker b{ color:var(--ink-dim); font-weight:500; }
+
+/* 여정 카드 */
+.cards6{ display:grid; grid-template-columns:repeat(3,1fr); gap:10px; margin-top:16px; flex:1 1 auto; }
+.jcard{ border:1px solid var(--line); border-top:2px solid var(--gc,var(--amber)); background:var(--bg-2); padding:12px 16px; display:flex; flex-direction:column; }
+.jcard .jc-top{ display:flex; justify-content:space-between; align-items:baseline; }
+.jcard .jc-no{ font-family:var(--font-en); font-variation-settings:"wdth" 80,"wght" 800; font-size:22px; color:var(--gc,var(--amber)); }
+.jcard .jc-en{ font-family:var(--font-mono); font-size:9.5px; letter-spacing:.18em; color:var(--ink-faint); text-transform:uppercase; }
+.jcard h3{ font-size:18px; font-weight:700; margin-top:2px; }
+.jcard p{ font-size:12px; font-weight:400; color:var(--ink-dim); margin-top:6px; line-height:1.5; flex:1 1 auto; }
+.jcard .jc-fig{ font-family:var(--font-mono); font-size:10.5px; letter-spacing:.04em; color:var(--amber); margin-top:8px; padding-top:7px; border-top:1px solid var(--line); }
+.flow-strip{ margin-top:18px; display:flex; align-items:center; gap:10px; flex-wrap:wrap; font-family:var(--font-mono); font-size:11px; letter-spacing:.05em; color:var(--ink-dim); }
+.flow-strip .node{ padding:5px 11px; border:1px solid var(--line); background:var(--bg-2); }
+.flow-strip .node.hl{ border-color:var(--amber-deep); color:var(--amber); }
+.flow-strip .arw{ color:var(--ink-faint); }
+.flow-strip .via{ color:var(--ink-faint); font-size:10px; }
+
+/* IN NUMBERS */
+.numgrid{ display:grid; grid-template-columns:repeat(3,1fr); grid-auto-rows:1fr; gap:1px; background:var(--line); border:1px solid var(--line); margin-top:22px; flex:1 1 auto; }
+.numgrid .cell{ background:var(--bg); padding:26px 30px; display:flex; flex-direction:column; justify-content:center; }
+.numgrid .cell .v{ font-family:var(--font-en); font-variation-settings:"wdth" 75,"wght" 800; font-variant-numeric:tabular-nums; font-size:64px; line-height:.85; color:var(--ink); }
+.numgrid .cell .v .u{ font-family:var(--font-kr); font-size:.24em; font-weight:400; color:var(--ink-dim); margin-left:.12em; }
+.numgrid .cell .k{ margin-top:14px; font-size:14px; color:var(--ink-dim); font-weight:400; }
+.numgrid .cell .k small{ display:block; font-family:var(--font-mono); font-size:9.5px; letter-spacing:.1em; color:var(--ink-faint); text-transform:uppercase; margin-top:4px; }
+.numgrid .cell .cno{ font-family:var(--font-mono); font-size:10px; letter-spacing:.16em; color:var(--gc,var(--amber)); }
+
+/* DIVIDER */
+.divider{ padding:0; }
+.divider .bg{ position:absolute; inset:0; z-index:0; background-size:cover; background-position:center; filter:grayscale(1) contrast(1.05) brightness(.5); }
+.divider .scrim{ position:absolute; inset:0; z-index:1; background:linear-gradient(100deg,rgba(10,11,13,.94) 0%,rgba(10,11,13,.74) 42%,rgba(10,11,13,.34) 100%),linear-gradient(to top,rgba(10,11,13,.9),transparent 50%); }
+.divider .d-inner{ position:relative; z-index:2; height:100%; display:flex; flex-direction:column; padding:0.6in 0.78in 0.5in; }
+.divider .d-no{ font-family:var(--font-en); font-variation-settings:"wdth" 80,"wght" 850; font-size:150px; line-height:.8; color:transparent; -webkit-text-stroke:1.5px var(--ink-faint); position:absolute; right:0.6in; top:0.5in; z-index:1; opacity:.5;}
+.divider .d-en{ font-family:var(--font-en); font-variation-settings:"wdth" 66,"wght" 850; font-size:104px; line-height:.9; letter-spacing:-.015em; color:var(--ink); margin-top:auto; }
+.divider .d-kr{ font-family:var(--font-kr); font-weight:800; font-size:30px; letter-spacing:.06em; color:var(--amber); margin-top:12px; }
+.divider .d-sub{ margin-top:18px; font-size:16px; font-weight:400; color:var(--ink-dim); max-width:34em; line-height:1.7; }
+.divider .d-sub strong{ color:var(--ink); }
+.divider .d-points{ margin-top:20px; display:flex; gap:14px; flex-wrap:wrap; }
+.divider .d-point{ border:1px solid var(--line); background:rgba(16,19,24,.6); padding:10px 15px; }
+.divider .d-point .dp-v{ font-family:var(--font-en); font-variation-settings:"wdth" 78,"wght" 800; font-variant-numeric:tabular-nums; font-size:26px; color:var(--ink); }
+.divider .d-point .dp-v .u{ font-family:var(--font-kr); font-size:.4em; font-weight:400; color:var(--ink-dim); margin-left:.15em; }
+.divider .d-point .dp-l{ font-family:var(--font-mono); font-size:9.5px; letter-spacing:.1em; color:var(--ink-faint); text-transform:uppercase; margin-top:5px; }
+
+/* 서사 슬라이드 (도입문 + 어원) */
+.narr{ display:grid; grid-template-columns:1.05fr 0.95fr; gap:44px; margin-top:24px; flex:1 1 auto; align-items:start; }
+.poem{ font-size:30px; font-weight:200; line-height:1.5; color:var(--ink-faint); max-width:15em; }
+.poem strong{ color:var(--ink); font-weight:500; }
+.poem em{ color:var(--amber); font-weight:400; }
+.origin{ border-left:1px solid var(--line); padding-left:34px; }
+.origin .o-glyph{ font-family:var(--font-en); font-weight:800; font-size:46px; letter-spacing:.02em; color:var(--amber); line-height:1; }
+.origin .o-glyph .cjk{ font-family:var(--font-kr); }
+.origin .o-rom{ font-family:var(--font-mono); font-size:11px; letter-spacing:.14em; color:var(--ink-faint); text-transform:uppercase; margin-top:10px; }
+.origin p{ font-size:13px; font-weight:400; color:var(--ink-dim); margin-top:14px; line-height:1.75; }
+.origin p strong{ color:var(--ink); font-weight:600; }
+
+/* 메커니즘 3단계 */
+.steps3{ display:grid; grid-template-columns:1fr 1fr 1fr; gap:0; margin-top:22px; flex:1 1 auto; }
+.step{ padding:4px 28px; border-left:1px solid var(--line); display:flex; flex-direction:column; }
+.step:first-child{ padding-left:0; border-left:0; }
+.step .st-no{ font-family:var(--font-mono); font-size:10.5px; letter-spacing:.16em; text-transform:uppercase; color:var(--amber); }
+.step .st-fig{ height:132px; display:flex; align-items:center; justify-content:flex-start; margin:14px 0 16px; }
+.step .st-fig svg{ height:100%; width:auto; overflow:visible; }
+.step h3{ font-size:19px; font-weight:700; line-height:1.3; letter-spacing:-.01em; }
+.step h3 em{ color:var(--amber); }
+.step p{ font-size:12.5px; font-weight:400; color:var(--ink-dim); margin-top:10px; line-height:1.7; }
+.step p strong{ color:var(--ink); font-weight:600; }
+.step .st-tag{ margin-top:auto; padding-top:12px; font-family:var(--font-mono); font-size:10px; letter-spacing:.06em; color:var(--ink-faint); }
+.step .st-tag b{ color:var(--amber); font-weight:500; }
+.mech-svg-line{ stroke:var(--steel); stroke-width:1.6; fill:none; }
+.mech-svg-am{ stroke:var(--amber); stroke-width:1.8; fill:none; }
+.mech-svg-amf{ fill:var(--amber); }
+.mech-svg-dim{ stroke:var(--ink-faint); stroke-width:1.4; fill:none; }
+.mech-lab{ font-family:var(--font-mono); font-size:9px; fill:var(--ink-dim); letter-spacing:.04em; }
+
+/* DETAIL 2-column */
+.two{ display:grid; grid-template-columns:1fr 1fr; gap:34px; margin-top:20px; flex:1 1 auto; min-height:0; }
+.two.w37{ grid-template-columns:0.85fr 1.15fr; }
+.col{ display:flex; flex-direction:column; min-height:0; }
+
+/* 프로세스 카드 */
+.plist{ display:flex; flex-direction:column; gap:8px; margin-top:14px; }
+.pcard{ border:1px solid var(--line); border-left:2px solid var(--gc,var(--amber)); background:var(--bg-2); padding:11px 14px; }
+.pcard .pc-top{ display:flex; justify-content:space-between; align-items:baseline; gap:10px; }
+.pcard .pc-code{ font-family:var(--font-mono); font-size:12px; letter-spacing:.08em; color:var(--gc,var(--amber)); font-weight:500; }
+.pcard .pc-from{ font-family:var(--font-mono); font-size:9.5px; color:var(--ink-faint); }
+.pcard h4{ font-size:14px; font-weight:600; margin-top:3px; }
+.pcard .pc-desc{ font-size:11.5px; font-weight:400; color:var(--ink-dim); margin-top:6px; line-height:1.6; }
+.pcard .pc-out{ margin-top:8px; display:flex; flex-wrap:wrap; gap:5px; }
+.pcard .pc-out .chip{ font-size:9.5px; padding:3px 7px; }
+.pcard .pc-out .chip.out{ color:var(--gc,var(--amber)); }
+.plist[style*="--g3"] .pcard{ padding:9px 13px; }
+
+/* capacity bar */
+.capbar{ margin-top:14px; }
+.capbar .row{ display:flex; align-items:center; gap:12px; margin-bottom:9px; }
+.capbar .row .nm{ width:100px; flex:0 0 auto; font-size:12.5px; color:var(--ink); }
+.capbar .row .track{ flex:1 1 auto; height:16px; background:var(--bg-3); position:relative; }
+.capbar .row .fill{ position:absolute; inset:0 auto 0 0; background:var(--gc,var(--amber)); opacity:.85; }
+.capbar .row .val{ width:66px; flex:0 0 auto; text-align:right; font-family:var(--font-mono); font-size:12px; color:var(--amber); }
+
+/* timeline */
+.tl{ margin-top:14px; border-left:1px solid var(--line); padding-left:16px; display:flex; flex-direction:column; gap:13px; }
+.tl .ti{ position:relative; }
+.tl .ti::before{ content:''; position:absolute; left:-20px; top:5px; width:7px; height:7px; background:var(--amber); }
+.tl .ti .yr{ font-family:var(--font-mono); font-size:12px; letter-spacing:.06em; color:var(--amber); }
+.tl .ti .tx{ font-size:12.5px; color:var(--ink-dim); font-weight:400; margin-top:3px; line-height:1.6; }
+.tl .ti .tx b{ color:var(--ink); font-weight:600; }
+
+/* everyday map */
+.emap{ display:flex; flex-direction:column; gap:10px; margin-top:14px; }
+.erow{ display:grid; grid-template-columns:0.9fr auto 1.1fr; align-items:center; gap:14px; border:1px solid var(--line); background:var(--bg-2); padding:14px 16px; }
+.erow .from{ font-family:var(--font-mono); font-size:11.5px; letter-spacing:.04em; color:var(--amber); }
+.erow .from small{ display:block; color:var(--ink-faint); font-size:9.5px; margin-top:3px; letter-spacing:.02em; }
+.erow .arw{ color:var(--ink-faint); font-family:var(--font-mono); }
+.erow .to{ font-size:13.5px; }
+.erow .to b{ font-weight:600; color:var(--ink); }
+.erow .to small{ display:block; color:var(--ink-dim); font-size:11.5px; font-weight:400; margin-top:3px; }
+
+/* closing */
+.closing .bg{ position:absolute; inset:0; z-index:0; background:url('../lubricants/img/band-people.jpg') center/cover no-repeat; filter:grayscale(1) contrast(1.05) brightness(.4); }
+.closing .scrim{ position:absolute; inset:0; z-index:1; background:linear-gradient(180deg,rgba(10,11,13,.82),rgba(7,8,10,.96)); }
+.closing .wrap{ position:relative; z-index:2; height:100%; display:flex; flex-direction:column; padding:0.6in 0.78in 0.5in; }
+.closing .big{ font-size:30px; font-weight:200; color:var(--ink-dim); max-width:26em; line-height:1.6; margin-top:auto; }
+.closing .big strong{ color:var(--ink); font-weight:600; }
+.closing .big em{ color:var(--amber); }
+.source{ margin-top:26px; font-family:var(--font-mono); font-size:10px; line-height:1.9; color:var(--ink-faint); letter-spacing:.03em; }
+.source b{ color:var(--ink-dim); }
+
+/* 공정맵 압축 */
+.pm .plist{ gap:6px; margin-top:11px; }
+.pm .pcard{ padding:9px 13px; }
+.pm .pcard h4{ margin-top:2px; font-size:13px; }
+.pm .pcard .pc-out{ margin-top:6px; }
+/* 5개년 실적표 (인쇄용 추가) */
+.ftable{ width:100%; border-collapse:collapse; margin-top:10px; }
+.ftable caption{ text-align:left; font-family:var(--font-mono); font-size:10px; letter-spacing:.12em;
+  color:var(--ink-faint); text-transform:uppercase; padding-bottom:7px; }
+.ftable th,.ftable td{ padding:7px 8px; border-bottom:1px solid var(--line); text-align:right;
+  font-size:12px; font-variant-numeric:tabular-nums; }
+.ftable thead th{ font-family:var(--font-mono); font-size:10px; letter-spacing:.08em;
+  color:var(--ink-faint); font-weight:500; border-bottom-color:var(--ink-faint); }
+.ftable th:first-child,.ftable td:first-child{ text-align:left; font-size:12px; }
+.ftable tbody th{ font-weight:600; color:var(--ink-dim); }
+.ftable tbody td{ font-family:var(--font-mono); color:var(--ink); }
+.ftable td.hi{ color:var(--amber); font-weight:600; }
+.ftable tr.accent th,.ftable tr.accent td{ color:var(--g4); font-weight:600; }
+.ftable tr:last-child th,.ftable tr:last-child td{ border-bottom:0; }
+/* 신용등급 카드 */
+.rate{ border:1px solid var(--line); background:var(--bg-2); padding:13px 16px; }
+.rate + .rate{ margin-top:9px; }
+.rate .rg{ font-family:var(--font-en); font-variation-settings:"wdth" 75,"wght" 800;
+  font-size:30px; line-height:1; color:var(--g4); }
+.rate .rg.intl{ font-size:20px; color:var(--g3); }
+.rate .rc{ margin-top:7px; font-family:var(--font-mono); font-size:9.5px; letter-spacing:.06em;
+  color:var(--ink-faint); line-height:1.75; }
+/* 성장 추이 바 */
+.gbar{ display:flex; flex-direction:column; gap:9px; margin-top:12px; }
+.gbar .row{ display:flex; align-items:center; gap:11px; }
+.gbar .yr{ width:52px; flex:0 0 auto; font-family:var(--font-mono); font-size:11px; color:var(--ink-faint); }
+.gbar .track{ flex:1 1 auto; height:14px; background:var(--bg-3); position:relative; }
+.gbar .fill{ position:absolute; inset:0 auto 0 0; background:var(--gc,var(--amber)); }
+.gbar .val{ width:76px; flex:0 0 auto; text-align:right; font-family:var(--font-mono);
+  font-size:11.5px; color:var(--ink-dim); }
+.gbar .row.now .val{ color:var(--amber); font-weight:600; }
+/* 2열 연혁 */
+.tl2{ display:grid; grid-template-columns:1fr 1fr; gap:0 34px; margin-top:14px; }
+.tl2 .tl{ margin-top:0; }
+
+/* ============================================================
+   PRINT THEME — 출력 테마 전환 (다크 기본 / 화이트 선택)
+   화면 우상단 토글 또는 ?theme=light 로 전환합니다.
+   구조·레이아웃은 그대로 두고 색만 인쇄 기준으로 재정의합니다.
+   ============================================================ */
+:root[data-theme="light"]{
+  --bg:#FFFFFF; --bg-2:#F6F4F0; --bg-3:#E9E5DE;
+  --ink:#15171B; --ink-dim:#4A4F57; --ink-faint:#6C7078;
+  --amber:#9A6B12; --amber-deep:#7A5410; --steel:#54606D; --line:#D8D4CC;
+  --g1:#9A6B12; --g2:#9E4F2C; --g3:#3D688F; --g4:#4A7748;
+}
+[data-theme="light"] body{ background:#FFFFFF; }
+[data-theme="light"] .slide{ background:#FFFFFF; color:var(--ink); }
+/* 사진 배경 3종 — 옅은 워터마크로 처리해 잉크 사용 최소화 */
+[data-theme="light"] .cover .bg,
+[data-theme="light"] .divider .bg,
+[data-theme="light"] .closing .bg{ filter:grayscale(1) contrast(.94) brightness(1.5); opacity:.07; }
+[data-theme="light"] .cover .scrim,
+[data-theme="light"] .divider .scrim,
+[data-theme="light"] .closing .scrim{ background:linear-gradient(100deg,rgba(255,255,255,.94) 0%,rgba(255,255,255,.82) 46%,rgba(255,255,255,.72) 100%); }
+[data-theme="light"] .cover .wrap,
+[data-theme="light"] .divider .d-inner,
+[data-theme="light"] .closing .wrap{ border-top:3px solid var(--amber); }
+[data-theme="light"] .divider .d-no{ -webkit-text-stroke:1.5px #C9C4BA; opacity:.9; }
+[data-theme="light"] .divider .d-point{ background:var(--bg-2); border-color:var(--line); }
+/* 얇은 대형 문장은 종이에서 힘이 빠지므로 굵기 보강 */
+[data-theme="light"] .poem{ font-weight:400; color:var(--ink-dim); }
+[data-theme="light"] .poem strong{ font-weight:700; }
+[data-theme="light"] .closing .big{ font-weight:400; color:var(--ink-dim); }
+/* 면·박스 배경 */
+[data-theme="light"] .pcard{ background:var(--bg-2); }
+[data-theme="light"] .erow{ background:var(--bg-2); }
+[data-theme="light"] .capbar .row .track{ background:var(--bg-3); }
+[data-theme="light"] .capbar .row .fill{ opacity:1; }
+[data-theme="light"] .numgrid .cell{ background:#FFFFFF; }
+/* 도식 선은 종이에서 가늘어지므로 소폭 보강 */
+[data-theme="light"] .mech-svg-line{ stroke-width:1.8; }
+[data-theme="light"] .mech-svg-am{ stroke-width:2; }
+[data-theme="light"] .mech-svg-dim{ stroke:#8A8E95; stroke-width:1.6; }
+
+/* ---------- 출력 테마 토글 (화면 전용) ---------- */
+.theme-sw{
+  position:fixed; top:18px; right:18px; z-index:999;
+  display:inline-flex; border:1px solid rgba(255,255,255,.42);
+  font-family:var(--font-mono); font-size:11px; letter-spacing:.1em;
+  background:rgba(10,11,13,.72); backdrop-filter:saturate(140%) blur(6px);
+}
+.theme-sw button{
+  appearance:none; border:0; background:transparent; cursor:pointer;
+  color:#fff; opacity:.55; padding:7px 13px; font:inherit; letter-spacing:inherit;
+  border-left:1px solid rgba(255,255,255,.24);
+}
+.theme-sw button:first-child{ border-left:0; }
+.theme-sw button[aria-pressed="true"]{ opacity:1; background:rgba(255,255,255,.18); }
+:root[data-theme="light"] .theme-sw{
+  border-color:#C9C4BA; background:rgba(255,255,255,.86);
+}
+:root[data-theme="light"] .theme-sw button{ color:#15171B; border-left-color:#DDD8D0; }
+:root[data-theme="light"] .theme-sw button[aria-pressed="true"]{ background:#EDE9E2; }
+.print-btn{
+  position:fixed; top:18px; right:190px; z-index:999;
+  appearance:none; cursor:pointer;
+  display:inline-flex; align-items:center; gap:7px;
+  border:1px solid var(--amber); background:var(--amber); color:#0A0B0D;
+  font-family:var(--font-mono); font-size:11px; letter-spacing:.1em; font-weight:500;
+  padding:7px 15px;
+}
+.print-btn:hover{ background:transparent; color:var(--amber); }
+.print-btn svg{ width:12px; height:12px; fill:none; stroke:currentColor; stroke-width:1.6; }
+:root[data-theme="light"] .print-btn{ color:#FFFFFF; }
+:root[data-theme="light"] .print-btn:hover{ color:var(--amber); background:#FFFFFF; }
+.theme-hint{
+  position:fixed; top:52px; right:18px; z-index:999;
+  font-family:var(--font-mono); font-size:10px; letter-spacing:.04em;
+  color:#8E887C; text-align:right; max-width:230px; line-height:1.7;
+}
+:root[data-theme="light"] .theme-hint{ color:#6C7078; }
+
+/* 화면에서만 장 구분 (인쇄에는 나오지 않음) */
+@media screen{
+  body{ background:#111316; padding:24px 0; }
+  :root[data-theme="light"] body{ background:#E8E6E1; }
+  .slide{ margin:0 auto 24px; box-shadow:0 2px 14px rgba(0,0,0,.35); }
+  :root[data-theme="light"] .slide{ box-shadow:0 2px 14px rgba(0,0,0,.14); }
+}
+@media print{
+  .theme-sw, .theme-hint, .print-btn{ display:none !important; }
+  .slide{ box-shadow:none; margin:0; }
+  body{ padding:0; }
+}
+
+</style>
+<script>
+(function(){
+  var q = new URLSearchParams(location.search).get('theme');
+  var t = q || localStorage.getItem('gsc-print-theme') || 'light';
+  if (t === 'light') document.documentElement.setAttribute('data-theme','light');
+})();
+</script>
+</head>
+<body>
+
+<!-- ============ 1. COVER ============ -->
+<section class="slide cover">
+  <div class="bg"></div><div class="scrim"></div>
+  <div class="wrap">
+    <div class="s-head"><span class="eyebrow">GS CALTEX — BUSINESS STORY</span><span class="s-tag">여수 · 2025년 기준</span></div>
+    <div class="en">FROM&nbsp;CRUDE&nbsp;OIL<br>TO ENERGY &amp; MATERIALS</div>
+    <div class="kr">원유에서 에너지와 소재까지</div>
+    <p class="sub">원유에서 시작한 GS칼텍스의 사업은 정유를 기반으로 <strong>석유화학·베이스오일·윤활유</strong>까지 이어집니다 —<br>여수공장의 생산공정과 주요 제품을 통해 GS칼텍스의 사업과 경쟁력을 살펴봅니다.</p>
+    <div class="cover-ticker">
+      <span>01 <b>정유</b></span><span>02 <b>방향족</b></span><span>03 <b>올레핀</b></span>
+      <span>04 <b>폴리머</b></span><span>05 <b>베이스오일</b></span><span>06 <b>윤활유</b></span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 2. 여정의 구조 ============ -->
+<section class="slide">
+  <div class="s-head"><span class="eyebrow">THE FLOW · 사업의 연결</span><span class="s-tag">OVERVIEW</span></div>
+  <div class="s-body">
+    <h1 class="h2">정유를 기반으로 <em>다양한 사업으로 이어집니다</em></h1>
+    <p class="lede">정유공정에서 생산되는 납사와 LPG, 부생가스, 미전환유 등은 석유화학과 베이스오일 사업의 원료로 활용되며, 다시 다양한 산업과 생활에 필요한 소재와 제품으로 이어집니다.</p>
+    <div class="flow-strip">
+      <span class="node hl">원유</span><span class="arw">→</span>
+      <span class="node">정유</span><span class="via">납사·LPG·부생가스 →</span>
+      <span class="node">방향족</span><span class="node">올레핀</span><span class="node">폴리머</span>
+      <span class="via">미전환유 →</span><span class="node">베이스오일</span><span class="arw">→</span>
+      <span class="node">윤활유</span><span class="arw">→</span><span class="node hl">일상</span>
+    </div>
+    <div class="cards6">
+      <div class="jcard" style="--gc:var(--g1)"><div class="jc-top"><span class="jc-no">01</span><span class="jc-en">Refining</span></div><h3>정유</h3><p>전 세계에서 도입한 원유를 정제해 휘발유·경유·항공유 등 다양한 석유제품과 석유화학·베이스오일 사업의 원료를 생산합니다.</p><div class="jc-fig">80만 배럴/일 · 단일 정유공장 세계 4위</div></div>
+      <div class="jcard" style="--gc:var(--amber)"><div class="jc-top"><span class="jc-no">02</span><span class="jc-en">Aromatics</span></div><h3>방향족</h3><p>납사 등을 원료로 벤젠·톨루엔·혼합자일렌·파라자일렌 등 방향족 제품을 생산합니다.</p><div class="jc-fig">280만 톤/년</div></div>
+      <div class="jcard" style="--gc:var(--g3)"><div class="jc-top"><span class="jc-no">03</span><span class="jc-en">Olefins</span></div><h3>올레핀</h3><p>납사와 LPG, 정유공정의 부생가스 등 다양한 원료를 활용해 에틸렌·프로필렌 등 기초 석유화학 제품을 생산합니다.</p><div class="jc-fig">230만 톤/년</div></div>
+      <div class="jcard" style="--gc:var(--g3)"><div class="jc-top"><span class="jc-no">04</span><span class="jc-en">Polymer</span></div><h3>폴리머</h3><p>에틸렌과 프로필렌을 원료로 폴리에틸렌(PE)과 폴리프로필렌(PP)을 생산하고, 다양한 용도의 복합수지를 공급합니다.</p><div class="jc-fig">98만 톤/년</div></div>
+      <div class="jcard" style="--gc:var(--g4)"><div class="jc-top"><span class="jc-no">05</span><span class="jc-en">Base Oil</span></div><h3>베이스오일</h3><p>정유 고도화공정에서 생산되는 미전환유(UCO)를 원료로 Group II와 Group III 등 고품질 베이스오일을 생산합니다.</p><div class="jc-fig">3만 배럴/일</div></div>
+      <div class="jcard" style="--gc:var(--g2)"><div class="jc-top"><span class="jc-no">06</span><span class="jc-en">Lubricants</span></div><h3>윤활유</h3><p>고품질 베이스오일과 축적된 기술력을 바탕으로 자동차용부터 산업용까지 다양한 Kixx 윤활유 제품을 생산합니다.</p><div class="jc-fig">9천 배럴/일</div></div>
+    </div>
+  </div>
+  <div class="s-foot"><span>GS CALTEX BUSINESS STORY</span><span class="pg">01</span></div>
+</section>
+
+<!-- ============ 3. IN NUMBERS ============ -->
+<section class="slide">
+  <div class="s-head"><span class="eyebrow">IN NUMBERS · 숫자로 보는 사업</span><span class="s-tag">2025년 기준</span></div>
+  <div class="s-body">
+    <div class="numgrid">
+      <div class="cell"><span class="cno">01 REFINING</span><div class="v" style="margin-top:8px">80<span class="u">만 배럴/일</span></div><p class="k">원유정제 처리량<small>Crude Refining Capacity</small></p></div>
+      <div class="cell"><span class="cno">02 AROMATICS</span><div class="v" style="margin-top:8px">280<span class="u">만 톤/년</span></div><p class="k">방향족 생산능력<small>Aromatics Capacity</small></p></div>
+      <div class="cell"><span class="cno">03 OLEFINS</span><div class="v" style="margin-top:8px">230<span class="u">만 톤/년</span></div><p class="k">올레핀 생산능력<small>Olefins Capacity</small></p></div>
+      <div class="cell"><span class="cno">04 POLYMER</span><div class="v" style="margin-top:8px">98<span class="u">만 톤/년</span></div><p class="k">폴리머 생산능력<small>Polymer Capacity</small></p></div>
+      <div class="cell"><span class="cno">05 BASE OIL</span><div class="v" style="margin-top:8px">3<span class="u">만 배럴/일</span></div><p class="k">베이스오일 생산능력<small>Base Oil Capacity</small></p></div>
+      <div class="cell"><span class="cno">06 LUBRICANTS</span><div class="v" style="margin-top:8px">9<span class="u">천 배럴/일</span></div><p class="k">윤활유 생산능력<small>Lubricants Capacity</small></p></div>
+    </div>
+  </div>
+  <div class="s-foot"><span>DATA — GS Caltex Sustainability Report 2025 · gscaltex.com/kr/business</span><span class="pg">02</span></div>
+</section>
+
+<!-- ==================================================================== 성장과 실적 -->
+<!-- GROWTH -->
+<section class="slide">
+  <div class="s-head"><span class="eyebrow">GROWTH · 성장의 발자취</span><span class="s-tag">2025년 기준</span></div>
+  <div class="s-body">
+    <h1 class="h2" style="font-size:26px">1969년 하루 6만 배럴에서 <em>하루 80만 배럴</em>로</h1>
+    <p class="lede" style="margin-top:8px">1967년 대한민국 최초의 민간 정유회사로 출범한 GS칼텍스는 지속적인 투자와 사업 확장을 통해 성장해 왔습니다. 정유에서 시작한 사업은 석유화학·베이스오일·윤활유까지 확대됐습니다.</p>
+    <div class="two" style="margin-top:18px">
+      <div class="col">
+        <span class="kicker">원유정제능력 · 만 배럴/일 (설비 준공 시점 누계)</span>
+        <div class="gbar" style="--gc:var(--g4)">
+          <div class="row"><span class="yr">1969</span><span class="track"><span class="fill" style="width:7.5%"></span></span><span class="val">6만</span></div>
+          <div class="row"><span class="yr">1972</span><span class="track"><span class="fill" style="width:15%"></span></span><span class="val">12만</span></div>
+          <div class="row"><span class="yr">1981</span><span class="track"><span class="fill" style="width:47.5%"></span></span><span class="val">38만</span></div>
+          <div class="row"><span class="yr">1996</span><span class="track"><span class="fill" style="width:81.25%"></span></span><span class="val">65만</span></div>
+          <div class="row now"><span class="yr">2025</span><span class="track"><span class="fill" style="width:100%"></span></span><span class="val">80만</span></div>
+        </div>
+        <div class="hr"></div>
+        <p class="body-p" style="margin-top:0">단일 정유공장 기준 <strong>세계 4위</strong> 규모의 원유정제시설과 하루 <strong>27만 5천 배럴</strong>의 고도화 처리능력을 갖추고 있습니다.</p>
+      </div>
+      <div class="col">
+        <span class="kicker dim">매출액 · 조 원 (연결 기준)</span>
+        <div class="gbar" style="--gc:var(--amber)">
+          <div class="row"><span class="yr">1980</span><span class="track"><span class="fill" style="width:1.7%"></span></span><span class="val">1조</span></div>
+          <div class="row"><span class="yr">2000</span><span class="track"><span class="fill" style="width:17.1%"></span></span><span class="val">10조</span></div>
+          <div class="row"><span class="yr">2007</span><span class="track"><span class="fill" style="width:34.2%"></span></span><span class="val">20조</span></div>
+          <div class="row"><span class="yr">2022</span><span class="track"><span class="fill" style="width:100%"></span></span><span class="val">58.5조</span></div>
+          <div class="row now"><span class="yr">2025</span><span class="track"><span class="fill" style="width:76.2%"></span></span><span class="val">44.6조</span></div>
+        </div>
+        <div class="hr"></div>
+        <p class="body-p" style="margin-top:0">국제유가와 정제마진 등 대외환경의 영향을 크게 받는 사업 특성 속에서도 <strong>수익성과 재무건전성</strong>을 지속적으로 관리하고 있습니다.</p>
+      </div>
+    </div>
+  </div>
+  <div class="s-foot"><span>DATA — GS칼텍스 사업보고서 · 한국은행 국민계정</span><span class="pg">03</span></div>
+</section>
+
+<!-- PERFORMANCE -->
+<section class="slide">
+  <div class="s-head"><span class="eyebrow">PERFORMANCE · 2025년 경영 실적</span><span class="s-tag">연결 기준</span></div>
+  <div class="s-body">
+    <div class="statrow" style="gap:44px;margin-top:10px">
+      <div class="stat"><div class="v">44.6<span class="u">조 원</span></div><div class="l">매출액 REVENUE</div></div>
+      <div class="stat"><div class="v">8,841<span class="u">억 원</span></div><div class="l">영업이익 OPERATING INCOME</div></div>
+      <div class="stat"><div class="v">1.9<span class="u">조 원</span></div><div class="l">EBITDA</div></div>
+      <div class="stat"><div class="v">3,120<span class="u">명</span></div><div class="l">임직원 EMPLOYEES</div></div>
+    </div>
+    <div class="hr"></div>
+    <div class="two" style="margin-top:6px">
+      <div class="col">
+        <span class="kicker">부채비율 = 부채총계 ÷ 자본총계</span>
+        <div class="gbar" style="--gc:var(--g3)">
+          <div class="row"><span class="yr">2021</span><span class="track"><span class="fill" style="width:93.2%"></span></span><span class="val">111.8%</span></div>
+          <div class="row"><span class="yr">2022</span><span class="track"><span class="fill" style="width:77.2%"></span></span><span class="val">92.6%</span></div>
+          <div class="row"><span class="yr">2023</span><span class="track"><span class="fill" style="width:66.8%"></span></span><span class="val">80.2%</span></div>
+          <div class="row"><span class="yr">2024</span><span class="track"><span class="fill" style="width:64.1%"></span></span><span class="val">76.9%</span></div>
+          <div class="row now"><span class="yr">2025</span><span class="track"><span class="fill" style="width:50.4%;background:var(--g4)"></span></span><span class="val">60.5%</span></div>
+        </div>
+        <p class="body-p">부채비율은 2021년 111.8%에서 2025년 <strong>60.5%</strong>로 낮아졌으며, 같은 기간 자본총계는 11.1조 원에서 <strong>13.8조 원</strong>으로 증가했습니다.</p>
+      </div>
+      <div class="col">
+        <span class="kicker dim">신용등급 · CREDIT RATING</span>
+        <div style="margin-top:12px">
+          <div class="rate">
+            <div class="rg">AA+</div>
+            <div class="rc">국내 회사채 신용등급<br>NICE신용평가 · 한국신용평가 · 한국기업평가<br>2020 — 2025 6년 연속 유지</div>
+          </div>
+          <div class="rate">
+            <div class="rg intl">BBB+ / Baa1</div>
+            <div class="rc">국제 신용등급 (2025)<br>S&amp;P BBB+ 안정적 · Moody&#8217;s Baa1 안정적</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="s-foot"><span>DATA — 2025년 연결 기준 · 임직원 수는 2025 지속가능성보고서 기준</span><span class="pg">04</span></div>
+</section>
+
+<!-- 5개년 실적표 -->
+<section class="slide">
+  <div class="s-head"><span class="eyebrow">FINANCIALS · 최근 5개년 실적</span><span class="s-tag">K-IFRS 연결</span></div>
+  <div class="s-body">
+    <div class="two" style="margin-top:14px">
+      <div class="col">
+        <table class="ftable">
+          <caption>연결 손익계산서 · 단위 십억 원</caption>
+          <thead><tr><th>구분</th><th>2021</th><th>2022</th><th>2023</th><th>2024</th><th>2025</th></tr></thead>
+          <tbody>
+            <tr><th>매출액</th><td>34,538</td><td>58,532</td><td>48,608</td><td>47,614</td><td class="hi">44,630</td></tr>
+            <tr><th>EBITDA</th><td>2,990</td><td>5,040</td><td>2,740</td><td>1,540</td><td class="hi">1,900</td></tr>
+            <tr><th>영업이익</th><td>2,019</td><td>3,979</td><td>1,684</td><td>548</td><td class="hi">884</td></tr>
+            <tr><th>당기순이익</th><td>1,051</td><td>2,789</td><td>1,153</td><td>109</td><td class="hi">706</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="col">
+        <table class="ftable">
+          <caption>연결 재무상태표 · 단위 십억 원</caption>
+          <thead><tr><th>구분</th><th>2021</th><th>2022</th><th>2023</th><th>2024</th><th>2025</th></tr></thead>
+          <tbody>
+            <tr><th>자산총계</th><td>23,582</td><td>26,038</td><td>24,322</td><td>23,174</td><td>22,075</td></tr>
+            <tr><th>부채총계</th><td>12,449</td><td>12,518</td><td>10,823</td><td>10,075</td><td>8,320</td></tr>
+            <tr><th>자본총계</th><td>11,133</td><td>13,520</td><td>13,499</td><td>13,099</td><td class="hi">13,754</td></tr>
+            <tr class="accent"><th>부채비율</th><td>111.8%</td><td>92.6%</td><td>80.2%</td><td>76.9%</td><td>60.5%</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <p class="body-p" style="margin-top:18px;font-size:12px">부채비율은 부채총계 ÷ 자본총계로 산출했습니다. 매출액은 국제유가와 정제마진에 따라 연도별 변동이 크지만, 자본총계는 증가하고 부채비율은 지속적으로 개선되고 있습니다.</p>
+  </div>
+  <div class="s-foot"><span>DATA — GS칼텍스 사업보고서</span><span class="pg">05</span></div>
+</section>
+
+<!-- 연혁 -->
+<section class="slide">
+  <div class="s-head"><span class="eyebrow">MILESTONES · 주요 성장 과정</span><span class="s-tag">1967 — 2025</span></div>
+  <div class="s-body">
+    <h1 class="h2" style="font-size:24px">정유에서 시작해 <em>에너지·화학 전반</em>으로 사업을 확장해 왔습니다</h1>
+    <div class="tl2">
+      <div class="tl">
+        <div class="ti"><div class="yr">1967</div><div class="tx"><b>호남정유주식회사 설립</b> — 대한민국 최초의 민간 정유회사로 출범 · 여수공장 기공</div></div>
+        <div class="ti"><div class="yr">1969</div><div class="tx"><b>제1원유정제시설(CDU) 준공</b> — 하루 6만 배럴 규모로 원유정제 시작 · 인천 윤활유공장 준공</div></div>
+        <div class="ti"><div class="yr">1988</div><div class="tx"><b>폴리프로필렌(PP) 공장 준공</b> — 폴리머 사업 진출</div></div>
+        <div class="ti"><div class="yr">1990</div><div class="tx"><b>제1방향족(BTX) · 제1파라자일렌(PX) 공장 준공</b> — 방향족 사업 본격화</div></div>
+        <div class="ti"><div class="yr">1995</div><div class="tx"><b>제1중질유분해시설(RFCC) 준공</b> — 고도화시설 가동을 통한 생산 경쟁력 강화</div></div>
+        <div class="ti"><div class="yr">1996</div><div class="tx"><b>제4원유정제시설(CDU) 준공 · &#8216;LG칼텍스정유&#8217;로 사명 변경</b> — 원유정제능력 확대</div></div>
+      </div>
+      <div class="tl">
+        <div class="ti"><div class="yr">2005</div><div class="tx"><b>&#8216;GS칼텍스&#8217;로 사명 변경</b> — GS그룹 출범과 함께 현재의 사명으로 변경</div></div>
+        <div class="ti"><div class="yr">2007–2023</div><div class="tx"><b>고도화시설 지속 확대</b> — HCR · VRHCR · VGOFCC 준공 · 고도화 처리능력 하루 27.5만 배럴로 확대</div></div>
+        <div class="ti"><div class="yr">2012</div><div class="tx"><b>250억불 수출의 탑 수상</b> — 국내 정유업계 최초 · 여수문화예술공원 GS칼텍스 예울마루 개관</div></div>
+        <div class="ti"><div class="yr">2022</div><div class="tx"><b>올레핀생산시설(MFC) 준공</b> — 연간 에틸렌 90만 톤 규모 가동 · 정유에서 석유화학으로 이어지는 사업 경쟁력 강화</div></div>
+        <div class="ti"><div class="yr">2025</div><div class="tx"><b>지속적인 경쟁력 강화</b> — 부채비율 60.5% · 국내 회사채 신용등급 AA+ 유지 · NCSI 주유소 부문 17년 연속 1위</div></div>
+      </div>
+    </div>
+  </div>
+  <div class="s-foot"><span>DATA — GS칼텍스 연혁 · gscaltex.com/kr/company/history</span><span class="pg">06</span></div>
+</section>
+
+<!-- ==================================================================== CH.00 생산 공정 -->
+<section class="slide divider">
+  <div class="bg" style="background-image:url('../refining/img/band-pipes.jpg')"></div><div class="scrim"></div>
+  <div class="d-no">00</div>
+  <div class="d-inner">
+    <div class="s-head"><span class="eyebrow">CHAPTER 00</span><span class="s-tag">PROCESS</span></div>
+    <div class="d-en">PROCESS</div><div class="d-kr">생산 공정</div>
+    <p class="d-sub">원유부두에서 시작해 <strong>일반정유·고도화·석유화학·베이스오일</strong>로 이어지는 여수공장의 주요 생산공정을 살펴봅니다.</p>
+    <div class="d-points">
+      <div class="d-point"><div class="dp-v">4<span class="u">개 흐름</span></div><div class="dp-l">생산공정 구분</div></div>
+      <div class="d-point"><div class="dp-v">80<span class="u">만 배럴/일</span></div><div class="dp-l">원유정제능력</div></div>
+      <div class="d-point"><div class="dp-v">27.5<span class="u">만 배럴/일</span></div><div class="dp-l">고도화 처리능력</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 공정 개요 -->
+<section class="slide">
+  <div class="s-head"><span class="eyebrow">01 OVERVIEW · 공정의 흐름</span><span class="s-tag">CH.00</span></div>
+  <div class="s-body">
+    <h1 class="h2" style="font-size:26px">원유부두에서 제품부두까지, <em>하나로 이어지는 공정</em></h1>
+    <p class="lede" style="margin-top:8px">전 세계 30여 개국에서 도입한 원유는 원유탱크에 저장된 뒤 모든 공정의 출발점인 상압증류공정으로 보내집니다. 여기서 갈라진 유분이 나머지 세 흐름의 원료가 됩니다.</p>
+    <div class="flow-strip" style="margin-top:18px">
+      <span class="node hl">원유부두</span><span class="arw">→</span>
+      <span class="node">원유탱크</span><span class="arw">→</span>
+      <span class="node">상압증류</span><span class="via">유분 분리 →</span>
+      <span class="node">고도화</span><span class="node">석유화학</span><span class="node">베이스오일</span><span class="arw">→</span>
+      <span class="node hl">제품부두</span>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:20px;flex:1 1 auto">
+      <div class="col">
+        <div style="border-top:2px solid var(--g1);padding-top:9px"><span class="jc-no" style="color:var(--g1);font-size:22px">01</span> <b style="font-size:15px">일반정유</b><div class="jc-en">Refining Process</div></div>
+        <p class="body-p" style="font-size:12px">원유를 끓는점 차이로 나누고 불순물을 걷어내는 정제의 기본기입니다. 여기서 갈라진 유분이 나머지 세 흐름의 원료가 됩니다.</p>
+        <span class="chip" style="margin-top:auto">CDU · VDU · HDS · SRU</span>
+      </div>
+      <div class="col">
+        <div style="border-top:2px solid var(--g2);padding-top:9px"><span class="jc-no" style="color:var(--g2);font-size:22px">02</span> <b style="font-size:15px">고도화</b><div class="jc-en">Upgrading Process</div></div>
+        <p class="body-p" style="font-size:12px">중질유를 촉매와 수소로 다시 분해해 휘발유·경유 등 부가가치가 높은 경질유로 전환합니다. 하루 27만 5천 배럴 규모입니다.</p>
+        <span class="chip" style="margin-top:auto">RFCC · VGOFCC · HCR · VRHCR</span>
+      </div>
+      <div class="col">
+        <div style="border-top:2px solid var(--g3);padding-top:9px"><span class="jc-no" style="color:var(--g3);font-size:22px">03</span> <b style="font-size:15px">석유화학</b><div class="jc-en">Petrochemical</div></div>
+        <p class="body-p" style="font-size:12px">정유공정에서 생산된 납사·LPG·부생가스가 방향족·올레핀·폴리머 등 석유화학 제품으로 이어지는 흐름입니다.</p>
+        <span class="chip" style="margin-top:auto">AROM · MFC</span>
+      </div>
+      <div class="col">
+        <div style="border-top:2px solid var(--g4);padding-top:9px"><span class="jc-no" style="color:var(--g4);font-size:22px">04</span> <b style="font-size:15px">베이스오일</b><div class="jc-en">Base Oil Process</div></div>
+        <p class="body-p" style="font-size:12px">고도화공정(HCR)에서 생산되는 미전환유(UCO)를 원료로 고품질 베이스오일을 생산해 윤활유로 연결합니다.</p>
+        <span class="chip" style="margin-top:auto">BOP</span>
+      </div>
+    </div>
+  </div>
+  <div class="s-foot"><span>DATA — gscaltex.com/kr/business/productionbase</span><span class="pg">07</span></div>
+</section>
+
+<!-- 7. 공정맵 -->
+<section class="slide pm">
+  <div class="s-head"><span class="eyebrow">02 PROCESS MAP · 공정 단위</span><span class="s-tag">CH.00</span></div>
+  <div class="s-body">
+    <h1 class="h2" style="font-size:26px">여수공장의 생산공정은 <em>네 갈래의 흐름</em>으로 이어집니다</h1>
+    <p class="lede" style="margin-top:8px">원유부두에서 시작해 일반정유·고도화·석유화학·베이스오일로 이어지는 주요 생산공정을 살펴봅니다. <span class="amber">←</span>는 원료의 출처, 색 칩은 생산되는 제품입니다.</p>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:16px;flex:1 1 auto">
+      <div class="col">
+        <div style="border-top:2px solid var(--g1);padding-top:9px"><span class="jc-no" style="color:var(--g1);font-size:20px">01</span> <b style="font-size:14px">일반정유</b><div class="jc-en">Refining Process</div></div>
+        <div class="plist" style="--gc:var(--g1);gap:6px">
+          <div class="pcard"><div class="pc-top"><span class="pc-code">CDU</span><span class="pc-from">← 원유탱크</span></div><h4>상압증류공정</h4><div class="pc-out"><span class="chip out">LPG</span><span class="chip out">납사</span><span class="chip out">연료유</span></div></div>
+          <div class="pcard"><div class="pc-top"><span class="pc-code">VDU</span><span class="pc-from">← 상압잔사유</span></div><h4>감압증류공정</h4><div class="pc-out"><span class="chip">감압경유·잔사유</span></div></div>
+          <div class="pcard"><div class="pc-top"><span class="pc-code">HDS</span><span class="pc-from">← 등·경유</span></div><h4>탈황공정</h4><div class="pc-out"><span class="chip out">등유</span><span class="chip out">경유</span></div></div>
+          <div class="pcard"><div class="pc-top"><span class="pc-code">SRU</span><span class="pc-from">← 산성가스</span></div><h4>황회수처리공정</h4><div class="pc-out"><span class="chip out">황 99.9%</span></div></div>
+        </div>
+      </div>
+      <div class="col">
+        <div style="border-top:2px solid var(--g2);padding-top:9px"><span class="jc-no" style="color:var(--g2);font-size:20px">02</span> <b style="font-size:14px">고도화</b><div class="jc-en">Upgrading Process</div></div>
+        <div class="plist" style="--gc:var(--g2);gap:6px">
+          <div class="pcard"><div class="pc-top"><span class="pc-code">RFCC</span><span class="pc-from">← 상압잔사유</span></div><h4>상압잔사유 촉매분해</h4><div class="pc-out"><span class="chip out">휘발유</span><span class="chip out">LPG</span></div></div>
+          <div class="pcard"><div class="pc-top"><span class="pc-code">VGOFCC</span><span class="pc-from">← 감압경유</span></div><h4>감압경유 촉매분해</h4><div class="pc-out"><span class="chip out">휘발유</span><span class="chip out">연료유</span></div></div>
+          <div class="pcard"><div class="pc-top"><span class="pc-code">HCR</span><span class="pc-from">← 감압경유</span></div><h4>수첨탈황분해</h4><div class="pc-out"><span class="chip out">등·경유</span><span class="chip">미전환유→BOP</span></div></div>
+          <div class="pcard"><div class="pc-top"><span class="pc-code">VRHCR</span><span class="pc-from">← 감압잔사유</span></div><h4>감압잔사유 분해</h4><div class="pc-out"><span class="chip out">경질유</span></div></div>
+        </div>
+      </div>
+      <div class="col">
+        <div style="border-top:2px solid var(--g3);padding-top:9px"><span class="jc-no" style="color:var(--g3);font-size:20px">03</span> <b style="font-size:14px">석유화학</b><div class="jc-en">Petrochemical</div></div>
+        <div class="plist" style="--gc:var(--g3);gap:6px">
+          <div class="pcard"><div class="pc-top"><span class="pc-code">AROM</span><span class="pc-from">← 납사</span></div><h4>방향족 생산공정</h4><div class="pc-out"><span class="chip out">벤젠</span><span class="chip out">톨루엔</span><span class="chip out">혼합자일렌</span><span class="chip out">파라자일렌</span></div></div>
+          <div class="pcard"><div class="pc-top"><span class="pc-code">MFC</span><span class="pc-from">← 납사·에탄·LPG</span></div><h4>올레핀 생산공정</h4><div class="pc-out"><span class="chip out">에틸렌</span><span class="chip out">프로필렌</span></div></div>
+          <div class="pcard"><div class="pc-top"><span class="pc-code">POLYMER</span><span class="pc-from">← MFC 에틸렌·프로필렌</span></div><h4>폴리머 생산공정</h4><div class="pc-out"><span class="chip out">폴리에틸렌</span><span class="chip out">폴리프로필렌</span><span class="chip out">복합수지</span></div></div>
+        </div>
+        <p class="body-p" style="font-size:11.5px;margin-top:6px">→ 다음 챕터(방향족·올레핀·폴리머)로 이어지는 흐름</p>
+      </div>
+      <div class="col">
+        <div style="border-top:2px solid var(--g4);padding-top:9px"><span class="jc-no" style="color:var(--g4);font-size:20px">04</span> <b style="font-size:14px">베이스오일</b><div class="jc-en">Base Oil Process</div></div>
+        <div class="plist" style="--gc:var(--g4);gap:6px">
+          <div class="pcard"><div class="pc-top"><span class="pc-code">BOP</span><span class="pc-from">← HCR 미전환유</span></div><h4>베이스오일 생산공정</h4><div class="pc-out"><span class="chip out">베이스오일</span></div></div>
+        </div>
+        <p class="body-p" style="font-size:11.5px;margin-top:10px">하루 <strong>3만 배럴</strong> 규모의 고품질 베이스오일 — 윤활유 챕터로 이어집니다. → 제품탱크에 모인 제품은 제품부두의 선박과 파이프라인·탱크로리로 국내외에 출하됩니다.</p>
+      </div>
+    </div>
+  </div>
+  <div class="s-foot"><span>DATA — gscaltex.com/kr/business/productionbase</span><span class="pg">08</span></div>
+</section>
+
+
+
+<!-- ==================================================================== CH.01 정유 -->
+<!-- 4. DIVIDER -->
+<section class="slide divider">
+  <div class="bg" style="background-image:url('../refining/img/band-harbor.jpg')"></div><div class="scrim"></div>
+  <div class="d-no">01</div>
+  <div class="d-inner">
+    <div class="s-head"><span class="eyebrow">CHAPTER 01</span><span class="s-tag">REFINING</span></div>
+    <div class="d-en">REFINING</div><div class="d-kr">정유</div>
+    <p class="d-sub">하루 <strong>80만 배럴</strong>의 원유가 에너지가 되기까지 — <strong>단일 정유공장 기준 세계 4위</strong> 원유정제시설을 갖춘 여수공장에서 시작됩니다.</p>
+    <div class="d-points">
+      <div class="d-point"><div class="dp-v">80<span class="u">만 배럴/일</span></div><div class="dp-l">정제능력</div></div>
+      <div class="d-point"><div class="dp-v">27.5<span class="u">만 배럴/일</span></div><div class="dp-l">중질유 분해</div></div>
+      <div class="d-point"><div class="dp-v">34.3<span class="u">%</span></div><div class="dp-l">고도화율</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 5. 서사 (도입문 + 원유도입) -->
+<section class="slide">
+  <div class="s-head"><span class="eyebrow">01 REFINING · 원유에서 에너지로</span><span class="s-tag">CH.01</span></div>
+  <div class="s-body">
+    <div class="narr">
+      <p class="poem"><strong>1967년</strong> 국내 최초의 민간 정유회사로 출범한 GS칼텍스는 전 세계에서 들여온 원유를 정제해 우리 생활과 산업에 필요한 <em>다양한 에너지와 제품</em>을 생산하고 있습니다.</p>
+      <div class="origin">
+        <div class="o-glyph"><span class="cjk">30여 개국 · 80여 유종</span></div>
+        <div class="o-rom">Crude Sourcing · 원유 도입</div>
+        <p>전 세계 <strong>30여 개국</strong>에서 <strong>80여 유종</strong>의 원유를 들여옵니다. 특정 지역에 기대지 않는 조달 경로가 구매 리스크를 분산합니다.</p>
+        <p>가볍고 무겁고, 달고 시고 — 성질이 다른 원유를 다룰 수 있다는 것. 그것이 <strong>안정적 공급</strong>의 첫 번째 조건입니다.</p>
+      </div>
+    </div>
+  </div>
+  <div class="s-foot"><span>DATA — gscaltex.com/kr/business · GS Caltex Sustainability Report 2025</span><span class="pg">09</span></div>
+</section>
+
+<!-- 6. 메커니즘 (증류·고도화) -->
+<section class="slide">
+  <div class="s-head"><span class="eyebrow">02 DISTILLATION · 상압증류와 고도화</span><span class="s-tag">CH.01</span></div>
+  <div class="s-body">
+    <h1 class="h2" style="font-size:26px">끓는점의 차이로 <em>원유를 다양한 유분</em>으로 분리합니다</h1>
+    <div class="two" style="margin-top:16px">
+      <div class="col">
+        <p class="body-p">원유를 가열해 <strong>상압증류탑</strong>에 투입하면 끓는점 차이에 따라 LPG·납사·등유·경유·잔사유 등 <strong>다양한 유분</strong>으로 분리됩니다. 분리된 유분은 각각 후속 정제·고도화·석유화학 공정의 원료로 활용됩니다.</p>
+        <div class="capbar" style="margin-top:16px">
+          <div class="row"><span class="nm">LPG</span><div class="track"><div class="fill" style="width:18%"></div></div><span class="val">~35°C</span></div>
+          <div class="row"><span class="nm">나프타</span><div class="track"><div class="fill" style="width:34%"></div></div><span class="val">35–160°C</span></div>
+          <div class="row"><span class="nm">등유·항공유</span><div class="track"><div class="fill" style="width:52%"></div></div><span class="val">160–250°C</span></div>
+          <div class="row"><span class="nm">경유</span><div class="track"><div class="fill" style="width:72%"></div></div><span class="val">240–370°C</span></div>
+          <div class="row"><span class="nm">중질유→고도화</span><div class="track"><div class="fill" style="width:100%;opacity:.5"></div></div><span class="val">370°C+</span></div>
+        </div>
+      </div>
+      <div class="col">
+        <span class="kicker">CAPACITY & UPGRADING</span>
+        <div class="statrow" style="margin-top:14px">
+          <div class="stat"><div class="v" style="font-size:52px">80<span class="u">만 배럴/일</span></div><div class="l">정제능력 · 세계 4위</div></div>
+          <div class="stat"><div class="v" style="font-size:52px">27.5<span class="u">만 배럴/일</span></div><div class="l">중질유 분해</div></div>
+        </div>
+        <p class="body-p" style="margin-top:16px">GS칼텍스는 하루 <strong>27만 5천 배럴</strong>의 고도화 처리능력을 갖추고 있습니다. 상압증류공정에서 분리된 중질유는 고도화공정을 거쳐 휘발유·등유·경유 등 부가가치가 높은 경질유로 전환됩니다.</p>
+        <div class="capbar" style="margin-top:12px">
+          <div class="row"><span class="nm">고도화율</span><div class="track"><div class="fill" style="width:34.3%"></div></div><span class="val">34.3%</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="s-foot"><span>DATA — 정제 80만 · 고도화 27.5만 배럴/일 · 고도화율 34.3% (2025년 기준)</span><span class="pg">10</span></div>
+</section>
+
+<!-- 8. 일상으로 -->
+<section class="slide">
+  <div class="s-head"><span class="eyebrow">03 TO EVERYDAY LIFE · 일상으로</span><span class="s-tag">CH.01</span></div>
+  <div class="s-body">
+    <div class="two">
+      <div class="col">
+        <h1 class="h2" style="font-size:26px">GS칼텍스의 석유제품은 <em>일상과 산업 곳곳</em>에서 사용됩니다</h1>
+        <p class="body-p">GS칼텍스가 생산한 석유제품은 전국 주유소와 LPG 충전소를 비롯해 각종 산업체·철도·항공사 등에 공급됩니다.</p>
+        <div class="statrow" style="margin-top:20px;gap:40px">
+          <div class="stat"><div class="v" style="font-size:52px">약 2,000<span class="u">개</span></div><div class="l">전국 주유소 네트워크</div></div>
+          <div class="stat"><div class="v" style="font-size:52px">약 330<span class="u">개</span></div><div class="l">LPG 충전소 ('25년 말)</div></div>
+        </div>
+      </div>
+      <div class="col" style="justify-content:center">
+        <span class="kicker dim">PRODUCTS · 정유가 내놓는 제품</span>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:16px">
+          <div class="pcard"><div class="pc-code">GASOLINE</div><h4>휘발유</h4></div>
+          <div class="pcard"><div class="pc-code">DIESEL</div><h4>경유</h4></div>
+          <div class="pcard"><div class="pc-code">KEROSENE</div><h4>등유</h4></div>
+          <div class="pcard"><div class="pc-code">JET FUEL</div><h4>항공유</h4></div>
+        </div>
+        <p class="body-p" style="margin-top:16px">정유공정에서 생산된 원료는 다시 <strong>방향족·올레핀·폴리머</strong> 등 다양한 석유화학 제품으로 이어집니다. 정유에서 석유화학으로 확장되는 GS칼텍스의 사업을 살펴봅니다.</p>
+      </div>
+    </div>
+  </div>
+  <div class="s-foot"><span>DATA — 주유소 약 2,000개 · LPG 충전소 약 330개('25년 말 기준)</span><span class="pg">11</span></div>
+</section>
+
+<!-- ==================================================================== CH.02 방향족 -->
+<!-- 9. DIVIDER -->
+<section class="slide divider">
+  <div class="bg" style="background-image:url('../aromatics/img/band-plant.jpg')"></div><div class="scrim"></div>
+  <div class="d-no">02</div>
+  <div class="d-inner">
+    <div class="s-head"><span class="eyebrow">CHAPTER 02</span><span class="s-tag">AROMATICS</span></div>
+    <div class="d-en">AROMATICS</div><div class="d-kr">방향족</div>
+    <p class="d-sub">납사 등을 원료로 벤젠·톨루엔·혼합자일렌·파라자일렌 등 방향족 제품을 생산합니다 — 연간 <strong>280만 톤</strong>, 세계적 규모의 방향족 생산 경쟁력.</p>
+    <div class="d-points">
+      <div class="d-point"><div class="dp-v">280<span class="u">만 톤/년</span></div><div class="dp-l">방향족 생산능력</div></div>
+      <div class="d-point"><div class="dp-v">135<span class="u">만 톤</span></div><div class="dp-l">파라자일렌 PX</div></div>
+      <div class="d-point"><div class="dp-v">93<span class="u">만 톤</span></div><div class="dp-l">벤젠 BZ</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 10. 서사 (도입문 + 芳香 어원) -->
+<section class="slide">
+  <div class="s-head"><span class="eyebrow">02 AROMATICS · 이름의 유래</span><span class="s-tag">CH.02</span></div>
+  <div class="s-body">
+    <div class="narr">
+      <p class="poem">정유공정에서 생산된 납사는 석유화학 공정을 거쳐 벤젠·톨루엔·혼합자일렌·파라자일렌 등 다양한 <em>방향족 제품</em>으로 전환됩니다.</p>
+      <div class="origin">
+        <div class="o-glyph"><span class="cjk">芳 香</span></div>
+        <div class="o-rom">Aromatics · 향기 나는 무리</div>
+        <p>꽃다울 방(<strong>芳</strong>)에 향기 향(<strong>香</strong>) — 방향(芳香)은 '향기 나는'이라는 뜻입니다. 19세기 화학자들이 이 계열을 처음 분류할 때 발견된 화합물 상당수가 실제로 좋은 향을 지녔고, 그래서 '<strong>향기 나는 무리</strong>'가 되었습니다.</p>
+        <p>지금 이 이름은 향기와 무관합니다. 벤젠처럼 고리 안의 <strong>전자가 고르게 퍼져 유난히 안정된 고리형 화합물</strong>을 통칭하는 말이 되었기 때문입니다. 향기에서 출발한 이름이 구조를 가리키는 이름으로 자리 잡은 것입니다.</p>
+      </div>
+    </div>
+  </div>
+  <div class="s-foot"><span>DATA — gscaltex.com/kr/Business/Aromatics</span><span class="pg">12</span></div>
+</section>
+
+<!-- 11. 메커니즘 (육각 고리 → 3 제품) -->
+<section class="slide">
+  <div class="s-head"><span class="eyebrow">MECHANISM · 방향족의 구조와 제품</span><span class="s-tag">CH.02</span></div>
+  <div class="s-body">
+    <h1 class="h2" style="font-size:26px">방향족 화합물의 기본 구조, <em>벤젠 고리</em></h1>
+    <div class="steps3">
+      <div class="step">
+        <span class="st-no">01 — BENZENE · 벤젠</span>
+        <div class="st-fig"><svg viewBox="0 0 130 130"><polygon class="mech-svg-am" points="65,20 104,42 104,86 65,108 26,86 26,42"/><circle class="mech-svg-am" cx="65" cy="64" r="24"/><text class="mech-lab" x="47" y="126">C₆H₆</text></svg></div>
+        <h3>벤젠 · 육각 고리</h3>
+        <p>6개의 탄소 원자가 고리 형태로 결합한 대표적인 방향족 화합물로, <strong>합성수지·합성섬유·세제</strong> 등 다양한 화학제품의 기초 원료로 활용됩니다.</p>
+        <span class="st-tag">고순도 벤젠 연간 <b>93만 톤</b></span>
+      </div>
+      <div class="step">
+        <span class="st-no">02 — TOLUENE · 톨루엔</span>
+        <div class="st-fig"><svg viewBox="0 0 130 130"><polygon class="mech-svg-line" points="65,26 104,48 104,92 65,114 26,92 26,48"/><circle class="mech-svg-line" cx="65" cy="70" r="22"/><line class="mech-svg-am" x1="65" y1="26" x2="65" y2="8"/><text class="mech-lab" x="72" y="12">CH₃</text><text class="mech-lab" x="47" y="128">C₇H₈</text></svg></div>
+        <h3>가지 하나가 붙으면 톨루엔</h3>
+        <p>벤젠 고리에 메틸기(CH₃) 하나 — 그 작은 차이가 <strong>페인트·잉크의 용제</strong>, 폴리우레탄(TDI)의 원료를 만듭니다.</p>
+        <span class="st-tag">톨루엔 연간 <b>17만 톤</b></span>
+      </div>
+      <div class="step">
+        <span class="st-no">03 — PARA-XYLENE · 파라자일렌</span>
+        <div class="st-fig"><svg viewBox="0 0 130 130"><polygon class="mech-svg-line" points="65,26 104,48 104,92 65,114 26,92 26,48"/><circle class="mech-svg-line" cx="65" cy="70" r="22"/><line class="mech-svg-am" x1="65" y1="26" x2="65" y2="8"/><line class="mech-svg-am" x1="65" y1="114" x2="65" y2="128"/><text class="mech-lab" x="72" y="10">CH₃</text><text class="mech-lab" x="72" y="128">CH₃</text></svg></div>
+        <h3>정반대 자리에 하나 더, 파라자일렌</h3>
+        <p>메틸기 두 개가 정반대(para) 자리에 붙으면 — <strong>옷과 페트병의 출발점</strong>. 폴리에스터·PET의 원료 TPA가 여기서 나옵니다.</p>
+        <span class="st-tag">파라자일렌 연간 <b>135만 톤</b> · 주력</span>
+      </div>
+    </div>
+  </div>
+  <div class="s-foot"><span>DATA — 벤젠 93 · 톨루엔 17 · 파라자일렌 135 (만 톤/년)</span><span class="pg">13</span></div>
+</section>
+
+<!-- 12. 수치·제품 (4제품 capacity) -->
+<section class="slide">
+  <div class="s-head"><span class="eyebrow">CAPACITY · 4개 주요 제품, 연간 280만 톤</span><span class="s-tag">CH.02</span></div>
+  <div class="s-body">
+    <div class="two">
+      <div class="col">
+        <div class="capbar" style="margin-top:6px">
+          <div class="row"><span class="nm">파라자일렌</span><div class="track"><div class="fill" style="width:100%"></div></div><span class="val">135</span></div>
+          <div class="row"><span class="nm">벤젠</span><div class="track"><div class="fill" style="width:69%"></div></div><span class="val">93</span></div>
+          <div class="row"><span class="nm">혼합자일렌</span><div class="track"><div class="fill" style="width:26%"></div></div><span class="val">35</span></div>
+          <div class="row"><span class="nm">톨루엔</span><div class="track"><div class="fill" style="width:13%"></div></div><span class="val">17</span></div>
+        </div>
+        <div class="hr"></div>
+        <p class="body-p">GS칼텍스는 세계적 규모의 생산능력과 축적된 기술력을 바탕으로 <strong>고품질 방향족 제품</strong>을 국내외 고객에게 안정적으로 공급하고 있습니다.</p>
+      </div>
+      <div class="col">
+        <div class="plist">
+          <div class="pcard"><div class="pc-top"><span class="pc-code">PX · 파라자일렌</span><span class="pc-from">135만 톤/년</span></div><div class="pc-desc">폴리에스터 섬유·PET의 원료인 TPA의 기초 원료.</div><div class="pc-out"><span class="chip out">폴리에스터 섬유</span><span class="chip out">페트병(PET)</span><span class="chip">TPA·DMT</span></div></div>
+          <div class="pcard"><div class="pc-top"><span class="pc-code">BZ · 벤젠</span><span class="pc-from">93만 톤/년</span></div><div class="pc-desc">6개 탄소의 정육각형 분자. 각종 석유화학제품의 원료로 전 세계 공급.</div><div class="pc-out"><span class="chip out">페놀수지</span><span class="chip out">나일론</span><span class="chip out">합성세제</span></div></div>
+          <div class="pcard"><div class="pc-top"><span class="pc-code">MX · 혼합자일렌</span><span class="pc-from">35만 톤/년</span></div><div class="pc-desc">올소·메타·파라 이성체 혼합물. 용제 + 파라자일렌의 원료.</div><div class="pc-out"><span class="chip out">도료 용제</span><span class="chip">PX 원료</span></div></div>
+          <div class="pcard"><div class="pc-top"><span class="pc-code">TL · 톨루엔</span><span class="pc-from">17만 톤/년</span></div><div class="pc-desc">도료·잉크·접착제의 용제이자 폴리우레탄(TDI)의 원료.</div><div class="pc-out"><span class="chip out">페인트·잉크</span><span class="chip out">폴리우레탄</span></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="s-foot"><span>DATA — 방향족 280만 톤/년 (PX 135·벤젠 93·혼합자일렌 35·톨루엔 17)</span><span class="pg">14</span></div>
+</section>
+
+<!-- 13. 연결 (일상으로) -->
+<section class="slide">
+  <div class="s-head"><span class="eyebrow">03 INTO EVERYDAY LIFE · 일상으로</span><span class="s-tag">CH.02</span></div>
+  <div class="s-body">
+    <h1 class="h2" style="font-size:26px">방향족 제품은 <em>다양한 생활·산업 소재</em>의 원료가 됩니다</h1>
+    <div class="emap">
+      <div class="erow"><span class="from">PARA-XYLENE<small>파라자일렌 → TPA</small></span><span class="arw">→</span><span class="to"><b>옷 · 페트병</b><small>폴리에스터 섬유와 PET 생산에 사용되는 고순도 테레프탈산(PTA)의 원료로 활용됩니다</small></span></div>
+      <div class="erow"><span class="from">BENZENE<small>벤젠 → 페놀·사이클로헥산</small></span><span class="arw">→</span><span class="to"><b>나일론 · 세제 · 전자부품</b><small>합성수지·합성섬유·세제 등 다양한 화학제품의 기초 원료로 활용됩니다</small></span></div>
+      <div class="erow"><span class="from">TOLUENE · XYLENE<small>톨루엔·혼합자일렌</small></span><span class="arw">→</span><span class="to"><b>페인트 · 잉크 · 우레탄</b><small>도료·잉크·접착제 등의 용제와 폴리우레탄 등의 원료로 활용됩니다</small></span></div>
+    </div>
+    <p class="body-p" style="margin-top:18px;max-width:56em">납사와 LPG, 정유공정의 부생가스 등은 올레핀 생산의 원료로 활용됩니다. 다음 장에서는 다양한 원료를 활용해 <strong>에틸렌·프로필렌</strong> 등을 생산하는 올레핀 사업을 살펴봅니다.</p>
+  </div>
+  <div class="s-foot"><span>DATA — gscaltex.com/kr/Business/Aromatics · GS Caltex Sustainability Report 2025</span><span class="pg">15</span></div>
+</section>
+
+<!-- ==================================================================== CH.03 올레핀 -->
+<!-- 14. DIVIDER -->
+<section class="slide divider">
+  <div class="bg" style="background-image:url('../olefins/img/band-night.jpg')"></div><div class="scrim"></div>
+  <div class="d-no">03</div>
+  <div class="d-inner">
+    <div class="s-head"><span class="eyebrow">CHAPTER 03</span><span class="s-tag">OLEFINS</span></div>
+    <div class="d-en">OLEFINS</div><div class="d-kr">올레핀</div>
+    <p class="d-sub">납사와 LPG, 정유공정 부생가스 등 다양한 원료를 활용해 연간 <strong>90만 톤의 에틸렌</strong>을 생산합니다 — 약 2조 7천억 원을 투자한 <strong>MFC</strong>가 2022년 11월 준공됐습니다.</p>
+    <div class="d-points">
+      <div class="d-point"><div class="dp-v">90<span class="u">만 톤/년</span></div><div class="dp-l">에틸렌 생산능력</div></div>
+      <div class="d-point"><div class="dp-v">2.7<span class="u">조 원</span></div><div class="dp-l">총 투자 (최대)</div></div>
+      <div class="d-point"><div class="dp-v">2022.11<span class="u"></span></div><div class="dp-l">올레핀생산시설(MFC) 준공</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 15. 서사 (도입문 + OLEFIANT 어원) -->
+<section class="slide">
+  <div class="s-head"><span class="eyebrow">03 OLEFINS · 이름의 유래</span><span class="s-tag">CH.03</span></div>
+  <div class="s-body">
+    <div class="narr">
+      <p class="poem">납사와 LPG 등의 탄화수소를 <strong>고온에서 열분해</strong>해 더 작은 분자로 전환하고, 급랭·압축·분리 공정을 거쳐 <em>에틸렌과 프로필렌</em> 등 기초 석유화학 제품을 생산합니다.</p>
+      <div class="origin">
+        <div class="o-glyph">OLÉFIANT</div>
+        <div class="o-rom">Olefins · 기름을 만드는 기체</div>
+        <p>18세기 말, 화학자들은 에틸렌이 염소와 만나면 <strong>기름 같은 액체 방울</strong>이 생기는 것을 발견했습니다. 그래서 '기름을 만드는 기체(gaz oléfiant)'라는 이름을 붙였고 — 여기서 올레핀(Olefin)이 왔습니다.</p>
+        <p>에틸렌과 프로필렌은 탄소 간 <strong>이중결합(C=C)</strong>을 가진 대표적인 올레핀입니다. 반응성이 높아 폴리에틸렌(PE)·폴리프로필렌(PP)을 비롯한 다양한 <strong>석유화학 제품</strong>을 생산하는 기초 원료로 활용됩니다.</p>
+      </div>
+    </div>
+  </div>
+  <div class="s-foot"><span>DATA — gscaltex.com/kr/business/mfc</span><span class="pg">16</span></div>
+</section>
+
+<!-- 16. 메커니즘 (크래킹 3단계) -->
+<section class="slide">
+  <div class="s-head"><span class="eyebrow">MECHANISM · 열분해 공정</span><span class="s-tag">CH.03</span></div>
+  <div class="s-body">
+    <h1 class="h2" style="font-size:26px">고온의 열로 <em>탄화수소를 분해</em>합니다</h1>
+    <div class="steps3">
+      <div class="step">
+        <span class="st-no">01 — MIXED FEED · 원료 혼합</span>
+        <div class="st-fig"><svg viewBox="0 0 150 130"><rect class="mech-svg-line" x="12" y="30" width="30" height="18"/><line class="mech-svg-dim" x1="16" y1="62" x2="40" y2="62"/><line class="mech-svg-dim" x1="16" y1="72" x2="40" y2="72"/><circle class="mech-svg-dim" cx="20" cy="90" r="4"/><circle class="mech-svg-dim" cx="34" cy="94" r="4"/><path class="mech-svg-am" d="M48,66 C80,66 90,66 118,66"/><polygon class="mech-svg-amf" points="118,66 110,61 110,71"/><text class="mech-lab" x="12" y="118">납사·에탄·LPG</text></svg></div>
+        <h3>액체와 기체 원료를 <em>함께</em> 활용</h3>
+        <p>보통의 크래커(NCC)는 납사만 다루지만, <strong>MFC</strong>는 에탄·LPG 같은 기체 원료도 분해로에 함께 투입하고, 정유 부생가스는 분해로 후단으로 받아 활용합니다. 정유공장의 저부가가치 부산물이 원료가 됩니다.</p>
+        <span class="st-tag">이름의 <b>Mixed</b>가 바로 이것</span>
+      </div>
+      <div class="step">
+        <span class="st-no">02 — CRACKING · 열분해</span>
+        <div class="st-fig"><svg viewBox="0 0 150 130"><rect class="mech-svg-am" x="40" y="18" width="70" height="94"/><text class="mech-lab" x="55" y="40">FURNACE</text><path class="mech-svg-dim" d="M20,70 L48,70"/><path class="mech-svg-line" d="M56,70 l10,-10 l10,10 l10,-10"/><line class="mech-svg-am" x1="70" y1="52" x2="70" y2="88"/><path class="mech-svg-dim" d="M84,70 l10,-8 M100,60 l14,0"/><text class="mech-lab" x="62" y="104">↯ 高熱</text></svg></div>
+        <h3>고온의 열로 <em>분해</em>합니다</h3>
+        <p>분해로의 고온이 탄화수소의 긴 사슬을 분해합니다. 이후 급랭·압축·분리 공정을 거쳐 각각의 제품으로 생산됩니다.</p>
+        <span class="st-tag">끓는점 분리가 아닌 <b>열분해</b></span>
+      </div>
+      <div class="step">
+        <span class="st-no">03 — OLEFINS · 이중결합</span>
+        <div class="st-fig"><svg viewBox="0 0 150 130"><circle class="mech-svg-am" cx="48" cy="64" r="16"/><circle class="mech-svg-am" cx="102" cy="64" r="16"/><line class="mech-svg-am" x1="64" y1="59" x2="86" y2="59"/><line class="mech-svg-am" x1="64" y1="69" x2="86" y2="69"/><text class="mech-lab" x="42" y="68">C</text><text class="mech-lab" x="96" y="68">C</text><text class="mech-lab" x="55" y="118">C = C  이중결합</text></svg></div>
+        <h3>에틸렌과 프로필렌 등 <em>기초 석유화학 제품</em></h3>
+        <p>탄소 간 이중결합(C=C)은 반응성이 높아 다른 분자와 쉽게 결합합니다. 이러한 특성을 가진 <strong>에틸렌과 프로필렌</strong>이 기초 석유화학 제품으로 생산됩니다.</p>
+        <span class="st-tag">석유화학 제품의 <b>기초 원료</b></span>
+      </div>
+    </div>
+  </div>
+  <div class="s-foot"><span>DATA — MFC(Mixed Feed Cracker) · 2022.11 준공</span><span class="pg">17</span></div>
+</section>
+
+<!-- 17. 수치 (산출/원료) -->
+<section class="slide">
+  <div class="s-head"><span class="eyebrow">OUTPUT & FEED · 산출물과 원료</span><span class="s-tag">CH.03</span></div>
+  <div class="s-body">
+    <div class="two">
+      <div class="col">
+        <span class="kicker">OUTPUT · 주요 생산제품 (만 톤/년)</span>
+        <div class="capbar" style="margin-top:14px">
+          <div class="row"><span class="nm">에틸렌</span><div class="track"><div class="fill" style="width:100%"></div></div><span class="val">90</span></div>
+          <div class="row"><span class="nm">프로필렌</span><div class="track"><div class="fill" style="width:52%"></div></div><span class="val">47</span></div>
+          <div class="row"><span class="nm">열분해가솔린</span><div class="track"><div class="fill" style="width:50%"></div></div><span class="val">45</span></div>
+          <div class="row"><span class="nm">혼합C4</span><div class="track"><div class="fill" style="width:33%"></div></div><span class="val">30</span></div>
+        </div>
+        <div class="plist" style="margin-top:12px">
+          <div class="pcard"><div class="pc-code">ETHYLENE · 에틸렌</div><div class="pc-desc">폴리에틸렌(PE)·폴리스티렌(PS)·PVC·EVA 등 다양한 석유화학 제품의 기초 원료로 활용됩니다.</div></div>
+          <div class="pcard"><div class="pc-code">PYGAS · 열분해가솔린</div><div class="pc-desc">벤젠·톨루엔·자일렌 등 <b style="color:var(--ink)">방향족 제품</b>을 생산하는 원료로 활용됩니다.</div></div>
+        </div>
+      </div>
+      <div class="col">
+        <span class="kicker dim">FEED · 주요 원료 (최대, 만 톤/년)</span>
+        <div class="statrow" style="gap:22px;margin-top:14px">
+          <div class="stat"><div class="v" style="font-size:44px">230<span class="u">만 톤</span></div><div class="l">납사 (기본 원료)</div></div>
+          <div class="stat"><div class="v" style="font-size:44px">18<span class="u">만 톤</span></div><div class="l">LPG (유연 투입)</div></div>
+          <div class="stat"><div class="v" style="font-size:44px">32<span class="u">만 톤</span></div><div class="l">정유 부생가스</div></div>
+        </div>
+        <p class="body-p" style="margin-top:14px">MFC는 납사뿐 아니라 <strong>LPG와 정유공정의 부생가스</strong> 등 다양한 원료를 활용할 수 있습니다. 이를 통해 원료 선택의 유연성을 높이고, 정유공정과의 연계로 원료 경쟁력을 확보하고 있습니다.</p>
+        <div class="hr"></div>
+        <p class="body-p" style="margin-top:0">혼합C4는 합성고무와 ABS·나일론 등의 원료인 부타디엔을 생산하는 데 활용됩니다.</p>
+      </div>
+    </div>
+  </div>
+  <div class="s-foot"><span>DATA — 에틸렌 90·프로필렌 47·혼합C4 30·열분해가솔린 45 / 원료(최대) 납사 230·LPG 18·off-gas 32 (만 톤/년)</span><span class="pg">18</span></div>
+</section>
+
+<!-- 18. 연결 (MFC 프로젝트) -->
+<section class="slide">
+  <div class="s-head"><span class="eyebrow">04 THE PROJECT · MFC</span><span class="s-tag">CH.03</span></div>
+  <div class="s-body">
+    <h1 class="h2" style="font-size:26px">정유에서 석유화학으로 <em>사업 경쟁력</em>을 확대했습니다</h1>
+    <p class="lede" style="max-width:60em">GS칼텍스는 약 <strong style="color:var(--ink)">2조 7천억 원</strong>을 투자해 여수공장에 MFC를 건설하고 2022년 11월 준공했습니다. MFC 가동을 통해 연간 <strong style="color:var(--ink)">90만 톤의 에틸렌 생산능력</strong>을 확보하고, 정유공정과 석유화학공정을 연계해 원료 활용과 사업 포트폴리오를 확대했습니다.</p>
+    <div class="statrow" style="margin-top:28px;gap:56px">
+      <div class="stat"><div class="v">2.7<span class="u">조 원</span></div><div class="l">총 투자 규모 · 창사 이래 최대</div></div>
+      <div class="stat"><div class="v">2022.11<span class="u"></span></div><div class="l">올레핀생산시설(MFC) 준공 · 여수</div></div>
+      <div class="stat"><div class="v">약 10<span class="u">%</span></div><div class="l">에너지 사용량 절감 (기존 대비)</div></div>
+      <div class="stat"><div class="v">7.6<span class="u">만 톤</span></div><div class="l">연간 CO₂ 배출 저감</div></div>
+    </div>
+    <p class="body-p" style="margin-top:28px;max-width:56em">MFC에서 생산된 에틸렌과 프로필렌은 <strong>중합공정</strong>을 거쳐 폴리에틸렌(PE)과 폴리프로필렌(PP) 등 다양한 폴리머 제품으로 전환됩니다. 다음 장에서는 폴리머 사업을 살펴봅니다.</p>
+  </div>
+  <div class="s-foot"><span>DATA — gscaltex.com/kr/business/mfc · 투자 2조 7천억 원 · 2022.11 준공</span><span class="pg">19</span></div>
+</section>
+
+<!-- ==================================================================== CH.04 폴리머 -->
+<!-- 19. DIVIDER -->
+<section class="slide divider">
+  <div class="bg" style="background-image:url('../polymer/img/band-ship.jpg')"></div><div class="scrim"></div>
+  <div class="d-no">04</div>
+  <div class="d-inner">
+    <div class="s-head"><span class="eyebrow">CHAPTER 04</span><span class="s-tag">POLYMER</span></div>
+    <div class="d-en">POLYMER</div><div class="d-kr">폴리머</div>
+    <p class="d-sub">에틸렌과 프로필렌에서 다양한 산업 소재로 — 연간 <strong>98만 톤</strong>의 폴리머 생산능력을 갖추고 있습니다.</p>
+    <div class="d-points">
+      <div class="d-point"><div class="dp-v">98<span class="u">만 톤/년</span></div><div class="dp-l">폴리머 생산능력</div></div>
+      <div class="d-point"><div class="dp-v">9.5<span class="u">억 달러</span></div><div class="dp-l">폴리머 매출</div></div>
+      <div class="d-point"><div class="dp-v">1988<span class="u"></span></div><div class="dp-l">하이프린 시작</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 20. 서사 (도입문 + POLY MEROS 어원) -->
+<section class="slide">
+  <div class="s-head"><span class="eyebrow">04 POLYMER · 이름의 유래</span><span class="s-tag">CH.04</span></div>
+  <div class="s-body">
+    <div class="narr">
+      <p class="poem">에틸렌과 프로필렌 등 기초 석유화학 제품은 <strong>중합공정</strong>을 거쳐 폴리에틸렌(PE)과 폴리프로필렌(PP) 등 다양한 <em>폴리머 제품</em>으로 전환됩니다.</p>
+      <div class="origin">
+        <div class="o-glyph">POLY · MEROS</div>
+        <div class="o-rom">Polymer · 많은 조각들</div>
+        <p>그리스어 <strong>poly(많이)</strong>와 <strong>meros(조각)</strong> — 폴리머는 말 그대로 '많은 조각으로 이루어진 것'입니다. 한자어로는 <strong>중합체(重合體)</strong>, '거듭 합쳐진 물질'이라는 뜻이죠.</p>
+        <p>작은 분자인 <strong>단량체(Monomer)</strong>가 반복적으로 결합해 만들어지는 고분자 물질로, 중합공정을 거쳐 필름·용기·파이프·자동차 부품 등 다양한 제품의 소재가 됩니다.</p>
+      </div>
+    </div>
+  </div>
+  <div class="s-foot"><span>DATA — gspolymer.com · GS Caltex Sustainability Report 2025</span><span class="pg">20</span></div>
+</section>
+
+<!-- 21. 메커니즘 (중합 3단계) -->
+<section class="slide">
+  <div class="s-head"><span class="eyebrow">MECHANISM · 중합공정</span><span class="s-tag">CH.04</span></div>
+  <div class="s-body">
+    <h1 class="h2" style="font-size:26px">가공하기 쉬운 <em>펠릿 형태</em>로 생산합니다</h1>
+    <div class="steps3">
+      <div class="step">
+        <span class="st-no">01 — MONOMER · 단량체</span>
+        <div class="st-fig"><svg viewBox="0 0 150 130"><circle class="mech-svg-dim" cx="30" cy="40" r="8"/><circle class="mech-svg-dim" cx="70" cy="30" r="8"/><circle class="mech-svg-dim" cx="110" cy="48" r="8"/><circle class="mech-svg-dim" cx="45" cy="80" r="8"/><circle class="mech-svg-dim" cx="90" cy="90" r="8"/><circle class="mech-svg-dim" cx="120" cy="86" r="8"/><text class="mech-lab" x="40" y="122">단량체(Monomer)</text></svg></div>
+        <h3>폴리머를 만드는 <em>기초 원료</em></h3>
+        <p>에틸렌과 프로필렌은 폴리에틸렌(PE)과 폴리프로필렌(PP)을 생산하는 대표적인 <strong>단량체</strong>입니다.</p>
+        <span class="st-tag">단량체 <b>(monomer)</b></span>
+      </div>
+      <div class="step">
+        <span class="st-no">02 — POLYMERIZATION · 중합</span>
+        <div class="st-fig"><svg viewBox="0 0 150 130"><circle class="mech-svg-amf" cx="70" cy="24" r="5"/><text class="mech-lab" x="80" y="28">촉매</text><line class="mech-svg-am" x1="20" y1="66" x2="128" y2="66"/><circle class="mech-svg-am" cx="24" cy="66" r="8"/><circle class="mech-svg-am" cx="50" cy="66" r="8"/><circle class="mech-svg-am" cx="76" cy="66" r="8"/><circle class="mech-svg-am" cx="102" cy="66" r="8"/><circle class="mech-svg-am" cx="126" cy="66" r="8"/><text class="mech-lab" x="42" y="118">(C₂H₄)ₙ 사슬</text></svg></div>
+        <h3>단량체를 결합해 <em>고분자</em>를 만듭니다</h3>
+        <p>지글러-나타·메탈로센 등의 <strong>촉매</strong>와 반응시켜 단량체를 긴 사슬 형태의 고분자로 전환하는 과정을 <strong>중합(重合)</strong>이라고 합니다.</p>
+        <span class="st-tag">촉매·공정 조건에 따라 <b>물성 구현</b></span>
+      </div>
+      <div class="step">
+        <span class="st-no">03 — PELLET · 펠릿</span>
+        <div class="st-fig"><svg viewBox="0 0 150 130"><rect class="mech-svg-am" x="28" y="46" width="22" height="14" rx="7"/><rect class="mech-svg-am" x="58" y="60" width="22" height="14" rx="7"/><rect class="mech-svg-am" x="88" y="44" width="22" height="14" rx="7"/><rect class="mech-svg-am" x="48" y="78" width="22" height="14" rx="7"/><rect class="mech-svg-am" x="82" y="74" width="22" height="14" rx="7"/><text class="mech-lab" x="42" y="118">펠릿(Pellet)</text></svg></div>
+        <h3>가공하기 쉬운 <em>펠릿 형태</em></h3>
+        <p>중합된 폴리머는 긴 사슬이 무수히 얽혀 있는 상태입니다. 이를 <strong>압출·냉각·절단</strong>해 쌀알 크기의 <strong>펠릿</strong>으로 만들며, 이후 다양한 가공공정을 거쳐 필름·용기·파이프·자동차 부품 등에 활용됩니다.</p>
+        <span class="st-tag">연간 폴리머 <b>98만 톤</b></span>
+      </div>
+    </div>
+  </div>
+  <div class="s-foot"><span>DATA — gspolymer.com (사업안내)</span><span class="pg">21</span></div>
+</section>
+
+<!-- 22. 수치 (3 폴리머) -->
+<section class="slide">
+  <div class="s-head"><span class="eyebrow">CAPACITY · 3개 주요 제품, 연간 98만 톤</span><span class="s-tag">CH.04</span></div>
+  <div class="s-body">
+    <div class="two">
+      <div class="col">
+        <div class="capbar" style="margin-top:6px">
+          <div class="row"><span class="nm">폴리에틸렌</span><div class="track"><div class="fill" style="width:100%"></div></div><span class="val">50</span></div>
+          <div class="row"><span class="nm">복합수지</span><div class="track"><div class="fill" style="width:60%"></div></div><span class="val">30</span></div>
+          <div class="row"><span class="nm">폴리프로필렌</span><div class="track"><div class="fill" style="width:36%"></div></div><span class="val">18</span></div>
+        </div>
+        <p class="body-p" style="font-family:var(--font-mono);font-size:11px;color:var(--ink-faint);margin-top:4px">단위: 만 톤/년 · 50 + 30 + 18 = 98</p>
+        <div class="hr"></div>
+        <span class="kicker dim">GLOBAL · 2025년 기준</span>
+        <div class="statrow" style="gap:24px;margin-top:12px">
+          <div class="stat"><div class="v" style="font-size:38px">9.5<span class="u">억 달러</span></div><div class="l">총 매출</div></div>
+          <div class="stat"><div class="v" style="font-size:38px">84.4<span class="u">만 톤</span></div><div class="l">연간 판매량</div></div>
+          <div class="stat"><div class="v" style="font-size:38px">3<span class="u">개</span></div><div class="l">해외 생산법인</div></div>
+        </div>
+        <p class="body-p" style="font-size:11px;margin-top:6px">해외 생산법인 중국 2 · 체코 — 여수·진주 공장, 중국 랑팡·쑤저우·상하이, 체코 카르비나, 이탈리아 밀라노, 일본 도쿄, 인도 첸나이</p>
+      </div>
+      <div class="col">
+        <div class="plist">
+          <div class="pcard"><div class="pc-top"><span class="pc-code">PE · SINCE 2022</span><span class="pc-from">50만 톤/년</span></div><h4>폴리에틸렌</h4><div class="pc-desc">MFC와 함께 가동을 시작한 최신 설비. 일상에서 가장 널리 쓰이는 플라스틱.</div><div class="pc-out"><span class="chip out">필름</span><span class="chip out">파이프</span><span class="chip out">용기</span></div></div>
+          <div class="pcard"><div class="pc-top"><span class="pc-code">COMPOUND · SINCE 1992</span><span class="pc-from">30만 톤/년</span></div><h4>복합수지</h4><div class="pc-desc">PP·PE에 고무·충진제·첨가제를 처방해 물성을 맞춤 설계. 도장성 소재·LFT 국내 최초 개발.</div><div class="pc-out"><span class="chip out">자동차 내·외장재</span><span class="chip out">가전 부품</span></div></div>
+          <div class="pcard"><div class="pc-top"><span class="pc-code">PP · SINCE 1988</span><span class="pc-from">18만 톤/년</span></div><h4>폴리프로필렌</h4><div class="pc-desc">5대 범용 수지. 생수병용·발포용 원료를 국내 최초 개발한 원조 사업.</div><div class="pc-out"><span class="chip out">자동차 내·외장재</span><span class="chip out">가전제품 부품</span><span class="chip out">식품용기</span><span class="chip out">필름</span><span class="chip out">섬유</span></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="s-foot"><span>DATA — gspolymer.com (2025년 기준) · PE 50·복합수지 30·PP 18 = 98만 톤/년 · 매출 9.5억 달러 · 판매 84.4만 톤</span><span class="pg">22</span></div>
+</section>
+
+<!-- 23. 연결 (하이프린 타임라인) -->
+<section class="slide">
+  <div class="s-head"><span class="eyebrow">HERITAGE · 폴리머 사업의 성장 과정</span><span class="s-tag">CH.04</span></div>
+  <div class="s-body">
+    <h1 class="h2" style="font-size:26px">1988년 폴리프로필렌에서 시작해 <em>고기능성 소재</em>로 확장해 왔습니다</h1>
+    <div class="two" style="margin-top:18px">
+      <div class="col">
+        <div class="tl">
+          <div class="ti"><div class="yr">1988</div><div class="tx"><b>폴리프로필렌 사업 시작</b> — 유동층 기상 중합(Unipol) 도입. 윤활유 용기용·생수병용·발포용 원료 국내 최초 개발</div></div>
+          <div class="ti"><div class="yr">1998</div><div class="tx"><b>대덕 중앙기술연구소 준공</b> — 도장성 원료, 흡음 파이프용 원료 등 고기능성 소재 개발의 거점</div></div>
+          <div class="ti"><div class="yr">2001</div><div class="tx"><b>프로필렌 전량 자체 조달 시작</b> — 정유 고도화설비(RFCC)가 폴리머의 원료 창고로 (CH.01 정유와 연결)</div></div>
+          <div class="ti"><div class="yr">2022</div><div class="tx"><b>올레핀생산시설(MFC) 준공, 폴리에틸렌 50만 톤 시대</b> — 올레핀-폴리머 수직 통합 완성 (CH.03 올레핀과 연결)</div></div>
+        </div>
+      </div>
+      <div class="col" style="justify-content:center">
+        <p class="body-p" style="font-size:15px;max-width:24em">1988년 폴리프로필렌 생산으로 시작한 폴리머 사업은 지속적인 설비 투자와 기술 개발을 통해 <strong>고기능성 소재</strong>로 영역을 넓혀 왔습니다.</p>
+        <div class="hr"></div>
+        <p class="body-p" style="margin-top:0;max-width:24em">다음 장에서는 정유 고도화공정에서 생산되는 미전환유(UCO)를 원료로 <strong>고품질 베이스오일</strong>을 생산하는 사업을 살펴봅니다.</p>
+      </div>
+    </div>
+  </div>
+  <div class="s-foot"><span>DATA — gspolymer.com · 하이프린(HIPRENE) 연혁</span><span class="pg">23</span></div>
+</section>
+
+<!-- ==================================================================== CH.05 베이스오일 -->
+<!-- 24. DIVIDER -->
+<section class="slide divider">
+  <div class="bg" style="background-image:url('../baseoil/img/band-towers.jpg')"></div><div class="scrim"></div>
+  <div class="d-no">05</div>
+  <div class="d-inner">
+    <div class="s-head"><span class="eyebrow">CHAPTER 05</span><span class="s-tag">BASE OIL</span></div>
+    <div class="d-en">BASE OIL</div><div class="d-kr">베이스오일</div>
+    <p class="d-sub">하루 <strong>3만 배럴</strong>의 고품질 베이스오일을 생산하고, 생산량의 <strong>70% 이상</strong>을 해외 시장에 공급하고 있습니다.</p>
+    <div class="d-points">
+      <div class="d-point"><div class="dp-v">3<span class="u">만 배럴/일</span></div><div class="dp-l">생산능력</div></div>
+      <div class="d-point"><div class="dp-v">70<span class="u">%+</span></div><div class="dp-l">수출 비중</div></div>
+      <div class="d-point"><div class="dp-v">2007.11<span class="u"></span></div><div class="dp-l">생산 시작</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 25. 서사 (도입문 + BASE 의미) -->
+<section class="slide">
+  <div class="s-head"><span class="eyebrow">05 BASE OIL · 이름의 의미</span><span class="s-tag">CH.05</span></div>
+  <div class="s-body">
+    <div class="narr">
+      <p class="poem">정유 고도화시설의 수첨분해공정(HCR)에서 생산되는 <strong>미전환유(UCO)</strong>를 원료로, 추가적인 정제 과정을 거쳐 <em>고품질 베이스오일</em>로 전환합니다.</p>
+      <div class="origin">
+        <div class="o-glyph">BASE OIL</div>
+        <div class="o-rom">Base Oil · 윤활유의 기본</div>
+        <p>이름 그대로 '기본(base)이 되는 오일'. 엔진오일 같은 윤활유 완제품은 <strong>90% 이상이 베이스오일</strong>이고, 그 위에서 소량의 첨가제가 성능을 조율합니다. 완제품의 대부분을 차지하는 만큼 베이스오일의 품질이 윤활유 성능의 기본을 좌우합니다.</p>
+        <p>베이스오일에는 국제 등급(API Group)이 있습니다. 옛 방식의 Gr.I보다 불순물이 적고 점도가 안정적인 <strong>Gr.II</strong>, 그리고 프리미엄 <strong>Gr.III</strong> — GS칼텍스는 이 고품질 구간을 최첨단 수첨분해공법으로 생산하며, <strong>Kixx LUBO</strong>라는 이름으로 세계에 공급합니다.</p>
+      </div>
+    </div>
+  </div>
+  <div class="s-foot"><span>DATA — gscaltex.com/kr/Business/BaseOil</span><span class="pg">24</span></div>
+</section>
+
+<!-- 26. 메커니즘 (이성화 3단계) -->
+<section class="slide">
+  <div class="s-head"><span class="eyebrow">MECHANISM · 베이스오일 생산공정</span><span class="s-tag">CH.05</span></div>
+  <div class="s-body">
+    <h1 class="h2" style="font-size:26px">이성화 탈왁스 등 고도화 공정을 거쳐 <em>베이스오일의 성능</em>을 높입니다</h1>
+    <div class="steps3">
+      <div class="step">
+        <span class="st-no">01 — FEEDSTOCK · 원료</span>
+        <div class="st-fig"><svg viewBox="0 0 150 130"><path class="mech-svg-dim" d="M18,64 C34,40 40,88 56,64 S78,40 94,64 S118,88 132,60"/><path class="mech-svg-dim" d="M20,84 C40,66 44,102 64,80 S92,60 110,82"/><text class="mech-lab" x="28" y="118">미전환유(UCO)</text></svg></div>
+        <h3>고도화설비가 남긴 <em>미전환유</em></h3>
+        <p>정유 챕터의 수첨분해공정(HCR)이 미처 다 쪼개지 못한 기름 — 미전환유. <strong>분자가 엉켜 있는</strong> 이 무거운 원료가 베이스오일의 출발점입니다.</p>
+        <span class="st-tag">쓰임 낮던 원료가 <b>출발점</b>으로</span>
+      </div>
+      <div class="step">
+        <span class="st-no">02 — ISO-DEWAXING · 이성화 탈왁스</span>
+        <div class="st-fig"><svg viewBox="0 0 150 130"><line class="mech-svg-am" x1="18" y1="52" x2="132" y2="52"/><line class="mech-svg-am" x1="18" y1="66" x2="132" y2="66"/><line class="mech-svg-am" x1="18" y1="80" x2="132" y2="80"/><text class="mech-lab" x="22" y="118">이성화 처리된 분자</text></svg></div>
+        <h3>이성화 탈왁스로 <em>성능을 높입니다</em></h3>
+        <p><strong>2단계 수첨분해</strong>와 이성화 탈왁스, 수첨처리 등의 공정을 통해 불순물을 제거하고, 온도 변화에서도 점도 성능을 유지할 수 있도록 점도 특성과 저온 유동성을 개선합니다.</p>
+        <span class="st-tag">저온유동성·<b>점도 특성 개선</b></span>
+      </div>
+      <div class="step">
+        <span class="st-no">03 — PREMIUM · 프리미엄 등급</span>
+        <div class="st-fig"><svg viewBox="0 0 150 130"><path class="mech-svg-am" d="M65,24 C65,24 92,64 92,84 A27,27 0 1 1 38,84 C38,64 65,24 65,24 Z"/><ellipse class="mech-svg-am" cx="56" cy="82" rx="6" ry="9" opacity=".6"/><text class="mech-lab" x="34" y="126">Gr.II · Gr.III</text></svg></div>
+        <h3>고르게 펴진 분자가 <em>맑은 프리미엄</em></h3>
+        <p>같은 원료에서 <strong>Gr.II와 Gr.III를 유연하게 생산</strong>. 특히 Gr.III는 높은 점도지수로 고급 자동차·산업용 윤활유의 심장이 됩니다.</p>
+        <span class="st-tag">배기 규제 강화 = <b>수요 증가</b></span>
+      </div>
+    </div>
+  </div>
+  <div class="s-foot"><span>DATA — 수첨분해(Hydrocracked) 베이스오일 · Kixx LUBO</span><span class="pg">25</span></div>
+</section>
+
+<!-- 27. 수치 (등급 + 생산/수출) -->
+<section class="slide">
+  <div class="s-head"><span class="eyebrow">CAPACITY · 하루 3만 배럴 · 생산량의 70% 이상 수출</span><span class="s-tag">CH.05</span></div>
+  <div class="s-body">
+    <div class="two">
+      <div class="col">
+        <div class="statrow" style="gap:34px;margin-top:6px">
+          <div class="stat"><div class="v">3<span class="u">만 배럴/일</span></div><div class="l">생산능력 · Hydrocracked</div></div>
+          <div class="stat"><div class="v">70<span class="u">%+</span></div><div class="l">해외 수출 비중</div></div>
+        </div>
+        <div class="hr"></div>
+        <span class="kicker dim">SINCE 2007 · 18년 동안 약 2배로</span>
+        <div class="flow-strip" style="margin-top:12px">
+          <span class="node">1.6만 배럴/일<br><small style="color:var(--ink-faint)">2007.11 시작</small></span><span class="arw">→</span>
+          <span class="node hl">3.0만 배럴/일<br><small style="color:var(--ink-faint)">TODAY</small></span><span class="arw">→</span>
+          <span class="node">수출 70%+<br><small style="color:var(--ink-faint)">아시아→미주·유럽</small></span>
+        </div>
+        <p class="body-p" style="margin-top:16px">2007년 11월 제2 고도화설비와 함께 베이스오일 생산을 시작했습니다. 하루 1만 6천 배럴 규모로 출발한 설비는 증설을 거쳐 현재 <strong>3만 배럴</strong>의 생산능력을 갖추고 있으며, 생산량의 <strong>70% 이상</strong>을 해외 시장에 공급하고 있습니다.</p>
+      </div>
+      <div class="col">
+        <span class="kicker">KIXX LUBO · 등급 포트폴리오</span>
+        <div class="plist" style="margin-top:12px">
+          <div class="pcard" style="--gc:var(--g4)"><div class="pc-top"><span class="pc-code">GR.II</span><span class="pc-from">KIXX LUBO</span></div><h4>Group II 베이스오일</h4><div class="pc-desc">자동차용·산업용·선박용 윤활유의 몸통.</div><div class="pc-out"><span class="chip out">150N</span><span class="chip out">220N</span><span class="chip out">600N</span></div></div>
+          <div class="pcard" style="--gc:var(--amber)"><div class="pc-top"><span class="pc-code">GR.III</span><span class="pc-from">PREMIUM · 높은 점도지수</span></div><h4>Group III 베이스오일</h4><div class="pc-desc">온도 변화에 강한 프리미엄 등급. 고급 엔진오일·산업용 윤활유의 기반.</div><div class="pc-out"><span class="chip out">4cSt</span><span class="chip out">6cSt</span><span class="chip out">8cSt</span></div></div>
+          <div class="pcard" style="--gc:var(--g3)"><div class="pc-top"><span class="pc-code">SPECIALTY</span><span class="pc-from">고부가가치</span></div><h4>White Oil · Process Oil</h4><div class="pc-desc">더 높은 순도가 필요한 특수 용도까지 포트폴리오를 확장.</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="s-foot"><span>DATA — 3만 배럴/일 · 수출 70%+ · 2007.11 시작(1.6만) · Gr.II 150·220·600N · Gr.III 4·6·8cSt</span><span class="pg">26</span></div>
+</section>
+
+<!-- 28. 연결 (다음 장) -->
+<section class="slide">
+  <div class="s-head"><span class="eyebrow">TO THE NEXT · 윤활유로 이어집니다</span><span class="s-tag">CH.05</span></div>
+  <div class="s-body">
+    <div class="two">
+      <div class="col" style="justify-content:center">
+        <h1 class="h2" style="font-size:28px">고품질 베이스오일은 <em>윤활유의 주요 원료</em>가 됩니다</h1>
+        <p class="body-p" style="font-size:15px;margin-top:16px;max-width:26em">환경 규제가 강화되면서 고품질 베이스오일에 대한 수요는 지속적으로 확대되고 있습니다. GS칼텍스는 아시아·태평양을 비롯해 미주·유럽 시장에 제품을 공급하고 있습니다.</p>
+      </div>
+      <div class="col" style="justify-content:center">
+        <p class="poem" style="font-size:26px">베이스오일에 용도와 요구 성능에 맞는 <strong>첨가제</strong>를 배합하면 <em>윤활유</em>가 됩니다. 다음 장에서는 <strong>Kixx 윤활유 사업</strong>을 살펴봅니다.</p>
+      </div>
+    </div>
+  </div>
+  <div class="s-foot"><span>DATA — gscaltex.com/kr/Business/BaseOil · GS Caltex Sustainability Report 2025</span><span class="pg">27</span></div>
+</section>
+
+<!-- ==================================================================== CH.06 윤활유 -->
+<!-- 29. DIVIDER -->
+<section class="slide divider">
+  <div class="bg" style="background-image:url('../lubricants/img/band-oil.jpg')"></div><div class="scrim"></div>
+  <div class="d-no">06</div>
+  <div class="d-inner">
+    <div class="s-head"><span class="eyebrow">FINAL CHAPTER 06</span><span class="s-tag">LUBRICANTS</span></div>
+    <div class="d-en">LUBRICANTS</div><div class="d-kr">윤활유</div>
+    <p class="d-sub">자체 생산한 고품질 베이스오일과 축적된 기술력을 바탕으로 하루 <strong>9천 배럴</strong>, <strong>300여 종</strong>의 윤활유를 생산합니다.</p>
+    <div class="d-points">
+      <div class="d-point"><div class="dp-v">9<span class="u">천 배럴/일</span></div><div class="dp-l">생산능력</div></div>
+      <div class="d-point"><div class="dp-v">300<span class="u">여 종</span></div><div class="dp-l">Kixx 제품</div></div>
+      <div class="d-point"><div class="dp-v">10<span class="u">년 연속</span></div><div class="dp-l">퍼스트브랜드 대상</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 30. 서사 (도입문 + LUBRICUS 어원) -->
+<section class="slide">
+  <div class="s-head"><span class="eyebrow">06 LUBRICANTS · 이름의 유래</span><span class="s-tag">CH.06</span></div>
+  <div class="s-body">
+    <div class="narr">
+      <p class="poem">윤활유는 움직이는 표면 사이에 <strong>유막</strong>을 형성해 직접적인 접촉을 줄이고, <em>마찰과 마모를 방지</em>합니다.</p>
+      <div class="origin">
+        <div class="o-glyph">LUBRICUS</div>
+        <div class="o-rom">Lubricants · 미끄러운</div>
+        <p>윤활유는 맞닿아 움직이는 두 표면 사이에 얇은 <strong>유막(油膜)</strong>을 형성해 마찰과 마모, 열을 줄입니다. 자동차 엔진부터 공장 설비까지 움직임이 있는 다양한 분야에 사용됩니다.</p>
+        <p>윤활유는 베이스오일에 용도와 요구 성능에 맞는 <strong>첨가제</strong>를 배합해 만들어지며, 베이스오일이 완제품의 <strong>90% 이상</strong>을 차지합니다. GS칼텍스는 <strong>자체 생산한 고품질 베이스오일</strong>과 축적된 배합 기술을 바탕으로 Kixx 제품을 생산합니다.</p>
+      </div>
+    </div>
+  </div>
+  <div class="s-foot"><span>DATA — gscaltex.com/kr/Business/Lubricants · kixxoil.com</span><span class="pg">28</span></div>
+</section>
+
+<!-- 31. 메커니즘 (유막 3단계) -->
+<section class="slide">
+  <div class="s-head"><span class="eyebrow">MECHANISM · 유막의 형성과 역할</span><span class="s-tag">CH.06</span></div>
+  <div class="s-body">
+    <h1 class="h2" style="font-size:26px">기계가 움직일 때 표면 사이에 <em>마찰</em>이 발생합니다</h1>
+    <div class="steps3">
+      <div class="step">
+        <span class="st-no">01 — FRICTION · 마찰</span>
+        <div class="st-fig"><svg viewBox="0 0 150 130"><path class="mech-svg-dim" d="M14,54 l12,-8 l12,8 l12,-8 l12,8 l12,-8 l12,8 l12,-8 l12,8 l12,-8"/><path class="mech-svg-dim" d="M14,66 l12,8 l12,-8 l12,8 l12,-8 l12,8 l12,-8 l12,8 l12,-8 l12,8"/><text class="mech-lab" x="30" y="118">거친 두 표면</text></svg></div>
+        <h3>거친 표면이 <em>직접</em> 맞닿습니다</h3>
+        <p>아무리 매끈해 보여도 금속 표면은 미세하게 울퉁불퉁합니다. 그대로 움직이면 긁히고, 뜨거워지고, 닳아 없어집니다 — <strong>마찰과 마모</strong>.</p>
+        <span class="st-tag">모든 기계의 <b>숙제</b></span>
+      </div>
+      <div class="step">
+        <span class="st-no">02 — OIL FILM · 유막</span>
+        <div class="st-fig"><svg viewBox="0 0 150 130"><path class="mech-svg-line" d="M14,48 l12,-6 l12,6 l12,-6 l12,6 l12,-6 l12,6 l12,-6 l12,6 l12,-6"/><path class="mech-svg-line" d="M14,82 l12,6 l12,-6 l12,6 l12,-6 l12,6 l12,-6 l12,6 l12,-6 l12,6"/><circle class="mech-svg-amf" cx="30" cy="65" r="3"/><circle class="mech-svg-amf" cx="54" cy="65" r="3"/><circle class="mech-svg-amf" cx="78" cy="65" r="3"/><circle class="mech-svg-amf" cx="102" cy="65" r="3"/><circle class="mech-svg-amf" cx="126" cy="65" r="3"/><text class="mech-lab" x="34" y="118">유막이 스며듦</text></svg></div>
+        <h3>그 사이로 <em>얇은 막</em>이 스며듭니다</h3>
+        <p>윤활유가 두 표면 사이에 <strong>유막</strong>을 만들면, 금속과 금속은 더 이상 직접 만나지 않습니다. 서로 긁던 표면이 기름 위를 미끄러지게 되는 것.</p>
+        <span class="st-tag">이 막이 엔진의 <b>수명</b>을 결정</span>
+      </div>
+      <div class="step">
+        <span class="st-no">03 — SMOOTH · 부드러움</span>
+        <div class="st-fig"><svg viewBox="0 0 150 130"><line class="mech-svg-line" x1="14" y1="50" x2="136" y2="50"/><line class="mech-svg-line" x1="14" y1="80" x2="136" y2="80"/><path class="mech-svg-am" d="M40,65 L110,65"/><polygon class="mech-svg-amf" points="110,65 101,60 101,70"/><text class="mech-lab" x="34" y="116">부드러운 움직임</text></svg></div>
+        <h3>마찰은 줄고, <em>움직임은 살아</em>납니다</h3>
+        <p>차가 더 힘차게 달리도록, 선박이 유유히 나아가도록, 공장 기계가 쉼 없이 돌도록. 자체 베이스오일에 <strong>첨가제의 과학</strong>을 더한 300여 종의 Kixx가 저마다의 움직임을 맡습니다.</p>
+        <span class="st-tag">하루 <b>9천 배럴</b> · KIXX</span>
+      </div>
+    </div>
+  </div>
+  <div class="s-foot"><span>DATA — kixxoil.com (브랜드 스토리)</span><span class="pg">29</span></div>
+</section>
+
+<!-- 32. 수치 (생산/브랜드 + 3무대) -->
+<section class="slide">
+  <div class="s-head"><span class="eyebrow">CAPACITY · 윤활유 생산능력과 제품군</span><span class="s-tag">CH.06</span></div>
+  <div class="s-body">
+    <div class="statrow" style="gap:52px;margin-top:6px">
+      <div class="stat"><div class="v">9<span class="u">천 배럴/일</span></div><div class="l">생산능력 · SINCE 1969 인천공장</div></div>
+      <div class="stat"><div class="v">300<span class="u">여 종</span></div><div class="l">Kixx 윤활유 제품</div></div>
+      <div class="stat"><div class="v">10<span class="u">년 연속</span></div><div class="l">대한민국 퍼스트브랜드 대상</div></div>
+    </div>
+    <div class="hr"></div>
+    <span class="kicker dim">WE LUBRICATE · 세 무대</span>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:14px">
+      <div class="pcard"><div class="pc-code">MOBILITY</div><h4>자동차용 윤활유</h4><div class="pc-desc">승용·상용 엔진오일부터 변속기·엑슬 오일까지. 엔진을 보호하고 성능을 끌어올립니다.</div><div class="pc-out"><span class="chip">승용 엔진오일</span><span class="chip">상용 엔진오일</span><span class="chip">변속기·엑슬</span></div></div>
+      <div class="pcard"><div class="pc-code">INDUSTRY</div><h4>산업용 윤활유</h4><div class="pc-desc">공장의 기계와 건설현장의 장비가 쉼 없이 돌아가도록, 산업의 움직임을 책임집니다.</div><div class="pc-out"><span class="chip">유압작동유</span><span class="chip">산업유</span><span class="chip">그리스</span></div></div>
+      <div class="pcard" style="--gc:var(--amber)"><div class="pc-code" style="color:var(--amber)">FUTURE</div><h4>미래를 위한 윤활유</h4><div class="pc-desc">바이오 기반 엔진오일, 데이터센터 서버를 식히는 액침냉각유까지 — 무대가 넓어집니다.</div><div class="pc-out"><span class="chip out">바이오 엔진오일</span><span class="chip out">액침냉각유</span></div></div>
+    </div>
+  </div>
+  <div class="s-foot"><span>DATA — 윤활유 생산능력 9천 배럴/일 · Kixx 300여 종 · 퍼스트브랜드 대상(윤활유 부문) 10년 연속</span><span class="pg">30</span></div>
+</section>
+
+<!-- 33. 연결 (Kixx 타임라인) -->
+<section class="slide">
+  <div class="s-head"><span class="eyebrow">SINCE 1969 · KIXX</span><span class="s-tag">CH.06</span></div>
+  <div class="s-body">
+    <h1 class="h2" style="font-size:26px">1969년 생산을 시작해 <em>Kixx</em> 브랜드로 이어지고 있습니다</h1>
+    <div class="two" style="margin-top:18px">
+      <div class="col">
+        <div class="tl">
+          <div class="ti"><div class="yr">1969</div><div class="tx"><b>인천공장, 윤활유 생산 시작</b> — 반세기 넘는 축적의 출발점</div></div>
+          <div class="ti"><div class="yr">2005</div><div class="tx"><b>윤활유 브랜드 Kixx 출범</b> — 자동차용과 산업용을 아우르는 대한민국 대표 브랜드로</div></div>
+          <div class="ti"><div class="yr">2010</div><div class="tx"><b>글로벌 시장 진출</b> — 인도·러시아·베트남을 시작으로 세계 각국에 Kixx를 공급</div></div>
+          <div class="ti"><div class="yr">TODAY</div><div class="tx"><b>퍼스트브랜드 대상 10년 연속</b> — 글로벌 No.1을 향해 7개 언어로 만나는 브랜드. 여수의 베이스오일에서 세계의 엔진까지</div></div>
+        </div>
+      </div>
+      <div class="col" style="justify-content:center">
+        <p class="poem" style="font-size:26px">1969년 인천공장에서 시작된 윤활유 생산은 50년 넘게 이어져 왔습니다. 2005년 <strong>Kixx</strong> 브랜드를 출범해 자동차용부터 산업용까지 다양한 제품을 <em>국내외 시장</em>에 공급하고 있습니다.</p>
+      </div>
+    </div>
+  </div>
+  <div class="s-foot"><span>DATA — kixxoil.com · 1969 인천 생산 시작 · 2005 Kixx 출범 · 2010 글로벌 진출</span><span class="pg">31</span></div>
+</section>
+
+<!-- ============ 34. CLOSING ============ -->
+<section class="slide closing">
+  <div class="bg"></div><div class="scrim"></div>
+  <div class="wrap">
+    <div class="s-head"><span class="eyebrow">FROM ENERGY TO MATERIALS · GS칼텍스의 사업</span><span class="s-tag">GS CALTEX</span></div>
+    <p class="big">원유에서 시작한 GS칼텍스의 사업은 정유를 기반으로 <em>석유화학·베이스오일·윤활유</em>까지 확장되어 왔습니다. 서로 다른 사업은 원료와 공정, 기술로 유기적으로 연결되며 에너지와 다양한 산업 소재를 생산하고 있습니다. 에너지에서 소재까지, <strong>GS칼텍스는 더 나은 미래를 위한 경쟁력</strong>을 만들어갑니다.</p>
+    <p class="source">
+      <b>DATA</b> — gscaltex.com/kr/business · gspolymer.com · kixxoil.com · GS Caltex Sustainability Report 2025 · GS칼텍스 미디어허브 (2025년 기준)<br>
+      <b>KEY FIGURES</b> — 원유정제 80만 배럴/일 · 고도화 27.5만(34.3%) · 방향족 280만 톤/년 · 올레핀 230만 톤/년(MFC 투자 2.7조) · 폴리머 98만 톤/년 · 베이스오일 3만 배럴/일 · 윤활유 9천 배럴/일(Kixx 300여 종)<br>
+      <b>PHOTO</b> — GS칼텍스 미디어허브 사진전
+    </p>
+  </div>
+</section>
+
+
+<button type="button" class="print-btn" id="print-now">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9V3h12v6M6 18H4v-6h16v6h-2M8 14h8v7H8z"/></svg>
+  인쇄 / PDF 저장
+</button>
+<div class="theme-sw" role="group" aria-label="출력 테마 선택">
+  <button type="button" data-theme-set="light">WHITE</button>
+  <button type="button" data-theme-set="dark">DARK</button>
+</div>
+<p class="theme-hint">인쇄 시 선택한 테마로 출력됩니다<br>DARK는 인쇄 대화상자에서 &lsquo;배경 그래픽&rsquo; 켜기</p>
+<script>
+(function(){
+  var root = document.documentElement;
+  var btns = document.querySelectorAll('[data-theme-set]');
+  function apply(t){
+    if (t === 'light') root.setAttribute('data-theme','light');
+    else root.removeAttribute('data-theme');
+    try { localStorage.setItem('gsc-print-theme', t); } catch(e){}
+    btns.forEach(function(b){
+      b.setAttribute('aria-pressed', String(b.dataset.themeSet === t));
+    });
+  }
+  btns.forEach(function(b){
+    b.addEventListener('click', function(){ apply(b.dataset.themeSet); });
+  });
+  apply(root.getAttribute('data-theme') === 'light' ? 'light' : 'dark');
+  var pb = document.getElementById('print-now');
+  if (pb) pb.addEventListener('click', function(){ window.print(); });
+  // 메인 PRINT 버튼(?print=1)으로 진입하면 폰트·이미지 로드 후 바로 인쇄 대화상자
+  if (new URLSearchParams(location.search).get('print') === '1') {
+    window.addEventListener('load', function(){
+      (document.fonts ? document.fonts.ready : Promise.resolve()).then(function(){
+        setTimeout(function(){ window.print(); }, 400);
+      });
+    });
+  }
+})();
+</script>
+</body>
+</html>

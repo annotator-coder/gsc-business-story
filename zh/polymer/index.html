@@ -1,0 +1,1026 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>聚合物 — GS Caltex 事业</title>
+<meta name="description" content="年产98万吨聚合物，从1988年HIPRENE到MFC — GS Caltex 聚合物故事">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="GS Caltex Business Story">
+<meta property="og:title" content="聚合物 — GS Caltex 事业">
+<meta property="og:description" content="年产98万吨聚合物，从1988年HIPRENE到MFC — GS Caltex 聚合物故事">
+<meta property="og:url" content="https://gsc-business-story.vercel.app/zh/polymer">
+<meta property="og:image" content="https://gsc-business-story.vercel.app/polymer/img/band-ship.jpg">
+<meta property="og:locale" content="zh_CN">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:        #0A0B0D;
+  --bg-2:      #0D1310;
+  --ink:       #EDE8DC;
+  --ink-dim:   #B9B3A6;
+  --ink-faint: #8E887C;
+  --accent:      #6FBF9E;
+  --accent-deep: #35664F;
+  --amber:     #E0A63E;
+  --line:      #26292E;
+  --font-kr: 'Pretendard', -apple-system, 'Apple SD Gothic Neo', sans-serif;
+  --font-en: 'Archivo', 'Pretendard', sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, monospace;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: auto; }
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-kr);
+  font-weight: 400;
+  line-height: 1.6;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  word-break: normal; line-break: strict; overflow-wrap: anywhere;
+  overflow-wrap: break-word;
+}
+::selection { background: var(--accent); color: var(--bg); }
+
+/* ---------- 공통 ---------- */
+.label {
+  font-family: var(--font-mono); font-weight: 500;
+  font-size: 0.72rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+.label--dim { color: var(--ink-faint); }
+.section { position: relative; }
+.inner { max-width: 1280px; margin: 0 auto; padding: 0 6vw; }
+.num {
+  font-family: var(--font-en);
+  font-variation-settings: "wdth" 75, "wght" 800;
+  font-variant-numeric: tabular-nums;
+  line-height: 0.95;
+  letter-spacing: -0.02em;
+}
+
+/* ---------- 진행 내비 / 탑바 ---------- */
+.progress-nav {
+  position: fixed; right: 24px; top: 50%;
+  transform: translateY(-50%);
+  z-index: 90; display: flex; flex-direction: column; gap: 14px;
+}
+.progress-nav a {
+  display: block; width: 6px; height: 6px;
+  background: var(--ink-faint);
+  transition: background .3s, transform .3s;
+}
+.progress-nav a.active { background: var(--accent); transform: scale(1.5); }
+@media (max-width: 720px) { .progress-nav { display: none; } }
+
+.topbar {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 95;
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 20px 4vw;
+  mix-blend-mode: difference;
+}
+.topbar .brand {
+  font-family: var(--font-en);
+  font-variation-settings: "wdth" 80, "wght" 700;
+  font-size: 0.85rem; letter-spacing: 0.18em; color: #fff;
+  text-decoration: none;
+}
+.topbar .chapter { font-family: var(--font-mono); font-weight: 500; font-size: 0.7rem; letter-spacing: 0.2em; color: #fff; opacity: .7; }
+.tb-right { display: flex; align-items: center; gap: 16px; }
+.lang {
+  font-family: var(--font-mono); font-weight: 500; font-size: .68rem; letter-spacing: .15em;
+  color: #fff; text-decoration: none; opacity: .8;
+  border: 1px solid rgba(255,255,255,.45); padding: 3px 9px;
+}
+.lang:hover { opacity: 1; }
+.lang-sw { display: inline-flex; border: 1px solid rgba(255,255,255,.45); font-family: var(--font-mono); font-weight: 500; font-size: .64rem; letter-spacing: .06em; }
+.lang-sw a { color: #fff; text-decoration: none; opacity: .5; padding: 3px 7px; border-left: 1px solid rgba(255,255,255,.28); }
+.lang-sw a:first-child { border-left: 0; }
+.lang-sw a:hover { opacity: .85; }
+.lang-sw a[aria-current="page"] { opacity: 1; background: rgba(255,255,255,.18); }
+
+/* ---------- HERO ---------- */
+.hero {
+  height: 100vh; height: 100svh;
+  position: relative; overflow: hidden;
+  display: flex; align-items: center; justify-content: center;
+}
+#bead-canvas { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+.hero-content { position: relative; z-index: 2; text-align: center; padding: 0 5vw; }
+.hero-eyebrow { margin-bottom: 28px; }
+.hero-title {
+  font-family: var(--font-en);
+  font-variation-settings: "wdth" 68, "wght" 850;
+  font-size: clamp(3.4rem, 11.5vw, 10.5rem);
+  line-height: 1; letter-spacing: -0.015em;
+  color: var(--ink);
+}
+.hero-title .row { display: block; overflow: hidden; padding: 0.03em 0; }
+.hero-title .row > span { display: inline-block; }
+.hero-title .row--kr { font-family: var(--font-kr); font-weight: 800; font-size: 0.72em; line-height: 1.15; letter-spacing: 0.06em; color: var(--accent); }
+.hero-sub {
+  margin-top: 36px;
+  font-size: clamp(1rem, 1.6vw, 1.25rem);
+  color: var(--ink-dim); font-weight: 400;
+  letter-spacing: 0.04em;
+}
+.hero-sub strong { color: var(--ink); font-weight: 600; }
+.scroll-cue {
+  position: absolute; bottom: 36px; left: 50%;
+  transform: translateX(-50%);
+  z-index: 2; display: flex; flex-direction: column; align-items: center; gap: 10px;
+}
+.scroll-cue .line {
+  width: 1px; height: 48px;
+  background: linear-gradient(to bottom, transparent, var(--accent));
+  animation: cue 2s ease-in-out infinite;
+}
+@keyframes cue {
+  0% { transform: scaleY(0); transform-origin: top; }
+  50% { transform: scaleY(1); transform-origin: top; }
+  51% { transform-origin: bottom; }
+  100% { transform: scaleY(0); transform-origin: bottom; }
+}
+
+/* ---------- 인트로 문장 ---------- */
+.manifesto { padding: 24vh 0; }
+.manifesto p {
+  font-size: clamp(1.6rem, 4vw, 3.2rem);
+  font-weight: 350; line-height: 1.5;
+  max-width: 20em;
+  color: var(--ink-faint);
+}
+.manifesto p .w { display: inline; white-space: nowrap; }
+.manifesto p strong { font-weight: 600; }
+
+/* ---------- 이름의 유래 ---------- */
+.origin { padding: 4vh 0 22vh; }
+.origin-grid {
+  display: grid; grid-template-columns: minmax(0, 2fr) minmax(0, 3fr);
+  gap: 6vw; align-items: center;
+}
+.origin-word {
+  font-family: var(--font-en);
+  font-variation-settings: "wdth" 70, "wght" 850;
+  font-size: clamp(2.6rem, 6.6vw, 6rem);
+  line-height: 1.02;
+  color: transparent; -webkit-text-stroke: 1.5px var(--accent-deep);
+  user-select: none;
+}
+.origin-word span { display: block; white-space: nowrap; }
+.origin-word span:nth-child(2) { color: var(--accent); -webkit-text-stroke: 0; margin-left: 0.5em; }
+.origin-word small {
+  display: block;
+  font-family: var(--font-mono); font-size: max(0.13em, 10px); font-weight: 400;
+  letter-spacing: 0.3em; color: var(--ink-faint);
+  -webkit-text-stroke: 0; margin-top: 1.2em;
+}
+.origin-copy h2 {
+  font-size: clamp(1.7rem, 3.4vw, 2.8rem);
+  font-weight: 700; line-height: 1.3; letter-spacing: -0.01em;
+  margin: 16px 0 10px;
+}
+.origin-copy h2 em { font-style: normal; color: var(--accent); }
+.origin-copy p:not(.label) {
+  margin-top: 16px; max-width: 36em;
+  color: var(--ink-dim); font-weight: 400;
+  font-size: clamp(0.98rem, 1.35vw, 1.15rem);
+}
+.origin-copy p strong { color: var(--ink); font-weight: 600; }
+
+/* ---------- 흑백 이미지 밴드 ---------- */
+.img-band { position: relative; height: 58vh; min-height: 380px; overflow: hidden; }
+.img-band .media {
+  position: absolute; inset: -14% 0;
+  background-size: cover; background-position: center;
+  filter: grayscale(1) brightness(0.6) contrast(1.06);
+  will-change: transform;
+}
+.img-band::after {
+  content: ''; position: absolute; inset: 0; pointer-events: none;
+  background: linear-gradient(to bottom, var(--fade-top, var(--bg)) 0%, transparent 30%, transparent 68%, var(--fade-bottom, var(--bg)) 100%),
+              linear-gradient(to right, rgba(10,11,13,.45), transparent 40%);
+}
+.img-band .caption { position: absolute; left: 6vw; bottom: 32px; z-index: 2; }
+.img-band .caption .cap-text {
+  display: block; margin-top: 10px;
+  color: var(--ink-dim); font-weight: 400;
+  font-size: clamp(0.95rem, 1.3vw, 1.15rem);
+}
+.img-band .caption .cap-text strong { color: var(--ink); font-weight: 600; }
+
+/* ---------- 중합 (핀 시퀀스) ---------- */
+.poly-section { background: var(--bg-2); }
+.poly-stage {
+  position: relative;
+  height: 100vh; height: 100svh;
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 4fr);
+  gap: 4vw;
+  max-width: 1280px; margin: 0 auto; padding: 0 6vw;
+  align-items: center;
+  overflow: hidden;
+}
+.poly-visual { position: relative; height: 82vh; display: flex; align-items: center; justify-content: center; z-index: 1; }
+.poly-visual svg { height: 100%; width: auto; max-width: 100%; overflow: visible; }
+.poly-copy { position: relative; height: 60vh; z-index: 1; }
+.poly-step {
+  position: absolute; inset: 0;
+  display: flex; flex-direction: column; justify-content: center;
+  opacity: 0; visibility: hidden;
+}
+.poly-step h3 {
+  font-size: clamp(1.8rem, 3.4vw, 3rem);
+  font-weight: 700; line-height: 1.25; letter-spacing: -0.01em;
+  margin: 18px 0 20px;
+}
+.poly-step h3 em { font-style: normal; color: var(--accent); }
+.poly-step p {
+  color: var(--ink-dim); font-weight: 400;
+  font-size: clamp(0.95rem, 1.25vw, 1.1rem);
+  max-width: 30em;
+}
+.poly-step p strong { color: var(--ink); font-weight: 600; }
+.badge {
+  display: inline-flex; align-items: center; gap: 10px;
+  border: 1px solid var(--accent-deep);
+  padding: 8px 16px; margin-top: 24px;
+  font-family: var(--font-mono); font-weight: 500; font-size: .75rem; letter-spacing: .15em;
+  color: var(--accent);
+}
+.svg-label { font-family: var(--font-mono); font-weight: 500; font-size: 12px; fill: var(--ink-dim); letter-spacing: .08em; }
+.svg-formula { font-family: var(--font-mono); font-weight: 500; font-size: 15px; fill: var(--ink); letter-spacing: .06em; }
+.svg-cap { font-family: var(--font-mono); font-weight: 500; font-size: 13px; fill: var(--ink-dim); letter-spacing: .08em; }
+
+/* ---------- 생산능력 ---------- */
+.capacity { padding: 20vh 0 14vh; }
+.capacity-head h2 {
+  font-size: clamp(2rem, 4.5vw, 4rem);
+  font-weight: 700; line-height: 1.25; letter-spacing: -0.015em;
+  margin-top: 18px;
+}
+.capacity-head h2 em { font-style: normal; color: var(--accent); }
+.prop-bar {
+  display: flex; height: 56px; margin-top: 6vh;
+  border: 1px solid var(--line);
+}
+.prop-bar .seg { position: relative; height: 100%; transform-origin: left center; }
+.prop-bar .seg span {
+  position: absolute; left: 10px; top: 50%; transform: translateY(-50%);
+  font-family: var(--font-mono); font-size: .68rem; letter-spacing: .06em;
+  color: var(--bg); white-space: nowrap; font-weight: 500;
+}
+.prop-bar .seg--pe { background: var(--accent); }
+.prop-bar .seg--mr { background: #4E8A72; }
+.prop-bar .seg--pp { background: #35594A; }
+.prop-bar .seg--pp span { color: var(--ink); }
+.prop-caption {
+  display: flex; justify-content: space-between; margin-top: 12px;
+  font-family: var(--font-mono); font-weight: 500; font-size: .7rem; color: var(--ink-faint); letter-spacing: .08em;
+}
+.product-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 1px; background: var(--line); border: 1px solid var(--line);
+  margin-top: 10vh;
+}
+.product-cell { background: var(--bg); padding: clamp(24px, 3vw, 44px); }
+.product-cell .p-top { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; flex-wrap: wrap; }
+.product-cell .p-code {
+  font-family: var(--font-mono); font-weight: 500;
+  font-size: clamp(1rem, 1.4vw, 1.2rem); letter-spacing: .1em; color: var(--accent);
+}
+.product-cell .p-cap { font-family: var(--font-mono); font-weight: 500; font-size: .72rem; color: var(--ink-faint); letter-spacing: .08em; }
+.product-cell h4 { font-size: clamp(1.1rem, 1.6vw, 1.35rem); font-weight: 600; margin-top: 10px; }
+.product-cell .p-num { font-size: clamp(2.4rem, 5vw, 4rem); color: var(--ink); margin: 14px 0 10px; }
+.product-cell .p-num .unit { font-family: var(--font-kr); font-size: .32em; font-weight: 400; color: var(--ink-dim); }
+.product-cell p.desc { color: var(--ink-dim); font-weight: 400; font-size: 0.92rem; }
+.chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
+.chips span {
+  font-family: var(--font-mono); font-weight: 500; font-size: 0.7rem; letter-spacing: 0.06em;
+  padding: 5px 10px; border: 1px solid var(--line); color: var(--ink-dim);
+}
+.chips span.out { border-color: var(--accent-deep); color: var(--accent); }
+
+/* ---------- 기술 경쟁력 ---------- */
+.tech { padding: 20vh 0 14vh; }
+.tech-head h2 {
+  font-size: clamp(2rem, 4.5vw, 4rem);
+  font-weight: 700; line-height: 1.25; letter-spacing: -0.015em;
+  margin-top: 18px; max-width: 22em;
+}
+.tech-head h2 em { font-style: normal; color: var(--accent); }
+.tech-intro {
+  margin-top: 20px; max-width: 34em;
+  color: var(--ink-dim); font-weight: 400;
+  font-size: clamp(1rem, 1.4vw, 1.15rem);
+}
+.tech-grid {
+  display: grid; grid-template-columns: repeat(2, 1fr);
+  gap: 1px; background: var(--line); border: 1px solid var(--line);
+  margin-top: 8vh;
+}
+.tech-intro + .tech-intro { margin-top: 12px; }
+.tech-group { margin-top: 8vh; margin-bottom: 14px; color: var(--accent); }
+.tech-grid--grouped { margin-top: 0; }
+.tech-cell { background: var(--bg); padding: clamp(24px, 3vw, 44px); }
+.tech-cell .p-top { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; flex-wrap: wrap; margin-bottom: 14px; }
+.tech-cell .p-code {
+  font-family: var(--font-mono); font-weight: 500;
+  font-size: clamp(1rem, 1.4vw, 1.2rem); letter-spacing: .1em; color: var(--accent);
+}
+.tech-cell .p-cap { font-family: var(--font-mono); font-weight: 500; font-size: .72rem; color: var(--ink-faint); letter-spacing: .08em; }
+.tech-cell p.desc { color: var(--ink-dim); font-weight: 400; font-size: 0.92rem; max-width: 34em; }
+
+/* ---------- 헤리티지 ---------- */
+.heritage { padding: 20vh 0 14vh; }
+.heritage-head h2 {
+  font-size: clamp(2rem, 4.5vw, 4rem);
+  font-weight: 700; line-height: 1.25; letter-spacing: -0.015em;
+  margin-top: 18px;
+}
+.heritage-head h2 em { font-style: normal; color: var(--accent); }
+.heritage-quote {
+  margin-top: 24px; max-width: 34em;
+  color: var(--ink-dim); font-weight: 400;
+  font-size: clamp(1rem, 1.4vw, 1.2rem);
+}
+.heritage-quote strong { color: var(--ink); font-weight: 600; }
+.timeline { margin-top: 10vh; }
+.tl-row {
+  display: grid; grid-template-columns: minmax(0,1fr) minmax(0,4fr);
+  gap: clamp(16px, 4vw, 56px); align-items: baseline;
+  padding: clamp(20px, 3vw, 34px) 0;
+  border-top: 1px solid var(--line);
+}
+.tl-row:last-child { border-bottom: 1px solid var(--line); }
+.tl-row .year { font-size: clamp(1.8rem, 3.6vw, 3rem); color: var(--accent); }
+.tl-row .what { font-weight: 600; font-size: clamp(1.05rem, 1.6vw, 1.3rem); }
+.tl-row .what small { display: block; font-weight: 400; font-size: .92rem; color: var(--ink-dim); margin-top: 6px; }
+.tl-row .what small a { color: var(--ink-dim); }
+
+/* ---------- 글로벌 ---------- */
+.global { padding: 20vh 0 16vh; }
+.global .label + h2 {
+  font-size: clamp(2rem, 4.5vw, 4rem);
+  font-weight: 700; line-height: 1.25; letter-spacing: -0.015em;
+  margin-top: 18px; max-width: 24em;
+}
+.global .label + h2 em { font-style: normal; color: var(--accent); }
+.global-intro {
+  margin-top: 20px; max-width: 34em;
+  color: var(--ink-dim); font-weight: 400;
+  font-size: clamp(1rem, 1.4vw, 1.15rem);
+}
+.global-stats {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 1px; background: var(--line); border: 1px solid var(--line);
+  margin-top: 8vh;
+}
+.global-stats .cell { background: var(--bg); padding: clamp(20px, 2.6vw, 40px); }
+.global-stats .cell .v { font-size: clamp(1.9rem, 3.8vw, 3.4rem); color: var(--ink); }
+.global-stats .cell .v .unit { font-family: var(--font-kr); font-size: .4em; font-weight: 400; color: var(--ink-dim); }
+.global-stats .cell .k { margin-top: 12px; color: var(--ink-dim); font-weight: 400; font-size: .9rem; }
+.global-stats .cell .k small { display: block; font-family: var(--font-mono); font-weight: 500; font-size: .68rem; color: var(--ink-faint); letter-spacing: .08em; margin-top: 4px; }
+.global-places { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 32px; }
+.global-places span {
+  font-family: var(--font-mono); font-weight: 500; font-size: .72rem; letter-spacing: .08em;
+  padding: 7px 13px; border: 1px solid var(--line); color: var(--ink-dim);
+}
+.global-places span.hq { border-color: var(--accent-deep); color: var(--accent); }
+.marquee {
+  margin-top: 14vh; overflow: hidden; white-space: nowrap;
+  border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);
+  padding: 22px 0;
+}
+.marquee-track { display: inline-block; will-change: transform; }
+.marquee-track span {
+  font-family: var(--font-en);
+  font-variation-settings: "wdth" 70, "wght" 750;
+  font-size: clamp(1.6rem, 3.5vw, 3rem);
+  color: transparent;
+  -webkit-text-stroke: 1px var(--ink-faint);
+  margin-right: 6vw; letter-spacing: .02em;
+}
+.marquee-track span.solid { color: var(--accent); -webkit-text-stroke: 0; }
+
+/* ---------- 아우트로 ---------- */
+.outro {
+  padding: 24vh 0 12vh; position: relative; overflow: hidden;
+  background: linear-gradient(to bottom, var(--bg), #07080A);
+}
+.outro-bg {
+  position: absolute; inset: 0 0 auto 0; height: 64vh;
+  z-index: 0; pointer-events: none;
+  background-image:
+    linear-gradient(to bottom, rgba(10,11,13,.55) 0%, rgba(10,11,13,.75) 60%, #0A0B0D 100%),
+    url('/polymer/img/outro-bg.jpg');
+  background-size: cover; background-position: center 40%;
+  filter: grayscale(1) contrast(1.05);
+  opacity: .5;
+}
+.outro .inner { position: relative; z-index: 1; }
+.outro-line {
+  font-size: clamp(1.4rem, 3vw, 2.4rem); font-weight: 350;
+  color: var(--ink-dim); max-width: 26em; line-height: 1.6;
+}
+.outro-line strong { color: var(--ink); font-weight: 600; }
+.next-chapters { margin-top: 14vh; }
+.next-chapters .row-item {
+  display: flex; justify-content: space-between; align-items: baseline;
+  padding: 22px 0; border-top: 1px solid var(--line);
+  color: var(--ink-faint); text-decoration: none;
+  transition: color .3s, padding-left .3s;
+}
+.next-chapters .row-item:last-child { border-bottom: 1px solid var(--line); }
+.next-chapters .row-item .name { font-size: clamp(1.3rem, 2.6vw, 2.2rem); font-weight: 600; }
+.next-chapters .row-item .en {
+  font-family: var(--font-mono); font-weight: 500; font-size: .72rem; letter-spacing: .2em; text-transform: uppercase;
+}
+.next-chapters .row-item.current { color: var(--ink); }
+.next-chapters .row-item.current .en { color: var(--accent); }
+.next-chapters a.row-item.done { color: var(--ink-dim); }
+.next-chapters a.row-item.done:hover { color: var(--ink); padding-left: 12px; }
+.next-chapters a.row-item.done .en { color: var(--amber); }
+.next-chapters .row-item.soon:hover { color: var(--ink-dim); padding-left: 12px; }
+.footer-note {
+  margin-top: 12vh;
+  font-family: var(--font-mono); font-weight: 500; font-size: .7rem; line-height: 2;
+  color: var(--ink-faint); letter-spacing: .04em;
+}
+.footer-note a { color: var(--ink-dim); }
+
+@media (max-width: 720px) {
+  .hero-sub br { display: none; }
+  .label { letter-spacing: 0.16em; font-size: 0.68rem; }
+}
+@media (max-width: 880px) {
+  .poly-stage { grid-template-columns: 1fr; grid-template-rows: 38vh 1fr; gap: 0; padding-top: 8vh; }
+  .poly-visual { height: 100%; }
+  .poly-visual svg { width: 100%; height: 100%; }
+  .svg-label { font-size: 16px; }
+  .svg-formula { font-size: 18px; }
+  .svg-cap { font-size: 16px; }
+  .poly-copy { height: 100%; }
+  .poly-step { justify-content: flex-start; padding-top: 2vh; }
+  .poly-step h3 { font-size: clamp(1.4rem, 6vw, 1.9rem); margin: 12px 0 14px; }
+  .badge { margin-top: 14px; }
+  .product-grid { grid-template-columns: 1fr; }
+  .global-stats { grid-template-columns: 1fr; }
+  .tl-row { grid-template-columns: 1fr; gap: 6px; }
+  .origin-grid { grid-template-columns: 1fr; gap: 4vh; }
+  .prop-bar .seg--pp span { display: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .scroll-cue .line { animation: none; }
+}
+@media (max-width: 560px) {
+  /* 모바일 터치 영역 확대 (상단바) */
+  .lang-sw a { padding-top: 8px; padding-bottom: 8px; }
+}
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <a class="brand" href="/zh">GS CALTEX — BUSINESS</a>
+  <span class="tb-right"><span class="chapter">CH.04 / POLYMER</span><span class="lang-sw"><a href="/polymer">KR</a><a href="/en/polymer">EN</a><a href="/zh/polymer" aria-current="page">中</a><a href="/ja/polymer">日</a></span></span>
+</header>
+
+<nav class="progress-nav" aria-label="章节导航">
+  <a href="#top" data-nav="hero" aria-label="开头"></a>
+  <a href="#poly" data-nav="poly" aria-label="聚合"></a>
+  <a href="#capacity" data-nav="capacity" aria-label="生产能力"></a>
+  <a href="#tech" data-nav="tech" aria-label="技术"></a>
+  <a href="#heritage" data-nav="heritage" aria-label="历史"></a>
+  <a href="#global" data-nav="global" aria-label="全球"></a>
+  <a href="#outro" data-nav="outro" aria-label="下一章"></a>
+</nav>
+
+<!-- ========== HERO ========== -->
+<section class="hero section" id="top" data-nav-target="hero">
+  <canvas id="bead-canvas" aria-hidden="true"></canvas>
+  <div class="hero-content">
+    <p class="label hero-eyebrow">GS CALTEX BUSINESS — CHAPTER 04</p>
+    <h1 class="hero-title" aria-label="聚合物">
+      <span class="row"><span data-hero-row>POLYMER</span></span>
+      <span class="row row--kr"><span data-hero-row>聚合物</span></span>
+    </h1>
+    <p class="hero-sub" data-hero-sub>
+从乙烯与丙烯到多种产业材料<br>
+      具备年产<strong>98万吨</strong>的聚合物产能
+    </p>
+  </div>
+  <div class="scroll-cue" aria-hidden="true">
+    <span class="label label--dim">SCROLL</span>
+    <span class="line"></span>
+  </div>
+</section>
+
+<!-- ========== 인트로 문장 ========== -->
+<section class="section manifesto">
+  <div class="inner">
+    <p data-manifesto>
+      <span class="w">乙烯与丙烯</span><span class="w">等</span><span class="w">基础石化产品，</span><span class="w">经由</span><span class="w">聚合工序</span><span class="w">转化为</span><span class="w"><strong>聚乙烯（PE）与</strong></span><span class="w"><strong>聚丙烯（PP）</strong></span><span class="w">等</span><span class="w">多种</span><span class="w">聚合物产品。</span>
+    </p>
+  </div>
+</section>
+
+<!-- ========== 이름의 유래 ========== -->
+<section class="section origin">
+  <div class="inner origin-grid">
+    <div class="origin-word" aria-hidden="true" data-reveal>
+      <span>POLY</span><span>MEROS</span>
+    </div>
+    <div class="origin-copy">
+      <p class="label" data-reveal>ORIGIN</p>
+      <h2 data-reveal>由多个单体结合而成的<br><em>高分子物质</em></h2>
+      <p data-reveal>聚合物（Polymer）源自希腊语中意为"多"的<strong>poly</strong>与意为"部分"的<strong>meros</strong>，指由单体（Monomer）等小分子反复结合而成的高分子物质。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ========== 이미지 밴드: 구조 ========== -->
+<section class="img-band" style="--fade-top: var(--bg); --fade-bottom: #0D1310" aria-label="工厂结构照片">
+  <div class="media" data-band style="background-image: url('/polymer/img/band-lattice.jpg')"></div>
+</section>
+
+<!-- ========== 중합 시퀀스 ========== -->
+<section class="section poly-section" id="poly" data-nav-target="poly">
+  <div class="poly-stage">
+    <div class="poly-visual" aria-hidden="true">
+      <svg viewBox="0 0 400 640" fill="none">
+        <!-- 촉매 -->
+        <g id="catalyst" opacity="0">
+          <rect x="186" y="96" width="28" height="28" transform="rotate(45 200 110)" stroke="#6FBF9E" stroke-width="2" fill="#0D1310"/>
+          <text class="svg-label" x="200" y="66" text-anchor="middle" fill="#6FBF9E">CATALYST</text>
+        </g>
+        <!-- 사슬 연결선 -->
+        <polyline id="chain-link" points="48,300 82,340 116,300 150,340 184,300 218,340 252,300 286,340 320,300 352,340"
+                  stroke="#EDE8DC" stroke-width="1.5" opacity="0"/>
+        <!-- 모노머 비즈 10개 (흩어짐 → 사슬 → 펠릿) -->
+        <g id="beads" fill="#6FBF9E">
+          <circle class="bead" cx="72"  cy="182" r="9"/>
+          <circle class="bead" cx="152" cy="140" r="9"/>
+          <circle class="bead" cx="242" cy="172" r="9"/>
+          <circle class="bead" cx="322" cy="132" r="9"/>
+          <circle class="bead" cx="92"  cy="302" r="9"/>
+          <circle class="bead" cx="202" cy="262" r="9"/>
+          <circle class="bead" cx="312" cy="282" r="9"/>
+          <circle class="bead" cx="132" cy="402" r="9"/>
+          <circle class="bead" cx="252" cy="392" r="9"/>
+          <circle class="bead" cx="332" cy="422" r="9"/>
+        </g>
+        <!-- 얽힌 사슬(중합 후 폴리머 덩어리) -->
+        <g id="tangle" stroke="#6FBF9E" stroke-width="1.4" fill="none" opacity="0">
+          <path d="M108 236 C140 196 176 290 210 238 S268 196 292 252"/>
+          <path d="M118 286 C150 238 182 300 214 262 S262 222 288 280"/>
+          <path d="M126 210 C170 250 152 300 204 290 S270 240 280 214"/>
+          <path d="M104 262 C150 300 200 200 236 232 S288 300 296 230"/>
+          <path d="M140 300 C150 250 230 300 248 206 S200 196 170 222"/>
+          <path d="M112 222 C180 210 170 270 240 262 S290 214 270 296"/>
+        </g>
+        <!-- 압출·냉각·절단 -->
+        <g id="process-arrow" opacity="0">
+          <path d="M200 316 V372" stroke="#EDE8DC" stroke-width="1.5"/>
+          <path d="M193 364 L200 374 L207 364" stroke="#EDE8DC" stroke-width="1.5" fill="none"/>
+          <text class="svg-cap" x="214" y="342">挤出 · 冷却 · 切粒</text>
+        </g>
+        <!-- 펠릿(쌀알 모양) -->
+        <g id="pellets" fill="#6FBF9E">
+          <g transform="rotate(35 150 410)"><ellipse class="pellet" cx="150" cy="410" rx="10" ry="5.5"/></g>
+          <g transform="rotate(-15 176 402)"><ellipse class="pellet" cx="176" cy="402" rx="10" ry="5.5"/></g>
+          <g transform="rotate(55 204 408)"><ellipse class="pellet" cx="204" cy="408" rx="10" ry="5.5"/></g>
+          <g transform="rotate(-50 232 401)"><ellipse class="pellet" cx="232" cy="401" rx="10" ry="5.5"/></g>
+          <g transform="rotate(-30 258 410)"><ellipse class="pellet" cx="258" cy="410" rx="10" ry="5.5"/></g>
+          <g transform="rotate(110 140 432)"><ellipse class="pellet" cx="140" cy="432" rx="10" ry="5.5"/></g>
+          <g transform="rotate(-30 166 428)"><ellipse class="pellet" cx="166" cy="428" rx="10" ry="5.5"/></g>
+          <g transform="rotate(35 194 434)"><ellipse class="pellet" cx="194" cy="434" rx="10" ry="5.5"/></g>
+          <g transform="rotate(140 222 428)"><ellipse class="pellet" cx="222" cy="428" rx="10" ry="5.5"/></g>
+          <g transform="rotate(-50 250 434)"><ellipse class="pellet" cx="250" cy="434" rx="10" ry="5.5"/></g>
+          <g transform="rotate(110 274 428)"><ellipse class="pellet" cx="274" cy="428" rx="10" ry="5.5"/></g>
+          <g transform="rotate(0 158 454)"><ellipse class="pellet" cx="158" cy="454" rx="10" ry="5.5"/></g>
+          <g transform="rotate(-50 186 456)"><ellipse class="pellet" cx="186" cy="456" rx="10" ry="5.5"/></g>
+          <g transform="rotate(-30 214 452)"><ellipse class="pellet" cx="214" cy="452" rx="10" ry="5.5"/></g>
+          <g transform="rotate(55 242 458)"><ellipse class="pellet" cx="242" cy="458" rx="10" ry="5.5"/></g>
+          <g transform="rotate(55 268 452)"><ellipse class="pellet" cx="268" cy="452" rx="10" ry="5.5"/></g>
+          <g transform="rotate(-30 198 476)"><ellipse class="pellet" cx="198" cy="476" rx="10" ry="5.5"/></g>
+          <g transform="rotate(0 228 474)"><ellipse class="pellet" cx="228" cy="474" rx="10" ry="5.5"/></g>
+          <g transform="rotate(-30 172 476)"><ellipse class="pellet" cx="172" cy="476" rx="10" ry="5.5"/></g>
+        </g>
+        <text id="poly-formula" class="svg-formula" x="200" y="528" text-anchor="middle" opacity="0">PE (C₂H₄)ₙ · PP (C₃H₆)ₙ</text>
+        <!-- 하단 캡션 -->
+        <text id="cap-0" class="svg-cap" x="200" y="612" text-anchor="middle" opacity="0">MONOMER</text>
+        <text id="cap-1" class="svg-cap" x="200" y="612" text-anchor="middle" opacity="0">POLYMERIZATION</text>
+        <text id="cap-2" class="svg-cap" x="200" y="612" text-anchor="middle" opacity="0">PELLET</text>
+      </svg>
+    </div>
+
+    <div class="poly-copy">
+      <div class="poly-step" data-step="0">
+        <p class="label">01 — MONOMER</p>
+        <h3>制造聚合物的<br><em>基础原料</em></h3>
+        <p>乙烯与丙烯是生产聚乙烯（PE）与聚丙烯（PP）的代表性<strong>单体</strong>。</p>
+      </div>
+      <div class="poly-step" data-step="1">
+        <p class="label">01 — POLYMERIZATION</p>
+        <h3>结合单体<br>制成<em>高分子</em></h3>
+        <p>单体与催化剂反应后，转化为长链状高分子。依据催化剂与工艺条件的不同，可实现<strong>刚性、透明性、柔韧性</strong>等多种物性。</p>
+      </div>
+      <div class="poly-step" data-step="2">
+        <p class="label">01 — PELLET</p>
+        <h3>制成便于加工的<br><em>颗粒形态</em></h3>
+        <p>聚合完成的聚合物是由无数长链缠绕而成的状态。经<strong>挤出、冷却、切粒</strong>后制成米粒大小的<strong>颗粒</strong>，随后经各种加工工序，用于薄膜、容器、管材、汽车零部件等。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== 생산능력 ========== -->
+<section class="section capacity" id="capacity" data-nav-target="capacity">
+  <div class="inner">
+    <div class="capacity-head">
+      <p class="label" data-reveal>02 — CAPACITY</p>
+      <h2 data-reveal>3种主要产品，<br><em>年产98万吨</em>的产能</h2>
+    </div>
+    <div class="prop-bar" data-reveal aria-label="各产品产能占比">
+      <div class="seg seg--pe" style="width:51%" data-seg><span>聚乙烯 50</span></div>
+      <div class="seg seg--mr" style="width:30.6%" data-seg><span>复合材料 30</span></div>
+      <div class="seg seg--pp" style="width:18.4%" data-seg><span>聚丙烯 18</span></div>
+    </div>
+    <div class="prop-caption" data-reveal><span>单位：万吨/年</span><span>50 + 30 + 18 = 98</span></div>
+
+    <div class="product-grid">
+      <div class="product-cell" data-reveal>
+        <div class="p-top"><span class="p-code">PE</span><span class="p-cap">SINCE 2022</span></div>
+        <h4>聚乙烯</h4>
+        <div class="p-num num"><span data-count="50">0</span><span class="unit">万吨 / 年</span></div>
+        <p class="desc">聚乙烯（PE）是由乙烯聚合生产的代表性合成树脂。GS加德士采用CPChem的Advanced Dual Loop（ADL）工艺，年产50万吨高密度聚乙烯（HDPE）。应用范围涵盖生活用品、包装材料、管材及建筑与用于工业的材料等多个领域。</p>
+        <div class="chips"><span class="out">生活用品</span><span class="out">包装材料</span><span class="out">管材</span><span class="out">用于工业的材料</span></div>
+      </div>
+      <div class="product-cell" data-reveal>
+        <div class="p-top"><span class="p-code">COMPOUND</span><span class="p-cap">SINCE 1992</span></div>
+        <h4>复合树脂</h4>
+        <div class="p-num num"><span data-count="30">0</span><span class="unit">万吨 / 年</span></div>
+        <p class="desc">复合树脂是在PP等合成树脂中混入橡胶、填料、助剂等，实现特定用途所需物性的材料。可赋予刚性、耐冲击性、耐热性等多种特性，广泛应用于汽车内外饰件、家电部件等领域。</p>
+        <div class="chips"><span class="out">汽车内外饰件</span><span class="out">家电部件</span><span class="out">用于工业的材料</span></div>
+      </div>
+      <div class="product-cell" data-reveal>
+        <div class="p-top"><span class="p-code">PP</span><span class="p-cap">SINCE 1988</span></div>
+        <h4>聚丙烯</h4>
+        <div class="p-num num"><span data-count="18">0</span><span class="unit">万吨 / 年</span></div>
+        <p class="desc">聚丙烯（PP）是由丙烯聚合生产的代表性合成树脂。GS加德士自1988年开始生产聚丙烯，现已具备年产18万吨的生产能力，可生产满足不同用途与特性需求的产品。应用范围涵盖汽车内外饰件、家电部件，以及食品容器、薄膜、纤维等多个领域的材料。</p>
+        <div class="chips"><span class="out">汽车内外饰件</span><span class="out">家电部件</span><span class="out">食品容器</span><span class="out">薄膜</span><span class="out">纤维</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== 이미지 밴드: 제어실 ========== -->
+<section class="img-band" style="--fade-top: var(--bg); --fade-bottom: var(--bg)" aria-label="控制室照片">
+  <div class="media" data-band style="background-image: url('/polymer/img/band-control.jpg')"></div>
+</section>
+
+<!-- ========== 기술 경쟁력 ========== -->
+<section class="section tech" id="tech" data-nav-target="tech">
+  <div class="inner">
+    <div class="tech-head">
+      <p class="label" data-reveal>03 — TECHNOLOGY</p>
+      <h2 data-reveal>依托深厚的技术积淀，<br>开发<em>多种高功能、环保材料</em></h2>
+      <p class="tech-intro" data-reveal>GS加德士基于聚合物业务长期积累的研发实力，持续开发满足多种用途与客户需求的高功能材料。</p>
+      <p class="tech-intro" data-reveal>同时，GS加德士开发为废弃资源赋予新价值的环保材料，实现资源循环，助力于材料产业的绿色转型（GX）。</p>
+    </div>
+    <p class="tech-group label" data-reveal>高功能材料</p>
+    <div class="tech-grid tech-grid--grouped">
+      <div class="tech-cell" data-reveal>
+        <div class="p-top"><span class="p-code">LFT</span><span class="p-cap">长纤维增强热塑性树脂</span></div>
+        <p class="desc">LFT（Long Fiber Reinforced Thermoplastics）是以长纤维增强热塑性树脂，提升机械与耐热性能的复合材料。凭借优异的刚性与轻量化特性，可作为替代金属的材料，广泛应用于汽车零部件等领域。</p>
+      </div>
+      <div class="tech-cell" data-reveal>
+        <div class="p-top"><span class="p-code">TPE</span><span class="p-cap">热塑性弹性体</span></div>
+        <p class="desc">TPE（Thermoplastic Elastomer）兼具橡胶的弹性与塑料的加工性。凭借优异的柔韧性、回弹性与成型性，广泛应用于家电、汽车、机器人等多个产业领域。</p>
+      </div>
+    </div>
+    <p class="tech-group label" data-reveal>环保材料</p>
+    <div class="tech-grid tech-grid--grouped">
+      <div class="tech-cell" data-reveal>
+        <div class="p-top"><span class="p-code">LOW-CARBON MR</span><span class="p-cap">低碳MR复合树脂</span></div>
+        <p class="desc">利用废塑料的机械回收原料而生产的复合树脂。GS加德士自2010年起生产低碳MR复合树脂，持续开发并扩大以汽车、家电及生活类废塑料为原料的高品质再生材料。2025年，其废汽车塑料材料全价值链在亚洲率先获得RecyClass认证。</p>
+      </div>
+      <div class="tech-cell" data-reveal>
+        <div class="p-top"><span class="p-code">MASS BALANCE CR</span><span class="p-cap">质量平衡CR聚合物</span></div>
+        <p class="desc">将源自废塑料、废油等多种废弃物的化学回收原料与传统原料共同利用而生产的可持续聚合物产品。GS加德士基于ISCC PLUS认证，系统管理再生原料的投入量及分配至产品的使用量，在保持优异物性与加工性的同时，助力资源循环与低碳转型。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== 히스토리 ========== -->
+<section class="section heritage" id="heritage" data-nav-target="heritage">
+  <div class="inner">
+    <div class="heritage-head">
+      <p class="label" data-reveal>04 — HISTORY</p>
+      <h2 data-reveal>1988年从聚丙烯起步，<br>逐步扩展至<em>聚乙烯与高功能材料</em></h2>
+    </div>
+    <div class="timeline">
+      <div class="tl-row" data-reveal>
+        <div class="year num">1988</div>
+        <div class="what">聚丙烯业务启航<small>开始生产聚丙烯，并通过持续的技术研发与设备扩建，夯实了业务基础</small></div>
+      </div>
+      <div class="tl-row" data-reveal>
+        <div class="year num">1998</div>
+        <div class="what">大德中央研究院建成<small>增强研发实力，扩大多种高功能聚合物材料的开发</small></div>
+      </div>
+      <div class="tl-row" data-reveal>
+        <div class="year num">2001</div>
+        <div class="what">强化丙烯自主供应基础<small>利用炼油升级工艺生产的丙烯，强化炼油与聚合物业务的合作</small></div>
+      </div>
+      <div class="tl-row" data-reveal>
+        <div class="year num">2022</div>
+        <div class="what">聚乙烯业务扩大<small>随着MFC投产，以自产乙烯为原料，开始年产50万吨规模的HDPE生产，由此强化了从烯烃到聚合物的一体化业务竞争力</small></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== 이미지 밴드: 수출 ========== -->
+<section class="img-band" style="--fade-top: var(--bg); --fade-bottom: var(--bg)" aria-label="出口港口照片">
+  <div class="media" data-band style="background-image: url('/polymer/img/band-ship.jpg')"></div>
+</section>
+
+<!-- ========== 글로벌 ========== -->
+<section class="section global" id="global" data-nav-target="global">
+  <div class="inner">
+    <p class="label" data-reveal>05 — GLOBAL</p>
+    <h2 data-reveal>以在国内累积的技术与生产竞争力为基础，<br>将业务拓展至<em>全球市场</em></h2>
+    <p class="global-intro" data-reveal>GS加德士以国内生产基地与研发实力为基础，在中国、捷克等地设立海外生产法人，不断强化复合树脂业务的全球竞争力。为满足汽车、家电等全球客户的需求，持续扩大本地化生产与供应能力。</p>
+    <div class="global-stats">
+      <div class="cell" data-reveal>
+        <div class="v num"><span data-count="9.5" data-decimals="1">0</span><span class="unit">亿USD</span></div>
+        <p class="k">聚合物总营收<small>AS OF 2025</small></p>
+      </div>
+      <div class="cell" data-reveal>
+        <div class="v num"><span data-count="84.4" data-decimals="1">0</span><span class="unit">万吨</span></div>
+        <p class="k">年销售量<small>AS OF 2025</small></p>
+      </div>
+      <div class="cell" data-reveal>
+        <div class="v num"><span data-count="3">0</span><span class="unit">个</span></div>
+        <p class="k">海外法人<small>CHINA ×2 · CZECHIA</small></p>
+      </div>
+    </div>
+    <div class="global-places" data-reveal>
+      <span class="hq">丽水 · 晋州工厂</span><span>中国 廊坊</span><span>中国 苏州</span><span>捷克 卡尔维纳</span><span>意大利 米兰</span><span>日本 东京</span><span>印度 金奈</span><span>中国 上海</span>
+    </div>
+  </div>
+</section>
+
+<!-- ========== 아우트로 ========== -->
+<section class="section outro" id="outro" data-nav-target="outro">
+  <div class="outro-bg" aria-hidden="true"></div>
+  <div class="inner">
+    <p class="outro-line" data-reveal>
+      炼油工序产出的原料，将延伸为<strong>高品质基础油</strong>。
+      下一章，我们将了解以炼油升级工艺产出的未转化油为原料，生产高品质润滑油基础原料的基础油业务。
+    </p>
+    <div class="next-chapters" data-reveal>
+      <a class="row-item done" href="/zh/process"><span class="name">生产工序</span><span class="en">CH.00 — Read</span></a>
+      <a class="row-item done" href="/zh/refining"><span class="name">炼油</span><span class="en">CH.01 — Read</span></a>
+      <a class="row-item done" href="/zh/aromatics"><span class="name">芳烃</span><span class="en">CH.02 — Read</span></a>
+      <a class="row-item done" href="/zh/olefins"><span class="name">烯烃</span><span class="en">CH.03 — Read</span></a>
+      <div class="row-item current"><span class="name">聚合物</span><span class="en">CH.04 — Now</span></div>
+      <a class="row-item done" href="/zh/baseoil"><span class="name">基础油</span><span class="en">CH.05 — Read →</span></a>
+      <a class="row-item done" href="/zh/lubricants"><span class="name">润滑油</span><span class="en">CH.06 — Read →</span></a>
+    </div>
+    <p class="footer-note">
+      DATA — <a href="https://www.gspolymer.com/kor/main/index.do" target="_blank" rel="noopener">gspolymer.com</a>（事业概况，2025年数据）· <a href="https://www.gscaltex.com/kr/Business/Polymer" target="_blank" rel="noopener">gscaltex.com/kr/Business/Polymer</a> · GS Caltex Sustainability Report 2025<br>
+      产能 (根据报告): 聚乙烯 50万 · 复合树脂 30万 · 聚丙烯 18万 = 98万吨/年 · 营收 9.5亿美元 · 销售 84.4万吨 (gspolymer, 2025)<br>
+      PHOTO — <a href="https://gscaltexmediahub.com/gsc-exhibition/" target="_blank" rel="noopener">GS Caltex Media Hub photo exhibition</a>
+    </p>
+  </div>
+</section>
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+<script>
+gsap.registerPlugin(ScrollTrigger);
+const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+/* ============ 히어로: 모노머 비즈 캔버스 ============ */
+(function () {
+  const canvas = document.getElementById('bead-canvas');
+  const ctx = canvas.getContext('2d');
+  let w, h, raf;
+
+  function resize() {
+    const dpr = Math.min(window.devicePixelRatio || 1, 2);
+    w = canvas.clientWidth; h = canvas.clientHeight;
+    canvas.width = w * dpr; canvas.height = h * dpr;
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+  }
+  resize();
+  window.addEventListener('resize', resize);
+
+  const dots = Array.from({ length: 26 }, () => ({
+    x: Math.random(), y: Math.random() * 1.2,
+    r: 1.6 + Math.random() * 2.6,
+    vy: 0.00008 + Math.random() * 0.0002,
+    a: 0.1 + Math.random() * 0.16
+  }));
+  const chains = Array.from({ length: 6 }, () => ({
+    x: Math.random(), y: Math.random() * 1.2,
+    n: 4 + Math.floor(Math.random() * 4),
+    seg: 14 + Math.random() * 14,
+    rot: Math.random() * Math.PI,
+    vr: (Math.random() - 0.5) * 0.0012,
+    vy: 0.0001 + Math.random() * 0.0002,
+    a: 0.1 + Math.random() * 0.14
+  }));
+
+  function draw() {
+    ctx.clearRect(0, 0, w, h);
+    const bg = ctx.createRadialGradient(w / 2, h * 0.45, 0, w / 2, h * 0.45, Math.max(w, h) * 0.8);
+    bg.addColorStop(0, '#0E1310');
+    bg.addColorStop(1, '#0A0B0D');
+    ctx.fillStyle = bg;
+    ctx.fillRect(0, 0, w, h);
+
+    dots.forEach(d => {
+      d.y -= d.vy;
+      if (d.y < -0.1) { d.y = 1.1; d.x = Math.random(); }
+      ctx.beginPath();
+      ctx.arc(d.x * w, d.y * h, d.r, 0, Math.PI * 2);
+      ctx.fillStyle = 'rgba(154, 149, 138, ' + d.a * 0.7 + ')';
+      ctx.fill();
+    });
+
+    chains.forEach(c => {
+      c.y -= c.vy; c.rot += c.vr;
+      if (c.y < -0.15) { c.y = 1.15; c.x = Math.random(); }
+      ctx.save();
+      ctx.translate(c.x * w, c.y * h);
+      ctx.rotate(c.rot);
+      ctx.beginPath();
+      for (let k = 0; k < c.n; k++) {
+        const px = (k - (c.n - 1) / 2) * c.seg;
+        const py = (k % 2 === 0 ? 1 : -1) * c.seg * 0.3;
+        k === 0 ? ctx.moveTo(px, py) : ctx.lineTo(px, py);
+      }
+      ctx.strokeStyle = 'rgba(111, 191, 158, ' + c.a * 0.8 + ')';
+      ctx.lineWidth = 1;
+      ctx.stroke();
+      for (let k = 0; k < c.n; k++) {
+        const px = (k - (c.n - 1) / 2) * c.seg;
+        const py = (k % 2 === 0 ? 1 : -1) * c.seg * 0.3;
+        ctx.beginPath();
+        ctx.arc(px, py, 2.6, 0, Math.PI * 2);
+        ctx.fillStyle = 'rgba(111, 191, 158, ' + c.a * 1.3 + ')';
+        ctx.fill();
+      }
+      ctx.restore();
+    });
+    raf = requestAnimationFrame(draw);
+  }
+  if (reduceMotion) { draw(); cancelAnimationFrame(raf); }
+  else draw();
+
+  gsap.to(canvas, {
+    opacity: 0.25, ease: 'none',
+    scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: true }
+  });
+})();
+
+/* ============ 히어로 등장 ============ */
+gsap.from('[data-hero-row]', {
+  yPercent: 110, duration: 1.2, stagger: 0.12, ease: 'power4.out', delay: 0.15
+});
+gsap.from('[data-hero-sub], .hero-eyebrow', {
+  opacity: 0, y: 24, duration: 1, stagger: 0.1, ease: 'power2.out', delay: 0.7
+});
+gsap.to('.hero-content', {
+  yPercent: -18, opacity: 0, ease: 'none',
+  scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom 30%', scrub: true }
+});
+
+/* ============ 매니페스토 ============ */
+gsap.to('[data-manifesto] .w', {
+  color: '#EDE8DC', stagger: 0.6, ease: 'none',
+  scrollTrigger: { trigger: '.manifesto', start: 'top 75%', end: 'bottom 55%', scrub: true }
+});
+
+/* ============ 중합 핀 시퀀스 ============ */
+(function () {
+  const steps = gsap.utils.toArray('.poly-step');
+  const beads = gsap.utils.toArray('#beads .bead');
+  const link = document.getElementById('chain-link');
+  const linkLen = link.getTotalLength();
+  link.style.strokeDasharray = linkLen;
+  link.style.strokeDashoffset = linkLen;
+
+  const chainPos = [[48,300],[82,340],[116,300],[150,340],[184,300],[218,340],[252,300],[286,340],[320,300],[352,340]];
+  const pellets = gsap.utils.toArray('#pellets .pellet');
+  gsap.set(pellets, { opacity: 0, scale: 0, transformOrigin: 'center', transformBox: 'fill-box' });
+
+
+  const tl = gsap.timeline({
+    scrollTrigger: {
+      trigger: '.poly-section',
+      start: 'top top',
+      end: '+=300%',
+      pin: '.poly-stage',
+      scrub: 0.6,
+      anticipatePin: 1
+    }
+  });
+
+  tl.set(steps[0], { autoAlpha: 1 });
+  tl.from(beads, { scale: 0, transformOrigin: 'center', opacity: 0, stagger: 0.12, duration: 0.5 }, 0.1);
+  tl.to('#cap-0', { opacity: 1, duration: 0.4 }, 0.6);
+
+  tl.to(steps[0], { autoAlpha: 0, y: -28, duration: 0.5 }, 2.6);
+  tl.fromTo(steps[1], { autoAlpha: 0, y: 28 }, { autoAlpha: 1, y: 0, duration: 0.5 }, 3.1);
+  tl.to('#cap-0', { opacity: 0, duration: 0.3 }, 3.0);
+  tl.to('#catalyst', { opacity: 1, duration: 0.5 }, 3.2);
+  beads.forEach((b, i) => {
+    tl.to(b, { attr: { cx: chainPos[i][0], cy: chainPos[i][1] }, duration: 0.9, ease: 'power2.inOut' }, 3.5 + i * 0.07);
+  });
+  tl.to(link, { opacity: 1, duration: 0.2 }, 4.5);
+  tl.to(link, { strokeDashoffset: 0, duration: 1.1, ease: 'none' }, 4.6);
+  tl.to('#cap-1', { opacity: 1, duration: 0.4 }, 4.6);
+
+  // STEP 1 → 2 (펠릿: 무수히 얽힌 사슬 → 압출·냉각·절단 → 쌀알 모양 펠릿)
+  tl.to(steps[1], { autoAlpha: 0, y: -28, duration: 0.5 }, 6.2);
+  tl.fromTo(steps[2], { autoAlpha: 0, y: 28 }, { autoAlpha: 1, y: 0, duration: 0.5 }, 6.7);
+  tl.to('#cap-1', { opacity: 0, duration: 0.3 }, 6.6);
+  tl.to('#catalyst', { opacity: 0, duration: 0.4 }, 6.6);
+  tl.to(link, { opacity: 0, duration: 0.4 }, 6.7);
+  tl.to(beads, { opacity: 0, scale: 0.4, transformOrigin: 'center', duration: 0.4 }, 6.7);
+  tl.to('#tangle', { opacity: 1, duration: 0.6 }, 6.9);
+  tl.to('#process-arrow', { opacity: 1, duration: 0.4 }, 7.4);
+  tl.to(pellets, { opacity: 1, scale: 1, duration: 0.3, stagger: 0.03, ease: 'back.out(2)' }, 7.6);
+  tl.to('#poly-formula', { opacity: 1, duration: 0.5 }, 7.9);
+  tl.to('#cap-2', { opacity: 1, duration: 0.4 }, 7.9);
+  tl.to({}, { duration: 1.0 });
+})();
+
+/* ============ 이미지 밴드 패럴랙스 ============ */
+gsap.utils.toArray('[data-band]').forEach(m => {
+  gsap.fromTo(m, { yPercent: -7 }, {
+    yPercent: 7, ease: 'none',
+    scrollTrigger: { trigger: m.parentElement, start: 'top bottom', end: 'bottom top', scrub: true }
+  });
+});
+
+/* ============ 공통 리빌 ============ */
+document.querySelectorAll('[data-reveal]').forEach(el => {
+  gsap.from(el, {
+    opacity: 0, y: 44, duration: 1, ease: 'power3.out',
+    scrollTrigger: { trigger: el, start: 'top 82%' }
+  });
+});
+
+/* ============ 비율 바 ============ */
+gsap.utils.toArray('[data-seg]').forEach((seg, i) => {
+  gsap.from(seg, {
+    scaleX: 0, duration: 1.1, delay: i * 0.14, ease: 'power3.inOut',
+    scrollTrigger: { trigger: '.prop-bar', start: 'top 85%' }
+  });
+});
+
+/* ============ 카운트업 ============ */
+document.querySelectorAll('[data-count]').forEach(el => {
+  const target = parseFloat(el.dataset.count);
+  const decimals = parseInt(el.dataset.decimals || '0', 10);
+  const obj = { v: 0 };
+  const fmt = v => v.toLocaleString('en-US', { minimumFractionDigits: decimals, maximumFractionDigits: decimals, useGrouping: false });
+  el.textContent = fmt(0);
+  ScrollTrigger.create({
+    trigger: el, start: 'top 85%', once: true,
+    onEnter: () => gsap.to(obj, {
+      v: target, duration: 1.8, ease: 'power2.out',
+      onUpdate: () => { el.textContent = fmt(obj.v); }
+    })
+  });
+});
+
+/* ============ 진행 내비 ============ */
+document.querySelectorAll('[data-nav-target]').forEach(sec => {
+  ScrollTrigger.create({
+    trigger: sec, start: 'top 50%', end: 'bottom 50%',
+    onToggle: self => {
+      if (self.isActive) {
+        document.querySelectorAll('.progress-nav a').forEach(a =>
+          a.classList.toggle('active', a.dataset.nav === sec.dataset.navTarget));
+      }
+    }
+  });
+});
+</script>
+</body>
+</html>

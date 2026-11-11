@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GS칼텍스 사업부문 — Business Story</title>
+<meta name="description" content="정유를 기반으로 석유화학·베이스오일·윤활유까지 — GS칼텍스 비즈니스 스토리">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="GS Caltex Business Story">
+<meta property="og:title" content="GS칼텍스 사업부문 — Business Story">
+<meta property="og:description" content="정유를 기반으로 석유화학·베이스오일·윤활유까지 — GS칼텍스 비즈니스 스토리">
+<meta property="og:url" content="https://gsc-business-story.vercel.app/menu">
+<meta property="og:image" content="https://gsc-business-story.vercel.app/og/og-main.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="ko_KR">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:        #0A0B0D;
+  --ink:       #EDE8DC;
+  --ink-dim:   #B9B3A6;
+  --ink-faint: #8E887C;
+  --line:      #26292E;
+  --c1: #E0A63E;  /* 정유 */
+  --c2: #7FA8C9;  /* 방향족 */
+  --c3: #E07A4A;  /* 올레핀 */
+  --c4: #6FBF9E;  /* 폴리머 */
+  --c5: #D9C07E;  /* 베이스오일 */
+  --c6: #D65C5C;  /* 윤활유 */
+  --font-kr: 'Pretendard', -apple-system, 'Apple SD Gothic Neo', sans-serif;
+  --font-en: 'Archivo', 'Pretendard', sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, monospace;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-kr);
+  line-height: 1.6;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}
+::selection { background: var(--c1); color: var(--bg); }
+
+.topbar {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 95;
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 20px 4vw;
+  mix-blend-mode: difference;
+}
+.topbar .brand {
+  font-family: var(--font-en);
+  font-variation-settings: "wdth" 80, "wght" 700;
+  font-size: 0.85rem; letter-spacing: 0.18em; color: #fff;
+  text-decoration: none;
+}
+.topbar .chapter { font-family: var(--font-mono); font-weight: 500; font-size: 0.7rem; letter-spacing: 0.2em; color: #fff; opacity: .7; }
+.tb-right { display: flex; align-items: center; gap: 16px; }
+.lang {
+  font-family: var(--font-mono); font-weight: 500; font-size: .68rem; letter-spacing: .15em;
+  color: #fff; text-decoration: none; opacity: .8;
+  border: 1px solid rgba(255,255,255,.45); padding: 3px 9px;
+}
+.lang:hover { opacity: 1; }
+.lang-sw { display: inline-flex; border: 1px solid rgba(255,255,255,.45); font-family: var(--font-mono); font-weight: 500; font-size: .64rem; letter-spacing: .06em; }
+.lang-sw a { color: #fff; text-decoration: none; opacity: .5; padding: 3px 7px; border-left: 1px solid rgba(255,255,255,.28); }
+.lang-sw a:first-child { border-left: 0; }
+.lang-sw a:hover { opacity: .85; }
+.lang-sw a[aria-current="page"] { opacity: 1; background: rgba(255,255,255,.18); }
+
+.inner { max-width: 1280px; margin: 0 auto; padding: 0 6vw; }
+
+/* ---------- HERO ---------- */
+.hero {
+  min-height: 62vh;
+  display: flex; flex-direction: column; justify-content: flex-end;
+  padding-top: 18vh;
+}
+.hero .label {
+  font-family: var(--font-mono); font-weight: 500;
+  font-size: 0.72rem; letter-spacing: 0.28em; text-transform: uppercase;
+  color: var(--ink-dim);
+}
+.hero-title {
+  font-family: var(--font-en);
+  font-variation-settings: "wdth" 68, "wght" 850;
+  font-size: clamp(2.9rem, 9.5vw, 8.8rem);
+  line-height: 1; letter-spacing: -0.015em;
+  margin-top: 22px;
+}
+.hero-title .row { display: block; overflow: hidden; padding: 0.03em 0; }
+.hero-title .row > span { display: inline-block; }
+.hero-sub {
+  margin: 26px 0 0;
+  font-size: clamp(1rem, 1.6vw, 1.25rem);
+  color: var(--ink-dim); font-weight: 400;
+  max-width: 40em;
+}
+.hero-sub strong { color: var(--ink); font-weight: 600; }
+.spectrum {
+  display: flex; height: 3px; margin-top: 6vh;
+}
+.spectrum span { flex: 1; transform-origin: left center; }
+.spectrum span:nth-child(1) { background: var(--c1); }
+.spectrum span:nth-child(2) { background: var(--c2); }
+.spectrum span:nth-child(3) { background: var(--c3); }
+.spectrum span:nth-child(4) { background: var(--c4); }
+.spectrum span:nth-child(5) { background: var(--c5); }
+.spectrum span:nth-child(6) { background: var(--c6); }
+
+/* ---------- 목차 ---------- */
+.toc { padding-top: 8vh; padding-bottom: 6vh; }
+.toc-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 5fr) minmax(0, 3fr);
+  gap: clamp(14px, 3vw, 44px);
+  align-items: baseline;
+  padding: clamp(24px, 3.6vw, 42px) 0;
+  border-top: 1px solid var(--line);
+  text-decoration: none;
+  --c: var(--ink);
+  transition: padding-left .3s;
+}
+.toc-row:last-child { border-bottom: 1px solid var(--line); }
+.toc-row .no {
+  font-family: var(--font-en);
+  font-variation-settings: "wdth" 75, "wght" 800;
+  font-size: clamp(1.9rem, 4.2vw, 3.6rem);
+  line-height: 1;
+  color: transparent; -webkit-text-stroke: 1px var(--ink-faint);
+  transition: color .3s, -webkit-text-stroke-color .3s;
+}
+.toc-row .body .name {
+  display: flex; align-items: baseline; gap: 16px; flex-wrap: wrap;
+}
+.toc-row .body .kr {
+  font-size: clamp(1.5rem, 3.2vw, 2.7rem);
+  font-weight: 700; letter-spacing: -0.01em; color: var(--ink);
+  transition: color .3s;
+}
+.toc-row .body .en {
+  font-family: var(--font-mono); font-weight: 500; font-size: .72rem; letter-spacing: .2em;
+  text-transform: uppercase; color: var(--ink-faint);
+}
+.toc-row .body .log {
+  margin-top: 8px; color: var(--ink-dim); font-weight: 400;
+  font-size: clamp(.92rem, 1.2vw, 1.05rem);
+}
+.toc-row .stat {
+  font-family: var(--font-mono); font-weight: 500; font-size: clamp(.75rem, 1vw, .85rem);
+  letter-spacing: .08em; color: var(--ink-faint);
+  text-align: right;
+  transition: color .3s;
+}
+.toc-row:hover { padding-left: 14px; }
+.toc-row:hover .no { color: var(--c); -webkit-text-stroke-color: transparent; }
+.toc-row:hover .kr { color: var(--c); }
+.toc-row:hover .stat { color: var(--ink-dim); }
+.toc-row[data-ch="1"] { --c: var(--c1); }
+.toc-row[data-ch="2"] { --c: var(--c2); }
+.toc-row[data-ch="3"] { --c: var(--c3); }
+.toc-row[data-ch="4"] { --c: var(--c4); }
+.toc-row[data-ch="5"] { --c: var(--c5); }
+.toc-row[data-ch="6"] { --c: var(--c6); }
+.toc-row[data-ch="c"] { --c: var(--c1); }
+.toc-sep + .toc { padding-top: 2vh; }
+.toc-sep {
+  margin-top: 4vh; padding-bottom: 4px;
+  font-family: var(--font-mono); font-weight: 500; font-size: .66rem; letter-spacing: .26em;
+  text-transform: uppercase; color: var(--ink-faint);
+}
+
+/* ---------- 푸터 ---------- */
+.foot { padding-top: 8vh; padding-bottom: 10vh; }
+.foot .start {
+  font-size: clamp(1.05rem, 1.6vw, 1.3rem);
+  color: var(--ink-dim); font-weight: 400;
+}
+.foot .start a { color: var(--c1); font-weight: 600; text-decoration: none; }
+.foot .start a:hover { text-decoration: underline; }
+.footer-note {
+  margin-top: 7vh;
+  font-family: var(--font-mono); font-weight: 500; font-size: .7rem; line-height: 2;
+  color: var(--ink-faint); letter-spacing: .04em;
+}
+.footer-note a { color: var(--ink-dim); }
+
+@media (max-width: 760px) {
+  .toc-row { grid-template-columns: minmax(0, 1fr) minmax(0, 6fr); }
+  .toc-row .stat { grid-column: 2; text-align: left; margin-top: 8px; }
+  .hero { min-height: 52vh; }
+}
+@media (max-width: 560px) {
+  /* 모바일 터치 영역 확대 (상단바) */
+  .lang-sw a { padding-top: 8px; padding-bottom: 8px; }
+}
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <a class="brand" href="/">GS CALTEX — BUSINESS</a>
+  <span class="tb-right"><span class="chapter">INDEX / 목차</span><span class="lang-sw"><a href="/menu" aria-current="page">KR</a><a href="/en/menu">EN</a><a href="/zh/menu">中</a><a href="/ja/menu">日</a></span></span>
+</header>
+
+<section class="hero inner">
+  <p class="label" data-in>GS CALTEX — BUSINESS STORY</p>
+  <h1 class="hero-title" aria-label="여섯 개의 장 SIX CHAPTERS">
+    <span class="row"><span data-hero-row>SIX CHAPTERS,</span></span>
+    <span class="row"><span data-hero-row>ONE JOURNEY</span></span>
+  </h1>
+  <p class="hero-sub" data-in>
+    원유에서 시작한 GS칼텍스의 사업은 <strong>정유를 기반으로 석유화학·베이스오일·윤활유</strong>까지 이어집니다.
+    각 장에서 주요 생산공정과 제품, 활용 분야를 살펴볼 수 있습니다.
+  </p>
+  <div class="spectrum" aria-hidden="true">
+    <span data-spec></span><span data-spec></span><span data-spec></span><span data-spec></span><span data-spec></span><span data-spec></span>
+  </div>
+</section>
+
+<nav class="toc inner" aria-label="챕터 목차">
+  <a class="toc-row" href="/process" data-ch="0" data-in>
+    <span class="no">00</span>
+    <span class="body">
+      <span class="name"><span class="kr">생산 공정</span><span class="en">Process Map</span></span>
+      <span class="log">원유부두에서 제품부두까지 — 네 갈래 흐름으로 보는 전체 지도</span>
+    </span>
+    <span class="stat">일반정유 · 고도화 · 석유화학 · 베이스오일</span>
+  </a>
+  <a class="toc-row" href="/refining" data-ch="1" data-in>
+    <span class="no">01</span>
+    <span class="body">
+      <span class="name"><span class="kr">정유</span><span class="en">Refining</span></span>
+      <span class="log">하루 80만 배럴이 에너지가 되기까지 — 모든 이야기의 시작</span>
+    </span>
+    <span class="stat">80만 배럴/일 · 단일 정유공장 세계 4위</span>
+  </a>
+  <a class="toc-row" href="/aromatics" data-ch="2" data-in>
+    <span class="no">02</span>
+    <span class="body">
+      <span class="name"><span class="kr">방향족</span><span class="en">Aromatics</span></span>
+      <span class="log">향기에서 이름을 얻은 육각 고리 — 옷과 페트병의 시작</span>
+    </span>
+    <span class="stat">280만 톤/년</span>
+  </a>
+  <a class="toc-row" href="/olefins" data-ch="3" data-in>
+    <span class="no">03</span>
+    <span class="body">
+      <span class="name"><span class="kr">올레핀</span><span class="en">Olefins</span></span>
+      <span class="log">분자를 쪼개 미래를 연 창사 이래 최대 투자, MFC</span>
+    </span>
+    <span class="stat">230만 톤/년</span>
+  </a>
+  <a class="toc-row" href="/polymer" data-ch="4" data-in>
+    <span class="no">04</span>
+    <span class="body">
+      <span class="name"><span class="kr">폴리머</span><span class="en">Polymer</span></span>
+      <span class="log">조각이 이어져 소재가 되는 중합의 화학 — 하이프린의 40년</span>
+    </span>
+    <span class="stat">98만 톤/년</span>
+  </a>
+  <a class="toc-row" href="/baseoil" data-ch="5" data-in>
+    <span class="no">05</span>
+    <span class="body">
+      <span class="name"><span class="kr">베이스오일</span><span class="en">Base Oil</span></span>
+      <span class="log">가장 무거운 기름에서 가장 맑은 오일로 — 그중 70%가 바다를 건넙니다</span>
+    </span>
+    <span class="stat">3만 배럴/일</span>
+  </a>
+  <a class="toc-row" href="/lubricants" data-ch="6" data-in>
+    <span class="no">06</span>
+    <span class="body">
+      <span class="name"><span class="kr">윤활유</span><span class="en">Lubricants</span></span>
+      <span class="log">모든 움직임을 부드럽게 — Kixx, 그리고 여정의 완성</span>
+    </span>
+    <span class="stat">9천 배럴/일</span>
+  </a>
+</nav>
+
+<p class="toc-sep inner" data-in>Company — 회사의 규모와 실적</p>
+
+<nav class="toc inner" aria-label="회사 소개">
+  <a class="toc-row" href="/company" data-ch="c" data-in>
+    <span class="no">GS</span>
+    <span class="body">
+      <span class="name"><span class="kr">성장과 실적</span><span class="en">Growth &amp; Performance</span></span>
+      <span class="log">1967년 하루 6만 배럴에서 시작한 59년 — 한국 경제와 함께 성장한 곡선과 재무 성과</span>
+    </span>
+    <span class="stat">매출 44.6조 · 부채비율 60.5% · AA+</span>
+  </a>
+</nav>
+
+<footer class="foot inner">
+  <p class="start" data-in>어디서든 시작하셔도 좋습니다. 다만 <a href="/refining">원유부두부터 읽으면</a>, 한 편의 이야기가 됩니다.<br>사업이 어떻게 이어지는지 먼저 보고 싶다면 — <a href="/">원유에서 에너지와 소재까지 →</a></p>
+  <p class="footer-note" data-in>
+    DATA — <a href="https://www.gscaltex.com/kr/business" target="_blank" rel="noopener">gscaltex.com/kr/business</a> · GS Caltex Sustainability Report 2025 · gspolymer.com · kixxoil.com · GS칼텍스 미디어허브<br>
+    PHOTO — <a href="https://gscaltexmediahub.com/gsc-exhibition/" target="_blank" rel="noopener">GS칼텍스 미디어허브 사진전</a> · 본 페이지는 공개 자료 기반의 인터랙티브 스토리텔링 프로젝트입니다
+  </p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+<script>
+const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+if (!reduceMotion) {
+  gsap.from('[data-hero-row]', { yPercent: 110, duration: 1.1, stagger: 0.12, ease: 'power4.out', delay: 0.1 });
+  gsap.from('[data-spec]', { scaleX: 0, duration: 0.9, stagger: 0.09, ease: 'power3.inOut', delay: 0.5 });
+  gsap.from('[data-in]', { opacity: 0, y: 26, duration: 0.9, stagger: 0.08, ease: 'power2.out', delay: 0.35 });
+}
+</script>
+</body>
+</html>

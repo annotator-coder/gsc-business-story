@@ -1,0 +1,966 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>润滑油 — GS Caltex 事业</title>
+<meta name="description" content="日产9千桶，300余款Kixx产品 — 让每一次运转都顺滑。GS Caltex 润滑油故事">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="GS Caltex Business Story">
+<meta property="og:title" content="润滑油 — GS Caltex 事业">
+<meta property="og:description" content="日产9千桶，300余款Kixx产品 — 让每一次运转都顺滑。GS Caltex 润滑油故事">
+<meta property="og:url" content="https://gsc-business-story.vercel.app/zh/lubricants">
+<meta property="og:image" content="https://gsc-business-story.vercel.app/lubricants/img/band-oil.jpg">
+<meta property="og:locale" content="zh_CN">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:        #0A0B0D;
+  --bg-2:      #140D0D;
+  --ink:       #EDE8DC;
+  --ink-dim:   #B9B3A6;
+  --ink-faint: #8E887C;
+  --accent:      #D65C5C;
+  --accent-deep: #7A3535;
+  --amber:     #E0A63E;
+  --line:      #26292E;
+  --font-kr: 'Pretendard', -apple-system, 'Apple SD Gothic Neo', sans-serif;
+  --font-en: 'Archivo', 'Pretendard', sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, monospace;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: auto; }
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-kr);
+  font-weight: 400;
+  line-height: 1.6;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  word-break: normal; line-break: strict; overflow-wrap: anywhere;
+  overflow-wrap: break-word;
+}
+::selection { background: var(--accent); color: var(--bg); }
+
+/* ---------- 공통 ---------- */
+.label {
+  font-family: var(--font-mono); font-weight: 500;
+  font-size: 0.72rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+.label--dim { color: var(--ink-faint); }
+.section { position: relative; }
+.inner { max-width: 1280px; margin: 0 auto; padding: 0 6vw; }
+.num {
+  font-family: var(--font-en);
+  font-variation-settings: "wdth" 75, "wght" 800;
+  font-variant-numeric: tabular-nums;
+  line-height: 0.95;
+  letter-spacing: -0.02em;
+}
+
+/* ---------- 진행 내비 / 탑바 ---------- */
+.progress-nav {
+  position: fixed; right: 24px; top: 50%;
+  transform: translateY(-50%);
+  z-index: 90; display: flex; flex-direction: column; gap: 14px;
+}
+.progress-nav a {
+  display: block; width: 6px; height: 6px;
+  background: var(--ink-faint);
+  transition: background .3s, transform .3s;
+}
+.progress-nav a.active { background: var(--accent); transform: scale(1.5); }
+@media (max-width: 720px) { .progress-nav { display: none; } }
+
+.topbar {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 95;
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 20px 4vw;
+  mix-blend-mode: difference;
+}
+.topbar .brand {
+  font-family: var(--font-en);
+  font-variation-settings: "wdth" 80, "wght" 700;
+  font-size: 0.85rem; letter-spacing: 0.18em; color: #fff;
+  text-decoration: none;
+}
+.topbar .chapter { font-family: var(--font-mono); font-weight: 500; font-size: 0.7rem; letter-spacing: 0.2em; color: #fff; opacity: .7; }
+.tb-right { display: flex; align-items: center; gap: 16px; }
+.lang {
+  font-family: var(--font-mono); font-weight: 500; font-size: .68rem; letter-spacing: .15em;
+  color: #fff; text-decoration: none; opacity: .8;
+  border: 1px solid rgba(255,255,255,.45); padding: 3px 9px;
+}
+.lang:hover { opacity: 1; }
+.lang-sw { display: inline-flex; border: 1px solid rgba(255,255,255,.45); font-family: var(--font-mono); font-weight: 500; font-size: .64rem; letter-spacing: .06em; }
+.lang-sw a { color: #fff; text-decoration: none; opacity: .5; padding: 3px 7px; border-left: 1px solid rgba(255,255,255,.28); }
+.lang-sw a:first-child { border-left: 0; }
+.lang-sw a:hover { opacity: .85; }
+.lang-sw a[aria-current="page"] { opacity: 1; background: rgba(255,255,255,.18); }
+
+/* ---------- HERO ---------- */
+.hero {
+  height: 100vh; height: 100svh;
+  position: relative; overflow: hidden;
+  display: flex; align-items: center; justify-content: center;
+}
+#arc-canvas { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+.hero-content { position: relative; z-index: 2; text-align: center; padding: 0 5vw; }
+.hero-eyebrow { margin-bottom: 28px; }
+.hero-title {
+  font-family: var(--font-en);
+  font-variation-settings: "wdth" 68, "wght" 850;
+  font-size: clamp(2.8rem, 10vw, 9.5rem);
+  line-height: 1; letter-spacing: -0.015em;
+  color: var(--ink);
+}
+.hero-title .row { display: block; overflow: hidden; padding: 0.03em 0; }
+.hero-title .row > span { display: inline-block; }
+.hero-title .row--kr { font-family: var(--font-kr); font-weight: 800; font-size: 0.72em; line-height: 1.15; letter-spacing: 0.06em; color: var(--accent); }
+.hero-sub {
+  margin-top: 36px;
+  font-size: clamp(1rem, 1.6vw, 1.25rem);
+  color: var(--ink-dim); font-weight: 400;
+  letter-spacing: 0.04em;
+}
+.hero-sub strong { color: var(--ink); font-weight: 600; }
+.scroll-cue {
+  position: absolute; bottom: 36px; left: 50%;
+  transform: translateX(-50%);
+  z-index: 2; display: flex; flex-direction: column; align-items: center; gap: 10px;
+}
+.scroll-cue .line {
+  width: 1px; height: 48px;
+  background: linear-gradient(to bottom, transparent, var(--accent));
+  animation: cue 2s ease-in-out infinite;
+}
+@keyframes cue {
+  0% { transform: scaleY(0); transform-origin: top; }
+  50% { transform: scaleY(1); transform-origin: top; }
+  51% { transform-origin: bottom; }
+  100% { transform: scaleY(0); transform-origin: bottom; }
+}
+
+/* ---------- 인트로 문장 ---------- */
+.manifesto { padding: 24vh 0; }
+.manifesto p {
+  font-size: clamp(1.6rem, 4vw, 3.2rem);
+  font-weight: 350; line-height: 1.5;
+  max-width: 20em;
+  color: var(--ink-faint);
+}
+.manifesto p .w { display: inline; }
+.manifesto p strong { font-weight: 600; }
+
+/* ---------- 이름의 유래 ---------- */
+.origin { padding: 4vh 0 22vh; }
+.origin-grid {
+  display: grid; grid-template-columns: minmax(0, 2fr) minmax(0, 3fr);
+  gap: 6vw; align-items: center;
+}
+.origin-word {
+  font-family: var(--font-en);
+  font-variation-settings: "wdth" 70, "wght" 850;
+  font-size: clamp(3.2rem, 7.6vw, 6.6rem);
+  line-height: 1.02;
+  color: transparent; -webkit-text-stroke: 1.5px var(--accent-deep);
+  user-select: none;
+}
+.origin-word span { display: block; }
+.origin-word span:nth-child(2) { color: var(--accent); -webkit-text-stroke: 0; margin-left: 0.5em; }
+.origin-word small {
+  display: block;
+  font-family: var(--font-mono); font-size: max(0.14em, 10px); font-weight: 400;
+  letter-spacing: 0.3em; color: var(--ink-faint);
+  -webkit-text-stroke: 0; margin-top: 1.2em;
+}
+.origin-copy h2 {
+  font-size: clamp(1.7rem, 3.4vw, 2.8rem);
+  font-weight: 700; line-height: 1.3; letter-spacing: -0.01em;
+  margin: 16px 0 10px;
+}
+.origin-copy h2 em { font-style: normal; color: var(--accent); }
+.origin-copy p:not(.label) {
+  margin-top: 16px; max-width: 36em;
+  color: var(--ink-dim); font-weight: 400;
+  font-size: clamp(0.98rem, 1.35vw, 1.15rem);
+}
+.origin-copy p strong { color: var(--ink); font-weight: 600; }
+
+/* ---------- 흑백 이미지 밴드 ---------- */
+.img-band { position: relative; height: 58vh; min-height: 380px; overflow: hidden; }
+.img-band .media {
+  position: absolute; inset: -14% 0;
+  background-size: cover; background-position: center;
+  filter: grayscale(1) brightness(0.6) contrast(1.06);
+  will-change: transform;
+}
+.img-band::after {
+  content: ''; position: absolute; inset: 0; pointer-events: none;
+  background: linear-gradient(to bottom, var(--fade-top, var(--bg)) 0%, transparent 30%, transparent 68%, var(--fade-bottom, var(--bg)) 100%),
+              linear-gradient(to right, rgba(10,11,13,.45), transparent 40%);
+}
+.img-band .caption { position: absolute; left: 6vw; bottom: 32px; z-index: 2; }
+.img-band .caption .cap-text {
+  display: block; margin-top: 10px;
+  color: var(--ink-dim); font-weight: 400;
+  font-size: clamp(0.95rem, 1.3vw, 1.15rem);
+}
+.img-band .caption .cap-text strong { color: var(--ink); font-weight: 600; }
+
+/* ---------- 마찰 (핀 시퀀스) ---------- */
+.fric-section { background: var(--bg-2); }
+.fric-stage {
+  position: relative;
+  height: 100vh; height: 100svh;
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 4fr);
+  gap: 4vw;
+  max-width: 1280px; margin: 0 auto; padding: 0 6vw;
+  align-items: center;
+  overflow: hidden;
+}
+.fric-visual { position: relative; height: 82vh; display: flex; align-items: center; justify-content: center; z-index: 1; }
+.fric-visual svg { height: 100%; width: auto; max-width: 100%; overflow: visible; }
+.fric-copy { position: relative; height: 60vh; z-index: 1; }
+.fric-step {
+  position: absolute; inset: 0;
+  display: flex; flex-direction: column; justify-content: center;
+  opacity: 0; visibility: hidden;
+}
+.fric-step h3 {
+  font-size: clamp(1.8rem, 3.4vw, 3rem);
+  font-weight: 700; line-height: 1.25; letter-spacing: -0.01em;
+  margin: 18px 0 20px;
+}
+.fric-step h3 em { font-style: normal; color: var(--accent); }
+.fric-step p {
+  color: var(--ink-dim); font-weight: 400;
+  font-size: clamp(0.95rem, 1.25vw, 1.1rem);
+  max-width: 30em;
+}
+.fric-step p strong { color: var(--ink); font-weight: 600; }
+.badge {
+  display: inline-flex; align-items: center; gap: 10px;
+  border: 1px solid var(--accent-deep);
+  padding: 8px 16px; margin-top: 24px;
+  font-family: var(--font-mono); font-weight: 500; font-size: .75rem; letter-spacing: .15em;
+  color: var(--accent);
+}
+.svg-label { font-family: var(--font-mono); font-weight: 500; font-size: 12px; fill: var(--ink-dim); letter-spacing: .08em; }
+.svg-cap { font-family: var(--font-mono); font-weight: 500; font-size: 13px; fill: var(--ink-dim); letter-spacing: .08em; }
+
+/* ---------- 수치 / 제품 ---------- */
+.capacity { padding: 20vh 0 14vh; }
+.capacity-head h2 {
+  font-size: clamp(2rem, 4.5vw, 4rem);
+  font-weight: 700; line-height: 1.25; letter-spacing: -0.015em;
+  margin-top: 18px;
+}
+.capacity-head h2 em { font-style: normal; color: var(--accent); }
+.stat-trio {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 1px; background: var(--line); border: 1px solid var(--line);
+  margin-top: 8vh;
+}
+.stat-trio .cell { background: var(--bg); padding: clamp(24px, 3vw, 48px); }
+.stat-trio .cell .stat-value { font-size: clamp(2.4rem, 5.5vw, 4.8rem); color: var(--ink); }
+.stat-trio .cell .stat-value .unit { font-family: var(--font-kr); font-size: .32em; font-weight: 400; color: var(--ink-dim); }
+.stat-trio .cell .cap { margin-top: 14px; color: var(--ink-dim); font-weight: 400; font-size: .95rem; }
+.stat-trio .cell .cap small { color: var(--ink-faint); font-size: .78rem; display: block; margin-top: 4px; font-family: var(--font-mono); font-weight: 500; letter-spacing: .06em; }
+.product-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 1px; background: var(--line); border: 1px solid var(--line);
+  margin-top: 10vh;
+}
+.product-cell { background: var(--bg); padding: clamp(24px, 3vw, 44px); }
+.product-cell .p-top { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; flex-wrap: wrap; }
+.product-cell .p-code {
+  font-family: var(--font-mono); font-weight: 500;
+  font-size: clamp(1rem, 1.4vw, 1.2rem); letter-spacing: .1em; color: var(--accent);
+}
+.product-cell .p-cap { font-family: var(--font-mono); font-weight: 500; font-size: .72rem; color: var(--ink-faint); letter-spacing: .08em; }
+.product-cell h4 { font-size: clamp(1.1rem, 1.6vw, 1.35rem); font-weight: 600; margin-top: 10px; }
+.product-cell p.desc { color: var(--ink-dim); font-weight: 400; font-size: 0.92rem; margin-top: 12px; }
+.chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
+.chips span {
+  font-family: var(--font-mono); font-weight: 500; font-size: 0.7rem; letter-spacing: 0.06em;
+  padding: 5px 10px; border: 1px solid var(--line); color: var(--ink-dim);
+}
+.chips span.out { border-color: var(--accent-deep); color: var(--accent); }
+.chips .chips-label { border: none; padding: 5px 0; color: var(--ink-faint); }
+
+/* ---------- Kixx 헤리티지 ---------- */
+.heritage { padding: 20vh 0 16vh; }
+.heritage-head h2 {
+  font-size: clamp(2rem, 4.5vw, 4rem);
+  font-weight: 700; line-height: 1.25; letter-spacing: -0.015em;
+  margin-top: 18px;
+}
+.heritage-head h2 em { font-style: normal; color: var(--accent); }
+.heritage-quote {
+  margin-top: 24px; max-width: 36em;
+  color: var(--ink-dim); font-weight: 400;
+  font-size: clamp(1rem, 1.4vw, 1.2rem);
+}
+.heritage-quote strong { color: var(--ink); font-weight: 600; }
+.timeline { margin-top: 10vh; }
+.tl-row {
+  display: grid; grid-template-columns: minmax(0,1fr) minmax(0,4fr);
+  gap: clamp(16px, 4vw, 56px); align-items: baseline;
+  padding: clamp(20px, 3vw, 34px) 0;
+  border-top: 1px solid var(--line);
+}
+.tl-row:last-child { border-bottom: 1px solid var(--line); }
+.tl-row .year { font-size: clamp(1.8rem, 3.6vw, 3rem); color: var(--accent); }
+.tl-row .what { font-weight: 600; font-size: clamp(1.05rem, 1.6vw, 1.3rem); }
+.tl-row .what small { display: block; font-weight: 400; font-size: .92rem; color: var(--ink-dim); margin-top: 6px; }
+.marquee {
+  margin-top: 14vh; overflow: hidden; white-space: nowrap;
+  border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);
+  padding: 22px 0;
+}
+.marquee-track { display: inline-block; will-change: transform; }
+.marquee-track span {
+  font-family: var(--font-en);
+  font-variation-settings: "wdth" 70, "wght" 750;
+  font-size: clamp(1.6rem, 3.5vw, 3rem);
+  color: transparent;
+  -webkit-text-stroke: 1px var(--ink-faint);
+  margin-right: 6vw; letter-spacing: .02em;
+}
+.marquee-track span.solid { color: var(--accent); -webkit-text-stroke: 0; }
+
+/* ---------- 품질 경쟁력 ---------- */
+.quality { padding: 20vh 0; }
+.quality-inner { max-width: 44em; }
+.quality-inner h2 {
+  font-size: clamp(1.8rem, 3.6vw, 3rem);
+  font-weight: 700; line-height: 1.3; letter-spacing: -0.01em;
+  margin: 16px 0 24px;
+}
+.quality-inner h2 em { font-style: normal; color: var(--accent); }
+.quality-inner p {
+  margin-top: 14px; color: var(--ink-dim); font-weight: 400;
+  font-size: clamp(0.98rem, 1.3vw, 1.15rem);
+}
+
+/* ---------- 일상으로 ---------- */
+.life { padding: 20vh 0 0; }
+.life-head { max-width: none; }
+.life-head h2 {
+  font-size: clamp(2rem, 4.5vw, 4rem);
+  font-weight: 700; line-height: 1.25; letter-spacing: -0.015em;
+  margin-top: 18px;
+}
+.life-head h2 em { font-style: normal; color: var(--accent); }
+.trans-list { margin-top: 10vh; }
+.trans-row {
+  display: grid; grid-template-columns: minmax(0,2fr) auto minmax(0,3fr);
+  gap: clamp(12px, 3vw, 40px); align-items: center;
+  padding: clamp(24px, 4vw, 44px) 0;
+  border-top: 1px solid var(--line);
+}
+.trans-row:last-child { border-bottom: 1px solid var(--line); }
+.trans-row .from {
+  font-family: var(--font-mono); font-weight: 500; letter-spacing: .08em;
+  font-size: clamp(.85rem, 1.4vw, 1.05rem); color: var(--accent);
+}
+.trans-row .from small { display: block; color: var(--ink-faint); font-size: .7rem; margin-top: 6px; letter-spacing: .1em; }
+.trans-row .arrow {
+  font-family: var(--font-en); font-variation-settings: "wdth" 70, "wght" 300;
+  font-size: clamp(1.4rem, 3vw, 2.4rem); color: var(--ink-faint);
+}
+.trans-row .to {
+  font-size: clamp(1.3rem, 2.8vw, 2.3rem); font-weight: 700; letter-spacing: -0.01em;
+}
+.trans-row .to small {
+  display: block; font-size: clamp(.8rem, 1.1vw, .95rem);
+  font-weight: 400; color: var(--ink-dim); margin-top: 8px;
+}
+
+/* ---------- 밸류체인 요약 ---------- */
+.chain { padding: 16vh 0 4vh; }
+.chain h2 {
+  font-size: clamp(2rem, 4.5vw, 4rem);
+  font-weight: 700; line-height: 1.25; letter-spacing: -0.015em;
+  margin-top: 18px;
+}
+.chain h2 em { font-style: normal; color: var(--accent); }
+.chain-intro {
+  margin-top: 24px; max-width: 44em;
+  color: var(--ink-dim); font-weight: 400;
+  font-size: clamp(0.98rem, 1.3vw, 1.15rem);
+}
+.chain-list { margin-top: 8vh; border-top: 1px solid var(--line); }
+.chain-row {
+  display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px;
+  padding: 18px 0; border-bottom: 1px solid var(--line);
+}
+.chain-code {
+  font-family: var(--font-mono); font-weight: 500; font-size: .78rem; letter-spacing: .1em;
+  color: var(--ink-dim);
+}
+.chain-row--current .chain-code { color: var(--accent); }
+.chain-flow {
+  font-family: var(--font-mono); font-weight: 500; font-size: .78rem; letter-spacing: .04em;
+  color: var(--ink-faint);
+}
+
+/* ---------- 아우트로 (시리즈 완결) ---------- */
+.outro {
+  padding: 24vh 0 12vh; position: relative; overflow: hidden;
+  background: linear-gradient(to bottom, var(--bg), #07080A);
+}
+.outro-bg {
+  position: absolute; inset: 0 0 auto 0; height: 64vh;
+  z-index: 0; pointer-events: none;
+  background-image:
+    linear-gradient(to bottom, rgba(10,11,13,.55) 0%, rgba(10,11,13,.75) 60%, #0A0B0D 100%),
+    url('/lubricants/img/outro-bg.jpg');
+  background-size: cover; background-position: center 35%;
+  filter: grayscale(1) contrast(1.05);
+  opacity: .5;
+}
+.outro .inner { position: relative; z-index: 1; }
+.outro-line {
+  font-size: clamp(1.4rem, 3vw, 2.4rem); font-weight: 350;
+  color: var(--ink-dim); max-width: 28em; line-height: 1.6;
+}
+.outro-line strong { color: var(--ink); font-weight: 600; }
+.next-chapters { margin-top: 14vh; }
+.next-chapters .row-item {
+  display: flex; justify-content: space-between; align-items: baseline;
+  padding: 22px 0; border-top: 1px solid var(--line);
+  color: var(--ink-faint); text-decoration: none;
+  transition: color .3s, padding-left .3s;
+}
+.next-chapters .row-item:last-child { border-bottom: 1px solid var(--line); }
+.next-chapters .row-item .name { font-size: clamp(1.3rem, 2.6vw, 2.2rem); font-weight: 600; }
+.next-chapters .row-item .en {
+  font-family: var(--font-mono); font-weight: 500; font-size: .72rem; letter-spacing: .2em; text-transform: uppercase;
+}
+.next-chapters .row-item.current { color: var(--ink); }
+.next-chapters .row-item.current .en { color: var(--accent); }
+.next-chapters a.row-item.done { color: var(--ink-dim); }
+.next-chapters a.row-item.done:hover { color: var(--ink); padding-left: 12px; }
+.next-chapters a.row-item.done .en { color: var(--amber); }
+.footer-note {
+  margin-top: 12vh;
+  font-family: var(--font-mono); font-weight: 500; font-size: .7rem; line-height: 2;
+  color: var(--ink-faint); letter-spacing: .04em;
+}
+.footer-note a { color: var(--ink-dim); }
+
+@media (max-width: 720px) {
+  .hero-sub br { display: none; }
+  .label { letter-spacing: 0.16em; font-size: 0.68rem; }
+}
+@media (max-width: 880px) {
+  .fric-stage { grid-template-columns: 1fr; grid-template-rows: 38vh 1fr; gap: 0; padding-top: 8vh; }
+  .fric-visual { height: 100%; }
+  .fric-visual svg { width: 100%; height: 100%; }
+  .svg-label { font-size: 16px; }
+  .svg-cap { font-size: 16px; }
+  .fric-copy { height: 100%; }
+  .fric-step { justify-content: flex-start; padding-top: 2vh; }
+  .fric-step h3 { font-size: clamp(1.4rem, 6vw, 1.9rem); margin: 12px 0 14px; }
+  .badge { margin-top: 14px; }
+  .product-grid { grid-template-columns: 1fr; }
+  .stat-trio { grid-template-columns: 1fr; }
+  .tl-row { grid-template-columns: 1fr; gap: 6px; }
+  .origin-grid { grid-template-columns: 1fr; gap: 4vh; }
+  .trans-row { grid-template-columns: 1fr; gap: 10px; }
+  .trans-row .arrow { display: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .scroll-cue .line { animation: none; }
+}
+@media (max-width: 560px) {
+  /* 모바일 터치 영역 확대 (상단바) */
+  .lang-sw a { padding-top: 8px; padding-bottom: 8px; }
+}
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <a class="brand" href="/zh">GS CALTEX — BUSINESS</a>
+  <span class="tb-right"><span class="chapter">CH.06 / LUBRICANTS</span><span class="lang-sw"><a href="/lubricants">KR</a><a href="/en/lubricants">EN</a><a href="/zh/lubricants" aria-current="page">中</a><a href="/ja/lubricants">日</a></span></span>
+</header>
+
+<nav class="progress-nav" aria-label="章节导航">
+  <a href="#top" data-nav="hero" aria-label="开头"></a>
+  <a href="#friction" data-nav="friction" aria-label="摩擦"></a>
+  <a href="#capacity" data-nav="capacity" aria-label="数据"></a>
+  <a href="#heritage" data-nav="heritage" aria-label="Kixx"></a>
+  <a href="#life" data-nav="life" aria-label="日常"></a>
+  <a href="#outro" data-nav="outro" aria-label="终章"></a>
+</nav>
+
+<!-- ========== HERO ========== -->
+<section class="hero section" id="top" data-nav-target="hero">
+  <canvas id="arc-canvas" aria-hidden="true"></canvas>
+  <div class="hero-content">
+    <p class="label hero-eyebrow">GS CALTEX BUSINESS — FINAL CHAPTER 06</p>
+    <h1 class="hero-title" aria-label="润滑油">
+      <span class="row"><span data-hero-row>LUBRICANTS</span></span>
+      <span class="row row--kr"><span data-hero-row>润滑油</span></span>
+    </h1>
+    <p class="hero-sub" data-hero-sub>
+基于自产的高品质基础油与技术实力<br>
+      日产<strong>9千桶</strong>，涵盖<strong>300余款</strong>润滑油产品
+    </p>
+  </div>
+  <div class="scroll-cue" aria-hidden="true">
+    <span class="label label--dim">SCROLL</span>
+    <span class="line"></span>
+  </div>
+</section>
+
+<!-- ========== 인트로 문장 ========== -->
+<section class="section manifesto">
+  <div class="inner">
+    <p data-manifesto>
+      <span class="w">GS加德士</span><span class="w">凭借</span><span class="w">自产的</span><span class="w"><strong>高品质</strong></span><span class="w"><strong>基础油</strong></span><span class="w">与</span><span class="w">积累的</span><span class="w">技术实力，</span><span class="w">生产</span><span class="w">从用于汽车</span><span class="w">到工业的</span><span class="w">共</span><span class="w"><strong>300余款</strong></span><span class="w"><strong>润滑油产品。</strong></span><span class="w">自1969年</span><span class="w">在仁川工厂</span><span class="w">开始生产润滑油以来，</span><span class="w">已积累</span><span class="w">超过50年</span><span class="w">的事业竞争力，</span><span class="w">并以</span><span class="w"><strong>Kixx品牌</strong></span><span class="w">向国内外客户</span><span class="w">供应</span><span class="w"><strong>高品质润滑油产品。</strong></span>
+    </p>
+  </div>
+</section>
+
+<!-- ========== 이름의 유래 ========== -->
+<section class="section origin">
+  <div class="inner origin-grid">
+    <div class="origin-word" aria-hidden="true" data-reveal>
+      <span>LUBRI-</span><span>CUS</span>
+      <small>LUBRICUS — LATIN FOR "SLIPPERY"</small>
+    </div>
+    <div class="origin-copy">
+      <p class="label" data-reveal>ORIGIN</p>
+      <h2 data-reveal>源自拉丁语<br><em>lubricus——"光滑"</em></h2>
+      <p data-reveal>Lubricant一词源自拉丁语中意为"光滑"的<strong>"Lubricus"</strong>。</p>
+      <p data-reveal>润滑油在相互接触并运动的两个表面之间<strong>形成油膜</strong>，减少摩擦与磨损，使机械与设备能够顺畅运转。</p>
+      <p data-reveal>从汽车发动机、变速箱，到工业现场的各种机械与设备，润滑油的应用<strong>范围十分广泛</strong>。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ========== 이미지 밴드: 품질 ========== -->
+<section class="img-band" style="--fade-top: var(--bg); --fade-bottom: #140D0D" aria-label="油品样本照片">
+  <div class="media" data-band style="background-image: url('/lubricants/img/band-oil.jpg')"></div>
+</section>
+
+<!-- ========== 마찰 시퀀스 ========== -->
+<section class="section fric-section" id="friction" data-nav-target="friction">
+  <div class="fric-stage">
+    <div class="fric-visual" aria-hidden="true">
+      <svg viewBox="0 0 400 640" fill="none">
+        <!-- 거친 표면 (step 0) -->
+        <g id="rough">
+          <path id="rough-top" d="M60 292 l20 -14 l20 14 l20 -14 l20 14 l20 -14 l20 14 l20 -14 l20 14 l20 -14 l20 14 l20 -14 l20 14 l20 -14 l20 14" stroke="#EDE8DC" stroke-width="2"/>
+          <path id="rough-bot" d="M60 336 l20 14 l20 -14 l20 14 l20 -14 l20 14 l20 -14 l20 14 l20 -14 l20 14 l20 -14 l20 14 l20 -14 l20 14 l20 -14" stroke="#EDE8DC" stroke-width="2"/>
+          <g id="sparks" opacity="0" stroke="#D65C5C" stroke-width="1.5">
+            <line x1="140" y1="306" x2="150" y2="320"/><line x1="150" y1="306" x2="140" y2="320"/>
+            <line x1="260" y1="308" x2="270" y2="322"/><line x1="270" y1="308" x2="260" y2="322"/>
+          </g>
+        </g>
+        <!-- 매끄러운 표면 + 유막 (step 1~2) -->
+        <g id="smooth" opacity="0">
+          <line id="smooth-top" x1="60" y1="272" x2="340" y2="272" stroke="#EDE8DC" stroke-width="2.5"/>
+          <line id="smooth-bot" x1="60" y1="360" x2="340" y2="360" stroke="#EDE8DC" stroke-width="2.5"/>
+          <g id="film" stroke="#D65C5C" stroke-width="1.2" opacity="0">
+            <path d="M64 300 q35 8 70 0 t70 0 t70 0 t68 0" fill="none"/>
+            <path d="M64 316 q35 -8 70 0 t70 0 t70 0 t68 0" fill="none"/>
+            <path d="M64 332 q35 8 70 0 t70 0 t70 0 t68 0" fill="none"/>
+          </g>
+          <text id="film-label" class="svg-label" x="200" y="410" text-anchor="middle" opacity="0" fill="#D65C5C">OIL FILM</text>
+        </g>
+        <!-- 움직임 화살표 (step 2) -->
+        <g id="motion" opacity="0">
+          <line x1="120" y1="240" x2="250" y2="240" stroke="#D65C5C" stroke-width="1.5"/>
+          <path d="M250 240 l-12 -6 v12 z" fill="#D65C5C"/>
+          <text class="svg-label" x="200" y="222" text-anchor="middle">FRICTION ↓ · WEAR ↓ · EFFICIENCY ↑</text>
+        </g>
+        <!-- 하단 캡션 -->
+        <text id="cap-0" class="svg-cap" x="200" y="600" text-anchor="middle" opacity="0">FRICTION</text>
+        <text id="cap-1" class="svg-cap" x="200" y="600" text-anchor="middle" opacity="0">FORMING THE OIL FILM</text>
+        <text id="cap-2" class="svg-cap" x="200" y="600" text-anchor="middle" opacity="0">PERFORMANCE</text>
+      </svg>
+    </div>
+
+    <div class="fric-copy">
+      <div class="fric-step" data-step="0">
+        <p class="label">01 — FRICTION</p>
+        <h3>机械运转时<br>表面之间会产生<em>摩擦</em></h3>
+        <p>金属表面直接接触并运动时会产生<strong>摩擦与热量</strong>，可能导致零部件磨损。</p>
+      </div>
+      <div class="fric-step" data-step="1">
+        <p class="label">01 — OIL FILM</p>
+        <h3>润滑油在表面之间<br>形成<em>油膜</em></h3>
+        <p>润滑油在运动的表面之间形成<strong>油膜</strong>，减少直接接触，防止摩擦与磨损。</p>
+      </div>
+      <div class="fric-step" data-step="2">
+        <p class="label">01 — PERFORMANCE</p>
+        <h3>减少摩擦与磨损<br>维持机械的<em>性能</em></h3>
+        <p>使用与用途相匹配的润滑油，可保护零部件，帮助机械<strong>稳定地维持性能</strong>。</p>
+        <span class="badge" style="font-family:var(--font-kr); letter-spacing:.08em;">9千桶/日 · KIXX</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== 수치 / 제품 ========== -->
+<section class="section capacity" id="capacity" data-nav-target="capacity">
+  <div class="inner">
+    <div class="capacity-head">
+      <p class="label" data-reveal>02 — CAPACITY & PRODUCTS</p>
+      <h2 data-reveal>日产9千桶，<br><em>300余款Kixx润滑油</em></h2>
+    </div>
+    <div class="stat-trio">
+      <div class="cell" data-reveal>
+        <div class="stat-value num"><span data-count="9">0</span><span class="unit">千桶 / 日</span></div>
+        <p class="cap">润滑油产能</p>
+      </div>
+      <div class="cell" data-reveal>
+        <div class="stat-value num"><span data-count="300" data-suffix="+">0</span><span class="unit">种</span></div>
+        <p class="cap">Kixx润滑油产品</p>
+      </div>
+      <div class="cell" data-reveal>
+        <div class="stat-value num">1969</div>
+        <p class="cap">SINCE · 仁川工厂开始生产润滑油</p>
+      </div>
+    </div>
+
+    <div class="product-grid">
+      <div class="product-cell" data-reveal>
+        <div class="p-top"><span class="p-code">MOBILITY</span><span class="p-cap">汽车润滑油</span></div>
+        <h4>为发动机与传动系统的性能与耐久性打造的多种汽车产品</h4>
+        <p class="desc">从乘用车、商用车发动机油到变速箱油、车桥油，为车辆主要部件供应各类润滑油。减少摩擦与磨损，帮助发动机与传动系统稳定发挥性能。</p>
+        <div class="chips"><span class="chips-label">主要产品 →</span><span class="out">乘用车发动机油</span><span class="out">商用车发动机油</span><span class="out">变速箱/车桥油</span><span>用于汽车的其他油品</span></div>
+      </div>
+      <div class="product-cell" data-reveal>
+        <div class="p-top"><span class="p-code">INDUSTRY</span><span class="p-cap">工业润滑油</span></div>
+        <h4>支撑各类工业设备稳定运行</h4>
+        <p class="desc">工业现场的机械与设备因运行条件与用途不同，所需润滑性能也各不相同。液压油、工业油等多种产品减少机械与设备的摩擦与磨损，支持其稳定运行。</p>
+        <div class="chips"><span class="chips-label">主要产品 →</span><span class="out">液压油</span><span class="out">工业油</span></div>
+      </div>
+      <div class="product-cell" data-reveal>
+        <div class="p-top"><span class="p-code">FUTURE</span><span class="p-cap">新的润滑解决方案</span></div>
+        <h4>随着产业与技术的变化，润滑油的角色也在不断扩展</h4>
+        <p class="desc">GS加德士在既有的用于汽车、工业润滑油的基础上，正在开发应对不断变化的出行方式与产业环境的新产品与新技术。</p>
+        <p class="desc" style="margin-top:14px"><strong>生物基发动机油</strong> — 采用生物基原料，在保持既有润滑性能的同时降低产品环境影响的发动机油。</p>
+        <p class="desc" style="margin-top:10px"><strong>浸没式冷却液</strong> — 用于将数据中心服务器等电子设备直接浸入非导电流体、高效管理发热的浸没式冷却技术。这是应对高性能计算与AI普及所带来的数据中心散热需求增长的新型流体解决方案。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== 이미지 밴드: 현장 ========== -->
+<section class="img-band" style="--fade-top: var(--bg); --fade-bottom: var(--bg)" aria-label="现场工作人员照片">
+  <div class="media" data-band style="background-image: url('/lubricants/img/band-crew.jpg')"></div>
+</section>
+
+<!-- ========== Kixx 헤리티지 ========== -->
+<section class="section heritage" id="heritage" data-nav-target="heritage">
+  <div class="inner">
+    <div class="heritage-head">
+      <p class="label" data-reveal>03 — KIXX</p>
+      <h2 data-reveal>2005年成立的<br><em>GS加德士润滑油品牌</em></h2>
+      <p class="heritage-quote" data-reveal>Kixx于2005年作为汽车润滑油品牌成立，如今已成长为涵盖汽车与工业产品的、<strong>具GS加德士代表性的润滑油品牌</strong>。凭借高品质基础油与积累的产品、调配技术，供应契合多种运行环境与客户需求的产品。</p>
+    </div>
+    <div class="timeline">
+      <div class="tl-row" data-reveal>
+        <div class="year num">2005</div>
+        <div class="what">润滑油品牌Kixx成立<small>以汽车润滑油品牌成立后，成长为涵盖用于汽车与工业的综合润滑油品牌</small></div>
+      </div>
+      <div class="tl-row" data-reveal>
+        <div class="year num">2010</div>
+        <div class="what">进军全球市场<small>以印度、俄罗斯、越南等国为起点进军海外市场，扩大全球事业</small></div>
+      </div>
+      <div class="tl-row" data-reveal>
+        <div class="year num">TODAY</div>
+        <div class="what">在国内外市场提升品牌竞争力<small>向多个国家与市场供应Kixx产品，不断提升作为全球润滑油品牌的竞争力</small></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== 이미지 밴드: 사람 ========== -->
+<section class="img-band" style="--fade-top: var(--bg); --fade-bottom: var(--bg)" aria-label="员工照片">
+  <div class="media" data-band style="background-image: url('/lubricants/img/band-people.jpg')"></div>
+</section>
+
+<!-- ========== 품질 경쟁력 ========== -->
+<section class="section quality">
+  <div class="inner quality-inner">
+    <p class="label" data-reveal>04 — QUALITY</p>
+    <h2 data-reveal>从基础油到润滑油成品，<br>以<em>积累的技术实力</em>管理品质</h2>
+    <p data-reveal>润滑油的性能不仅取决于基础油的品质，也取决于添加剂的调配技术以及生产、品质管理水平。</p>
+    <p data-reveal>GS加德士使用自产的高品质基础油，凭借契合各产品所需性能的调配技术与严格的品质管理，生产多种Kixx润滑油产品。</p>
+    <p data-reveal>为应对汽车与工业设备的不断变化及其技术趋势和新规格，持续开发新产品并改进性能。</p>
+  </div>
+</section>
+
+<!-- ========== 일상으로 ========== -->
+<section class="section life" id="life" data-nav-target="life">
+  <div class="inner">
+    <div class="life-head">
+      <p class="label" data-reveal>05 — INTO EVERYDAY LIFE</p>
+      <h2 data-reveal>润滑油从汽车到工业设备，<br>稳定支撑<em>各种运转</em></h2>
+    </div>
+    <div class="trans-list">
+      <div class="trans-row" data-reveal>
+        <div class="from">PASSENGER CAR<small>乘用车</small></div>
+        <div class="arrow" aria-hidden="true">→</div>
+        <div class="to">发动机及传动系统<small>发动机油、变速箱油帮助减少发动机与变速箱内部的摩擦与磨损，有助于维持性能稳定</small></div>
+      </div>
+      <div class="trans-row" data-reveal>
+        <div class="from">COMMERCIAL VEHICLE<small>商用车</small></div>
+        <div class="arrow" aria-hidden="true">→</div>
+        <div class="to">卡车 · 客车等<small>商用车发动机油保护在长时间运行、高负荷环境下的发动机，有助于稳定运行</small></div>
+      </div>
+      <div class="trans-row" data-reveal>
+        <div class="from">INDUSTRY<small>工业</small></div>
+        <div class="arrow" aria-hidden="true">→</div>
+        <div class="to">工厂 · 工程机械 · 工业设备<small>液压油、工业油帮助各类机械与设备稳定运行并维持性能</small></div>
+      </div>
+      <div class="trans-row" data-reveal>
+        <div class="from">DATA CENTER<small>数据中心</small></div>
+        <div class="arrow" aria-hidden="true">→</div>
+        <div class="to">服务器 · IT设备<small>浸没式冷却液高效管理电子设备产生的热量，支持数据中心的稳定运营、提升能效</small></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== GS칼텍스의 사업: 밸류체인 요약 ========== -->
+<section class="section chain">
+  <div class="inner">
+    <p class="label" data-reveal>FROM ENERGY TO MATERIALS</p>
+    <h2 data-reveal>从原油到能源与材料，<br>连成<em>一条完整的价值链</em></h2>
+    <p class="chain-intro" data-reveal>GS加德士的事业始于原油引进与炼油，进而拓展至芳烃、烯烃、聚合物等多种石化产品。炼油升级工艺产出的原料成为基础油，而高品质基础油又成为Kixx润滑油的主要原料。通过各事业与工艺之间的有机联结，提升原料的利用价值，并向国内外客户供应能源与材料领域的多种产品。</p>
+    <div class="chain-list">
+      <div class="chain-row" data-reveal><span class="chain-code">REFINING · 炼油</span><span class="chain-flow">原油 → 石油产品 · 石化原料</span></div>
+      <div class="chain-row" data-reveal><span class="chain-code">AROMATICS · 芳烃</span><span class="chain-flow">石脑油 → 苯 · 甲苯 · 混合二甲苯 · 对二甲苯</span></div>
+      <div class="chain-row" data-reveal><span class="chain-code">OLEFINS · 烯烃</span><span class="chain-flow">石脑油 · LPG · 副产气 → 乙烯 · 丙烯等</span></div>
+      <div class="chain-row" data-reveal><span class="chain-code">POLYMER · 聚合物</span><span class="chain-flow">乙烯 · 丙烯 → PE · PP · 复合树脂</span></div>
+      <div class="chain-row" data-reveal><span class="chain-code">BASE OIL · 基础油</span><span class="chain-flow">未转化油(UCO) → 高品质基础油</span></div>
+      <div class="chain-row chain-row--current" data-reveal><span class="chain-code">LUBRICANTS · 润滑油</span><span class="chain-flow">基础油 + 添加剂 → 汽车 · 工业润滑油</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== 아우트로: 시리즈 완결 ========== -->
+<section class="section outro" id="outro" data-nav-target="outro">
+  <div class="outro-bg" aria-hidden="true"></div>
+  <div class="inner">
+    <p class="outro-line" data-reveal>
+      从原油出发的GS加德士业务，以炼油为基础，拓展至石化、基础油与润滑油。
+      各项业务通过原料、工序与技术有机相连，生产能源与多种产业材料。
+      从能源到材料，<strong>GS加德士持续打造面向更美好未来的竞争力</strong>。
+    </p>
+    <div class="next-chapters" data-reveal>
+      <a class="row-item done" href="/zh/process"><span class="name">生产工序</span><span class="en">CH.00 — Read</span></a>
+      <a class="row-item done" href="/zh/refining"><span class="name">炼油</span><span class="en">CH.01 — Read</span></a>
+      <a class="row-item done" href="/zh/aromatics"><span class="name">芳烃</span><span class="en">CH.02 — Read</span></a>
+      <a class="row-item done" href="/zh/olefins"><span class="name">烯烃</span><span class="en">CH.03 — Read</span></a>
+      <a class="row-item done" href="/zh/polymer"><span class="name">聚合物</span><span class="en">CH.04 — Read</span></a>
+      <a class="row-item done" href="/zh/baseoil"><span class="name">基础油</span><span class="en">CH.05 — Read</span></a>
+      <div class="row-item current"><span class="name">润滑油</span><span class="en">CH.06 — Now</span></div>
+    </div>
+    <p class="footer-note">
+      DATA — <a href="https://www.gscaltex.com/kr/Business/Lubricants" target="_blank" rel="noopener">gscaltex.com/kr/Business/Lubricants</a> · <a href="https://www.kixxoil.com/kr/" target="_blank" rel="noopener">kixxoil.com</a> (品牌故事) · GS Caltex Sustainability Report 2025<br>
+      产能 9千桶/日 · 300+ 种Kixx产品 · 1969年仁川工厂开工 · 2005年Kixx品牌成立 · 2010年进军全球市场<br>
+      PHOTO — <a href="https://gscaltexmediahub.com/gsc-exhibition/" target="_blank" rel="noopener">GS Caltex Media Hub photo exhibition</a>
+    </p>
+  </div>
+</section>
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+<script>
+gsap.registerPlugin(ScrollTrigger);
+const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+/* ============ 히어로: 회전 원호(베어링) 캔버스 ============ */
+(function () {
+  const canvas = document.getElementById('arc-canvas');
+  const ctx = canvas.getContext('2d');
+  let w, h, raf, t = 0;
+
+  function resize() {
+    const dpr = Math.min(window.devicePixelRatio || 1, 2);
+    w = canvas.clientWidth; h = canvas.clientHeight;
+    canvas.width = w * dpr; canvas.height = h * dpr;
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+  }
+  resize();
+  window.addEventListener('resize', resize);
+
+  const rings = Array.from({ length: 10 }, (_, i) => ({
+    r: 0.16 + i * 0.085,
+    speed: (i % 2 === 0 ? 1 : -1) * (0.0012 + Math.random() * 0.0018),
+    arc: 0.6 + Math.random() * 1.6,
+    off: Math.random() * Math.PI * 2,
+    a: 0.05 + Math.random() * 0.1,
+    red: i % 3 === 0
+  }));
+
+  function draw() {
+    ctx.clearRect(0, 0, w, h);
+    const bg = ctx.createRadialGradient(w / 2, h * 0.45, 0, w / 2, h * 0.45, Math.max(w, h) * 0.8);
+    bg.addColorStop(0, '#120E0E');
+    bg.addColorStop(1, '#0A0B0D');
+    ctx.fillStyle = bg;
+    ctx.fillRect(0, 0, w, h);
+
+    const cx = w / 2, cy = h * 0.5, base = Math.min(w, h);
+    rings.forEach(R => {
+      const start = R.off + t * R.speed;
+      ctx.beginPath();
+      ctx.arc(cx, cy, base * R.r, start, start + R.arc);
+      ctx.strokeStyle = R.red
+        ? 'rgba(214, 92, 92, ' + R.a + ')'
+        : 'rgba(154, 149, 138, ' + R.a * 0.75 + ')';
+      ctx.lineWidth = 1;
+      ctx.stroke();
+    });
+    t += 1;
+    raf = requestAnimationFrame(draw);
+  }
+  if (reduceMotion) { t = 40; draw(); cancelAnimationFrame(raf); }
+  else draw();
+
+  gsap.to(canvas, {
+    opacity: 0.25, ease: 'none',
+    scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: true }
+  });
+})();
+
+/* ============ 히어로 등장 ============ */
+gsap.from('[data-hero-row]', {
+  yPercent: 110, duration: 1.2, stagger: 0.12, ease: 'power4.out', delay: 0.15
+});
+gsap.from('[data-hero-sub], .hero-eyebrow', {
+  opacity: 0, y: 24, duration: 1, stagger: 0.1, ease: 'power2.out', delay: 0.7
+});
+gsap.to('.hero-content', {
+  yPercent: -18, opacity: 0, ease: 'none',
+  scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom 30%', scrub: true }
+});
+
+/* ============ 매니페스토 ============ */
+gsap.to('[data-manifesto] .w', {
+  color: '#EDE8DC', stagger: 0.6, ease: 'none',
+  scrollTrigger: { trigger: '.manifesto', start: 'top 75%', end: 'bottom 55%', scrub: true }
+});
+
+/* ============ 마찰 핀 시퀀스 ============ */
+(function () {
+  const steps = gsap.utils.toArray('.fric-step');
+  const tl = gsap.timeline({
+    scrollTrigger: {
+      trigger: '.fric-section',
+      start: 'top top',
+      end: '+=300%',
+      pin: '.fric-stage',
+      scrub: 0.6,
+      anticipatePin: 1
+    }
+  });
+
+  tl.set(steps[0], { autoAlpha: 1 });
+  ['#rough-top', '#rough-bot'].forEach((sel, i) => {
+    const p = document.querySelector(sel);
+    const len = p.getTotalLength();
+    p.style.strokeDasharray = len;
+    p.style.strokeDashoffset = len;
+    tl.to(p, { strokeDashoffset: 0, duration: 1.4, ease: 'none' }, 0.2 + i * 0.3);
+  });
+  tl.to('#sparks', { opacity: 1, duration: 0.4 }, 1.7);
+  tl.to('#sparks', { opacity: 0.3, duration: 0.4 }, 2.2);
+  tl.to('#sparks', { opacity: 1, duration: 0.4 }, 2.5);
+  tl.to('#cap-0', { opacity: 1, duration: 0.4 }, 0.7);
+
+  tl.to(steps[0], { autoAlpha: 0, y: -28, duration: 0.5 }, 3.0);
+  tl.fromTo(steps[1], { autoAlpha: 0, y: 28 }, { autoAlpha: 1, y: 0, duration: 0.5 }, 3.5);
+  tl.to('#cap-0', { opacity: 0, duration: 0.3 }, 3.4);
+  tl.to('#sparks', { opacity: 0, duration: 0.3 }, 3.4);
+  tl.to('#rough', { opacity: 0, duration: 0.7 }, 3.6);
+  tl.to('#smooth', { opacity: 1, duration: 0.7 }, 3.9);
+  const films = gsap.utils.toArray('#film path');
+  tl.to('#film', { opacity: 1, duration: 0.2 }, 4.4);
+  films.forEach((p, i) => {
+    const len = p.getTotalLength();
+    p.style.strokeDasharray = len;
+    p.style.strokeDashoffset = len;
+    tl.to(p, { strokeDashoffset: 0, duration: 0.9, ease: 'power1.inOut' }, 4.5 + i * 0.3);
+  });
+  tl.to('#film-label', { opacity: 1, duration: 0.4 }, 5.2);
+  tl.to('#cap-1', { opacity: 1, duration: 0.4 }, 4.4);
+
+  tl.to(steps[1], { autoAlpha: 0, y: -28, duration: 0.5 }, 6.2);
+  tl.fromTo(steps[2], { autoAlpha: 0, y: 28 }, { autoAlpha: 1, y: 0, duration: 0.5 }, 6.7);
+  tl.to('#cap-1', { opacity: 0, duration: 0.3 }, 6.6);
+  tl.to('#motion', { opacity: 1, duration: 0.5 }, 6.9);
+  tl.to('#smooth-top', { attr: { x1: 90, x2: 370 }, duration: 1.4, ease: 'power1.inOut' }, 6.9);
+  tl.to('#film path', { x: 14, duration: 1.4, ease: 'power1.inOut' }, 6.9);
+  tl.to('#cap-2', { opacity: 1, duration: 0.4 }, 7.1);
+  tl.to({}, { duration: 1.0 });
+})();
+
+/* ============ 이미지 밴드 패럴랙스 ============ */
+gsap.utils.toArray('[data-band]').forEach(m => {
+  gsap.fromTo(m, { yPercent: -7 }, {
+    yPercent: 7, ease: 'none',
+    scrollTrigger: { trigger: m.parentElement, start: 'top bottom', end: 'bottom top', scrub: true }
+  });
+});
+
+/* ============ 공통 리빌 ============ */
+document.querySelectorAll('[data-reveal]').forEach(el => {
+  gsap.from(el, {
+    opacity: 0, y: 44, duration: 1, ease: 'power3.out',
+    scrollTrigger: { trigger: el, start: 'top 82%' }
+  });
+});
+
+/* ============ 카운트업 ============ */
+document.querySelectorAll('[data-count]').forEach(el => {
+  const target = parseFloat(el.dataset.count);
+  const suffix = el.dataset.suffix || '';
+  const obj = { v: 0 };
+  const fmt = v => v.toLocaleString('en-US', { maximumFractionDigits: 0, useGrouping: false }) + suffix;
+  el.textContent = fmt(0);
+  ScrollTrigger.create({
+    trigger: el, start: 'top 85%', once: true,
+    onEnter: () => gsap.to(obj, {
+      v: target, duration: 1.8, ease: 'power2.out',
+      onUpdate: () => { el.textContent = fmt(obj.v); }
+    })
+  });
+});
+
+/* ============ 진행 내비 ============ */
+document.querySelectorAll('[data-nav-target]').forEach(sec => {
+  ScrollTrigger.create({
+    trigger: sec, start: 'top 50%', end: 'bottom 50%',
+    onToggle: self => {
+      if (self.isActive) {
+        document.querySelectorAll('.progress-nav a').forEach(a =>
+          a.classList.toggle('active', a.dataset.nav === sec.dataset.navTarget));
+      }
+    }
+  });
+});
+</script>
+</body>
+</html>

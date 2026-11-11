@@ -1,0 +1,1358 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+<meta charset="UTF-8">
+<title>GS Caltex事业部门 — 从原油到能源与材料</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700;800&family=Archivo:wdth,wght@62..125,100..900&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0A0B0D; --bg-2:#101318; --bg-3:#15191F;
+  --ink:#EDE8DC; --ink-dim:#B9B3A6; --ink-faint:#8E887C;
+  --amber:#E0A63E; --amber-deep:#8A5F1C; --steel:#3E4A55; --line:#26292E;
+  --g1:#E0A63E; --g2:#C96F45; --g3:#7FA8C9; --g4:#8FB98B;
+  --font-kr:'Pretendard','Noto Sans SC',-apple-system,'Apple SD Gothic Neo',sans-serif;
+  --font-en:'Archivo','Pretendard','Noto Sans SC',sans-serif;
+  --font-mono:'IBM Plex Mono',ui-monospace,monospace;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{font-size:16px;}
+body{ background:#000; color:var(--ink); font-family:var(--font-kr); font-weight:400; line-height:1.55; -webkit-font-smoothing:antialiased; word-break:normal; line-break:strict; }
+@page{ size:13.333in 7.5in; margin:0; }
+
+.slide{
+  position:relative; width:13.333in; height:7.5in; overflow:hidden;
+  background:var(--bg); color:var(--ink);
+  display:flex; flex-direction:column; padding:0.6in 0.78in 0.5in;
+  page-break-after:always; break-after:page;
+  -webkit-print-color-adjust:exact; print-color-adjust:exact;
+}
+.slide:last-child{ page-break-after:auto; break-after:auto; }
+
+/* 크롬 */
+.eyebrow{ font-family:var(--font-mono); font-size:11.5px; letter-spacing:.26em; text-transform:uppercase; color:var(--amber); }
+.eyebrow.dim{ color:var(--ink-faint); }
+.s-head{ display:flex; justify-content:space-between; align-items:baseline; flex:0 0 auto; }
+.s-tag{ font-family:var(--font-mono); font-size:11px; letter-spacing:.2em; color:var(--ink-faint); text-transform:uppercase; }
+.s-foot{ flex:0 0 auto; margin-top:auto; display:flex; justify-content:space-between; align-items:center; border-top:1px solid var(--line); padding-top:9px; font-family:var(--font-mono); font-size:9.5px; letter-spacing:.08em; color:var(--ink-faint); }
+.s-foot .pg{ color:var(--ink-dim); }
+.s-body{ flex:1 1 auto; display:flex; flex-direction:column; min-height:0; }
+
+em{ font-style:normal; color:var(--amber); }
+strong{ color:var(--ink); font-weight:600; }
+.amber{ color:var(--amber); }
+.kicker{ font-family:var(--font-mono); font-size:10.5px; letter-spacing:.14em; text-transform:uppercase; color:var(--amber); }
+.kicker.dim{ color:var(--ink-faint); }
+.h2{ font-size:34px; font-weight:700; line-height:1.2; letter-spacing:-.01em; margin-top:12px; }
+.h3{ font-size:22px; font-weight:700; line-height:1.28; margin-top:8px; letter-spacing:-.01em; }
+.lede{ margin-top:14px; font-size:14px; font-weight:400; color:var(--ink-dim); max-width:52em; line-height:1.7; }
+.body-p{ font-size:13px; font-weight:400; color:var(--ink-dim); margin-top:10px; line-height:1.75; }
+.body-p strong{ color:var(--ink); font-weight:600; }
+.hr{ height:1px; background:var(--line); margin:16px 0; }
+
+/* 통계 */
+.stat .v{ font-family:var(--font-en); font-variation-settings:"wdth" 75,"wght" 800; font-variant-numeric:tabular-nums; font-size:60px; line-height:.88; color:var(--ink); }
+.stat .v .u{ font-family:var(--font-kr); font-size:.26em; font-weight:400; color:var(--ink-dim); letter-spacing:.02em; margin-left:.15em; }
+.stat .l{ font-family:var(--font-mono); font-size:10px; letter-spacing:.12em; text-transform:uppercase; color:var(--ink-faint); margin-top:9px; }
+.statrow{ display:flex; gap:30px; margin-top:16px; flex-wrap:wrap; }
+.chip{ font-family:var(--font-mono); font-size:10.5px; letter-spacing:.04em; padding:4px 9px; border:1px solid var(--line); color:var(--ink-dim); display:inline-block; }
+.chip.out{ border-color:currentColor; }
+
+/* COVER */
+.cover .bg{ position:absolute; inset:0; z-index:0; background:url('../baseoil/img/fig-splash.jpg') center/cover no-repeat; filter:grayscale(1) contrast(1.06) brightness(.42); }
+.cover .scrim{ position:absolute; inset:0; z-index:1; background:linear-gradient(120deg,rgba(10,11,13,.94) 0%,rgba(10,11,13,.72) 46%,rgba(10,11,13,.5) 100%),radial-gradient(120% 80% at 15% 90%, rgba(224,166,62,.10), transparent 60%); }
+.cover .wrap{ position:relative; z-index:2; height:100%; display:flex; flex-direction:column; padding:0.6in 0.78in 0.5in; }
+.cover .en{ font-family:var(--font-en); font-variation-settings:"wdth" 66,"wght" 850; font-size:118px; line-height:.92; letter-spacing:-.015em; color:var(--ink); margin-top:auto; }
+.cover .kr{ font-family:var(--font-kr); font-weight:800; font-size:34px; letter-spacing:.08em; color:var(--amber); margin-top:14px; }
+.cover .sub{ margin-top:22px; font-size:17px; font-weight:400; color:var(--ink-dim); max-width:34em; line-height:1.7; }
+.cover .sub strong{ color:var(--ink); font-weight:600; }
+.cover-ticker{ margin-top:26px; display:flex; gap:22px; flex-wrap:wrap; font-family:var(--font-mono); font-size:11px; letter-spacing:.14em; color:var(--ink-faint); text-transform:uppercase; }
+.cover-ticker b{ color:var(--ink-dim); font-weight:500; }
+
+/* 여정 카드 */
+.cards6{ display:grid; grid-template-columns:repeat(3,1fr); gap:10px; margin-top:16px; flex:1 1 auto; }
+.jcard{ border:1px solid var(--line); border-top:2px solid var(--gc,var(--amber)); background:var(--bg-2); padding:12px 16px; display:flex; flex-direction:column; }
+.jcard .jc-top{ display:flex; justify-content:space-between; align-items:baseline; }
+.jcard .jc-no{ font-family:var(--font-en); font-variation-settings:"wdth" 80,"wght" 800; font-size:22px; color:var(--gc,var(--amber)); }
+.jcard .jc-en{ font-family:var(--font-mono); font-size:9.5px; letter-spacing:.18em; color:var(--ink-faint); text-transform:uppercase; }
+.jcard h3{ font-size:18px; font-weight:700; margin-top:2px; }
+.jcard p{ font-size:12px; font-weight:400; color:var(--ink-dim); margin-top:6px; line-height:1.5; flex:1 1 auto; }
+.jcard .jc-fig{ font-family:var(--font-mono); font-size:10.5px; letter-spacing:.04em; color:var(--amber); margin-top:8px; padding-top:7px; border-top:1px solid var(--line); }
+.flow-strip{ margin-top:18px; display:flex; align-items:center; gap:10px; flex-wrap:wrap; font-family:var(--font-mono); font-size:11px; letter-spacing:.05em; color:var(--ink-dim); }
+.flow-strip .node{ padding:5px 11px; border:1px solid var(--line); background:var(--bg-2); }
+.flow-strip .node.hl{ border-color:var(--amber-deep); color:var(--amber); }
+.flow-strip .arw{ color:var(--ink-faint); }
+.flow-strip .via{ color:var(--ink-faint); font-size:10px; }
+
+/* IN NUMBERS */
+.numgrid{ display:grid; grid-template-columns:repeat(3,1fr); grid-auto-rows:1fr; gap:1px; background:var(--line); border:1px solid var(--line); margin-top:22px; flex:1 1 auto; }
+.numgrid .cell{ background:var(--bg); padding:26px 30px; display:flex; flex-direction:column; justify-content:center; }
+.numgrid .cell .v{ font-family:var(--font-en); font-variation-settings:"wdth" 75,"wght" 800; font-variant-numeric:tabular-nums; font-size:64px; line-height:.85; color:var(--ink); }
+.numgrid .cell .v .u{ font-family:var(--font-kr); font-size:.24em; font-weight:400; color:var(--ink-dim); margin-left:.12em; }
+.numgrid .cell .k{ margin-top:14px; font-size:14px; color:var(--ink-dim); font-weight:400; }
+.numgrid .cell .k small{ display:block; font-family:var(--font-mono); font-size:9.5px; letter-spacing:.1em; color:var(--ink-faint); text-transform:uppercase; margin-top:4px; }
+.numgrid .cell .cno{ font-family:var(--font-mono); font-size:10px; letter-spacing:.16em; color:var(--gc,var(--amber)); }
+
+/* DIVIDER */
+.divider{ padding:0; }
+.divider .bg{ position:absolute; inset:0; z-index:0; background-size:cover; background-position:center; filter:grayscale(1) contrast(1.05) brightness(.5); }
+.divider .scrim{ position:absolute; inset:0; z-index:1; background:linear-gradient(100deg,rgba(10,11,13,.94) 0%,rgba(10,11,13,.74) 42%,rgba(10,11,13,.34) 100%),linear-gradient(to top,rgba(10,11,13,.9),transparent 50%); }
+.divider .d-inner{ position:relative; z-index:2; height:100%; display:flex; flex-direction:column; padding:0.6in 0.78in 0.5in; }
+.divider .d-no{ font-family:var(--font-en); font-variation-settings:"wdth" 80,"wght" 850; font-size:150px; line-height:.8; color:transparent; -webkit-text-stroke:1.5px var(--ink-faint); position:absolute; right:0.6in; top:0.5in; z-index:1; opacity:.5;}
+.divider .d-en{ font-family:var(--font-en); font-variation-settings:"wdth" 66,"wght" 850; font-size:104px; line-height:.9; letter-spacing:-.015em; color:var(--ink); margin-top:auto; }
+.divider .d-kr{ font-family:var(--font-kr); font-weight:800; font-size:30px; letter-spacing:.06em; color:var(--amber); margin-top:12px; }
+.divider .d-sub{ margin-top:18px; font-size:16px; font-weight:400; color:var(--ink-dim); max-width:34em; line-height:1.7; }
+.divider .d-sub strong{ color:var(--ink); }
+.divider .d-points{ margin-top:20px; display:flex; gap:14px; flex-wrap:wrap; }
+.divider .d-point{ border:1px solid var(--line); background:rgba(16,19,24,.6); padding:10px 15px; }
+.divider .d-point .dp-v{ font-family:var(--font-en); font-variation-settings:"wdth" 78,"wght" 800; font-variant-numeric:tabular-nums; font-size:26px; color:var(--ink); }
+.divider .d-point .dp-v .u{ font-family:var(--font-kr); font-size:.4em; font-weight:400; color:var(--ink-dim); margin-left:.15em; }
+.divider .d-point .dp-l{ font-family:var(--font-mono); font-size:9.5px; letter-spacing:.1em; color:var(--ink-faint); text-transform:uppercase; margin-top:5px; }
+
+/* 서사 슬라이드 (도입문 + 어원) */
+.narr{ display:grid; grid-template-columns:1.05fr 0.95fr; gap:44px; margin-top:24px; flex:1 1 auto; align-items:start; }
+.poem{ font-size:30px; font-weight:200; line-height:1.5; color:var(--ink-faint); max-width:15em; }
+.poem strong{ color:var(--ink); font-weight:500; }
+.poem em{ color:var(--amber); font-weight:400; }
+.origin{ border-left:1px solid var(--line); padding-left:34px; }
+.origin .o-glyph{ font-family:var(--font-en); font-weight:800; font-size:46px; letter-spacing:.02em; color:var(--amber); line-height:1; }
+.origin .o-glyph .cjk{ font-family:var(--font-kr); }
+.origin .o-rom{ font-family:var(--font-mono); font-size:11px; letter-spacing:.14em; color:var(--ink-faint); text-transform:uppercase; margin-top:10px; }
+.origin p{ font-size:13px; font-weight:400; color:var(--ink-dim); margin-top:14px; line-height:1.75; }
+.origin p strong{ color:var(--ink); font-weight:600; }
+
+/* 메커니즘 3단계 */
+.steps3{ display:grid; grid-template-columns:1fr 1fr 1fr; gap:0; margin-top:22px; flex:1 1 auto; }
+.step{ padding:4px 28px; border-left:1px solid var(--line); display:flex; flex-direction:column; }
+.step:first-child{ padding-left:0; border-left:0; }
+.step .st-no{ font-family:var(--font-mono); font-size:10.5px; letter-spacing:.16em; text-transform:uppercase; color:var(--amber); }
+.step .st-fig{ height:132px; display:flex; align-items:center; justify-content:flex-start; margin:14px 0 16px; }
+.step .st-fig svg{ height:100%; width:auto; overflow:visible; }
+.step h3{ font-size:19px; font-weight:700; line-height:1.3; letter-spacing:-.01em; }
+.step h3 em{ color:var(--amber); }
+.step p{ font-size:12.5px; font-weight:400; color:var(--ink-dim); margin-top:10px; line-height:1.7; }
+.step p strong{ color:var(--ink); font-weight:600; }
+.step .st-tag{ margin-top:auto; padding-top:12px; font-family:var(--font-mono); font-size:10px; letter-spacing:.06em; color:var(--ink-faint); }
+.step .st-tag b{ color:var(--amber); font-weight:500; }
+.mech-svg-line{ stroke:var(--steel); stroke-width:1.6; fill:none; }
+.mech-svg-am{ stroke:var(--amber); stroke-width:1.8; fill:none; }
+.mech-svg-amf{ fill:var(--amber); }
+.mech-svg-dim{ stroke:var(--ink-faint); stroke-width:1.4; fill:none; }
+.mech-lab{ font-family:var(--font-mono); font-size:9px; fill:var(--ink-dim); letter-spacing:.04em; }
+
+/* DETAIL 2-column */
+.two{ display:grid; grid-template-columns:1fr 1fr; gap:34px; margin-top:20px; flex:1 1 auto; min-height:0; }
+.two.w37{ grid-template-columns:0.85fr 1.15fr; }
+.col{ display:flex; flex-direction:column; min-height:0; }
+
+/* 프로세스 카드 */
+.plist{ display:flex; flex-direction:column; gap:8px; margin-top:14px; }
+.pcard{ border:1px solid var(--line); border-left:2px solid var(--gc,var(--amber)); background:var(--bg-2); padding:11px 14px; }
+.pcard .pc-top{ display:flex; justify-content:space-between; align-items:baseline; gap:10px; }
+.pcard .pc-code{ font-family:var(--font-mono); font-size:12px; letter-spacing:.08em; color:var(--gc,var(--amber)); font-weight:500; }
+.pcard .pc-from{ font-family:var(--font-mono); font-size:9.5px; color:var(--ink-faint); }
+.pcard h4{ font-size:14px; font-weight:600; margin-top:3px; }
+.pcard .pc-desc{ font-size:11.5px; font-weight:400; color:var(--ink-dim); margin-top:6px; line-height:1.6; }
+.pcard .pc-out{ margin-top:8px; display:flex; flex-wrap:wrap; gap:5px; }
+.pcard .pc-out .chip{ font-size:9.5px; padding:3px 7px; }
+.pcard .pc-out .chip.out{ color:var(--gc,var(--amber)); }
+.plist[style*="--g3"] .pcard{ padding:9px 13px; }
+
+/* capacity bar */
+.capbar{ margin-top:14px; }
+.capbar .row{ display:flex; align-items:center; gap:12px; margin-bottom:9px; }
+.capbar .row .nm{ width:100px; flex:0 0 auto; font-size:12.5px; color:var(--ink); }
+.capbar .row .track{ flex:1 1 auto; height:16px; background:var(--bg-3); position:relative; }
+.capbar .row .fill{ position:absolute; inset:0 auto 0 0; background:var(--gc,var(--amber)); opacity:.85; }
+.capbar .row .val{ width:66px; flex:0 0 auto; text-align:right; font-family:var(--font-mono); font-size:12px; color:var(--amber); }
+
+/* timeline */
+.tl{ margin-top:14px; border-left:1px solid var(--line); padding-left:16px; display:flex; flex-direction:column; gap:13px; }
+.tl .ti{ position:relative; }
+.tl .ti::before{ content:''; position:absolute; left:-20px; top:5px; width:7px; height:7px; background:var(--amber); }
+.tl .ti .yr{ font-family:var(--font-mono); font-size:12px; letter-spacing:.06em; color:var(--amber); }
+.tl .ti .tx{ font-size:12.5px; color:var(--ink-dim); font-weight:400; margin-top:3px; line-height:1.6; }
+.tl .ti .tx b{ color:var(--ink); font-weight:600; }
+
+/* everyday map */
+.emap{ display:flex; flex-direction:column; gap:10px; margin-top:14px; }
+.erow{ display:grid; grid-template-columns:0.9fr auto 1.1fr; align-items:center; gap:14px; border:1px solid var(--line); background:var(--bg-2); padding:14px 16px; }
+.erow .from{ font-family:var(--font-mono); font-size:11.5px; letter-spacing:.04em; color:var(--amber); }
+.erow .from small{ display:block; color:var(--ink-faint); font-size:9.5px; margin-top:3px; letter-spacing:.02em; }
+.erow .arw{ color:var(--ink-faint); font-family:var(--font-mono); }
+.erow .to{ font-size:13.5px; }
+.erow .to b{ font-weight:600; color:var(--ink); }
+.erow .to small{ display:block; color:var(--ink-dim); font-size:11.5px; font-weight:400; margin-top:3px; }
+
+/* closing */
+.closing .bg{ position:absolute; inset:0; z-index:0; background:url('../lubricants/img/band-people.jpg') center/cover no-repeat; filter:grayscale(1) contrast(1.05) brightness(.4); }
+.closing .scrim{ position:absolute; inset:0; z-index:1; background:linear-gradient(180deg,rgba(10,11,13,.82),rgba(7,8,10,.96)); }
+.closing .wrap{ position:relative; z-index:2; height:100%; display:flex; flex-direction:column; padding:0.6in 0.78in 0.5in; }
+.closing .big{ font-size:30px; font-weight:200; color:var(--ink-dim); max-width:26em; line-height:1.6; margin-top:auto; }
+.closing .big strong{ color:var(--ink); font-weight:600; }
+.closing .big em{ color:var(--amber); }
+.source{ margin-top:26px; font-family:var(--font-mono); font-size:10px; line-height:1.9; color:var(--ink-faint); letter-spacing:.03em; }
+.source b{ color:var(--ink-dim); }
+
+/* 공정맵 압축 */
+.pm .plist{ gap:6px; margin-top:11px; }
+.pm .pcard{ padding:9px 13px; }
+.pm .pcard h4{ margin-top:2px; font-size:13px; }
+.pm .pcard .pc-out{ margin-top:6px; }
+/* 5개년 실적표 (인쇄용 추가) */
+.ftable{ width:100%; border-collapse:collapse; margin-top:10px; }
+.ftable caption{ text-align:left; font-family:var(--font-mono); font-size:10px; letter-spacing:.12em;
+  color:var(--ink-faint); text-transform:uppercase; padding-bottom:7px; }
+.ftable th,.ftable td{ padding:7px 8px; border-bottom:1px solid var(--line); text-align:right;
+  font-size:12px; font-variant-numeric:tabular-nums; }
+.ftable thead th{ font-family:var(--font-mono); font-size:10px; letter-spacing:.08em;
+  color:var(--ink-faint); font-weight:500; border-bottom-color:var(--ink-faint); }
+.ftable th:first-child,.ftable td:first-child{ text-align:left; font-size:12px; }
+.ftable tbody th{ font-weight:600; color:var(--ink-dim); }
+.ftable tbody td{ font-family:var(--font-mono); color:var(--ink); }
+.ftable td.hi{ color:var(--amber); font-weight:600; }
+.ftable tr.accent th,.ftable tr.accent td{ color:var(--g4); font-weight:600; }
+.ftable tr:last-child th,.ftable tr:last-child td{ border-bottom:0; }
+/* 신용등급 카드 */
+.rate{ border:1px solid var(--line); background:var(--bg-2); padding:13px 16px; }
+.rate + .rate{ margin-top:9px; }
+.rate .rg{ font-family:var(--font-en); font-variation-settings:"wdth" 75,"wght" 800;
+  font-size:30px; line-height:1; color:var(--g4); }
+.rate .rg.intl{ font-size:20px; color:var(--g3); }
+.rate .rc{ margin-top:7px; font-family:var(--font-mono); font-size:9.5px; letter-spacing:.06em;
+  color:var(--ink-faint); line-height:1.75; }
+/* 성장 추이 바 */
+.gbar{ display:flex; flex-direction:column; gap:9px; margin-top:12px; }
+.gbar .row{ display:flex; align-items:center; gap:11px; }
+.gbar .yr{ width:52px; flex:0 0 auto; font-family:var(--font-mono); font-size:11px; color:var(--ink-faint); }
+.gbar .track{ flex:1 1 auto; height:14px; background:var(--bg-3); position:relative; }
+.gbar .fill{ position:absolute; inset:0 auto 0 0; background:var(--gc,var(--amber)); }
+.gbar .val{ width:76px; flex:0 0 auto; text-align:right; font-family:var(--font-mono);
+  font-size:11.5px; color:var(--ink-dim); }
+.gbar .row.now .val{ color:var(--amber); font-weight:600; }
+/* 2열 연혁 */
+.tl2{ display:grid; grid-template-columns:1fr 1fr; gap:0 34px; margin-top:14px; }
+.tl2 .tl{ margin-top:0; }
+
+/* ============================================================
+   PRINT THEME — 출력 테마 전환 (다크 기본 / 화이트 선택)
+   화면 우상단 토글 또는 ?theme=light 로 전환합니다.
+   구조·레이아웃은 그대로 두고 색만 인쇄 기준으로 재정의합니다.
+   ============================================================ */
+:root[data-theme="light"]{
+  --bg:#FFFFFF; --bg-2:#F6F4F0; --bg-3:#E9E5DE;
+  --ink:#15171B; --ink-dim:#4A4F57; --ink-faint:#6C7078;
+  --amber:#9A6B12; --amber-deep:#7A5410; --steel:#54606D; --line:#D8D4CC;
+  --g1:#9A6B12; --g2:#9E4F2C; --g3:#3D688F; --g4:#4A7748;
+}
+[data-theme="light"] body{ background:#FFFFFF; }
+[data-theme="light"] .slide{ background:#FFFFFF; color:var(--ink); }
+/* 사진 배경 3종 — 옅은 워터마크로 처리해 잉크 사용 최소화 */
+[data-theme="light"] .cover .bg,
+[data-theme="light"] .divider .bg,
+[data-theme="light"] .closing .bg{ filter:grayscale(1) contrast(.94) brightness(1.5); opacity:.07; }
+[data-theme="light"] .cover .scrim,
+[data-theme="light"] .divider .scrim,
+[data-theme="light"] .closing .scrim{ background:linear-gradient(100deg,rgba(255,255,255,.94) 0%,rgba(255,255,255,.82) 46%,rgba(255,255,255,.72) 100%); }
+[data-theme="light"] .cover .wrap,
+[data-theme="light"] .divider .d-inner,
+[data-theme="light"] .closing .wrap{ border-top:3px solid var(--amber); }
+[data-theme="light"] .divider .d-no{ -webkit-text-stroke:1.5px #C9C4BA; opacity:.9; }
+[data-theme="light"] .divider .d-point{ background:var(--bg-2); border-color:var(--line); }
+/* 얇은 대형 문장은 종이에서 힘이 빠지므로 굵기 보강 */
+[data-theme="light"] .poem{ font-weight:400; color:var(--ink-dim); }
+[data-theme="light"] .poem strong{ font-weight:700; }
+[data-theme="light"] .closing .big{ font-weight:400; color:var(--ink-dim); }
+/* 면·박스 배경 */
+[data-theme="light"] .pcard{ background:var(--bg-2); }
+[data-theme="light"] .erow{ background:var(--bg-2); }
+[data-theme="light"] .capbar .row .track{ background:var(--bg-3); }
+[data-theme="light"] .capbar .row .fill{ opacity:1; }
+[data-theme="light"] .numgrid .cell{ background:#FFFFFF; }
+/* 도식 선은 종이에서 가늘어지므로 소폭 보강 */
+[data-theme="light"] .mech-svg-line{ stroke-width:1.8; }
+[data-theme="light"] .mech-svg-am{ stroke-width:2; }
+[data-theme="light"] .mech-svg-dim{ stroke:#8A8E95; stroke-width:1.6; }
+
+/* ---------- 출력 테마 토글 (화면 전용) ---------- */
+.theme-sw{
+  position:fixed; top:18px; right:18px; z-index:999;
+  display:inline-flex; border:1px solid rgba(255,255,255,.42);
+  font-family:var(--font-mono); font-size:11px; letter-spacing:.1em;
+  background:rgba(10,11,13,.72); backdrop-filter:saturate(140%) blur(6px);
+}
+.theme-sw button{
+  appearance:none; border:0; background:transparent; cursor:pointer;
+  color:#fff; opacity:.55; padding:7px 13px; font:inherit; letter-spacing:inherit;
+  border-left:1px solid rgba(255,255,255,.24);
+}
+.theme-sw button:first-child{ border-left:0; }
+.theme-sw button[aria-pressed="true"]{ opacity:1; background:rgba(255,255,255,.18); }
+:root[data-theme="light"] .theme-sw{
+  border-color:#C9C4BA; background:rgba(255,255,255,.86);
+}
+:root[data-theme="light"] .theme-sw button{ color:#15171B; border-left-color:#DDD8D0; }
+:root[data-theme="light"] .theme-sw button[aria-pressed="true"]{ background:#EDE9E2; }
+.print-btn{
+  position:fixed; top:18px; right:190px; z-index:999;
+  appearance:none; cursor:pointer;
+  display:inline-flex; align-items:center; gap:7px;
+  border:1px solid var(--amber); background:var(--amber); color:#0A0B0D;
+  font-family:var(--font-mono); font-size:11px; letter-spacing:.1em; font-weight:500;
+  padding:7px 15px;
+}
+.print-btn:hover{ background:transparent; color:var(--amber); }
+.print-btn svg{ width:12px; height:12px; fill:none; stroke:currentColor; stroke-width:1.6; }
+:root[data-theme="light"] .print-btn{ color:#FFFFFF; }
+:root[data-theme="light"] .print-btn:hover{ color:var(--amber); background:#FFFFFF; }
+.theme-hint{
+  position:fixed; top:52px; right:18px; z-index:999;
+  font-family:var(--font-mono); font-size:10px; letter-spacing:.04em;
+  color:#8E887C; text-align:right; max-width:230px; line-height:1.7;
+}
+:root[data-theme="light"] .theme-hint{ color:#6C7078; }
+
+/* 화면에서만 장 구분 (인쇄에는 나오지 않음) */
+@media screen{
+  body{ background:#111316; padding:24px 0; }
+  :root[data-theme="light"] body{ background:#E8E6E1; }
+  .slide{ margin:0 auto 24px; box-shadow:0 2px 14px rgba(0,0,0,.35); }
+  :root[data-theme="light"] .slide{ box-shadow:0 2px 14px rgba(0,0,0,.14); }
+}
+@media print{
+  .theme-sw, .theme-hint, .print-btn{ display:none !important; }
+  .slide{ box-shadow:none; margin:0; }
+  body{ padding:0; }
+}
+
+</style>
+<script>
+(function(){
+  var q = new URLSearchParams(location.search).get('theme');
+  var t = q || localStorage.getItem('gsc-print-theme') || 'light';
+  if (t === 'light') document.documentElement.setAttribute('data-theme','light');
+})();
+</script>
+</head>
+<body>
+
+<!-- ============ 1. COVER ============ -->
+<section class="slide cover">
+  <div class="bg"></div><div class="scrim"></div>
+  <div class="wrap">
+    <div class="s-head"><span class="eyebrow">GS CALTEX — BUSINESS STORY</span><span class="s-tag">丽水 · 2025年基准</span></div>
+    <div class="en">FROM&nbsp;CRUDE&nbsp;OIL<br>TO ENERGY &amp; MATERIALS</div>
+    <div class="kr">从原油到能源与材料</div>
+    <p class="sub">GS Caltex的事业始于原油，以炼油为基础，延伸至<strong>石化·基础油·润滑油</strong> —<br>跟随丽水工厂的生产工序与主要产品，了解GS Caltex的事业与竞争力。</p>
+    <div class="cover-ticker">
+      <span>01 <b>炼油</b></span><span>02 <b>芳烃</b></span><span>03 <b>烯烃</b></span>
+      <span>04 <b>聚合物</b></span><span>05 <b>基础油</b></span><span>06 <b>润滑油</b></span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 2. 여정의 구조 ============ -->
+<section class="slide">
+  <div class="s-head"><span class="eyebrow">THE FLOW · 事业的连接</span><span class="s-tag">OVERVIEW</span></div>
+  <div class="s-body">
+    <h1 class="h2">以炼油为基础，<em>延伸至多元事业</em></h1>
+    <p class="lede">炼油工序产出的石脑油、LPG、副产气体和未转化油等，被用作石化与基础油事业的原料，并进一步转化为各行各业和日常生活所需的材料与产品。</p>
+    <div class="flow-strip">
+      <span class="node hl">原油</span><span class="arw">→</span>
+      <span class="node">炼油</span><span class="via">石脑油·LPG·副产气体 →</span>
+      <span class="node">芳烃</span><span class="node">烯烃</span><span class="node">聚合物</span>
+      <span class="via">未转化油 →</span><span class="node">基础油</span><span class="arw">→</span>
+      <span class="node">润滑油</span><span class="arw">→</span><span class="node hl">日常生活</span>
+    </div>
+    <div class="cards6">
+      <div class="jcard" style="--gc:var(--g1)"><div class="jc-top"><span class="jc-no">01</span><span class="jc-en">Refining</span></div><h3>炼油</h3><p>将来自世界各地的原油加工精炼，生产汽油、柴油、航空煤油等多种石油产品，以及石化与基础油事业的原料。</p><div class="jc-fig">800K bbl/day · 单一炼厂规模全球第4</div></div>
+      <div class="jcard" style="--gc:var(--amber)"><div class="jc-top"><span class="jc-no">02</span><span class="jc-en">Aromatics</span></div><h3>芳烃</h3><p>以石脑油等为原料，生产苯、甲苯、混合二甲苯、对二甲苯等芳烃产品。</p><div class="jc-fig">2,800K tons/yr</div></div>
+      <div class="jcard" style="--gc:var(--g3)"><div class="jc-top"><span class="jc-no">03</span><span class="jc-en">Olefins</span></div><h3>烯烃</h3><p>利用石脑油、LPG及炼油工序副产气体等多种原料，生产乙烯、丙烯等基础石化产品。</p><div class="jc-fig">2,300K tons/yr</div></div>
+      <div class="jcard" style="--gc:var(--g3)"><div class="jc-top"><span class="jc-no">04</span><span class="jc-en">Polymer</span></div><h3>聚合物</h3><p>以乙烯和丙烯为原料生产聚乙烯（PE）和聚丙烯（PP），并供应多种用途的改性树脂。</p><div class="jc-fig">980K tons/yr</div></div>
+      <div class="jcard" style="--gc:var(--g4)"><div class="jc-top"><span class="jc-no">05</span><span class="jc-en">Base Oil</span></div><h3>基础油</h3><p>以炼油深加工工序产出的未转化油（UCO）为原料，生产Group II、Group III等高品质基础油。</p><div class="jc-fig">30K bbl/day</div></div>
+      <div class="jcard" style="--gc:var(--g2)"><div class="jc-top"><span class="jc-no">06</span><span class="jc-en">Lubricants</span></div><h3>润滑油</h3><p>依托高品质基础油与深厚的技术积累，生产从车用到工业用的多种Kixx润滑油产品。</p><div class="jc-fig">9K bbl/day</div></div>
+    </div>
+  </div>
+  <div class="s-foot"><span>GS CALTEX BUSINESS STORY</span><span class="pg">01</span></div>
+</section>
+
+<!-- ============ 3. IN NUMBERS ============ -->
+<section class="slide">
+  <div class="s-head"><span class="eyebrow">IN NUMBERS · 数字看事业</span><span class="s-tag">2025年基准</span></div>
+  <div class="s-body">
+    <div class="numgrid">
+      <div class="cell"><span class="cno">01 REFINING</span><div class="v" style="margin-top:8px">800<span class="u">K bbl/day</span></div><p class="k">原油炼化能力<small>Crude Refining Capacity</small></p></div>
+      <div class="cell"><span class="cno">02 AROMATICS</span><div class="v" style="margin-top:8px">2,800<span class="u">K tons/yr</span></div><p class="k">芳烃产能<small>Aromatics Capacity</small></p></div>
+      <div class="cell"><span class="cno">03 OLEFINS</span><div class="v" style="margin-top:8px">2,300<span class="u">K tons/yr</span></div><p class="k">烯烃产能<small>Olefins Capacity</small></p></div>
+      <div class="cell"><span class="cno">04 POLYMER</span><div class="v" style="margin-top:8px">980<span class="u">K tons/yr</span></div><p class="k">聚合物产能<small>Polymer Capacity</small></p></div>
+      <div class="cell"><span class="cno">05 BASE OIL</span><div class="v" style="margin-top:8px">30<span class="u">K bbl/day</span></div><p class="k">基础油产能<small>Base Oil Capacity</small></p></div>
+      <div class="cell"><span class="cno">06 LUBRICANTS</span><div class="v" style="margin-top:8px">9<span class="u">K bbl/day</span></div><p class="k">润滑油产能<small>Lubricants Capacity</small></p></div>
+    </div>
+  </div>
+  <div class="s-foot"><span>DATA — GS Caltex Sustainability Report 2025 · gscaltex.com/kr/business</span><span class="pg">02</span></div>
+</section>
+
+<!-- ==================================================================== 성장과 실적 -->
+<!-- GROWTH -->
+<section class="slide">
+  <div class="s-head"><span class="eyebrow">GROWTH · 成长足迹</span><span class="s-tag">2025年基准</span></div>
+  <div class="s-body">
+    <h1 class="h2" style="font-size:26px">从1969年日产6万桶到<em>日产80万桶</em></h1>
+    <p class="lede" style="margin-top:8px">GS Caltex于1967年作为韩国首家民营炼油企业成立，通过持续投资与业务拓展不断成长。始于炼油的事业已延伸至石化、基础油和润滑油领域。</p>
+    <div class="two" style="margin-top:18px">
+      <div class="col">
+        <span class="kicker">原油炼化能力 · K bbl/day（按设施竣工时点累计）</span>
+        <div class="gbar" style="--gc:var(--g4)">
+          <div class="row"><span class="yr">1969</span><span class="track"><span class="fill" style="width:7.5%"></span></span><span class="val">60K</span></div>
+          <div class="row"><span class="yr">1972</span><span class="track"><span class="fill" style="width:15%"></span></span><span class="val">120K</span></div>
+          <div class="row"><span class="yr">1981</span><span class="track"><span class="fill" style="width:47.5%"></span></span><span class="val">380K</span></div>
+          <div class="row"><span class="yr">1996</span><span class="track"><span class="fill" style="width:81.25%"></span></span><span class="val">650K</span></div>
+          <div class="row now"><span class="yr">2025</span><span class="track"><span class="fill" style="width:100%"></span></span><span class="val">800K</span></div>
+        </div>
+        <div class="hr"></div>
+        <p class="body-p" style="margin-top:0">拥有单一炼厂规模<strong>全球第4</strong>的原油炼化设施，以及日处理<strong>27.5万桶</strong>的深加工能力。</p>
+      </div>
+      <div class="col">
+        <span class="kicker dim">营业收入 · 万亿韩元（合并）</span>
+        <div class="gbar" style="--gc:var(--amber)">
+          <div class="row"><span class="yr">1980</span><span class="track"><span class="fill" style="width:1.7%"></span></span><span class="val">1万亿</span></div>
+          <div class="row"><span class="yr">2000</span><span class="track"><span class="fill" style="width:17.1%"></span></span><span class="val">10万亿</span></div>
+          <div class="row"><span class="yr">2007</span><span class="track"><span class="fill" style="width:34.2%"></span></span><span class="val">20万亿</span></div>
+          <div class="row"><span class="yr">2022</span><span class="track"><span class="fill" style="width:100%"></span></span><span class="val">58.5万亿</span></div>
+          <div class="row now"><span class="yr">2025</span><span class="track"><span class="fill" style="width:76.2%"></span></span><span class="val">44.6万亿</span></div>
+        </div>
+        <div class="hr"></div>
+        <p class="body-p" style="margin-top:0">尽管业务深受国际油价与炼油利润等外部环境影响，我们始终持续管理<strong>盈利能力与财务稳健性</strong>。</p>
+      </div>
+    </div>
+  </div>
+  <div class="s-foot"><span>DATA — GS Caltex事业报告书 · 韩国银行国民账户</span><span class="pg">03</span></div>
+</section>
+
+<!-- PERFORMANCE -->
+<section class="slide">
+  <div class="s-head"><span class="eyebrow">PERFORMANCE · 2025年经营业绩</span><span class="s-tag">合并基准</span></div>
+  <div class="s-body">
+    <div class="statrow" style="gap:44px;margin-top:10px">
+      <div class="stat"><div class="v">44.6<span class="u">T KRW</span></div><div class="l">营业收入 REVENUE</div></div>
+      <div class="stat"><div class="v">884.1<span class="u">B KRW</span></div><div class="l">营业利润 OPERATING INCOME</div></div>
+      <div class="stat"><div class="v">1.9<span class="u">T KRW</span></div><div class="l">EBITDA</div></div>
+      <div class="stat"><div class="v">3,120<span class="u">名</span></div><div class="l">员工 EMPLOYEES</div></div>
+    </div>
+    <div class="hr"></div>
+    <div class="two" style="margin-top:6px">
+      <div class="col">
+        <span class="kicker">负债率 = 负债总额 ÷ 资本总额</span>
+        <div class="gbar" style="--gc:var(--g3)">
+          <div class="row"><span class="yr">2021</span><span class="track"><span class="fill" style="width:93.2%"></span></span><span class="val">111.8%</span></div>
+          <div class="row"><span class="yr">2022</span><span class="track"><span class="fill" style="width:77.2%"></span></span><span class="val">92.6%</span></div>
+          <div class="row"><span class="yr">2023</span><span class="track"><span class="fill" style="width:66.8%"></span></span><span class="val">80.2%</span></div>
+          <div class="row"><span class="yr">2024</span><span class="track"><span class="fill" style="width:64.1%"></span></span><span class="val">76.9%</span></div>
+          <div class="row now"><span class="yr">2025</span><span class="track"><span class="fill" style="width:50.4%;background:var(--g4)"></span></span><span class="val">60.5%</span></div>
+        </div>
+        <p class="body-p">负债率由2021年的111.8%降至2025年的<strong>60.5%</strong>，同期资本总额由11.1万亿韩元增至<strong>13.8万亿韩元</strong>。</p>
+      </div>
+      <div class="col">
+        <span class="kicker dim">信用评级 · CREDIT RATING</span>
+        <div style="margin-top:12px">
+          <div class="rate">
+            <div class="rg">AA+</div>
+            <div class="rc">韩国国内公司债信用评级<br>NICE信用评价 · 韩国信用评价 · 韩国企业评价<br>2020 — 2025 连续6年保持</div>
+          </div>
+          <div class="rate">
+            <div class="rg intl">BBB+ / Baa1</div>
+            <div class="rc">国际信用评级（2025）<br>S&amp;P BBB+ 稳定 · Moody&#8217;s Baa1 稳定</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="s-foot"><span>DATA — 2025年合并基准 · 员工人数依据2025年可持续发展报告</span><span class="pg">04</span></div>
+</section>
+
+<!-- 5개년 실적표 -->
+<section class="slide">
+  <div class="s-head"><span class="eyebrow">FINANCIALS · 近五年业绩</span><span class="s-tag">K-IFRS 合并</span></div>
+  <div class="s-body">
+    <div class="two" style="margin-top:14px">
+      <div class="col">
+        <table class="ftable">
+          <caption>合并利润表 · 单位 十亿韩元</caption>
+          <thead><tr><th>项目</th><th>2021</th><th>2022</th><th>2023</th><th>2024</th><th>2025</th></tr></thead>
+          <tbody>
+            <tr><th>营业收入</th><td>34,538</td><td>58,532</td><td>48,608</td><td>47,614</td><td class="hi">44,630</td></tr>
+            <tr><th>EBITDA</th><td>2,990</td><td>5,040</td><td>2,740</td><td>1,540</td><td class="hi">1,900</td></tr>
+            <tr><th>营业利润</th><td>2,019</td><td>3,979</td><td>1,684</td><td>548</td><td class="hi">884</td></tr>
+            <tr><th>净利润</th><td>1,051</td><td>2,789</td><td>1,153</td><td>109</td><td class="hi">706</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="col">
+        <table class="ftable">
+          <caption>合并资产负债表 · 单位 十亿韩元</caption>
+          <thead><tr><th>项目</th><th>2021</th><th>2022</th><th>2023</th><th>2024</th><th>2025</th></tr></thead>
+          <tbody>
+            <tr><th>资产总额</th><td>23,582</td><td>26,038</td><td>24,322</td><td>23,174</td><td>22,075</td></tr>
+            <tr><th>负债总额</th><td>12,449</td><td>12,518</td><td>10,823</td><td>10,075</td><td>8,320</td></tr>
+            <tr><th>资本总额</th><td>11,133</td><td>13,520</td><td>13,499</td><td>13,099</td><td class="hi">13,754</td></tr>
+            <tr class="accent"><th>负债率</th><td>111.8%</td><td>92.6%</td><td>80.2%</td><td>76.9%</td><td>60.5%</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <p class="body-p" style="margin-top:18px;font-size:12px">负债率按负债总额 ÷ 资本总额计算。营业收入随国际油价与炼油利润逐年大幅波动，但资本总额持续增长，负债率稳步改善。</p>
+  </div>
+  <div class="s-foot"><span>DATA — GS Caltex事业报告书</span><span class="pg">05</span></div>
+</section>
+
+<!-- 연혁 -->
+<section class="slide">
+  <div class="s-head"><span class="eyebrow">MILESTONES · 主要成长历程</span><span class="s-tag">1967 — 2025</span></div>
+  <div class="s-body">
+    <h1 class="h2" style="font-size:24px">始于炼油，事业不断拓展至<em>能源与化工全领域</em></h1>
+    <div class="tl2">
+      <div class="tl">
+        <div class="ti"><div class="yr">1967</div><div class="tx"><b>湖南精油株式会社成立</b> — 作为韩国首家民营炼油企业起步 · 丽水工厂动工</div></div>
+        <div class="ti"><div class="yr">1969</div><div class="tx"><b>第1原油常压蒸馏装置（CDU）竣工</b> — 以日产6万桶规模开始原油炼化 · 仁川润滑油工厂竣工</div></div>
+        <div class="ti"><div class="yr">1988</div><div class="tx"><b>聚丙烯（PP）工厂竣工</b> — 进军聚合物事业</div></div>
+        <div class="ti"><div class="yr">1990</div><div class="tx"><b>第1芳烃（BTX）·第1对二甲苯（PX）工厂竣工</b> — 芳烃事业全面展开</div></div>
+        <div class="ti"><div class="yr">1995</div><div class="tx"><b>第1重油催化裂化装置（RFCC）竣工</b> — 深加工设施投运，增强生产竞争力</div></div>
+        <div class="ti"><div class="yr">1996</div><div class="tx"><b>第4原油常压蒸馏装置（CDU）竣工 · 更名为&#8216;LG-Caltex精油&#8217;</b> — 扩大原油炼化能力</div></div>
+      </div>
+      <div class="tl">
+        <div class="ti"><div class="yr">2005</div><div class="tx"><b>更名为&#8216;GS Caltex&#8217;</b> — 随GS集团成立更名为现名</div></div>
+        <div class="ti"><div class="yr">2007–2023</div><div class="tx"><b>持续扩充深加工设施</b> — HCR · VRHCR · VGOFCC 竣工 · 深加工能力扩大至日处理27.5万桶</div></div>
+        <div class="ti"><div class="yr">2012</div><div class="tx"><b>荣获250亿美元出口之塔</b> — 韩国炼油业界首家 · 丽水文化艺术公园 GS Caltex艺乐堂（Yeulmaru）开馆</div></div>
+        <div class="ti"><div class="yr">2022</div><div class="tx"><b>烯烃生产设施（MFC）竣工</b> — 年产乙烯90万吨规模投运 · 强化由炼油延伸至石化的事业竞争力</div></div>
+        <div class="ti"><div class="yr">2025</div><div class="tx"><b>持续强化竞争力</b> — 负债率60.5% · 保持国内公司债信用评级AA+ · NCSI加油站部门连续17年第1</div></div>
+      </div>
+    </div>
+  </div>
+  <div class="s-foot"><span>DATA — GS Caltex沿革 · gscaltex.com/kr/company/history</span><span class="pg">06</span></div>
+</section>
+
+<!-- ==================================================================== CH.00 생산 공정 -->
+<section class="slide divider">
+  <div class="bg" style="background-image:url('../refining/img/band-pipes.jpg')"></div><div class="scrim"></div>
+  <div class="d-no">00</div>
+  <div class="d-inner">
+    <div class="s-head"><span class="eyebrow">CHAPTER 00</span><span class="s-tag">PROCESS</span></div>
+    <div class="d-en">PROCESS</div><div class="d-kr">生产工序</div>
+    <p class="d-sub">从原油码头出发，了解丽水工厂由<strong>一般炼油·深加工·石化·基础油</strong>串联而成的主要生产工序。</p>
+    <div class="d-points">
+      <div class="d-point"><div class="dp-v">4<span class="u">条流程</span></div><div class="dp-l">生产工序分类</div></div>
+      <div class="d-point"><div class="dp-v">800<span class="u">K bbl/day</span></div><div class="dp-l">原油炼化能力</div></div>
+      <div class="d-point"><div class="dp-v">275<span class="u">K bbl/day</span></div><div class="dp-l">深加工能力</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 공정 개요 -->
+<section class="slide">
+  <div class="s-head"><span class="eyebrow">01 OVERVIEW · 工序流程</span><span class="s-tag">CH.00</span></div>
+  <div class="s-body">
+    <h1 class="h2" style="font-size:26px">从原油码头到产品码头，<em>一脉相连的工序</em></h1>
+    <p class="lede" style="margin-top:8px">从全球约30个国家引进的原油储存在原油罐中，随后被送往所有工序的起点——常压蒸馏工序。在此分离出的馏分，将成为其余三条流程的原料。</p>
+    <div class="flow-strip" style="margin-top:18px">
+      <span class="node hl">原油码头</span><span class="arw">→</span>
+      <span class="node">原油罐</span><span class="arw">→</span>
+      <span class="node">常压蒸馏</span><span class="via">馏分分离 →</span>
+      <span class="node">深加工</span><span class="node">石化</span><span class="node">基础油</span><span class="arw">→</span>
+      <span class="node hl">产品码头</span>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:20px;flex:1 1 auto">
+      <div class="col">
+        <div style="border-top:2px solid var(--g1);padding-top:9px"><span class="jc-no" style="color:var(--g1);font-size:22px">01</span> <b style="font-size:15px">一般炼油</b><div class="jc-en">Refining Process</div></div>
+        <p class="body-p" style="font-size:12px">按沸点差异分离原油并去除杂质，是炼油的基本功。在此分离出的馏分，将成为其余三条流程的原料。</p>
+        <span class="chip" style="margin-top:auto">CDU · VDU · HDS · SRU</span>
+      </div>
+      <div class="col">
+        <div style="border-top:2px solid var(--g2);padding-top:9px"><span class="jc-no" style="color:var(--g2);font-size:22px">02</span> <b style="font-size:15px">深加工</b><div class="jc-en">Upgrading Process</div></div>
+        <p class="body-p" style="font-size:12px">利用催化剂和氢气将重油再次裂解，转化为汽油、柴油等高附加值轻质油，日处理规模27.5万桶。</p>
+        <span class="chip" style="margin-top:auto">RFCC · VGOFCC · HCR · VRHCR</span>
+      </div>
+      <div class="col">
+        <div style="border-top:2px solid var(--g3);padding-top:9px"><span class="jc-no" style="color:var(--g3);font-size:22px">03</span> <b style="font-size:15px">石化</b><div class="jc-en">Petrochemical</div></div>
+        <p class="body-p" style="font-size:12px">炼油工序产出的石脑油、LPG、副产气体转化为芳烃、烯烃、聚合物等石化产品的流程。</p>
+        <span class="chip" style="margin-top:auto">AROM · MFC</span>
+      </div>
+      <div class="col">
+        <div style="border-top:2px solid var(--g4);padding-top:9px"><span class="jc-no" style="color:var(--g4);font-size:22px">04</span> <b style="font-size:15px">基础油</b><div class="jc-en">Base Oil Process</div></div>
+        <p class="body-p" style="font-size:12px">以加氢裂化工序（HCR）产出的未转化油（UCO）为原料生产高品质基础油，并延伸至润滑油。</p>
+        <span class="chip" style="margin-top:auto">BOP</span>
+      </div>
+    </div>
+  </div>
+  <div class="s-foot"><span>DATA — gscaltex.com/kr/business/productionbase</span><span class="pg">07</span></div>
+</section>
+
+<!-- 7. 공정맵 -->
+<section class="slide pm">
+  <div class="s-head"><span class="eyebrow">02 PROCESS MAP · 工序单元</span><span class="s-tag">CH.00</span></div>
+  <div class="s-body">
+    <h1 class="h2" style="font-size:26px">丽水工厂的生产工序由<em>四条流程</em>串联而成</h1>
+    <p class="lede" style="margin-top:8px">从原油码头出发，依次经过一般炼油、深加工、石化与基础油的主要生产工序。<span class="amber">←</span>表示原料来源，彩色标签为产出产品。</p>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:16px;flex:1 1 auto">
+      <div class="col">
+        <div style="border-top:2px solid var(--g1);padding-top:9px"><span class="jc-no" style="color:var(--g1);font-size:20px">01</span> <b style="font-size:14px">一般炼油</b><div class="jc-en">Refining Process</div></div>
+        <div class="plist" style="--gc:var(--g1);gap:6px">
+          <div class="pcard"><div class="pc-top"><span class="pc-code">CDU</span><span class="pc-from">← 原油罐</span></div><h4>常压蒸馏工序</h4><div class="pc-out"><span class="chip out">LPG</span><span class="chip out">石脑油</span><span class="chip out">燃料油</span></div></div>
+          <div class="pcard"><div class="pc-top"><span class="pc-code">VDU</span><span class="pc-from">← 常压渣油</span></div><h4>减压蒸馏工序</h4><div class="pc-out"><span class="chip">减压瓦斯油·渣油</span></div></div>
+          <div class="pcard"><div class="pc-top"><span class="pc-code">HDS</span><span class="pc-from">← 煤油·柴油</span></div><h4>脱硫工序</h4><div class="pc-out"><span class="chip out">煤油</span><span class="chip out">柴油</span></div></div>
+          <div class="pcard"><div class="pc-top"><span class="pc-code">SRU</span><span class="pc-from">← 酸性气体</span></div><h4>硫磺回收工序</h4><div class="pc-out"><span class="chip out">硫磺 99.9%</span></div></div>
+        </div>
+      </div>
+      <div class="col">
+        <div style="border-top:2px solid var(--g2);padding-top:9px"><span class="jc-no" style="color:var(--g2);font-size:20px">02</span> <b style="font-size:14px">深加工</b><div class="jc-en">Upgrading Process</div></div>
+        <div class="plist" style="--gc:var(--g2);gap:6px">
+          <div class="pcard"><div class="pc-top"><span class="pc-code">RFCC</span><span class="pc-from">← 常压渣油</span></div><h4>常压渣油催化裂化</h4><div class="pc-out"><span class="chip out">汽油</span><span class="chip out">LPG</span></div></div>
+          <div class="pcard"><div class="pc-top"><span class="pc-code">VGOFCC</span><span class="pc-from">← 减压瓦斯油</span></div><h4>减压瓦斯油催化裂化</h4><div class="pc-out"><span class="chip out">汽油</span><span class="chip out">燃料油</span></div></div>
+          <div class="pcard"><div class="pc-top"><span class="pc-code">HCR</span><span class="pc-from">← 减压瓦斯油</span></div><h4>加氢裂化</h4><div class="pc-out"><span class="chip out">煤油·柴油</span><span class="chip">未转化油→BOP</span></div></div>
+          <div class="pcard"><div class="pc-top"><span class="pc-code">VRHCR</span><span class="pc-from">← 减压渣油</span></div><h4>减压渣油裂化</h4><div class="pc-out"><span class="chip out">轻质油</span></div></div>
+        </div>
+      </div>
+      <div class="col">
+        <div style="border-top:2px solid var(--g3);padding-top:9px"><span class="jc-no" style="color:var(--g3);font-size:20px">03</span> <b style="font-size:14px">石化</b><div class="jc-en">Petrochemical</div></div>
+        <div class="plist" style="--gc:var(--g3);gap:6px">
+          <div class="pcard"><div class="pc-top"><span class="pc-code">AROM</span><span class="pc-from">← 石脑油</span></div><h4>芳烃生产工序</h4><div class="pc-out"><span class="chip out">苯</span><span class="chip out">甲苯</span><span class="chip out">混合二甲苯</span><span class="chip out">对二甲苯</span></div></div>
+          <div class="pcard"><div class="pc-top"><span class="pc-code">MFC</span><span class="pc-from">← 石脑油·乙烷·LPG</span></div><h4>烯烃生产</h4><div class="pc-out"><span class="chip out">乙烯</span><span class="chip out">丙烯</span></div></div>
+          <div class="pcard"><div class="pc-top"><span class="pc-code">POLYMER</span><span class="pc-from">← MFC 乙烯 · 丙烯</span></div><h4>聚合物生产</h4><div class="pc-out"><span class="chip out">聚乙烯</span><span class="chip out">聚丙烯</span><span class="chip out">改性树脂</span></div></div>
+        </div>
+        <p class="body-p" style="font-size:11.5px;margin-top:6px">→ 延续至下一章节（芳烃·烯烃·聚合物）的流程</p>
+      </div>
+      <div class="col">
+        <div style="border-top:2px solid var(--g4);padding-top:9px"><span class="jc-no" style="color:var(--g4);font-size:20px">04</span> <b style="font-size:14px">基础油</b><div class="jc-en">Base Oil Process</div></div>
+        <div class="plist" style="--gc:var(--g4);gap:6px">
+          <div class="pcard"><div class="pc-top"><span class="pc-code">BOP</span><span class="pc-from">← HCR 未转化油</span></div><h4>基础油生产工序</h4><div class="pc-out"><span class="chip out">基础油</span></div></div>
+        </div>
+        <p class="body-p" style="font-size:11.5px;margin-top:10px">日产<strong>3万桶</strong>的高品质基础油 — 延续至润滑油章节。→ 汇集到产品罐的产品，经由产品码头的船舶以及管道、油罐车运往国内外。</p>
+      </div>
+    </div>
+  </div>
+  <div class="s-foot"><span>DATA — gscaltex.com/kr/business/productionbase</span><span class="pg">08</span></div>
+</section>
+
+
+
+<!-- ==================================================================== CH.01 정유 -->
+<!-- 4. DIVIDER -->
+<section class="slide divider">
+  <div class="bg" style="background-image:url('../refining/img/band-harbor.jpg')"></div><div class="scrim"></div>
+  <div class="d-no">01</div>
+  <div class="d-inner">
+    <div class="s-head"><span class="eyebrow">CHAPTER 01</span><span class="s-tag">REFINING</span></div>
+    <div class="d-en">REFINING</div><div class="d-kr">炼油</div>
+    <p class="d-sub">日产<strong>80万桶</strong>原油转化为能源的旅程 — 始于拥有<strong>单一炼厂规模全球第4</strong>原油炼化设施的丽水工厂。</p>
+    <div class="d-points">
+      <div class="d-point"><div class="dp-v">800<span class="u">K bbl/day</span></div><div class="dp-l">炼化能力</div></div>
+      <div class="d-point"><div class="dp-v">275<span class="u">K bbl/day</span></div><div class="dp-l">重油裂解</div></div>
+      <div class="d-point"><div class="dp-v">34.3<span class="u">%</span></div><div class="dp-l">深加工比率</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 5. 서사 (도입문 + 원유도입) -->
+<section class="slide">
+  <div class="s-head"><span class="eyebrow">01 REFINING · 从原油到能源</span><span class="s-tag">CH.01</span></div>
+  <div class="s-body">
+    <div class="narr">
+      <p class="poem">GS Caltex于<strong>1967年</strong>作为韩国首家民营炼油企业成立，将来自世界各地的原油加工精炼，生产日常生活与产业所需的<em>多种能源与产品</em>。</p>
+      <div class="origin">
+        <div class="o-glyph"><span class="cjk">约30个国家 · 约80个油种</span></div>
+        <div class="o-rom">Crude Sourcing · 原油引进</div>
+        <p>从全球<strong>约30个国家</strong>引进<strong>约80个油种</strong>的原油。不依赖特定地区的采购渠道有效分散了采购风险。</p>
+        <p>轻质或重质，低硫或高硫 — 能够处理性质各异的原油，是<strong>稳定供应</strong>的首要条件。</p>
+      </div>
+    </div>
+  </div>
+  <div class="s-foot"><span>DATA — gscaltex.com/kr/business · GS Caltex Sustainability Report 2025</span><span class="pg">09</span></div>
+</section>
+
+<!-- 6. 메커니즘 (증류·고도화) -->
+<section class="slide">
+  <div class="s-head"><span class="eyebrow">02 DISTILLATION · 常压蒸馏与深加工</span><span class="s-tag">CH.01</span></div>
+  <div class="s-body">
+    <h1 class="h2" style="font-size:26px">按沸点差异将<em>原油分离为多种馏分</em></h1>
+    <div class="two" style="margin-top:16px">
+      <div class="col">
+        <p class="body-p">原油经加热后进入<strong>常压蒸馏塔</strong>，按沸点差异分离为LPG、石脑油、煤油、柴油、渣油等<strong>多种馏分</strong>。分离出的馏分分别用作后续精制、深加工及石化工序的原料。</p>
+        <div class="capbar" style="margin-top:16px">
+          <div class="row"><span class="nm">LPG</span><div class="track"><div class="fill" style="width:18%"></div></div><span class="val">~35°C</span></div>
+          <div class="row"><span class="nm">石脑油</span><div class="track"><div class="fill" style="width:34%"></div></div><span class="val">35–160°C</span></div>
+          <div class="row"><span class="nm">煤油·航空煤油</span><div class="track"><div class="fill" style="width:52%"></div></div><span class="val">160–250°C</span></div>
+          <div class="row"><span class="nm">柴油</span><div class="track"><div class="fill" style="width:72%"></div></div><span class="val">240–370°C</span></div>
+          <div class="row"><span class="nm">重油→深加工</span><div class="track"><div class="fill" style="width:100%;opacity:.5"></div></div><span class="val">370°C+</span></div>
+        </div>
+      </div>
+      <div class="col">
+        <span class="kicker">CAPACITY & UPGRADING</span>
+        <div class="statrow" style="margin-top:14px">
+          <div class="stat"><div class="v" style="font-size:52px">800<span class="u">K bbl/day</span></div><div class="l">炼化能力 · 全球第4</div></div>
+          <div class="stat"><div class="v" style="font-size:52px">275<span class="u">K bbl/day</span></div><div class="l">重油裂解</div></div>
+        </div>
+        <p class="body-p" style="margin-top:16px">GS Caltex拥有日处理<strong>27.5万桶</strong>的深加工能力。常压蒸馏工序分离出的重油，经深加工转化为汽油、煤油、柴油等高附加值轻质油。</p>
+        <div class="capbar" style="margin-top:12px">
+          <div class="row"><span class="nm">深加工比率</span><div class="track"><div class="fill" style="width:34.3%"></div></div><span class="val">34.3%</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="s-foot"><span>DATA — 炼化 800K · 深加工 275K bbl/day · 深加工比率 34.3%（2025年基准）</span><span class="pg">10</span></div>
+</section>
+
+<!-- 8. 일상으로 -->
+<section class="slide">
+  <div class="s-head"><span class="eyebrow">03 TO EVERYDAY LIFE · 走进日常</span><span class="s-tag">CH.01</span></div>
+  <div class="s-body">
+    <div class="two">
+      <div class="col">
+        <h1 class="h2" style="font-size:26px">GS Caltex的石油产品广泛应用于<em>日常生活与产业各处</em></h1>
+        <p class="body-p">GS Caltex生产的石油产品供应给全国加油站和LPG加气站，以及各类工业企业、铁路和航空公司等。</p>
+        <div class="statrow" style="margin-top:20px;gap:40px">
+          <div class="stat"><div class="v" style="font-size:52px">约2,000<span class="u">座</span></div><div class="l">全国加油站网络</div></div>
+          <div class="stat"><div class="v" style="font-size:52px">约330<span class="u">座</span></div><div class="l">LPG加气站（2025年末）</div></div>
+        </div>
+      </div>
+      <div class="col" style="justify-content:center">
+        <span class="kicker dim">PRODUCTS · 炼油产出的产品</span>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:16px">
+          <div class="pcard"><div class="pc-code">GASOLINE</div><h4>汽油</h4></div>
+          <div class="pcard"><div class="pc-code">DIESEL</div><h4>柴油</h4></div>
+          <div class="pcard"><div class="pc-code">KEROSENE</div><h4>煤油</h4></div>
+          <div class="pcard"><div class="pc-code">JET FUEL</div><h4>航空煤油</h4></div>
+        </div>
+        <p class="body-p" style="margin-top:16px">炼油工序产出的原料进一步转化为<strong>芳烃、烯烃、聚合物</strong>等多种石化产品。接下来了解GS Caltex由炼油延伸至石化的事业。</p>
+      </div>
+    </div>
+  </div>
+  <div class="s-foot"><span>DATA — 加油站约2,000座 · LPG加气站约330座（2025年末基准）</span><span class="pg">11</span></div>
+</section>
+
+<!-- ==================================================================== CH.02 방향족 -->
+<!-- 9. DIVIDER -->
+<section class="slide divider">
+  <div class="bg" style="background-image:url('../aromatics/img/band-plant.jpg')"></div><div class="scrim"></div>
+  <div class="d-no">02</div>
+  <div class="d-inner">
+    <div class="s-head"><span class="eyebrow">CHAPTER 02</span><span class="s-tag">AROMATICS</span></div>
+    <div class="d-en">AROMATICS</div><div class="d-kr">芳烃</div>
+    <p class="d-sub">以石脑油等为原料，生产苯、甲苯、混合二甲苯、对二甲苯等芳烃产品 — 年产<strong>280万吨</strong>，具备世界级规模的芳烃生产竞争力。</p>
+    <div class="d-points">
+      <div class="d-point"><div class="dp-v">2,800<span class="u">K tons/yr</span></div><div class="dp-l">芳烃产能</div></div>
+      <div class="d-point"><div class="dp-v">1,350<span class="u">K tons</span></div><div class="dp-l">对二甲苯 PX</div></div>
+      <div class="d-point"><div class="dp-v">930<span class="u">K tons</span></div><div class="dp-l">苯 BZ</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 10. 서사 (도입문 + 芳香 어원) -->
+<section class="slide">
+  <div class="s-head"><span class="eyebrow">02 AROMATICS · 名称由来</span><span class="s-tag">CH.02</span></div>
+  <div class="s-body">
+    <div class="narr">
+      <p class="poem">炼油工序产出的石脑油经过石化工序，转化为苯、甲苯、混合二甲苯、对二甲苯等多种<em>芳烃产品</em>。</p>
+      <div class="origin">
+        <div class="o-glyph"><span class="cjk">芳 香</span></div>
+        <div class="o-rom">Aromatics · 芳香的家族</div>
+        <p>“芳”与“香” — 芳香意为“散发香气的”。19世纪化学家首次对这一类物质进行分类时，发现的许多化合物确实带有宜人的香气，于是被称为“<strong>芳香的家族</strong>”。</p>
+        <p>如今这一名称已与香气无关，而是泛指像苯那样<strong>电子在环内均匀分布、格外稳定的环状化合物</strong>。一个源于香气的名称，最终成为描述结构的名称。</p>
+      </div>
+    </div>
+  </div>
+  <div class="s-foot"><span>DATA — gscaltex.com/kr/Business/Aromatics</span><span class="pg">12</span></div>
+</section>
+
+<!-- 11. 메커니즘 (육각 고리 → 3 제품) -->
+<section class="slide">
+  <div class="s-head"><span class="eyebrow">MECHANISM · 芳烃的结构与产品</span><span class="s-tag">CH.02</span></div>
+  <div class="s-body">
+    <h1 class="h2" style="font-size:26px">芳烃化合物的基本结构，<em>苯环</em></h1>
+    <div class="steps3">
+      <div class="step">
+        <span class="st-no">01 — BENZENE · 苯</span>
+        <div class="st-fig"><svg viewBox="0 0 130 130"><polygon class="mech-svg-am" points="65,20 104,42 104,86 65,108 26,86 26,42"/><circle class="mech-svg-am" cx="65" cy="64" r="24"/><text class="mech-lab" x="47" y="126">C₆H₆</text></svg></div>
+        <h3>苯 · 六元环</h3>
+        <p>由6个碳原子以环状结合而成的代表性芳烃化合物，是<strong>合成树脂、合成纤维、洗涤剂</strong>等多种化工产品的基础原料。</p>
+        <span class="st-tag">高纯度苯 年产 <b>93万吨</b></span>
+      </div>
+      <div class="step">
+        <span class="st-no">02 — TOLUENE · 甲苯</span>
+        <div class="st-fig"><svg viewBox="0 0 130 130"><polygon class="mech-svg-line" points="65,26 104,48 104,92 65,114 26,92 26,48"/><circle class="mech-svg-line" cx="65" cy="70" r="22"/><line class="mech-svg-am" x1="65" y1="26" x2="65" y2="8"/><text class="mech-lab" x="72" y="12">CH₃</text><text class="mech-lab" x="47" y="128">C₇H₈</text></svg></div>
+        <h3>多一个支链，就是甲苯</h3>
+        <p>苯环上连接一个甲基（CH₃）— 这一微小差异，造就了<strong>涂料·油墨溶剂</strong>以及聚氨酯（TDI）的原料。</p>
+        <span class="st-tag">甲苯 年产 <b>17万吨</b></span>
+      </div>
+      <div class="step">
+        <span class="st-no">03 — PARA-XYLENE · 对二甲苯</span>
+        <div class="st-fig"><svg viewBox="0 0 130 130"><polygon class="mech-svg-line" points="65,26 104,48 104,92 65,114 26,92 26,48"/><circle class="mech-svg-line" cx="65" cy="70" r="22"/><line class="mech-svg-am" x1="65" y1="26" x2="65" y2="8"/><line class="mech-svg-am" x1="65" y1="114" x2="65" y2="128"/><text class="mech-lab" x="72" y="10">CH₃</text><text class="mech-lab" x="72" y="128">CH₃</text></svg></div>
+        <h3>在正对位置再加一个，就是对二甲苯</h3>
+        <p>两个甲基连接在正对（para）位置 — <strong>衣物与PET瓶的起点</strong>。聚酯与PET的原料TPA正源于此。</p>
+        <span class="st-tag">对二甲苯 年产 <b>135万吨</b> · 主力</span>
+      </div>
+    </div>
+  </div>
+  <div class="s-foot"><span>DATA — 苯 930 · 甲苯 170 · 对二甲苯 1,350（K tons/yr）</span><span class="pg">13</span></div>
+</section>
+
+<!-- 12. 수치·제품 (4제품 capacity) -->
+<section class="slide">
+  <div class="s-head"><span class="eyebrow">CAPACITY · 4种主要产品，年产280万吨</span><span class="s-tag">CH.02</span></div>
+  <div class="s-body">
+    <div class="two">
+      <div class="col">
+        <div class="capbar" style="margin-top:6px">
+          <div class="row"><span class="nm">对二甲苯</span><div class="track"><div class="fill" style="width:100%"></div></div><span class="val">135</span></div>
+          <div class="row"><span class="nm">苯</span><div class="track"><div class="fill" style="width:69%"></div></div><span class="val">93</span></div>
+          <div class="row"><span class="nm">混合二甲苯</span><div class="track"><div class="fill" style="width:26%"></div></div><span class="val">35</span></div>
+          <div class="row"><span class="nm">甲苯</span><div class="track"><div class="fill" style="width:13%"></div></div><span class="val">17</span></div>
+        </div>
+        <div class="hr"></div>
+        <p class="body-p">GS Caltex依托世界级规模的产能与深厚的技术积累，向国内外客户稳定供应<strong>高品质芳烃产品</strong>。</p>
+      </div>
+      <div class="col">
+        <div class="plist">
+          <div class="pcard"><div class="pc-top"><span class="pc-code">PX · 对二甲苯</span><span class="pc-from">1,350K tons/yr</span></div><div class="pc-desc">聚酯纤维与PET的原料TPA的基础原料。</div><div class="pc-out"><span class="chip out">聚酯纤维</span><span class="chip out">PET瓶</span><span class="chip">TPA·DMT</span></div></div>
+          <div class="pcard"><div class="pc-top"><span class="pc-code">BZ · 苯</span><span class="pc-from">930K tons/yr</span></div><div class="pc-desc">由6个碳原子构成的正六边形分子。作为各类石化产品的原料供应全球。</div><div class="pc-out"><span class="chip out">酚醛树脂</span><span class="chip out">尼龙</span><span class="chip out">合成洗涤剂</span></div></div>
+          <div class="pcard"><div class="pc-top"><span class="pc-code">MX · 混合二甲苯</span><span class="pc-from">350K tons/yr</span></div><div class="pc-desc">邻位·间位·对位异构体的混合物。用作溶剂及对二甲苯的原料。</div><div class="pc-out"><span class="chip out">涂料溶剂</span><span class="chip">PX原料</span></div></div>
+          <div class="pcard"><div class="pc-top"><span class="pc-code">TL · 甲苯</span><span class="pc-from">170K tons/yr</span></div><div class="pc-desc">涂料、油墨、胶粘剂的溶剂，也是聚氨酯（TDI）的原料。</div><div class="pc-out"><span class="chip out">涂料·油墨</span><span class="chip out">聚氨酯</span></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="s-foot"><span>DATA — 芳烃 2,800K tons/yr（PX 1,350 · 苯 930 · 混合二甲苯 350 · 甲苯 170）</span><span class="pg">14</span></div>
+</section>
+
+<!-- 13. 연결 (일상으로) -->
+<section class="slide">
+  <div class="s-head"><span class="eyebrow">03 INTO EVERYDAY LIFE · 走进日常</span><span class="s-tag">CH.02</span></div>
+  <div class="s-body">
+    <h1 class="h2" style="font-size:26px">芳烃产品是<em>多种生活与工业材料</em>的原料</h1>
+    <div class="emap">
+      <div class="erow"><span class="from">PARA-XYLENE<small>对二甲苯 → TPA</small></span><span class="arw">→</span><span class="to"><b>衣物 · PET瓶</b><small>用作生产聚酯纤维与PET所需的精对苯二甲酸（PTA）的原料</small></span></div>
+      <div class="erow"><span class="from">BENZENE<small>苯 → 苯酚·环己烷</small></span><span class="arw">→</span><span class="to"><b>尼龙 · 洗涤剂 · 电子零部件</b><small>用作合成树脂、合成纤维、洗涤剂等多种化工产品的基础原料</small></span></div>
+      <div class="erow"><span class="from">TOLUENE · XYLENE<small>甲苯·混合二甲苯</small></span><span class="arw">→</span><span class="to"><b>涂料 · 油墨 · 聚氨酯</b><small>用作涂料、油墨、胶粘剂等的溶剂，以及聚氨酯等的原料</small></span></div>
+    </div>
+    <p class="body-p" style="margin-top:18px;max-width:56em">石脑油、LPG及炼油工序副产气体等被用作烯烃生产的原料。下一章将介绍利用多种原料生产<strong>乙烯、丙烯</strong>等产品的烯烃事业。</p>
+  </div>
+  <div class="s-foot"><span>DATA — gscaltex.com/kr/Business/Aromatics · GS Caltex Sustainability Report 2025</span><span class="pg">15</span></div>
+</section>
+
+<!-- ==================================================================== CH.03 올레핀 -->
+<!-- 14. DIVIDER -->
+<section class="slide divider">
+  <div class="bg" style="background-image:url('../olefins/img/band-night.jpg')"></div><div class="scrim"></div>
+  <div class="d-no">03</div>
+  <div class="d-inner">
+    <div class="s-head"><span class="eyebrow">CHAPTER 03</span><span class="s-tag">OLEFINS</span></div>
+    <div class="d-en">OLEFINS</div><div class="d-kr">烯烃</div>
+    <p class="d-sub">利用石脑油、LPG、炼油副产气体等多种原料，年产<strong>90万吨乙烯</strong> — 投资约2.7万亿韩元的<strong>MFC</strong>于2022年11月竣工。</p>
+    <div class="d-points">
+      <div class="d-point"><div class="dp-v">900<span class="u">K tons/yr</span></div><div class="dp-l">乙烯产能</div></div>
+      <div class="d-point"><div class="dp-v">2.7<span class="u">T KRW</span></div><div class="dp-l">总投资（历来最大）</div></div>
+      <div class="d-point"><div class="dp-v">2022.11<span class="u"></span></div><div class="dp-l">烯烃生产设施（MFC）竣工</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 15. 서사 (도입문 + OLEFIANT 어원) -->
+<section class="slide">
+  <div class="s-head"><span class="eyebrow">03 OLEFINS · 名称由来</span><span class="s-tag">CH.03</span></div>
+  <div class="s-body">
+    <div class="narr">
+      <p class="poem">将石脑油、LPG等烃类在<strong>高温下热裂解</strong>为更小的分子，再经急冷、压缩、分离工序，生产<em>乙烯、丙烯</em>等基础石化产品。</p>
+      <div class="origin">
+        <div class="o-glyph">OLÉFIANT</div>
+        <div class="o-rom">Olefins · 生成油的气体</div>
+        <p>18世纪末，化学家发现乙烯与氯气相遇会生成<strong>油状液滴</strong>，于是将其命名为“生成油的气体（gaz oléfiant）”— 烯烃（Olefin）一词由此而来。</p>
+        <p>乙烯和丙烯是具有碳碳<strong>双键（C=C）</strong>的代表性烯烃。它们反应活性高，是生产聚乙烯（PE）、聚丙烯（PP）等多种<strong>石化产品</strong>的基础原料。</p>
+      </div>
+    </div>
+  </div>
+  <div class="s-foot"><span>DATA — gscaltex.com/kr/business/mfc</span><span class="pg">16</span></div>
+</section>
+
+<!-- 16. 메커니즘 (크래킹 3단계) -->
+<section class="slide">
+  <div class="s-head"><span class="eyebrow">MECHANISM · 热裂解工序</span><span class="s-tag">CH.03</span></div>
+  <div class="s-body">
+    <h1 class="h2" style="font-size:26px">以高温<em>裂解烃类</em></h1>
+    <div class="steps3">
+      <div class="step">
+        <span class="st-no">01 — MIXED FEED · 原料混合</span>
+        <div class="st-fig"><svg viewBox="0 0 150 130"><rect class="mech-svg-line" x="12" y="30" width="30" height="18"/><line class="mech-svg-dim" x1="16" y1="62" x2="40" y2="62"/><line class="mech-svg-dim" x1="16" y1="72" x2="40" y2="72"/><circle class="mech-svg-dim" cx="20" cy="90" r="4"/><circle class="mech-svg-dim" cx="34" cy="94" r="4"/><path class="mech-svg-am" d="M48,66 C80,66 90,66 118,66"/><polygon class="mech-svg-amf" points="118,66 110,61 110,71"/><text class="mech-lab" x="12" y="118">石脑油·乙烷·LPG</text></svg></div>
+        <h3>液体与气体原料<em>并用</em></h3>
+        <p>一般裂解装置（NCC）只处理石脑油，而<strong>MFC</strong>还将乙烷、LPG等气体原料一并投入裂解炉，并在裂解炉后段接收炼油副产气体加以利用。炼厂的低附加值副产品由此成为原料。</p>
+        <span class="st-tag">名称中的<b>Mixed</b>正是此意</span>
+      </div>
+      <div class="step">
+        <span class="st-no">02 — CRACKING · 热裂解</span>
+        <div class="st-fig"><svg viewBox="0 0 150 130"><rect class="mech-svg-am" x="40" y="18" width="70" height="94"/><text class="mech-lab" x="55" y="40">FURNACE</text><path class="mech-svg-dim" d="M20,70 L48,70"/><path class="mech-svg-line" d="M56,70 l10,-10 l10,10 l10,-10"/><line class="mech-svg-am" x1="70" y1="52" x2="70" y2="88"/><path class="mech-svg-dim" d="M84,70 l10,-8 M100,60 l14,0"/><text class="mech-lab" x="62" y="104">↯ 高熱</text></svg></div>
+        <h3>以高温<em>裂解</em></h3>
+        <p>裂解炉的高温将烃类的长链断开，之后经急冷、压缩、分离工序分别生产出各类产品。</p>
+        <span class="st-tag">不是沸点分离，而是<b>热裂解</b></span>
+      </div>
+      <div class="step">
+        <span class="st-no">03 — OLEFINS · 双键</span>
+        <div class="st-fig"><svg viewBox="0 0 150 130"><circle class="mech-svg-am" cx="48" cy="64" r="16"/><circle class="mech-svg-am" cx="102" cy="64" r="16"/><line class="mech-svg-am" x1="64" y1="59" x2="86" y2="59"/><line class="mech-svg-am" x1="64" y1="69" x2="86" y2="69"/><text class="mech-lab" x="42" y="68">C</text><text class="mech-lab" x="96" y="68">C</text><text class="mech-lab" x="55" y="118">C = C  双键</text></svg></div>
+        <h3>乙烯、丙烯等<em>基础石化产品</em></h3>
+        <p>碳碳双键（C=C）反应活性高，易与其他分子结合。具备这一特性的<strong>乙烯和丙烯</strong>被生产为基础石化产品。</p>
+        <span class="st-tag">石化产品的<b>基础原料</b></span>
+      </div>
+    </div>
+  </div>
+  <div class="s-foot"><span>DATA — MFC（Mixed Feed Cracker） · 2022.11 竣工</span><span class="pg">17</span></div>
+</section>
+
+<!-- 17. 수치 (산출/원료) -->
+<section class="slide">
+  <div class="s-head"><span class="eyebrow">OUTPUT &amp; FEED · 产出与原料</span><span class="s-tag">CH.03</span></div>
+  <div class="s-body">
+    <div class="two">
+      <div class="col">
+        <span class="kicker">OUTPUT · 主要产品（K tons/yr）</span>
+        <div class="capbar" style="margin-top:14px">
+          <div class="row"><span class="nm">乙烯</span><div class="track"><div class="fill" style="width:100%"></div></div><span class="val">90</span></div>
+          <div class="row"><span class="nm">丙烯</span><div class="track"><div class="fill" style="width:52%"></div></div><span class="val">47</span></div>
+          <div class="row"><span class="nm">裂解汽油</span><div class="track"><div class="fill" style="width:50%"></div></div><span class="val">45</span></div>
+          <div class="row"><span class="nm">混合C4</span><div class="track"><div class="fill" style="width:33%"></div></div><span class="val">30</span></div>
+        </div>
+        <div class="plist" style="margin-top:12px">
+          <div class="pcard"><div class="pc-code">ETHYLENE · 乙烯</div><div class="pc-desc">用作聚乙烯（PE）、聚苯乙烯（PS）、PVC、EVA等多种石化产品的基础原料。</div></div>
+          <div class="pcard"><div class="pc-code">PYGAS · 裂解汽油</div><div class="pc-desc">用作生产苯、甲苯、二甲苯等<b style="color:var(--ink)">芳烃产品</b>的原料。</div></div>
+        </div>
+      </div>
+      <div class="col">
+        <span class="kicker dim">FEED · 主要原料（最大，K tons/yr）</span>
+        <div class="statrow" style="gap:22px;margin-top:14px">
+          <div class="stat"><div class="v" style="font-size:44px">2,300<span class="u">K tons</span></div><div class="l">石脑油（基本原料）</div></div>
+          <div class="stat"><div class="v" style="font-size:44px">180<span class="u">K tons</span></div><div class="l">LPG（灵活投料）</div></div>
+          <div class="stat"><div class="v" style="font-size:44px">320<span class="u">K tons</span></div><div class="l">炼油副产气体</div></div>
+        </div>
+        <p class="body-p" style="margin-top:14px">MFC不仅可使用石脑油，还能利用<strong>LPG及炼油工序副产气体</strong>等多种原料，由此提升原料选择的灵活性，并通过与炼油工序联动确保原料竞争力。</p>
+        <div class="hr"></div>
+        <p class="body-p" style="margin-top:0">混合C4用于生产丁二烯，丁二烯是合成橡胶以及ABS、尼龙等的原料。</p>
+      </div>
+    </div>
+  </div>
+  <div class="s-foot"><span>DATA — 乙烯 900 · 丙烯 470 · 混合C4 300 · 裂解汽油 450 / 原料（最大）石脑油 2,300 · LPG 180 · off-gas 320（K tons/yr）</span><span class="pg">18</span></div>
+</section>
+
+<!-- 18. 연결 (MFC 프로젝트) -->
+<section class="slide">
+  <div class="s-head"><span class="eyebrow">04 THE PROJECT · MFC</span><span class="s-tag">CH.03</span></div>
+  <div class="s-body">
+    <h1 class="h2" style="font-size:26px">由炼油延伸至石化，<em>扩大事业竞争力</em></h1>
+    <p class="lede" style="max-width:60em">GS Caltex投资约<strong style="color:var(--ink)">2.7万亿韩元</strong>在丽水工厂建设MFC，并于2022年11月竣工。通过MFC投运，确保了年产<strong style="color:var(--ink)">90万吨乙烯的产能</strong>，并联动炼油与石化工序，扩大了原料利用与事业组合。</p>
+    <div class="statrow" style="margin-top:28px;gap:56px">
+      <div class="stat"><div class="v">2.7<span class="u">T KRW</span></div><div class="l">总投资规模 · 创立以来最大</div></div>
+      <div class="stat"><div class="v">2022.11<span class="u"></span></div><div class="l">烯烃生产设施（MFC）竣工 · 丽水</div></div>
+      <div class="stat"><div class="v">约10<span class="u">%</span></div><div class="l">能源使用量削减（与既有设施相比）</div></div>
+      <div class="stat"><div class="v">76<span class="u">K tons</span></div><div class="l">年CO₂减排量</div></div>
+    </div>
+    <p class="body-p" style="margin-top:28px;max-width:56em">MFC生产的乙烯和丙烯经过<strong>聚合工序</strong>，转化为聚乙烯（PE）、聚丙烯（PP）等多种聚合物产品。下一章将介绍聚合物事业。</p>
+  </div>
+  <div class="s-foot"><span>DATA — gscaltex.com/kr/business/mfc · 投资2.7万亿韩元 · 2022.11 竣工</span><span class="pg">19</span></div>
+</section>
+
+<!-- ==================================================================== CH.04 폴리머 -->
+<!-- 19. DIVIDER -->
+<section class="slide divider">
+  <div class="bg" style="background-image:url('../polymer/img/band-ship.jpg')"></div><div class="scrim"></div>
+  <div class="d-no">04</div>
+  <div class="d-inner">
+    <div class="s-head"><span class="eyebrow">CHAPTER 04</span><span class="s-tag">POLYMER</span></div>
+    <div class="d-en">POLYMER</div><div class="d-kr">聚合物</div>
+    <p class="d-sub">从乙烯和丙烯到多种工业材料 — 具备年产<strong>98万吨</strong>的聚合物产能。</p>
+    <div class="d-points">
+      <div class="d-point"><div class="dp-v">980<span class="u">K tons/yr</span></div><div class="dp-l">聚合物产能</div></div>
+      <div class="d-point"><div class="dp-v">950<span class="u">M USD</span></div><div class="dp-l">聚合物销售额</div></div>
+      <div class="d-point"><div class="dp-v">1988<span class="u"></span></div><div class="dp-l">HIPRENE 起步</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 20. 서사 (도입문 + POLY MEROS 어원) -->
+<section class="slide">
+  <div class="s-head"><span class="eyebrow">04 POLYMER · 名称由来</span><span class="s-tag">CH.04</span></div>
+  <div class="s-body">
+    <div class="narr">
+      <p class="poem">乙烯、丙烯等基础石化产品经过<strong>聚合工序</strong>，转化为聚乙烯（PE）、聚丙烯（PP）等多种<em>聚合物产品</em>。</p>
+      <div class="origin">
+        <div class="o-glyph">POLY · MEROS</div>
+        <div class="o-rom">Polymer · 众多的部分</div>
+        <p>源自希腊语<strong>poly（众多）</strong>与<strong>meros（部分）</strong> — 聚合物字面意思就是“由许多部分组成的物质”。汉字写作<strong>重合体（聚合体）</strong>，意为“反复结合而成的物质”。</p>
+        <p>由小分子<strong>单体（Monomer）</strong>反复结合而成的高分子物质，经聚合工序成为薄膜、容器、管材、汽车零部件等多种产品的材料。</p>
+      </div>
+    </div>
+  </div>
+  <div class="s-foot"><span>DATA — gspolymer.com · GS Caltex Sustainability Report 2025</span><span class="pg">20</span></div>
+</section>
+
+<!-- 21. 메커니즘 (중합 3단계) -->
+<section class="slide">
+  <div class="s-head"><span class="eyebrow">MECHANISM · 聚合工序</span><span class="s-tag">CH.04</span></div>
+  <div class="s-body">
+    <h1 class="h2" style="font-size:26px">以便于加工的<em>颗粒形态</em>生产</h1>
+    <div class="steps3">
+      <div class="step">
+        <span class="st-no">01 — MONOMER · 单体</span>
+        <div class="st-fig"><svg viewBox="0 0 150 130"><circle class="mech-svg-dim" cx="30" cy="40" r="8"/><circle class="mech-svg-dim" cx="70" cy="30" r="8"/><circle class="mech-svg-dim" cx="110" cy="48" r="8"/><circle class="mech-svg-dim" cx="45" cy="80" r="8"/><circle class="mech-svg-dim" cx="90" cy="90" r="8"/><circle class="mech-svg-dim" cx="120" cy="86" r="8"/><text class="mech-lab" x="40" y="122">单体（Monomer）</text></svg></div>
+        <h3>制造聚合物的<em>基础原料</em></h3>
+        <p>乙烯和丙烯是生产聚乙烯（PE）和聚丙烯（PP）的代表性<strong>单体</strong>。</p>
+        <span class="st-tag">单体 <b>(monomer)</b></span>
+      </div>
+      <div class="step">
+        <span class="st-no">02 — POLYMERIZATION · 聚合</span>
+        <div class="st-fig"><svg viewBox="0 0 150 130"><circle class="mech-svg-amf" cx="70" cy="24" r="5"/><text class="mech-lab" x="80" y="28">催化剂</text><line class="mech-svg-am" x1="20" y1="66" x2="128" y2="66"/><circle class="mech-svg-am" cx="24" cy="66" r="8"/><circle class="mech-svg-am" cx="50" cy="66" r="8"/><circle class="mech-svg-am" cx="76" cy="66" r="8"/><circle class="mech-svg-am" cx="102" cy="66" r="8"/><circle class="mech-svg-am" cx="126" cy="66" r="8"/><text class="mech-lab" x="42" y="118">(C₂H₄)ₙ 链</text></svg></div>
+        <h3>将单体结合为<em>高分子</em></h3>
+        <p>与齐格勒-纳塔、茂金属等<strong>催化剂</strong>反应，将单体转化为长链高分子的过程称为<strong>聚合</strong>。</p>
+        <span class="st-tag">依催化剂与工艺条件<b>实现物性</b></span>
+      </div>
+      <div class="step">
+        <span class="st-no">03 — PELLET · 颗粒</span>
+        <div class="st-fig"><svg viewBox="0 0 150 130"><rect class="mech-svg-am" x="28" y="46" width="22" height="14" rx="7"/><rect class="mech-svg-am" x="58" y="60" width="22" height="14" rx="7"/><rect class="mech-svg-am" x="88" y="44" width="22" height="14" rx="7"/><rect class="mech-svg-am" x="48" y="78" width="22" height="14" rx="7"/><rect class="mech-svg-am" x="82" y="74" width="22" height="14" rx="7"/><text class="mech-lab" x="42" y="118">颗粒（Pellet）</text></svg></div>
+        <h3>便于加工的<em>颗粒形态</em></h3>
+        <p>聚合后的聚合物处于无数长链相互缠绕的状态。将其<strong>挤出·冷却·切粒</strong>制成米粒大小的<strong>颗粒</strong>，再经过各种加工工序，用于薄膜、容器、管材、汽车零部件等。</p>
+        <span class="st-tag">聚合物 年产 <b>98万吨</b></span>
+      </div>
+    </div>
+  </div>
+  <div class="s-foot"><span>DATA — gspolymer.com（事业介绍）</span><span class="pg">21</span></div>
+</section>
+
+<!-- 22. 수치 (3 폴리머) -->
+<section class="slide">
+  <div class="s-head"><span class="eyebrow">CAPACITY · 3种主要产品，年产98万吨</span><span class="s-tag">CH.04</span></div>
+  <div class="s-body">
+    <div class="two">
+      <div class="col">
+        <div class="capbar" style="margin-top:6px">
+          <div class="row"><span class="nm">聚乙烯</span><div class="track"><div class="fill" style="width:100%"></div></div><span class="val">50</span></div>
+          <div class="row"><span class="nm">改性树脂</span><div class="track"><div class="fill" style="width:60%"></div></div><span class="val">30</span></div>
+          <div class="row"><span class="nm">聚丙烯</span><div class="track"><div class="fill" style="width:36%"></div></div><span class="val">18</span></div>
+        </div>
+        <p class="body-p" style="font-family:var(--font-mono);font-size:11px;color:var(--ink-faint);margin-top:4px">单位：K tons/yr · 500 + 300 + 180 = 980</p>
+        <div class="hr"></div>
+        <span class="kicker dim">GLOBAL · 2025年基准</span>
+        <div class="statrow" style="gap:24px;margin-top:12px">
+          <div class="stat"><div class="v" style="font-size:38px">950<span class="u">M USD</span></div><div class="l">总销售额</div></div>
+          <div class="stat"><div class="v" style="font-size:38px">844<span class="u">K tons</span></div><div class="l">年销量</div></div>
+          <div class="stat"><div class="v" style="font-size:38px">3<span class="u">家</span></div><div class="l">海外生产法人</div></div>
+        </div>
+        <p class="body-p" style="font-size:11px;margin-top:6px">海外生产法人 中国2家 · 捷克 — 丽水·晋州工厂，中国廊坊·苏州·上海，捷克卡尔维纳，意大利米兰，日本东京，印度金奈</p>
+      </div>
+      <div class="col">
+        <div class="plist">
+          <div class="pcard"><div class="pc-top"><span class="pc-code">PE · SINCE 2022</span><span class="pc-from">500K tons/yr</span></div><h4>聚乙烯</h4><div class="pc-desc">与MFC同步投运的最新设施。日常生活中使用最广泛的塑料。</div><div class="pc-out"><span class="chip out">薄膜</span><span class="chip out">管材</span><span class="chip out">容器</span></div></div>
+          <div class="pcard"><div class="pc-top"><span class="pc-code">COMPOUND · SINCE 1992</span><span class="pc-from">300K tons/yr</span></div><h4>改性树脂</h4><div class="pc-desc">在PP·PE中配入橡胶、填料、添加剂，定制设计物性。韩国首家开发可涂装材料与LFT。</div><div class="pc-out"><span class="chip out">汽车内外饰件</span><span class="chip out">家电零部件</span></div></div>
+          <div class="pcard"><div class="pc-top"><span class="pc-code">PP · SINCE 1988</span><span class="pc-from">180K tons/yr</span></div><h4>聚丙烯</h4><div class="pc-desc">五大通用树脂之一。韩国首家开发矿泉水瓶用、发泡用原料的元老事业。</div><div class="pc-out"><span class="chip out">汽车内外饰件</span><span class="chip out">家电产品零部件</span><span class="chip out">食品容器</span><span class="chip out">薄膜</span><span class="chip out">纤维</span></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="s-foot"><span>DATA — gspolymer.com（2025年基准） · PE 500 · 改性树脂 300 · PP 180 = 980K tons/yr · 销售额 9.5亿美元 · 销量 844K tons</span><span class="pg">22</span></div>
+</section>
+
+<!-- 23. 연결 (하이프린 타임라인) -->
+<section class="slide">
+  <div class="s-head"><span class="eyebrow">HERITAGE · 聚合物事业成长历程</span><span class="s-tag">CH.04</span></div>
+  <div class="s-body">
+    <h1 class="h2" style="font-size:26px">始于1988年的聚丙烯，不断拓展至<em>高性能材料</em></h1>
+    <div class="two" style="margin-top:18px">
+      <div class="col">
+        <div class="tl">
+          <div class="ti"><div class="yr">1988</div><div class="tx"><b>启动聚丙烯事业</b> — 引进流化床气相聚合（Unipol）工艺。韩国首家开发润滑油容器用、矿泉水瓶用、发泡用原料</div></div>
+          <div class="ti"><div class="yr">1998</div><div class="tx"><b>大德中央技术研究所竣工</b> — 可涂装原料、吸音管材用原料等高性能材料的开发基地</div></div>
+          <div class="ti"><div class="yr">2001</div><div class="tx"><b>丙烯实现全部自供</b> — 炼油深加工装置（RFCC）成为聚合物的原料库（与CH.01 炼油相连）</div></div>
+          <div class="ti"><div class="yr">2022</div><div class="tx"><b>烯烃生产设施（MFC）竣工，迈入聚乙烯50万吨时代</b> — 完成烯烃-聚合物垂直一体化（与CH.03 烯烃相连）</div></div>
+        </div>
+      </div>
+      <div class="col" style="justify-content:center">
+        <p class="body-p" style="font-size:15px;max-width:24em">始于1988年聚丙烯生产的聚合物事业，通过持续的设备投资与技术开发，将领域拓展至<strong>高性能材料</strong>。</p>
+        <div class="hr"></div>
+        <p class="body-p" style="margin-top:0;max-width:24em">下一章将介绍以炼油深加工工序产出的未转化油（UCO）为原料生产<strong>高品质基础油</strong>的事业。</p>
+      </div>
+    </div>
+  </div>
+  <div class="s-foot"><span>DATA — gspolymer.com · HIPRENE 沿革</span><span class="pg">23</span></div>
+</section>
+
+<!-- ==================================================================== CH.05 베이스오일 -->
+<!-- 24. DIVIDER -->
+<section class="slide divider">
+  <div class="bg" style="background-image:url('../baseoil/img/band-towers.jpg')"></div><div class="scrim"></div>
+  <div class="d-no">05</div>
+  <div class="d-inner">
+    <div class="s-head"><span class="eyebrow">CHAPTER 05</span><span class="s-tag">BASE OIL</span></div>
+    <div class="d-en">BASE OIL</div><div class="d-kr">基础油</div>
+    <p class="d-sub">日产<strong>3万桶</strong>高品质基础油，产量的<strong>70%以上</strong>供应海外市场。</p>
+    <div class="d-points">
+      <div class="d-point"><div class="dp-v">30<span class="u">K bbl/day</span></div><div class="dp-l">产能</div></div>
+      <div class="d-point"><div class="dp-v">70<span class="u">%+</span></div><div class="dp-l">出口比重</div></div>
+      <div class="d-point"><div class="dp-v">2007.11<span class="u"></span></div><div class="dp-l">投产时间</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 25. 서사 (도입문 + BASE 의미) -->
+<section class="slide">
+  <div class="s-head"><span class="eyebrow">05 BASE OIL · 名称含义</span><span class="s-tag">CH.05</span></div>
+  <div class="s-body">
+    <div class="narr">
+      <p class="poem">以炼油深加工设施加氢裂化工序（HCR）产出的<strong>未转化油（UCO）</strong>为原料，经过进一步精制，转化为<em>高品质基础油</em>。</p>
+      <div class="origin">
+        <div class="o-glyph">BASE OIL</div>
+        <div class="o-rom">Base Oil · 润滑油之本</div>
+        <p>顾名思义，是作为“基础（base）”的油。机油等润滑油成品中<strong>90%以上是基础油</strong>，少量添加剂在此基础上调节性能。由于基础油占成品的绝大部分，其品质决定了润滑油性能的根本。</p>
+        <p>基础油有国际等级（API Group）：比传统Gr.I杂质更少、黏度更稳定的<strong>Gr.II</strong>，以及高端的<strong>Gr.III</strong> — GS Caltex采用最先进的加氢裂化工艺生产这些高品质等级，并以<strong>Kixx LUBO</strong>品牌供应全球。</p>
+      </div>
+    </div>
+  </div>
+  <div class="s-foot"><span>DATA — gscaltex.com/kr/Business/BaseOil</span><span class="pg">24</span></div>
+</section>
+
+<!-- 26. 메커니즘 (이성화 3단계) -->
+<section class="slide">
+  <div class="s-head"><span class="eyebrow">MECHANISM · 基础油生产工序</span><span class="s-tag">CH.05</span></div>
+  <div class="s-body">
+    <h1 class="h2" style="font-size:26px">经异构脱蜡等深加工工序，提升<em>基础油性能</em></h1>
+    <div class="steps3">
+      <div class="step">
+        <span class="st-no">01 — FEEDSTOCK · 原料</span>
+        <div class="st-fig"><svg viewBox="0 0 150 130"><path class="mech-svg-dim" d="M18,64 C34,40 40,88 56,64 S78,40 94,64 S118,88 132,60"/><path class="mech-svg-dim" d="M20,84 C40,66 44,102 64,80 S92,60 110,82"/><text class="mech-lab" x="28" y="118">未转化油（UCO）</text></svg></div>
+        <h3>深加工装置留下的<em>未转化油</em></h3>
+        <p>炼油章节中加氢裂化工序（HCR）未能完全裂解的油 — 未转化油。这种<strong>分子相互缠结</strong>的重质原料，正是基础油的起点。</p>
+        <span class="st-tag">低用途原料成为<b>起点</b></span>
+      </div>
+      <div class="step">
+        <span class="st-no">02 — ISO-DEWAXING · 异构脱蜡</span>
+        <div class="st-fig"><svg viewBox="0 0 150 130"><line class="mech-svg-am" x1="18" y1="52" x2="132" y2="52"/><line class="mech-svg-am" x1="18" y1="66" x2="132" y2="66"/><line class="mech-svg-am" x1="18" y1="80" x2="132" y2="80"/><text class="mech-lab" x="22" y="118">经异构化处理的分子</text></svg></div>
+        <h3>通过异构脱蜡<em>提升性能</em></h3>
+        <p>通过<strong>两段加氢裂化</strong>、异构脱蜡、加氢精制等工序去除杂质，改善黏度特性与低温流动性，使其在温度变化中仍能保持黏度性能。</p>
+        <span class="st-tag">低温流动性·<b>黏度特性改善</b></span>
+      </div>
+      <div class="step">
+        <span class="st-no">03 — PREMIUM · 高端等级</span>
+        <div class="st-fig"><svg viewBox="0 0 150 130"><path class="mech-svg-am" d="M65,24 C65,24 92,64 92,84 A27,27 0 1 1 38,84 C38,64 65,24 65,24 Z"/><ellipse class="mech-svg-am" cx="56" cy="82" rx="6" ry="9" opacity=".6"/><text class="mech-lab" x="34" y="126">Gr.II · Gr.III</text></svg></div>
+        <h3>均匀舒展的分子造就<em>清澈的高端品质</em></h3>
+        <p>以同一原料<strong>灵活生产Gr.II与Gr.III</strong>。尤其是Gr.III，凭借高黏度指数成为高端车用及工业用润滑油的核心。</p>
+        <span class="st-tag">排放法规趋严 = <b>需求增长</b></span>
+      </div>
+    </div>
+  </div>
+  <div class="s-foot"><span>DATA — 加氢裂化（Hydrocracked）基础油 · Kixx LUBO</span><span class="pg">25</span></div>
+</section>
+
+<!-- 27. 수치 (등급 + 생산/수출) -->
+<section class="slide">
+  <div class="s-head"><span class="eyebrow">CAPACITY · 日产3万桶 · 产量70%以上出口</span><span class="s-tag">CH.05</span></div>
+  <div class="s-body">
+    <div class="two">
+      <div class="col">
+        <div class="statrow" style="gap:34px;margin-top:6px">
+          <div class="stat"><div class="v">30<span class="u">K bbl/day</span></div><div class="l">产能 · Hydrocracked</div></div>
+          <div class="stat"><div class="v">70<span class="u">%+</span></div><div class="l">海外出口比重</div></div>
+        </div>
+        <div class="hr"></div>
+        <span class="kicker dim">SINCE 2007 · 18年间增长约2倍</span>
+        <div class="flow-strip" style="margin-top:12px">
+          <span class="node">16K bbl/day<br><small style="color:var(--ink-faint)">2007.11 投产</small></span><span class="arw">→</span>
+          <span class="node hl">30K bbl/day<br><small style="color:var(--ink-faint)">TODAY</small></span><span class="arw">→</span>
+          <span class="node">出口 70%+<br><small style="color:var(--ink-faint)">亚洲→美洲·欧洲</small></span>
+        </div>
+        <p class="body-p" style="margin-top:16px">2007年11月随第2深加工装置一同开始生产基础油。设施以日产1.6万桶规模起步，经过扩建，目前具备<strong>3万桶</strong>的产能，产量的<strong>70%以上</strong>供应海外市场。</p>
+      </div>
+      <div class="col">
+        <span class="kicker">KIXX LUBO · 等级组合</span>
+        <div class="plist" style="margin-top:12px">
+          <div class="pcard" style="--gc:var(--g4)"><div class="pc-top"><span class="pc-code">GR.II</span><span class="pc-from">KIXX LUBO</span></div><h4>Group II 基础油</h4><div class="pc-desc">车用、工业用、船用润滑油的主体。</div><div class="pc-out"><span class="chip out">150N</span><span class="chip out">220N</span><span class="chip out">600N</span></div></div>
+          <div class="pcard" style="--gc:var(--amber)"><div class="pc-top"><span class="pc-code">GR.III</span><span class="pc-from">PREMIUM · 高黏度指数</span></div><h4>Group III 基础油</h4><div class="pc-desc">耐温度变化的高端等级。高端机油与工业润滑油的基础。</div><div class="pc-out"><span class="chip out">4cSt</span><span class="chip out">6cSt</span><span class="chip out">8cSt</span></div></div>
+          <div class="pcard" style="--gc:var(--g3)"><div class="pc-top"><span class="pc-code">SPECIALTY</span><span class="pc-from">高附加值</span></div><h4>White Oil · Process Oil</h4><div class="pc-desc">产品组合延伸至需要更高纯度的特殊用途。</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="s-foot"><span>DATA — 30K bbl/day · 出口 70%+ · 2007.11 投产（16K） · Gr.II 150·220·600N · Gr.III 4·6·8cSt</span><span class="pg">26</span></div>
+</section>
+
+<!-- 28. 연결 (다음 장) -->
+<section class="slide">
+  <div class="s-head"><span class="eyebrow">TO THE NEXT · 延续至润滑油</span><span class="s-tag">CH.05</span></div>
+  <div class="s-body">
+    <div class="two">
+      <div class="col" style="justify-content:center">
+        <h1 class="h2" style="font-size:28px">高品质基础油成为<em>润滑油的主要原料</em></h1>
+        <p class="body-p" style="font-size:15px;margin-top:16px;max-width:26em">随着环保法规日益严格，市场对高品质基础油的需求持续扩大。GS Caltex向亚太地区以及美洲、欧洲市场供应产品。</p>
+      </div>
+      <div class="col" style="justify-content:center">
+        <p class="poem" style="font-size:26px">在基础油中调配适合用途与性能要求的<strong>添加剂</strong>，便成为<em>润滑油</em>。下一章将介绍<strong>Kixx润滑油事业</strong>。</p>
+      </div>
+    </div>
+  </div>
+  <div class="s-foot"><span>DATA — gscaltex.com/kr/Business/BaseOil · GS Caltex Sustainability Report 2025</span><span class="pg">27</span></div>
+</section>
+
+<!-- ==================================================================== CH.06 윤활유 -->
+<!-- 29. DIVIDER -->
+<section class="slide divider">
+  <div class="bg" style="background-image:url('../lubricants/img/band-oil.jpg')"></div><div class="scrim"></div>
+  <div class="d-no">06</div>
+  <div class="d-inner">
+    <div class="s-head"><span class="eyebrow">FINAL CHAPTER 06</span><span class="s-tag">LUBRICANTS</span></div>
+    <div class="d-en">LUBRICANTS</div><div class="d-kr">润滑油</div>
+    <p class="d-sub">依托自产高品质基础油与深厚的技术积累，日产<strong>9千桶</strong>、<strong>300余种</strong>润滑油。</p>
+    <div class="d-points">
+      <div class="d-point"><div class="dp-v">9<span class="u">K bbl/day</span></div><div class="dp-l">产能</div></div>
+      <div class="d-point"><div class="dp-v">300+<span class="u">种</span></div><div class="dp-l">Kixx 产品</div></div>
+      <div class="d-point"><div class="dp-v">10<span class="u">年蝉联</span></div><div class="dp-l">第一品牌大奖</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 30. 서사 (도입문 + LUBRICUS 어원) -->
+<section class="slide">
+  <div class="s-head"><span class="eyebrow">06 LUBRICANTS · 名称由来</span><span class="s-tag">CH.06</span></div>
+  <div class="s-body">
+    <div class="narr">
+      <p class="poem">润滑油在运动表面之间形成<strong>油膜</strong>，减少直接接触，<em>防止摩擦与磨损</em>。</p>
+      <div class="origin">
+        <div class="o-glyph">LUBRICUS</div>
+        <div class="o-rom">Lubricants · 润滑的</div>
+        <p>润滑油在相互接触运动的两个表面之间形成一层薄薄的<strong>油膜</strong>，减少摩擦、磨损和热量。从汽车发动机到工厂设备，广泛用于各种运动场景。</p>
+        <p>润滑油由基础油调配适合用途与性能要求的<strong>添加剂</strong>制成，基础油占成品的<strong>90%以上</strong>。GS Caltex依托<strong>自产高品质基础油</strong>与深厚的调配技术生产Kixx产品。</p>
+      </div>
+    </div>
+  </div>
+  <div class="s-foot"><span>DATA — gscaltex.com/kr/Business/Lubricants · kixxoil.com</span><span class="pg">28</span></div>
+</section>
+
+<!-- 31. 메커니즘 (유막 3단계) -->
+<section class="slide">
+  <div class="s-head"><span class="eyebrow">MECHANISM · 油膜的形成与作用</span><span class="s-tag">CH.06</span></div>
+  <div class="s-body">
+    <h1 class="h2" style="font-size:26px">机械运转时，表面之间会产生<em>摩擦</em></h1>
+    <div class="steps3">
+      <div class="step">
+        <span class="st-no">01 — FRICTION · 摩擦</span>
+        <div class="st-fig"><svg viewBox="0 0 150 130"><path class="mech-svg-dim" d="M14,54 l12,-8 l12,8 l12,-8 l12,8 l12,-8 l12,8 l12,-8 l12,8 l12,-8"/><path class="mech-svg-dim" d="M14,66 l12,8 l12,-8 l12,8 l12,-8 l12,8 l12,-8 l12,8 l12,-8 l12,8"/><text class="mech-lab" x="30" y="118">两个粗糙表面</text></svg></div>
+        <h3>粗糙表面<em>直接</em>接触</h3>
+        <p>无论看起来多么光滑，金属表面都存在微观的凹凸。直接运动就会刮伤、发热、磨损 — <strong>摩擦与磨损</strong>。</p>
+        <span class="st-tag">所有机械的<b>课题</b></span>
+      </div>
+      <div class="step">
+        <span class="st-no">02 — OIL FILM · 油膜</span>
+        <div class="st-fig"><svg viewBox="0 0 150 130"><path class="mech-svg-line" d="M14,48 l12,-6 l12,6 l12,-6 l12,6 l12,-6 l12,6 l12,-6 l12,6 l12,-6"/><path class="mech-svg-line" d="M14,82 l12,6 l12,-6 l12,6 l12,-6 l12,6 l12,-6 l12,6 l12,-6 l12,6"/><circle class="mech-svg-amf" cx="30" cy="65" r="3"/><circle class="mech-svg-amf" cx="54" cy="65" r="3"/><circle class="mech-svg-amf" cx="78" cy="65" r="3"/><circle class="mech-svg-amf" cx="102" cy="65" r="3"/><circle class="mech-svg-amf" cx="126" cy="65" r="3"/><text class="mech-lab" x="34" y="118">油膜渗入</text></svg></div>
+        <h3>一层<em>薄膜</em>渗入其间</h3>
+        <p>润滑油在两个表面之间形成<strong>油膜</strong>后，金属与金属不再直接接触。原本相互刮擦的表面，变为在油上滑动。</p>
+        <span class="st-tag">这层膜决定发动机的<b>寿命</b></span>
+      </div>
+      <div class="step">
+        <span class="st-no">03 — SMOOTH · 顺滑</span>
+        <div class="st-fig"><svg viewBox="0 0 150 130"><line class="mech-svg-line" x1="14" y1="50" x2="136" y2="50"/><line class="mech-svg-line" x1="14" y1="80" x2="136" y2="80"/><path class="mech-svg-am" d="M40,65 L110,65"/><polygon class="mech-svg-amf" points="110,65 101,60 101,70"/><text class="mech-lab" x="34" y="116">顺滑的运动</text></svg></div>
+        <h3>摩擦减少，<em>运动焕发活力</em></h3>
+        <p>让汽车跑得更有劲，让船舶从容前行，让工厂机器不停运转。在自产基础油中融入<strong>添加剂科学</strong>的300余种Kixx，各自担当不同的运动。</p>
+        <span class="st-tag">日产 <b>9千桶</b> · KIXX</span>
+      </div>
+    </div>
+  </div>
+  <div class="s-foot"><span>DATA — kixxoil.com（品牌故事）</span><span class="pg">29</span></div>
+</section>
+
+<!-- 32. 수치 (생산/브랜드 + 3무대) -->
+<section class="slide">
+  <div class="s-head"><span class="eyebrow">CAPACITY · 润滑油产能与产品线</span><span class="s-tag">CH.06</span></div>
+  <div class="s-body">
+    <div class="statrow" style="gap:52px;margin-top:6px">
+      <div class="stat"><div class="v">9<span class="u">K bbl/day</span></div><div class="l">产能 · SINCE 1969 仁川工厂</div></div>
+      <div class="stat"><div class="v">300+<span class="u">种</span></div><div class="l">Kixx 润滑油产品</div></div>
+      <div class="stat"><div class="v">10<span class="u">年蝉联</span></div><div class="l">韩国第一品牌大奖</div></div>
+    </div>
+    <div class="hr"></div>
+    <span class="kicker dim">WE LUBRICATE · 三大舞台</span>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:14px">
+      <div class="pcard"><div class="pc-code">MOBILITY</div><h4>车用润滑油</h4><div class="pc-desc">从乘用车·商用车机油到变速箱·车桥油，保护发动机并提升性能。</div><div class="pc-out"><span class="chip">乘用车机油</span><span class="chip">商用车机油</span><span class="chip">变速箱·车桥</span></div></div>
+      <div class="pcard"><div class="pc-code">INDUSTRY</div><h4>工业润滑油</h4><div class="pc-desc">让工厂机械与建筑工地设备不停运转，守护产业的运动。</div><div class="pc-out"><span class="chip">液压油</span><span class="chip">工业用油</span><span class="chip">润滑脂</span></div></div>
+      <div class="pcard" style="--gc:var(--amber)"><div class="pc-code" style="color:var(--amber)">FUTURE</div><h4>面向未来的润滑油</h4><div class="pc-desc">从生物基机油到为数据中心服务器降温的浸没式冷却液 — 舞台不断扩展。</div><div class="pc-out"><span class="chip out">生物机油</span><span class="chip out">浸没式冷却液</span></div></div>
+    </div>
+  </div>
+  <div class="s-foot"><span>DATA — 润滑油产能 9K bbl/day · Kixx 300余种 · 第一品牌大奖（润滑油部门）10年蝉联</span><span class="pg">30</span></div>
+</section>
+
+<!-- 33. 연결 (Kixx 타임라인) -->
+<section class="slide">
+  <div class="s-head"><span class="eyebrow">SINCE 1969 · KIXX</span><span class="s-tag">CH.06</span></div>
+  <div class="s-body">
+    <h1 class="h2" style="font-size:26px">始于1969年的生产，如今延续为<em>Kixx</em>品牌</h1>
+    <div class="two" style="margin-top:18px">
+      <div class="col">
+        <div class="tl">
+          <div class="ti"><div class="yr">1969</div><div class="tx"><b>仁川工厂开始生产润滑油</b> — 半个多世纪积累的起点</div></div>
+          <div class="ti"><div class="yr">2005</div><div class="tx"><b>润滑油品牌Kixx诞生</b> — 成为涵盖车用与工业用的韩国代表品牌</div></div>
+          <div class="ti"><div class="yr">2010</div><div class="tx"><b>进军全球市场</b> — 以印度、俄罗斯、越南为起点，向世界各国供应Kixx</div></div>
+          <div class="ti"><div class="yr">TODAY</div><div class="tx"><b>第一品牌大奖 10年蝉联</b> — 以全球No.1为目标、以7种语言触达的品牌。从丽水的基础油到全世界的发动机</div></div>
+        </div>
+      </div>
+      <div class="col" style="justify-content:center">
+        <p class="poem" style="font-size:26px">始于1969年仁川工厂的润滑油生产已延续50余年。2005年推出<strong>Kixx</strong>品牌，向<em>国内外市场</em>供应从车用到工业用的多种产品。</p>
+      </div>
+    </div>
+  </div>
+  <div class="s-foot"><span>DATA — kixxoil.com · 1969 仁川开始生产 · 2005 Kixx 诞生 · 2010 进军全球</span><span class="pg">31</span></div>
+</section>
+
+<!-- ============ 34. CLOSING ============ -->
+<section class="slide closing">
+  <div class="bg"></div><div class="scrim"></div>
+  <div class="wrap">
+    <div class="s-head"><span class="eyebrow">FROM ENERGY TO MATERIALS · GS Caltex的事业</span><span class="s-tag">GS CALTEX</span></div>
+    <p class="big">GS Caltex的事业始于原油，以炼油为基础，不断拓展至<em>石化、基础油与润滑油</em>。各项事业通过原料、工序与技术有机相连，生产能源与多种工业材料。从能源到材料，<strong>GS Caltex为更美好的未来打造竞争力</strong>。</p>
+    <p class="source">
+      <b>DATA</b> — gscaltex.com/kr/business · gspolymer.com · kixxoil.com · GS Caltex Sustainability Report 2025 · GS Caltex媒体中心（2025年基准）<br>
+      <b>KEY FIGURES</b> — 原油炼化 800K bbl/day · 深加工 275K（34.3%） · 芳烃 2,800K tons/yr · 烯烃 2,300K tons/yr（MFC投资2.7万亿韩元） · 聚合物 980K tons/yr · 基础油 30K bbl/day · 润滑油 9K bbl/day（Kixx 300余种）<br>
+      <b>PHOTO</b> — GS Caltex媒体中心摄影展
+    </p>
+  </div>
+</section>
+
+
+<button type="button" class="print-btn" id="print-now">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9V3h12v6M6 18H4v-6h16v6h-2M8 14h8v7H8z"/></svg>
+  打印 / 保存为PDF
+</button>
+<div class="theme-sw" role="group" aria-label="选择输出主题">
+  <button type="button" data-theme-set="light">WHITE</button>
+  <button type="button" data-theme-set="dark">DARK</button>
+</div>
+<p class="theme-hint">将以所选主题打印<br>DARK主题请在打印对话框中开启&lsquo;背景图形&rsquo;</p>
+<script>
+(function(){
+  var root = document.documentElement;
+  var btns = document.querySelectorAll('[data-theme-set]');
+  function apply(t){
+    if (t === 'light') root.setAttribute('data-theme','light');
+    else root.removeAttribute('data-theme');
+    try { localStorage.setItem('gsc-print-theme', t); } catch(e){}
+    btns.forEach(function(b){
+      b.setAttribute('aria-pressed', String(b.dataset.themeSet === t));
+    });
+  }
+  btns.forEach(function(b){
+    b.addEventListener('click', function(){ apply(b.dataset.themeSet); });
+  });
+  apply(root.getAttribute('data-theme') === 'light' ? 'light' : 'dark');
+  var pb = document.getElementById('print-now');
+  if (pb) pb.addEventListener('click', function(){ window.print(); });
+  // 메인 PRINT 버튼(?print=1)으로 진입하면 폰트·이미지 로드 후 바로 인쇄 대화상자
+  if (new URLSearchParams(location.search).get('print') === '1') {
+    window.addEventListener('load', function(){
+      (document.fonts ? document.fonts.ready : Promise.resolve()).then(function(){
+        setTimeout(function(){ window.print(); }, 400);
+      });
+    });
+  }
+})();
+</script>
+</body>
+</html>

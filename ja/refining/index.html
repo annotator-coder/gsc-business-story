@@ -1,0 +1,902 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>精製 — GS Caltex ビジネス</title>
+<meta name="description" content="一日80万バレル、世界第4位の単一製油所 — GS Caltex 精製ストーリー">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="GS Caltex Business Story">
+<meta property="og:title" content="精製 — GS Caltex ビジネス">
+<meta property="og:description" content="一日80万バレル、世界第4位の単一製油所 — GS Caltex 精製ストーリー">
+<meta property="og:url" content="https://gsc-business-story.vercel.app/ja/refining">
+<meta property="og:image" content="https://gsc-business-story.vercel.app/refining/img/band-harbor.jpg">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:        #0A0B0D;
+  --bg-2:      #101318;
+  --ink:       #EDE8DC;
+  --ink-dim:   #B9B3A6;
+  --ink-faint: #8E887C;
+  --amber:     #E0A63E;
+  --amber-deep:#8A5F1C;
+  --steel:     #3E4A55;
+  --line:      #26292E;
+  --font-kr: 'Pretendard', -apple-system, 'Apple SD Gothic Neo', sans-serif;
+  --font-en: 'Archivo', 'Pretendard', sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, monospace;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: auto; }
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-kr);
+  font-weight: 400;
+  line-height: 1.6;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  word-break: normal; line-break: strict; overflow-wrap: anywhere;
+  overflow-wrap: break-word;
+}
+::selection { background: var(--amber); color: var(--bg); }
+
+/* ---------- 공통 ---------- */
+.label {
+  font-family: var(--font-mono); font-weight: 500;
+  font-size: 0.72rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--amber);
+}
+.label--dim { color: var(--ink-faint); }
+.section { position: relative; }
+.inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 6vw;
+}
+.num {
+  font-family: var(--font-en);
+  font-variation-settings: "wdth" 75, "wght" 800;
+  font-variant-numeric: tabular-nums;
+  line-height: 0.95;
+  letter-spacing: -0.02em;
+}
+.rule {
+  height: 1px; background: var(--line);
+  transform-origin: left center;
+}
+
+/* ---------- 진행 내비 ---------- */
+.progress-nav {
+  position: fixed; right: 24px; top: 50%;
+  transform: translateY(-50%);
+  z-index: 90; display: flex; flex-direction: column; gap: 14px;
+}
+.progress-nav a {
+  display: block; width: 6px; height: 6px;
+  background: var(--ink-faint);
+  transition: background .3s, transform .3s;
+}
+.progress-nav a.active { background: var(--amber); transform: scale(1.5); }
+@media (max-width: 720px) { .progress-nav { display: none; } }
+
+.topbar {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 95;
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 20px 4vw;
+  mix-blend-mode: difference;
+  transition: opacity .35s ease;
+}
+.topbar.is-hidden { opacity: 0; pointer-events: none; }
+.topbar .brand {
+  font-family: var(--font-en);
+  font-variation-settings: "wdth" 80, "wght" 700;
+  font-size: 0.85rem; letter-spacing: 0.18em; color: #fff;
+  text-decoration: none;
+}
+.topbar .chapter { font-family: var(--font-mono); font-weight: 500; font-size: 0.7rem; letter-spacing: 0.2em; color: #fff; opacity: .7; }
+.tb-right { display: flex; align-items: center; gap: 16px; }
+.lang {
+  font-family: var(--font-mono); font-weight: 500; font-size: .68rem; letter-spacing: .15em;
+  color: #fff; text-decoration: none; opacity: .8;
+  border: 1px solid rgba(255,255,255,.45); padding: 3px 9px;
+}
+.lang:hover { opacity: 1; }
+.lang-sw { display: inline-flex; border: 1px solid rgba(255,255,255,.45); font-family: var(--font-mono); font-weight: 500; font-size: .64rem; letter-spacing: .06em; }
+.lang-sw a { color: #fff; text-decoration: none; opacity: .5; padding: 3px 7px; border-left: 1px solid rgba(255,255,255,.28); }
+.lang-sw a:first-child { border-left: 0; }
+.lang-sw a:hover { opacity: .85; }
+.lang-sw a[aria-current="page"] { opacity: 1; background: rgba(255,255,255,.18); }
+
+/* ---------- HERO ---------- */
+.hero {
+  height: 100vh; height: 100svh;
+  position: relative; overflow: hidden;
+  display: flex; align-items: center; justify-content: center;
+}
+#oil-canvas {
+  position: absolute; inset: 0; width: 100%; height: 100%;
+  display: block;
+}
+.hero-content {
+  position: relative; z-index: 2; text-align: center;
+  padding: 0 5vw;
+}
+.hero-eyebrow { margin-bottom: 28px; }
+.hero-title {
+  font-family: var(--font-en);
+  font-variation-settings: "wdth" 68, "wght" 850;
+  font-size: clamp(3.6rem, 11.5vw, 10.5rem);
+  line-height: 1; letter-spacing: -0.015em;
+  color: var(--ink);
+}
+.hero-title .row { display: block; overflow: hidden; padding: 0.03em 0; }
+.hero-title .row > span { display: inline-block; }
+.hero-title .row--kr { font-family: var(--font-kr); font-weight: 800; font-size: 0.72em; line-height: 1.15; letter-spacing: 0.06em; color: var(--amber); }
+.hero-sub {
+  margin-top: 36px;
+  font-size: clamp(1rem, 1.6vw, 1.25rem);
+  color: var(--ink-dim); font-weight: 400;
+  letter-spacing: 0.04em;
+}
+.hero-sub strong { color: var(--ink); font-weight: 600; }
+.scroll-cue {
+  position: absolute; bottom: 36px; left: 50%;
+  transform: translateX(-50%);
+  z-index: 2; display: flex; flex-direction: column; align-items: center; gap: 10px;
+}
+.scroll-cue .line {
+  width: 1px; height: 48px;
+  background: linear-gradient(to bottom, transparent, var(--amber));
+  animation: cue 2s ease-in-out infinite;
+}
+@keyframes cue {
+  0% { transform: scaleY(0); transform-origin: top; }
+  50% { transform: scaleY(1); transform-origin: top; }
+  51% { transform-origin: bottom; }
+  100% { transform: scaleY(0); transform-origin: bottom; }
+}
+
+/* ---------- 인트로 문장 ---------- */
+.manifesto { padding: 24vh 0; }
+.manifesto p {
+  font-size: clamp(1.6rem, 4vw, 3.2rem);
+  font-weight: 350; line-height: 1.5;
+  max-width: 20em;
+  color: var(--ink-faint);
+}
+.manifesto p .w { display: inline; }
+.manifesto p strong { font-weight: 600; }
+
+/* ---------- 원유 도입 ---------- */
+.sourcing { padding: 16vh 0 20vh; }
+.sourcing-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 8vw;
+  align-items: end; margin-top: 8vh;
+}
+.stat-block .stat-value {
+  font-size: clamp(4rem, 11vw, 10rem);
+  color: var(--ink);
+}
+.stat-block .stat-value .unit {
+  font-family: var(--font-kr);
+  font-size: 0.28em; font-weight: 400; color: var(--ink-dim);
+  letter-spacing: 0.05em; margin-left: 0.15em;
+}
+.stat-block .stat-desc {
+  margin-top: 20px; color: var(--ink-dim); font-weight: 400;
+  font-size: clamp(0.95rem, 1.3vw, 1.1rem);
+  max-width: 26em;
+}
+.stat-block .stat-desc strong { color: var(--ink); font-weight: 600; }
+.sourcing-copy {
+  font-size: clamp(1.05rem, 1.5vw, 1.3rem);
+  font-weight: 400; color: var(--ink-dim); max-width: 24em;
+}
+.sourcing-copy strong { color: var(--amber); font-weight: 600; }
+/* ---------- 흑백 이미지 밴드 ---------- */
+.img-band {
+  position: relative; height: 58vh; min-height: 380px;
+  overflow: hidden;
+}
+.img-band .media {
+  position: absolute; inset: -14% 0;
+  background-size: cover; background-position: center;
+  filter: grayscale(1) brightness(0.6) contrast(1.06);
+  will-change: transform;
+}
+.img-band::after {
+  content: ''; position: absolute; inset: 0; pointer-events: none;
+  background: linear-gradient(to bottom, var(--fade-top, var(--bg)) 0%, transparent 30%, transparent 68%, var(--fade-bottom, var(--bg)) 100%),
+              linear-gradient(to right, rgba(10,11,13,.45), transparent 40%);
+}
+.img-band .caption {
+  position: absolute; left: 6vw; bottom: 32px; z-index: 2;
+}
+.img-band .caption .cap-text {
+  display: block; margin-top: 10px;
+  color: var(--ink-dim); font-weight: 400;
+  font-size: clamp(0.95rem, 1.3vw, 1.15rem);
+}
+.img-band .caption .cap-text strong { color: var(--ink); font-weight: 600; }
+
+/* ---------- 증류탑 (핀 시퀀스) ---------- */
+.tower-section { background: var(--bg-2); }
+.tower-bg {
+  position: absolute; inset: 0; z-index: 0; pointer-events: none;
+  background-image:
+    linear-gradient(to right, rgba(16,19,24,.6) 0%, rgba(16,19,24,.78) 52%, rgba(16,19,24,.95) 100%),
+    linear-gradient(to bottom, rgba(16,19,24,.9) 0%, rgba(16,19,24,.3) 22%, rgba(16,19,24,.3) 78%, rgba(16,19,24,.9) 100%),
+    url('/refining/img/tower-bg.jpg');
+  background-size: cover, cover, cover;
+  background-position: center 28%;
+  filter: grayscale(1) contrast(1.04);
+  opacity: .5;
+  will-change: transform;
+}
+.tower-visual, .tower-copy { z-index: 1; }
+.tower-stage {
+  position: relative;
+  height: 100vh; height: 100svh;
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 4fr);
+  gap: 4vw;
+  max-width: 1280px; margin: 0 auto; padding: 0 6vw;
+  align-items: center;
+  overflow: hidden;
+}
+.tower-visual { position: relative; height: 82vh; display:flex; align-items:center; justify-content:center; }
+.tower-visual svg { height: 100%; width: auto; max-width: 100%; overflow: visible; }
+
+.tower-copy { position: relative; height: 60vh; }
+.tower-step {
+  position: absolute; inset: 0;
+  display: flex; flex-direction: column; justify-content: center;
+  opacity: 0; visibility: hidden;
+}
+.tower-step h3 {
+  font-size: clamp(1.8rem, 3.4vw, 3rem);
+  font-weight: 700; line-height: 1.25; letter-spacing: -0.01em;
+  margin: 18px 0 20px;
+}
+.tower-step h3 em { font-style: normal; color: var(--amber); }
+.tower-step p {
+  color: var(--ink-dim); font-weight: 400;
+  font-size: clamp(0.95rem, 1.25vw, 1.1rem);
+  max-width: 30em;
+}
+.tower-step p strong { color: var(--ink); font-weight: 600; }
+.tower-step .big {
+  font-size: clamp(3rem, 7vw, 6rem); color: var(--ink); margin: 8px 0 16px;
+}
+.tower-step .big .unit {
+  font-family: var(--font-kr); font-size: 0.3em; font-weight: 400;
+  color: var(--ink-dim); margin-left: .2em;
+}
+.badge {
+  display: inline-flex; align-items: center; gap: 10px;
+  border: 1px solid var(--amber-deep);
+  padding: 8px 16px; margin-top: 24px;
+  font-family: var(--font-mono); font-weight: 500; font-size: .75rem; letter-spacing: .15em;
+  color: var(--amber);
+}
+
+/* SVG tower internals */
+.frac-label { font-family: var(--font-mono); font-weight: 500; font-size: 11px; fill: var(--ink-dim); letter-spacing: .08em; }
+.frac-temp { font-family: var(--font-mono); font-weight: 500; font-size: 9px; fill: var(--ink-dim); letter-spacing: .05em; }
+.tower-visual svg { filter: drop-shadow(0 0 36px rgba(10, 12, 15, 0.95)); }
+.frac-line { stroke: var(--line); stroke-width: 1; }
+
+/* ---------- 고도화율 ---------- */
+.upgrade-rate {
+  display: flex; gap: 10px; align-items: baseline; margin-top: 32px;
+  font-family: var(--font-mono); font-weight: 500; font-size: .8rem; color: var(--ink-faint);
+  letter-spacing: .1em;
+}
+.upgrade-rate strong { color: var(--amber); font-size: 1.1rem; }
+
+/* ---------- 네트워크 ---------- */
+.network { padding: 20vh 0; }
+.network-head { max-width: none; }
+.network-head h2 {
+  font-size: clamp(2rem, 4.5vw, 4rem);
+  font-weight: 700; line-height: 1.25; letter-spacing: -0.015em;
+  margin-top: 18px;
+}
+.network-head h2 em { font-style: normal; color: var(--amber); }
+.network-stats {
+  display: grid; grid-template-columns: repeat(2, 1fr);
+  gap: 1px; background: var(--line); border: 1px solid var(--line);
+  margin-top: 10vh;
+}
+.network-stats .cell {
+  background: var(--bg); padding: clamp(28px, 4vw, 56px);
+}
+.network-stats .cell .stat-value {
+  font-size: clamp(3rem, 7.5vw, 6.5rem); color: var(--ink);
+}
+.network-stats .cell .stat-value .unit {
+  font-family: var(--font-kr); font-size: .3em; font-weight: 400; color: var(--ink-dim);
+}
+.network-stats .cell .cap {
+  margin-top: 14px; color: var(--ink-dim); font-weight: 400; font-size: .95rem;
+}
+.network-stats .cell .cap small { color: var(--ink-faint); font-size: .78rem; display: block; margin-top: 4px; font-family: var(--font-mono); font-weight: 500; letter-spacing: .06em;}
+
+.network-lede {
+  margin-top: 26px; max-width: 44em;
+  color: var(--ink-dim); font-weight: 400;
+  font-size: clamp(.98rem, 1.3vw, 1.12rem);
+}
+.product-grid {
+  margin-top: 1px; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1px; background: var(--line);
+  border: 1px solid var(--line); border-top: 0;
+}
+.product-grid .p-cell { background: var(--bg); padding: clamp(24px, 3vw, 40px); }
+.product-grid .p-name {
+  font-family: var(--font-en); font-variation-settings: "wdth" 78, "wght" 750;
+  font-size: clamp(1.05rem, 1.7vw, 1.35rem); letter-spacing: .02em; color: var(--amber);
+}
+.product-grid .p-name span {
+  display: block; margin-top: 8px;
+  font-family: var(--font-kr); font-weight: 700; font-size: .95rem; color: var(--ink);
+}
+.product-grid .p-desc {
+  margin-top: 14px; color: var(--ink-dim); font-weight: 400; font-size: .92rem; line-height: 1.7;
+}
+@media (max-width: 900px) {
+  .product-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 560px) {
+  .product-grid { grid-template-columns: 1fr; }
+}
+
+/* 제품 마퀴 */
+.marquee {
+  margin-top: 14vh; overflow: hidden; white-space: nowrap;
+  border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);
+  padding: 22px 0;
+}
+.marquee-track { display: inline-block; will-change: transform; }
+.marquee-track span {
+  font-family: var(--font-en);
+  font-variation-settings: "wdth" 70, "wght" 750;
+  font-size: clamp(1.6rem, 3.5vw, 3rem);
+  color: transparent;
+  -webkit-text-stroke: 1px var(--ink-faint);
+  margin-right: 6vw; letter-spacing: .02em;
+}
+.marquee-track span.solid { color: var(--amber); -webkit-text-stroke: 0; }
+
+/* ---------- 아우트로 ---------- */
+.outro {
+  padding: 24vh 0 12vh; position: relative; overflow: hidden;
+  background: linear-gradient(to bottom, var(--bg), #07080A);
+}
+.outro-bg {
+  position: absolute; inset: 0 0 auto 0; height: 64vh;
+  z-index: 0; pointer-events: none;
+  background-image:
+    linear-gradient(to bottom, rgba(10,11,13,.55) 0%, rgba(10,11,13,.75) 60%, #0A0B0D 100%),
+    url('/refining/img/outro-bg.jpg');
+  background-size: cover; background-position: center 40%;
+  filter: grayscale(1) contrast(1.05);
+  opacity: .5;
+}
+.outro .inner { position: relative; z-index: 1; }
+.outro-line {
+  font-size: clamp(1.4rem, 3vw, 2.4rem); font-weight: 350;
+  color: var(--ink-dim); max-width: 26em; line-height: 1.6;
+}
+.outro-line strong { color: var(--ink); font-weight: 600; }
+.next-chapters { margin-top: 14vh; }
+.next-chapters .row-item {
+  display: flex; justify-content: space-between; align-items: baseline;
+  padding: 22px 0; border-top: 1px solid var(--line);
+  color: var(--ink-faint); text-decoration: none;
+  transition: color .3s, padding-left .3s;
+}
+.next-chapters .row-item:last-child { border-bottom: 1px solid var(--line); }
+.next-chapters .row-item .name {
+  font-size: clamp(1.3rem, 2.6vw, 2.2rem); font-weight: 600;
+}
+.next-chapters .row-item .en {
+  font-family: var(--font-mono); font-weight: 500; font-size: .72rem; letter-spacing: .2em; text-transform: uppercase;
+}
+.next-chapters .row-item.current { color: var(--ink); }
+.next-chapters .row-item.current .en { color: var(--amber); }
+.next-chapters .row-item.soon:hover { color: var(--ink-dim); padding-left: 12px; }
+.next-chapters a.row-item.next { color: var(--ink-dim); }
+.next-chapters a.row-item.next .en { color: var(--amber); }
+.next-chapters a.row-item.next:hover { color: var(--ink); padding-left: 12px; }
+.footer-note {
+  margin-top: 12vh;
+  font-family: var(--font-mono); font-weight: 500; font-size: .7rem; line-height: 2;
+  color: var(--ink-faint); letter-spacing: .04em;
+}
+.footer-note a { color: var(--ink-dim); }
+
+@media (max-width: 720px) {
+  .hero-sub br { display: none; }
+  .label { letter-spacing: 0.16em; font-size: 0.68rem; }
+}
+@media (max-width: 880px) {
+  .tower-stage { grid-template-columns: 1fr; grid-template-rows: 48vh 1fr; gap: 0; padding-top: 8vh; }
+  .tower-visual { height: 100%; }
+  .tower-visual svg { width: 100%; height: 100%; }
+  .frac-label { font-size: 18px; }
+  .frac-temp { font-size: 14px; }
+  .tower-copy { height: 100%; }
+  .tower-step { justify-content: flex-start; padding-top: 3vh; }
+  .tower-step h3 { font-size: clamp(1.4rem, 6vw, 1.9rem); margin: 12px 0 14px; }
+  .tower-step .big { font-size: clamp(2.4rem, 11vw, 3.6rem); }
+  .badge { margin-top: 14px; }
+  .upgrade-meter { margin-top: 20px; }
+  .sourcing-grid { grid-template-columns: 1fr; gap: 8vh; align-items: start; }
+  .network-stats { grid-template-columns: 1fr; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .scroll-cue .line { animation: none; }
+}
+@media (max-width: 560px) {
+  /* 모바일 터치 영역 확대 (상단바) */
+  .lang-sw a { padding-top: 8px; padding-bottom: 8px; }
+}
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <a class="brand" href="/ja">GS CALTEX — BUSINESS</a>
+  <span class="tb-right"><span class="chapter">CH.01 / REFINING</span><span class="lang-sw"><a href="/refining">KR</a><a href="/en/refining">EN</a><a href="/zh/refining">中</a><a href="/ja/refining" aria-current="page">日</a></span></span>
+</header>
+
+<nav class="progress-nav" aria-label="章の移動">
+  <a href="#top" data-nav="hero" aria-label="冒頭"></a>
+  <a href="#sourcing" data-nav="sourcing" aria-label="原油の受け入れ"></a>
+  <a href="#tower" data-nav="tower" aria-label="精製"></a>
+  <a href="#network" data-nav="network" aria-label="ネットワーク"></a>
+  <a href="#outro" data-nav="outro" aria-label="次の章"></a>
+</nav>
+
+<!-- ========== HERO ========== -->
+<section class="hero section" id="top" data-nav-target="hero">
+  <canvas id="oil-canvas" aria-hidden="true"></canvas>
+  <div class="hero-content">
+    <p class="label hero-eyebrow">GS CALTEX BUSINESS — CHAPTER 01</p>
+    <h1 class="hero-title" aria-label="精製">
+      <span class="row"><span data-hero-row>REFINING</span></span>
+    </h1>
+    <p class="hero-sub" data-hero-sub>
+1日あたり<strong>80万バレル</strong>の原油がエネルギーになるまで<br>
+      その工程は、単一の石油精製工場として世界<strong>第4位</strong>の原油精製能力を備える麗水（ヨス）工場から始まります。
+    </p>
+  </div>
+  <div class="scroll-cue" aria-hidden="true">
+    <span class="label label--dim">SCROLL</span>
+    <span class="line"></span>
+  </div>
+</section>
+
+<!-- ========== 인트로 문장 ========== -->
+<section class="section manifesto">
+  <div class="inner">
+    <p data-manifesto>
+      <span class="w">1967年に</span> <span class="w">韓国初の</span> <span class="w">民間石油精製会社</span> <span class="w">として</span> <span class="w">誕生した</span>
+      <span class="w">GS Caltexは、</span> <span class="w">世界各地から</span> <span class="w">調達した</span> <span class="w">原油を</span> <span class="w">精製し、</span>
+      <span class="w">暮らしと</span> <span class="w">産業に</span> <span class="w">必要な</span>
+      <span class="w"><strong>多様な</strong></span> <span class="w"><strong>エネルギーと</strong></span> <span class="w"><strong>製品を</strong></span> <span class="w">生産しています。</span>
+    </p>
+  </div>
+</section>
+
+<!-- ========== 원유 도입 ========== -->
+<section class="section sourcing" id="sourcing" data-nav-target="sourcing">
+  <div class="inner">
+    <p class="label" data-reveal>01 — CRUDE SOURCING</p>
+    <div class="sourcing-grid">
+      <div class="stat-block" data-reveal>
+        <div class="stat-value num"><span data-count="30" data-suffix="+">0</span><span class="unit">か国</span></div>
+        <div class="rule" data-rule style="margin-top:24px;"></div>
+        <p class="stat-desc">中東をはじめ<strong>米国・東南アジア・オーストラリア・欧州</strong>へと原油の調達先を広げ、安定した供給基盤を確保しています。</p>
+      </div>
+      <div class="stat-block" data-reveal>
+        <div class="stat-value num"><span data-count="80">0</span><span class="unit">以上の油種</span></div>
+        <div class="rule" data-rule style="margin-top:24px;"></div>
+        <p class="stat-desc sourcing-copy">産地や特性の異なる多様な原油を処理できる能力を生かし、<strong>市場の状況に柔軟に対応</strong>しています。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== 이미지 밴드: 원유부두 ========== -->
+<section class="img-band" style="--fade-top: var(--bg); --fade-bottom: #101318" aria-label="原油埠頭の写真">
+  <div class="media" data-band style="background-image: url('/refining/img/band-harbor.jpg')"></div>
+</section>
+
+<!-- ========== 증류탑 시퀀스 ========== -->
+<section class="section tower-section" id="tower" data-nav-target="tower">
+  <div class="tower-stage">
+    <div class="tower-bg" aria-hidden="true"></div>
+    <div class="tower-visual" aria-hidden="true">
+      <svg viewBox="0 0 340 640" fill="none">
+        <defs>
+          <linearGradient id="crudeGrad" x1="0" y1="1" x2="0" y2="0">
+            <stop offset="0" stop-color="#1A1206"/>
+            <stop offset="1" stop-color="#3A2A0C"/>
+          </linearGradient>
+          <clipPath id="towerClip">
+            <path d="M130 40 h80 a10 10 0 0 1 10 10 v540 h-100 v-540 a10 10 0 0 1 10-10 z"/>
+          </clipPath>
+        </defs>
+
+        <!-- 탑 몸체 -->
+        <path d="M130 40 h80 a10 10 0 0 1 10 10 v540 h-100 v-540 a10 10 0 0 1 10-10 z"
+              stroke="#3E4A55" stroke-width="1.5"/>
+        <!-- 트레이 -->
+        <g stroke="#26292E" stroke-width="1">
+          <line x1="122" y1="140" x2="218" y2="140"/>
+          <line x1="122" y1="240" x2="218" y2="240"/>
+          <line x1="122" y1="340" x2="218" y2="340"/>
+          <line x1="122" y1="440" x2="218" y2="440"/>
+          <line x1="122" y1="520" x2="218" y2="520"/>
+        </g>
+
+        <!-- 원유 충전 (클립 내부) -->
+        <g clip-path="url(#towerClip)">
+          <rect id="crudeFill" x="120" y="590" width="100" height="560" fill="url(#crudeGrad)"/>
+        </g>
+
+        <!-- 원유 인입 파이프 -->
+        <path d="M20 560 h100" stroke="#3E4A55" stroke-width="1.5"/>
+        <circle id="feedDot" cx="20" cy="560" r="4" fill="#E0A63E"/>
+        <text class="frac-label" x="20" y="546">CRUDE IN</text>
+
+        <!-- 유분 인출 (위→아래: 끓는점 낮은 순) -->
+        <g id="frac-1" opacity="0">
+          <path d="M220 110 h70" stroke="#E0A63E" stroke-width="1.5"/>
+          <circle cx="290" cy="110" r="3.5" fill="#E0A63E"/>
+          <text class="frac-label" x="230" y="100" fill="#EDE8DC">LPG</text>
+          <text class="frac-temp" x="230" y="128">~ 35°C</text>
+        </g>
+        <g id="frac-2" opacity="0">
+          <path d="M220 210 h70" stroke="#E0A63E" stroke-width="1.5"/>
+          <circle cx="290" cy="210" r="3.5" fill="#E0A63E"/>
+          <text class="frac-label" x="230" y="200" fill="#EDE8DC">NAPHTHA</text>
+          <text class="frac-temp" x="230" y="228">35 – 160°C</text>
+        </g>
+        <g id="frac-3" opacity="0">
+          <path d="M220 310 h70" stroke="#E0A63E" stroke-width="1.5"/>
+          <circle cx="290" cy="310" r="3.5" fill="#E0A63E"/>
+          <text class="frac-label" x="230" y="300" fill="#EDE8DC">KEROSENE · JET</text>
+          <text class="frac-temp" x="230" y="328">160 – 250°C</text>
+        </g>
+        <g id="frac-4" opacity="0">
+          <path d="M220 410 h70" stroke="#E0A63E" stroke-width="1.5"/>
+          <circle cx="290" cy="410" r="3.5" fill="#E0A63E"/>
+          <text class="frac-label" x="230" y="400" fill="#EDE8DC">DIESEL</text>
+          <text class="frac-temp" x="230" y="428">240 – 370°C</text>
+        </g>
+        <g id="frac-5" opacity="0">
+          <path d="M220 555 h70" stroke="#8A5F1C" stroke-width="1.5"/>
+          <circle cx="290" cy="555" r="3.5" fill="#8A5F1C"/>
+          <text class="frac-label" x="230" y="545" fill="#9A958A">RESIDUE → UPGRADER</text>
+          <text class="frac-temp" x="230" y="573">370°C +</text>
+        </g>
+      </svg>
+    </div>
+
+    <div class="tower-copy">
+      <div class="tower-step" data-step="0">
+        <p class="label">02 — DISTILLATION</p>
+        <h3>沸点の違いを利用して<br>原油を<em>さまざまな留分</em>に分離します</h3>
+        <p>原油を加熱して常圧蒸留塔に投入すると、沸点の違いによって<strong>LPG・ナフサ・灯油・軽油・残油</strong>などの留分に分離されます。分離された留分は、その後の精製・高度化・石油化学工程の原料として使用されます。</p>
+      </div>
+      <div class="tower-step" data-step="1">
+        <p class="label">02 — CAPACITY</p>
+        <div class="big num"><span data-count="800">0</span><span class="unit">K bbl / day</span></div>
+        <p>GS Caltexは1日あたり<strong>80万バレル</strong>の原油精製能力を備えています。最先端の自動化生産設備で、ガソリン・灯油・軽油・ジェット燃料など高品質な石油製品を生産しています。</p>
+        <span class="badge">WORLD NO.4 · SINGLE REFINERY</span>
+      </div>
+      <div class="tower-step" data-step="2">
+        <p class="label">03 — UPGRADING</p>
+        <div class="big num"><span data-count="275">0</span><span class="unit">K bbl / day</span></div>
+        <p>GS Caltexは、1日あたり<strong>27万5千バレル</strong>の高度化処理能力を備えています。常圧蒸留工程で分離された重質油は、高度化工程を経て、ガソリン・灯油・軽油など、付加価値の高い軽質油へと転換されます。</p>
+        <p class="upgrade-rate"><strong>34.3%</strong><span>UPGRADING RATIO</span></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== 이미지 밴드: 파이프라인 ========== -->
+<section class="img-band" style="--fade-top: #101318; --fade-bottom: var(--bg)" aria-label="パイプラインの写真">
+  <div class="media" data-band style="background-image: url('/refining/img/band-pipes.jpg')"></div>
+</section>
+
+<!-- ========== 이미지 밴드: 제품탱크 ========== -->
+<section class="img-band" style="--fade-top: var(--bg); --fade-bottom: var(--bg)" aria-label="製品タンクの写真">
+  <div class="media" data-band style="background-image: url('/refining/img/band-tanks.jpg')"></div>
+</section>
+
+<!-- ========== 네트워크 ========== -->
+<section class="section network" id="network" data-nav-target="network">
+  <div class="inner">
+    <div class="network-head">
+      <p class="label" data-reveal>04 — INTO EVERYDAY LIFE</p>
+      <h2 data-reveal>GS Caltexの石油製品は<br><em>暮らしと産業のさまざまな場面</em>で活躍</h2>
+      <p class="network-lede" data-reveal>GS Caltexの石油製品は、韓国全土のサービスステーションやLPG充填所をはじめ、さまざまな産業施設・鉄道・航空会社などに供給されています。</p>
+    </div>
+    <div class="network-stats">
+      <div class="cell" data-reveal>
+        <div class="stat-value num"><span data-count="2000" data-prefix="~">0</span><span class="unit">か所</span></div>
+        <p class="cap">韓国全土のサービスステーションネットワーク（2025年末）<small>ACROSS KOREA</small></p>
+      </div>
+      <div class="cell" data-reveal>
+        <div class="stat-value num"><span data-count="330" data-prefix="~">0</span><span class="unit">か所</span></div>
+        <p class="cap">韓国全土のLPG充填所（2025年末）<small>ACROSS KOREA</small></p>
+      </div>
+    </div>
+    <div class="product-grid">
+      <div class="p-cell" data-reveal>
+        <p class="p-name">GASOLINE<span>ガソリン</span></p>
+        <p class="p-desc">自動車の主要な燃料として使用されます。</p>
+      </div>
+      <div class="p-cell" data-reveal>
+        <p class="p-name">DIESEL<span>軽油</span></p>
+        <p class="p-desc">自動車をはじめ、さまざまな輸送・産業分野の燃料として使用されます。</p>
+      </div>
+      <div class="p-cell" data-reveal>
+        <p class="p-name">KEROSENE<span>灯油</span></p>
+        <p class="p-desc">暖房用や産業用などの燃料として使用されます。</p>
+      </div>
+      <div class="p-cell" data-reveal>
+        <p class="p-name">JET FUEL<span>ジェット燃料</span></p>
+        <p class="p-desc">航空機の運航に必要な燃料として使用されます。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== 아우트로 ========== -->
+<section class="section outro" id="outro" data-nav-target="outro">
+  <div class="outro-bg" aria-hidden="true"></div>
+  <div class="inner">
+    <p class="outro-line" data-reveal>
+      石油精製工程で生産された原料は、さらに<strong>芳香族・オレフィン・ポリマー</strong>など多様な石油化学製品へとつながります。石油精製から石油化学へと広がるGS Caltexの事業をご紹介します。
+    </p>
+    <div class="next-chapters" data-reveal>
+      <a class="row-item next" href="/ja/process"><span class="name">生産工程</span><span class="en">CH.00 — Read</span></a>
+      <div class="row-item current"><span class="name">精製</span><span class="en">CH.01 — Now</span></div>
+      <a class="row-item next" href="/ja/aromatics"><span class="name">芳香族</span><span class="en">CH.02 — Read →</span></a>
+      <a class="row-item next" href="/ja/olefins"><span class="name">オレフィン</span><span class="en">CH.03 — Read →</span></a>
+      <a class="row-item next" href="/ja/polymer"><span class="name">ポリマー</span><span class="en">CH.04 — Read →</span></a>
+      <a class="row-item next" href="/ja/baseoil"><span class="name">ベースオイル</span><span class="en">CH.05 — Read →</span></a>
+      <a class="row-item next" href="/ja/lubricants"><span class="name">潤滑油</span><span class="en">CH.06 — Read →</span></a>
+    </div>
+    <p class="footer-note">
+      DATA — <a href="https://www.gscaltex.com/kr/business" target="_blank" rel="noopener">gscaltex.com/kr/business</a> · <a href="https://www.gscaltex.com/kr/business/productionbase" target="_blank" rel="noopener">生産工程ページ</a> · GS Caltex Sustainability Report 2025 (2025年時点)<br>
+      Refining 800K bbl/day · Upgrading 275K bbl/day · Upgrading ratio 34.3% · Crude from 30+ countries, 80+ grades · ~2,000 stations · ~330 LPG stations (end 2025)<br>
+      PHOTO — <a href="https://gscaltexmediahub.com/gsc-exhibition/" target="_blank" rel="noopener">GS Caltex Media Hub photo exhibition</a>
+    </p>
+  </div>
+</section>
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+<script>
+gsap.registerPlugin(ScrollTrigger);
+const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+/* ============ 히어로: 원유 파문(리플) 캔버스 ============ */
+(function () {
+  const canvas = document.getElementById('oil-canvas');
+  const ctx = canvas.getContext('2d');
+  let w, h, raf;
+
+  function resize() {
+    const dpr = Math.min(window.devicePixelRatio || 1, 2);
+    w = canvas.clientWidth; h = canvas.clientHeight;
+    canvas.width = w * dpr; canvas.height = h * dpr;
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+  }
+  resize();
+  window.addEventListener('resize', resize);
+
+  const ripples = [];
+  function spawn(px, py) {
+    ripples.push({
+      x: px !== undefined ? px : w * (0.15 + Math.random() * 0.7),
+      y: py !== undefined ? py : h * (0.6 + Math.random() * 0.28),
+      max: 140 + Math.random() * 180,
+      life: 0,
+      dur: 400 + Math.random() * 140
+    });
+  }
+  let nextSpawn = 40;
+
+  function drawBase() {
+    const bg = ctx.createRadialGradient(w / 2, h * 0.4, 0, w / 2, h * 0.4, Math.max(w, h) * 0.8);
+    bg.addColorStop(0, '#101114');
+    bg.addColorStop(1, '#0A0B0D');
+    ctx.fillStyle = bg;
+    ctx.fillRect(0, 0, w, h);
+
+    ctx.beginPath();
+    ctx.moveTo(0, h * 0.8);
+    ctx.quadraticCurveTo(w * 0.5, h * 0.74, w, h * 0.8);
+    ctx.lineTo(w, h); ctx.lineTo(0, h);
+    ctx.closePath();
+    ctx.fillStyle = 'rgba(30, 22, 8, 0.55)';
+    ctx.fill();
+    ctx.beginPath();
+    ctx.moveTo(0, h * 0.8);
+    ctx.quadraticCurveTo(w * 0.5, h * 0.74, w, h * 0.8);
+    ctx.strokeStyle = 'rgba(224, 166, 62, 0.14)';
+    ctx.lineWidth = 1;
+    ctx.stroke();
+  }
+
+  function draw() {
+    drawBase();
+
+    for (let i = ripples.length - 1; i >= 0; i--) {
+      const rp = ripples[i];
+      rp.life++;
+      const p = rp.life / rp.dur;
+      if (p >= 1) { ripples.splice(i, 1); continue; }
+      const ease = 1 - Math.pow(1 - p, 2.2);
+      const alpha = Math.pow(1 - p, 1.6);
+      ctx.beginPath();
+      ctx.ellipse(rp.x, rp.y, rp.max * ease, rp.max * ease * 0.32, 0, 0, Math.PI * 2);
+      ctx.strokeStyle = 'rgba(224, 166, 62, ' + (alpha * 0.32) + ')';
+      ctx.lineWidth = 1.2;
+      ctx.stroke();
+      ctx.beginPath();
+      ctx.ellipse(rp.x, rp.y, rp.max * ease * 0.62, rp.max * ease * 0.32 * 0.62, 0, 0, Math.PI * 2);
+      ctx.strokeStyle = 'rgba(237, 232, 220, ' + (alpha * 0.12) + ')';
+      ctx.lineWidth = 1;
+      ctx.stroke();
+    }
+
+    if (--nextSpawn <= 0) {
+      spawn();
+      nextSpawn = 160 + Math.random() * 140;
+    }
+    raf = requestAnimationFrame(draw);
+  }
+
+  if (reduceMotion) { drawBase(); }
+  else { spawn(w * 0.5, h * 0.76); draw(); }
+
+  gsap.to(canvas, {
+    opacity: 0.25, ease: 'none',
+    scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: true }
+  });
+})();
+
+/* ============ 히어로 타이틀 등장 ============ */
+gsap.from('[data-hero-row]', {
+  yPercent: 110, duration: 1.2, stagger: 0.12, ease: 'power4.out', delay: 0.15
+});
+gsap.from('[data-hero-sub], .hero-eyebrow', {
+  opacity: 0, y: 24, duration: 1, stagger: 0.1, ease: 'power2.out', delay: 0.7
+});
+gsap.to('.hero-content', {
+  yPercent: -18, opacity: 0, ease: 'none',
+  scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom 30%', scrub: true }
+});
+
+/* ============ 매니페스토: 단어별 밝아짐 ============ */
+gsap.to('[data-manifesto] .w', {
+  color: '#EDE8DC', stagger: 0.6, ease: 'none',
+  scrollTrigger: {
+    trigger: '.manifesto', start: 'top 75%', end: 'bottom 55%', scrub: true
+  }
+});
+
+/* ============ 증류탑 핀 시퀀스 ============ */
+(function () {
+  const steps = gsap.utils.toArray('.tower-step');
+  const tl = gsap.timeline({
+    scrollTrigger: {
+      trigger: '.tower-section',
+      start: 'top top',
+      end: '+=340%',
+      pin: '.tower-stage',
+      scrub: 0.6,
+      anticipatePin: 1
+    }
+  });
+
+  tl.set(steps[0], { autoAlpha: 1 });
+  tl.to('#crudeFill', { attr: { y: 60 }, duration: 3, ease: 'none' }, 0);
+  tl.to('#feedDot', { attr: { cx: 118 }, duration: 1.2, ease: 'none' }, 0);
+  tl.to('#frac-5', { opacity: 1, duration: 0.3 }, 0.6);
+  tl.to('#frac-4', { opacity: 1, duration: 0.3 }, 1.2);
+  tl.to('#frac-3', { opacity: 1, duration: 0.3 }, 1.7);
+  tl.to('#frac-2', { opacity: 1, duration: 0.3 }, 2.2);
+  tl.to('#frac-1', { opacity: 1, duration: 0.3 }, 2.7);
+
+  tl.to(steps[0], { autoAlpha: 0, y: -28, duration: 0.5 }, 3.4);
+  tl.fromTo(steps[1], { autoAlpha: 0, y: 28 }, { autoAlpha: 1, y: 0, duration: 0.5 }, 3.9);
+  tl.to({}, { duration: 1.4 });
+
+  tl.to(steps[1], { autoAlpha: 0, y: -28, duration: 0.5 }, 5.9);
+  tl.fromTo(steps[2], { autoAlpha: 0, y: 28 }, { autoAlpha: 1, y: 0, duration: 0.5 }, 6.4);
+  tl.to('#frac-5 path', { stroke: '#E0A63E', duration: 0.4 }, 6.4);
+  tl.to('#frac-5 circle', { fill: '#E0A63E', duration: 0.4 }, 6.4);
+  tl.to('#frac-5 text', { fill: '#EDE8DC', duration: 0.4 }, 6.4);
+  tl.to({}, { duration: 1.2 });
+})();
+
+/* ============ 공통 리빌 ============ */
+document.querySelectorAll('[data-reveal]').forEach(el => {
+  gsap.from(el, {
+    opacity: 0, y: 44, duration: 1, ease: 'power3.out',
+    scrollTrigger: { trigger: el, start: 'top 82%' }
+  });
+});
+document.querySelectorAll('[data-rule]').forEach(el => {
+  gsap.from(el, {
+    scaleX: 0, duration: 1.2, ease: 'power3.inOut',
+    scrollTrigger: { trigger: el, start: 'top 85%' }
+  });
+});
+
+/* ============ 카운트업 ============ */
+document.querySelectorAll('[data-count]').forEach(el => {
+  const target = parseFloat(el.dataset.count);
+  const decimals = parseInt(el.dataset.decimals || '0', 10);
+  const prefix = el.dataset.prefix || '';
+  const suffix = el.dataset.suffix || '';
+  const obj = { v: 0 };
+  const fmt = v => prefix + v.toLocaleString('en-US', {
+    minimumFractionDigits: decimals, maximumFractionDigits: decimals
+  }) + suffix;
+  el.textContent = fmt(0);
+  ScrollTrigger.create({
+    trigger: el, start: 'top 85%', once: true,
+    onEnter: () => gsap.to(obj, {
+      v: target, duration: 1.8, ease: 'power2.out',
+      onUpdate: () => { el.textContent = fmt(obj.v); }
+    })
+  });
+});
+
+/* ============ 이미지 밴드 패럴랙스 + 증류탑 배경 ============ */
+gsap.utils.toArray('[data-band]').forEach(m => {
+  gsap.fromTo(m, { yPercent: -7 }, {
+    yPercent: 7, ease: 'none',
+    scrollTrigger: { trigger: m.parentElement, start: 'top bottom', end: 'bottom top', scrub: true }
+  });
+});
+gsap.fromTo('.tower-bg', { scale: 1.08 }, {
+  scale: 1, ease: 'none',
+  scrollTrigger: { trigger: '.tower-section', start: 'top bottom', end: 'bottom top', scrub: true }
+});
+
+/* ============ 진행 내비 활성화 ============ */
+document.querySelectorAll('[data-nav-target]').forEach(sec => {
+  ScrollTrigger.create({
+    trigger: sec, start: 'top 50%', end: 'bottom 50%',
+    onToggle: self => {
+      if (self.isActive) {
+        document.querySelectorAll('.progress-nav a').forEach(a =>
+          a.classList.toggle('active', a.dataset.nav === sec.dataset.navTarget));
+      }
+    }
+  });
+});
+</script>
+</body>
+</html>

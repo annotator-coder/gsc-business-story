@@ -1,0 +1,8 @@
+{
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "redirects": [
+    { "source": "/journey", "destination": "/", "permanent": true },
+    { "source": "/en/journey", "destination": "/en", "permanent": true }
+  ]
+}

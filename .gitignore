@@ -1,0 +1,9 @@
+.vercel
+.DS_Store
+*.pdf
+*.zip
+*.docx
+수정/
+공문수정/
+번역검수/
+data/

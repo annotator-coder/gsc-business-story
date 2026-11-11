@@ -1,0 +1,919 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>방향족 — GS칼텍스 사업부문</title>
+<meta name="description" content="연간 280만 톤, 세계적 규모의 방향족 생산 경쟁력 — GS칼텍스 방향족 사업 스토리">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="GS Caltex Business Story">
+<meta property="og:title" content="방향족 — GS칼텍스 사업부문">
+<meta property="og:description" content="연간 280만 톤, 세계적 규모의 방향족 생산 경쟁력 — GS칼텍스 방향족 사업 스토리">
+<meta property="og:url" content="https://gsc-business-story.vercel.app/aromatics">
+<meta property="og:image" content="https://gsc-business-story.vercel.app/aromatics/img/band-plant.jpg">
+<meta property="og:locale" content="ko_KR">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:        #0A0B0D;
+  --bg-2:      #0E1216;
+  --ink:       #EDE8DC;
+  --ink-dim:   #B9B3A6;
+  --ink-faint: #8E887C;
+  --accent:      #7FA8C9;
+  --accent-deep: #3F5D77;
+  --amber:     #E0A63E;
+  --line:      #26292E;
+  --font-kr: 'Pretendard', -apple-system, 'Apple SD Gothic Neo', sans-serif;
+  --font-en: 'Archivo', 'Pretendard', sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, monospace;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: auto; }
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-kr);
+  font-weight: 400;
+  line-height: 1.6;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}
+::selection { background: var(--accent); color: var(--bg); }
+
+/* ---------- 공통 ---------- */
+.label {
+  font-family: var(--font-mono); font-weight: 500;
+  font-size: 0.72rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+.label--dim { color: var(--ink-faint); }
+.section { position: relative; }
+.inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 6vw;
+}
+.num {
+  font-family: var(--font-en);
+  font-variation-settings: "wdth" 75, "wght" 800;
+  font-variant-numeric: tabular-nums;
+  line-height: 0.95;
+  letter-spacing: -0.02em;
+}
+.rule { height: 1px; background: var(--line); transform-origin: left center; }
+
+/* ---------- 진행 내비 / 탑바 ---------- */
+.progress-nav {
+  position: fixed; right: 24px; top: 50%;
+  transform: translateY(-50%);
+  z-index: 90; display: flex; flex-direction: column; gap: 14px;
+}
+.progress-nav a {
+  display: block; width: 6px; height: 6px;
+  background: var(--ink-faint);
+  transition: background .3s, transform .3s;
+}
+.progress-nav a.active { background: var(--accent); transform: scale(1.5); }
+@media (max-width: 720px) { .progress-nav { display: none; } }
+
+.topbar {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 95;
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 20px 4vw;
+  mix-blend-mode: difference;
+}
+.topbar .brand {
+  font-family: var(--font-en);
+  font-variation-settings: "wdth" 80, "wght" 700;
+  font-size: 0.85rem; letter-spacing: 0.18em; color: #fff;
+  text-decoration: none;
+}
+.topbar .chapter { font-family: var(--font-mono); font-weight: 500; font-size: 0.7rem; letter-spacing: 0.2em; color: #fff; opacity: .7; }
+.tb-right { display: flex; align-items: center; gap: 16px; }
+.lang {
+  font-family: var(--font-mono); font-weight: 500; font-size: .68rem; letter-spacing: .15em;
+  color: #fff; text-decoration: none; opacity: .8;
+  border: 1px solid rgba(255,255,255,.45); padding: 3px 9px;
+}
+.lang:hover { opacity: 1; }
+.lang-sw { display: inline-flex; border: 1px solid rgba(255,255,255,.45); font-family: var(--font-mono); font-weight: 500; font-size: .64rem; letter-spacing: .06em; }
+.lang-sw a { color: #fff; text-decoration: none; opacity: .5; padding: 3px 7px; border-left: 1px solid rgba(255,255,255,.28); }
+.lang-sw a:first-child { border-left: 0; }
+.lang-sw a:hover { opacity: .85; }
+.lang-sw a[aria-current="page"] { opacity: 1; background: rgba(255,255,255,.18); }
+
+/* ---------- HERO ---------- */
+.hero {
+  height: 100vh; height: 100svh;
+  position: relative; overflow: hidden;
+  display: flex; align-items: center; justify-content: center;
+}
+#hex-canvas { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+.hero-content { position: relative; z-index: 2; text-align: center; padding: 0 5vw; }
+.hero-eyebrow { margin-bottom: 28px; }
+.hero-title {
+  font-family: var(--font-en);
+  font-variation-settings: "wdth" 68, "wght" 850;
+  font-size: clamp(3.2rem, 11vw, 10.5rem);
+  line-height: 1; letter-spacing: -0.015em;
+  color: var(--ink);
+}
+.hero-title .row { display: block; overflow: hidden; padding: 0.03em 0; }
+.hero-title .row > span { display: inline-block; }
+.hero-title .row--kr { font-family: var(--font-kr); font-weight: 800; font-size: 0.72em; line-height: 1.15; letter-spacing: 0.06em; color: var(--accent); }
+.hero-sub {
+  margin-top: 36px;
+  font-size: clamp(1rem, 1.6vw, 1.25rem);
+  color: var(--ink-dim); font-weight: 400;
+  letter-spacing: 0.04em;
+}
+.hero-sub strong { color: var(--ink); font-weight: 600; }
+.scroll-cue {
+  position: absolute; bottom: 36px; left: 50%;
+  transform: translateX(-50%);
+  z-index: 2; display: flex; flex-direction: column; align-items: center; gap: 10px;
+}
+.scroll-cue .line {
+  width: 1px; height: 48px;
+  background: linear-gradient(to bottom, transparent, var(--accent));
+  animation: cue 2s ease-in-out infinite;
+}
+@keyframes cue {
+  0% { transform: scaleY(0); transform-origin: top; }
+  50% { transform: scaleY(1); transform-origin: top; }
+  51% { transform-origin: bottom; }
+  100% { transform: scaleY(0); transform-origin: bottom; }
+}
+
+/* ---------- 인트로 문장 ---------- */
+.manifesto { padding: 24vh 0; }
+.manifesto p {
+  font-size: clamp(1.6rem, 4vw, 3.2rem);
+  font-weight: 350; line-height: 1.5;
+  max-width: 20em;
+  color: var(--ink-faint);
+}
+.manifesto p .w { display: inline; }
+.manifesto p strong { font-weight: 600; }
+
+/* ---------- 이름의 유래 ---------- */
+.origin { padding: 4vh 0 22vh; }
+.origin-grid {
+  display: grid; grid-template-columns: minmax(0, 2fr) minmax(0, 3fr);
+  gap: 6vw; align-items: center;
+}
+.origin-hanja {
+  display: flex; flex-direction: column;
+  font-weight: 800; line-height: 1.04;
+  font-size: clamp(4rem, 10vw, 8.5rem);
+  color: transparent; -webkit-text-stroke: 1.5px var(--accent-deep);
+  user-select: none;
+}
+.origin-hanja span:nth-child(2) {
+  color: var(--accent); -webkit-text-stroke: 0; margin-left: 0.42em;
+}
+.origin-hanja span:nth-child(3) { margin-left: 0.84em; }
+.origin-hanja small {
+  display: block;
+  font-family: var(--font-mono); font-size: max(0.11em, 10px); font-weight: 400;
+  letter-spacing: 0.3em; color: var(--ink-faint);
+  -webkit-text-stroke: 0; margin-top: 0.3em;
+}
+.origin-copy h2 {
+  font-size: clamp(1.7rem, 3.4vw, 2.8rem);
+  font-weight: 700; line-height: 1.3; letter-spacing: -0.01em;
+  margin: 16px 0 10px;
+}
+.origin-copy h2 em { font-style: normal; color: var(--accent); }
+.origin-copy p:not(.label) {
+  margin-top: 16px; max-width: 36em;
+  color: var(--ink-dim); font-weight: 400;
+  font-size: clamp(0.98rem, 1.35vw, 1.15rem);
+}
+.origin-copy p strong { color: var(--ink); font-weight: 600; }
+
+/* ---------- 흑백 이미지 밴드 ---------- */
+.img-band { position: relative; height: 58vh; min-height: 380px; overflow: hidden; }
+.img-band .media {
+  position: absolute; inset: -14% 0;
+  background-size: cover; background-position: center;
+  filter: grayscale(1) brightness(0.6) contrast(1.06);
+  will-change: transform;
+}
+.img-band::after {
+  content: ''; position: absolute; inset: 0; pointer-events: none;
+  background: linear-gradient(to bottom, var(--fade-top, var(--bg)) 0%, transparent 30%, transparent 68%, var(--fade-bottom, var(--bg)) 100%),
+              linear-gradient(to right, rgba(10,11,13,.45), transparent 40%);
+}
+.img-band .caption { position: absolute; left: 6vw; bottom: 32px; z-index: 2; }
+.img-band .caption .cap-text {
+  display: block; margin-top: 10px;
+  color: var(--ink-dim); font-weight: 400;
+  font-size: clamp(0.95rem, 1.3vw, 1.15rem);
+}
+.img-band .caption .cap-text strong { color: var(--ink); font-weight: 600; }
+
+/* ---------- 분자 (핀 시퀀스) ---------- */
+.mol-section { background: var(--bg-2); }
+.mol-stage {
+  position: relative;
+  height: 100vh; height: 100svh;
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 4fr);
+  gap: 4vw;
+  max-width: 1280px; margin: 0 auto; padding: 0 6vw;
+  align-items: center;
+  overflow: hidden;
+}
+.mol-visual { position: relative; height: 82vh; display: flex; align-items: center; justify-content: center; z-index: 1; }
+.mol-visual svg { height: 100%; width: auto; max-width: 100%; overflow: visible; }
+.mol-copy { position: relative; height: 60vh; z-index: 1; }
+.mol-step {
+  position: absolute; inset: 0;
+  display: flex; flex-direction: column; justify-content: center;
+  opacity: 0; visibility: hidden;
+}
+.mol-step h3 {
+  font-size: clamp(1.8rem, 3.4vw, 3rem);
+  font-weight: 700; line-height: 1.25; letter-spacing: -0.01em;
+  margin: 18px 0 20px;
+}
+.mol-step h3 em { font-style: normal; color: var(--accent); }
+.mol-step p {
+  color: var(--ink-dim); font-weight: 400;
+  font-size: clamp(0.95rem, 1.25vw, 1.1rem);
+  max-width: 30em;
+}
+.mol-step p strong { color: var(--ink); font-weight: 600; }
+.mol-step .big {
+  font-size: clamp(2.6rem, 6vw, 5rem); color: var(--ink); margin: 8px 0 16px;
+}
+.mol-step .big .unit {
+  font-family: var(--font-kr); font-size: 0.32em; font-weight: 400;
+  color: var(--ink-dim); margin-left: .2em;
+}
+.badge {
+  display: inline-flex; align-items: center; gap: 10px;
+  border: 1px solid var(--accent-deep);
+  padding: 8px 16px; margin-top: 24px;
+  font-family: var(--font-mono); font-weight: 500; font-size: .75rem; letter-spacing: .15em;
+  color: var(--accent);
+}
+.mol-label { font-family: var(--font-mono); font-weight: 500; font-size: 13px; fill: var(--ink-dim); letter-spacing: .08em; }
+.mol-formula { font-family: var(--font-mono); font-weight: 500; font-size: 15px; fill: var(--ink); letter-spacing: .06em; }
+
+/* ---------- 생산능력 / 제품 ---------- */
+.capacity { padding: 20vh 0 14vh; }
+.capacity-head h2 {
+  font-size: clamp(2rem, 4.5vw, 4rem);
+  font-weight: 700; line-height: 1.25; letter-spacing: -0.015em;
+  margin-top: 18px; max-width: 20em;
+}
+.capacity-head h2 em { font-style: normal; color: var(--accent); }
+.capacity-total { margin-top: 8vh; }
+.capacity-total .stat-value {
+  font-size: clamp(4rem, 11vw, 10rem); color: var(--ink);
+}
+.capacity-total .stat-value .unit {
+  font-family: var(--font-kr);
+  font-size: 0.28em; font-weight: 400; color: var(--ink-dim);
+  letter-spacing: 0.05em; margin-left: 0.15em;
+}
+.prop-bar {
+  display: flex; height: 56px; margin-top: 6vh;
+  border: 1px solid var(--line);
+}
+.prop-bar .seg {
+  position: relative; height: 100%;
+  transform-origin: left center;
+}
+.prop-bar .seg span {
+  position: absolute; left: 10px; top: 50%; transform: translateY(-50%);
+  font-family: var(--font-mono); font-size: .68rem; letter-spacing: .06em;
+  color: var(--bg); white-space: nowrap; font-weight: 500;
+}
+.prop-bar .seg--px { background: var(--accent); }
+.prop-bar .seg--bz { background: #5F87A8; }
+.prop-bar .seg--mx { background: #44637E; }
+.prop-bar .seg--tl { background: #33495C; }
+.prop-bar .seg--tl span, .prop-bar .seg--mx span { color: var(--ink); }
+.prop-caption {
+  display: flex; justify-content: space-between; margin-top: 12px;
+  font-family: var(--font-mono); font-weight: 500; font-size: .7rem; color: var(--ink-faint); letter-spacing: .08em;
+}
+.product-grid {
+  display: grid; grid-template-columns: repeat(2, 1fr);
+  gap: 1px; background: var(--line); border: 1px solid var(--line);
+  margin-top: 10vh;
+}
+.product-cell { background: var(--bg); padding: clamp(24px, 3vw, 44px); }
+.product-cell .p-top { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; flex-wrap: wrap; }
+.product-cell .p-code {
+  font-family: var(--font-mono); font-weight: 500;
+  font-size: clamp(1rem, 1.5vw, 1.25rem); letter-spacing: .1em; color: var(--accent);
+}
+.product-cell .p-cap {
+  font-family: var(--font-mono); font-weight: 500; font-size: .72rem; color: var(--ink-faint); letter-spacing: .08em;
+}
+.product-cell h4 { font-size: clamp(1.1rem, 1.6vw, 1.35rem); font-weight: 600; margin-top: 10px; }
+.product-cell .p-num {
+  font-size: clamp(2.4rem, 5vw, 4rem); color: var(--ink); margin: 14px 0 10px;
+}
+.product-cell .p-num .unit {
+  font-family: var(--font-kr); font-size: .32em; font-weight: 400; color: var(--ink-dim);
+}
+.product-cell p.desc {
+  color: var(--ink-dim); font-weight: 400; font-size: 0.92rem; max-width: 34em;
+}
+.chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
+.chips span {
+  font-family: var(--font-mono); font-weight: 500; font-size: 0.7rem; letter-spacing: 0.06em;
+  padding: 5px 10px; border: 1px solid var(--line); color: var(--ink-dim);
+}
+.chips span.out { border-color: var(--accent-deep); color: var(--accent); }
+
+/* ---------- 일상으로 ---------- */
+.life { padding: 20vh 0 0; }
+.life-head { max-width: none; }
+.life-head h2 {
+  font-size: clamp(2rem, 4.5vw, 4rem);
+  font-weight: 700; line-height: 1.25; letter-spacing: -0.015em;
+  margin-top: 18px;
+}
+.life-head h2 em { font-style: normal; color: var(--accent); }
+.trans-list { margin-top: 10vh; }
+.trans-row {
+  display: grid; grid-template-columns: minmax(0,2fr) auto minmax(0,3fr);
+  gap: clamp(12px, 3vw, 40px); align-items: center;
+  padding: clamp(24px, 4vw, 44px) 0;
+  border-top: 1px solid var(--line);
+}
+.trans-row:last-child { border-bottom: 1px solid var(--line); }
+.trans-row .from {
+  font-family: var(--font-mono); font-weight: 500; letter-spacing: .08em;
+  font-size: clamp(.85rem, 1.4vw, 1.05rem); color: var(--accent);
+}
+.trans-row .from small { display: block; color: var(--ink-faint); font-size: .7rem; margin-top: 6px; letter-spacing: .1em; }
+.trans-row .arrow {
+  font-family: var(--font-en); font-variation-settings: "wdth" 70, "wght" 300;
+  font-size: clamp(1.4rem, 3vw, 2.4rem); color: var(--ink-faint);
+}
+.trans-row .to {
+  font-size: clamp(1.3rem, 2.8vw, 2.3rem); font-weight: 700; letter-spacing: -0.01em;
+}
+.trans-row .to small {
+  display: block; font-size: clamp(.8rem, 1.1vw, .95rem);
+  font-weight: 400; color: var(--ink-dim); margin-top: 8px;
+}
+.marquee {
+  margin-top: 14vh; overflow: hidden; white-space: nowrap;
+  border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);
+  padding: 22px 0;
+}
+.marquee-track { display: inline-block; will-change: transform; }
+.marquee-track span {
+  font-family: var(--font-en);
+  font-variation-settings: "wdth" 70, "wght" 750;
+  font-size: clamp(1.6rem, 3.5vw, 3rem);
+  color: transparent;
+  -webkit-text-stroke: 1px var(--ink-faint);
+  margin-right: 6vw; letter-spacing: .02em;
+}
+.marquee-track span.solid { color: var(--accent); -webkit-text-stroke: 0; }
+
+/* ---------- 아우트로 ---------- */
+.outro {
+  padding: 24vh 0 12vh; position: relative; overflow: hidden;
+  background: linear-gradient(to bottom, var(--bg), #07080A);
+}
+.outro-bg {
+  position: absolute; inset: 0 0 auto 0; height: 64vh;
+  z-index: 0; pointer-events: none;
+  background-image:
+    linear-gradient(to bottom, rgba(10,11,13,.55) 0%, rgba(10,11,13,.75) 60%, #0A0B0D 100%),
+    url('/aromatics/img/outro-bg.jpg');
+  background-size: cover; background-position: center 40%;
+  filter: grayscale(1) contrast(1.05);
+  opacity: .5;
+}
+.outro .inner { position: relative; z-index: 1; }
+.outro-h {
+  margin-top: 18px; margin-bottom: 28px;
+  font-size: clamp(1.9rem, 4.2vw, 3.4rem);
+  font-weight: 700; line-height: 1.25; letter-spacing: -0.015em;
+}
+.outro-h em { font-style: normal; color: var(--accent); }
+.outro-line {
+  font-size: clamp(1.4rem, 3vw, 2.4rem); font-weight: 350;
+  color: var(--ink-dim); max-width: 26em; line-height: 1.6;
+}
+.outro-line strong { color: var(--ink); font-weight: 600; }
+.next-chapters { margin-top: 14vh; }
+.next-chapters .row-item {
+  display: flex; justify-content: space-between; align-items: baseline;
+  padding: 22px 0; border-top: 1px solid var(--line);
+  color: var(--ink-faint); text-decoration: none;
+  transition: color .3s, padding-left .3s;
+}
+.next-chapters .row-item:last-child { border-bottom: 1px solid var(--line); }
+.next-chapters .row-item .name { font-size: clamp(1.3rem, 2.6vw, 2.2rem); font-weight: 600; }
+.next-chapters .row-item .en {
+  font-family: var(--font-mono); font-weight: 500; font-size: .72rem; letter-spacing: .2em; text-transform: uppercase;
+}
+.next-chapters .row-item.current { color: var(--ink); }
+.next-chapters .row-item.current .en { color: var(--accent); }
+.next-chapters a.row-item.done { color: var(--ink-dim); }
+.next-chapters a.row-item.done:hover { color: var(--ink); padding-left: 12px; }
+.next-chapters a.row-item.done .en { color: var(--amber); }
+.next-chapters .row-item.soon:hover { color: var(--ink-dim); padding-left: 12px; }
+.footer-note {
+  margin-top: 12vh;
+  font-family: var(--font-mono); font-weight: 500; font-size: .7rem; line-height: 2;
+  color: var(--ink-faint); letter-spacing: .04em;
+}
+.footer-note a { color: var(--ink-dim); }
+
+@media (max-width: 720px) {
+  .hero-sub br { display: none; }
+  .label { letter-spacing: 0.16em; font-size: 0.68rem; }
+}
+@media (max-width: 880px) {
+  .mol-stage { grid-template-columns: 1fr; grid-template-rows: 36vh 1fr; gap: 0; padding-top: 8vh; }
+  .mol-visual { height: 100%; }
+  .mol-copy { height: 100%; }
+  .mol-step { justify-content: flex-start; padding-top: 2vh; }
+  .mol-step h3 { font-size: clamp(1.4rem, 6vw, 1.9rem); margin: 12px 0 14px; }
+  .mol-step .big { font-size: clamp(2.2rem, 10vw, 3.2rem); }
+  .badge { margin-top: 14px; }
+  .origin-grid { grid-template-columns: 1fr; gap: 4vh; }
+  .origin-hanja { flex-direction: row; gap: 0.2em; }
+  .origin-hanja span:nth-child(2), .origin-hanja span:nth-child(3) { margin-left: 0; }
+  .product-grid { grid-template-columns: 1fr; }
+  .trans-row { grid-template-columns: 1fr; gap: 10px; }
+  .trans-row .arrow { display: none; }
+  .prop-bar .seg--mx span, .prop-bar .seg--tl span { display: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .scroll-cue .line { animation: none; }
+}
+@media (max-width: 560px) {
+  /* 모바일 터치 영역 확대 (상단바) */
+  .lang-sw a { padding-top: 8px; padding-bottom: 8px; }
+}
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <a class="brand" href="/">GS CALTEX — BUSINESS</a>
+  <span class="tb-right"><span class="chapter">CH.02 / AROMATICS</span><span class="lang-sw"><a href="/aromatics" aria-current="page">KR</a><a href="/en/aromatics">EN</a><a href="/zh/aromatics">中</a><a href="/ja/aromatics">日</a></span></span>
+</header>
+
+<nav class="progress-nav" aria-label="섹션 이동">
+  <a href="#top" data-nav="hero" aria-label="처음"></a>
+  <a href="#molecule" data-nav="molecule" aria-label="분자"></a>
+  <a href="#capacity" data-nav="capacity" aria-label="생산능력"></a>
+  <a href="#life" data-nav="life" aria-label="일상으로"></a>
+  <a href="#outro" data-nav="outro" aria-label="다음 장"></a>
+</nav>
+
+<!-- ========== HERO ========== -->
+<section class="hero section" id="top" data-nav-target="hero">
+  <canvas id="hex-canvas" aria-hidden="true"></canvas>
+  <div class="hero-content">
+    <p class="label hero-eyebrow">GS CALTEX BUSINESS — CHAPTER 02</p>
+    <h1 class="hero-title" aria-label="방향족 AROMATICS">
+      <span class="row"><span data-hero-row>AROMATICS</span></span>
+      <span class="row row--kr"><span data-hero-row>방향족</span></span>
+    </h1>
+    <p class="hero-sub" data-hero-sub>
+      연간 <strong>280만 톤</strong>, 세계적 규모의 <strong>방향족 생산 경쟁력</strong> —<br>
+      납사에서 소재로 이어지는 두 번째 이야기
+    </p>
+  </div>
+  <div class="scroll-cue" aria-hidden="true">
+    <span class="label label--dim">SCROLL</span>
+    <span class="line"></span>
+  </div>
+</section>
+
+<!-- ========== 인트로 문장 ========== -->
+<section class="section manifesto">
+  <div class="inner">
+    <p data-manifesto>
+      <span class="w">정유</span> <span class="w">공정에서</span> <span class="w">생산된</span> <span class="w">납사는</span> <span class="w">석유화학</span> <span class="w">공정을</span> <span class="w">거쳐</span> <span class="w">벤젠·톨루엔·혼합자일렌·파라자일렌</span> <span class="w">등</span> <span class="w">다양한</span> <span class="w"><strong>방향족</strong></span> <span class="w"><strong>제품으로</strong></span> <span class="w">전환됩니다.</span>
+      <span class="w">GS칼텍스는</span> <span class="w">세계적</span> <span class="w">규모의</span> <span class="w">생산능력과</span> <span class="w">축적된</span> <span class="w">기술력을</span> <span class="w">바탕으로</span> <span class="w"><strong>고품질</strong></span> <span class="w"><strong>방향족</strong></span> <span class="w"><strong>제품을</strong></span> <span class="w">국내외</span> <span class="w">고객에게</span> <span class="w">안정적으로</span> <span class="w">공급하고</span> <span class="w">있습니다.</span>
+    </p>
+  </div>
+</section>
+
+<!-- ========== 이름의 유래 ========== -->
+<section class="section origin">
+  <div class="inner origin-grid">
+    <div class="origin-hanja" aria-hidden="true" data-reveal>
+      <span>芳<small>꽃다울 방</small></span><span>香<small>향기 향</small></span><span>族<small>무리 족</small></span>
+    </div>
+    <div class="origin-copy">
+      <p class="label" data-reveal>ORIGIN — 이름의 유래</p>
+      <h2 data-reveal>왜 <em>'방향족(Aromatics)'</em><br>이라고 부를까요</h2>
+      <p data-reveal>방향족이라는 이름은 <strong>초기 발견된 화합물 중 일부가 특유의 향을 가지고 있었던 데서 유래</strong>했습니다.</p>
+      <p data-reveal>오늘날에는 향의 유무가 아니라 <strong>벤젠과 같은 특정한 분자 구조와 특성을 가진 화합물</strong>을 방향족(Aromatics)이라고 부릅니다.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ========== 이미지 밴드: 생산시설 ========== -->
+<section class="img-band" style="--fade-top: var(--bg); --fade-bottom: #0E1216" aria-label="방향족 생산시설 사진">
+  <div class="media" data-band style="background-image: url('/aromatics/img/band-plant.jpg')"></div>
+</section>
+
+<!-- ========== 분자 시퀀스 ========== -->
+<section class="section mol-section" id="molecule" data-nav-target="molecule">
+  <div class="mol-stage">
+    <div class="mol-visual" aria-hidden="true">
+      <svg viewBox="0 0 400 640" fill="none">
+        <!-- 벤젠 고리 -->
+        <polygon id="ring" points="200,210 295,265 295,375 200,430 105,375 105,265"
+                 stroke="#EDE8DC" stroke-width="2"/>
+        <!-- 이중결합 (안쪽 평행선) -->
+        <g id="dbonds" stroke="#7FA8C9" stroke-width="1.5" opacity="0">
+          <line x1="211" y1="228" x2="277" y2="266"/>
+          <line x1="277" y1="374" x2="211" y2="412"/>
+          <line x1="123" y1="358" x2="123" y2="282"/>
+        </g>
+        <!-- 탄소 원자 -->
+        <g id="carbons" fill="#7FA8C9">
+          <circle cx="200" cy="210" r="6"/>
+          <circle cx="295" cy="265" r="6"/>
+          <circle cx="295" cy="375" r="6"/>
+          <circle cx="200" cy="430" r="6"/>
+          <circle cx="105" cy="375" r="6"/>
+          <circle cx="105" cy="265" r="6"/>
+        </g>
+        <!-- 메틸기 1 (위) → 톨루엔 -->
+        <g id="methyl-1" opacity="0">
+          <line x1="200" y1="210" x2="200" y2="152" stroke="#E0A63E" stroke-width="2"/>
+          <circle cx="200" cy="134" r="19" stroke="#E0A63E" stroke-width="2" fill="#0E1216"/>
+          <text class="mol-formula" x="200" y="139" text-anchor="middle" fill="#E0A63E">CH<tspan dy="4" font-size="11" letter-spacing="0">3</tspan></text>
+        </g>
+        <!-- 메틸기 2 (아래, para) → 파라자일렌 -->
+        <g id="methyl-2" opacity="0">
+          <line x1="200" y1="430" x2="200" y2="488" stroke="#E0A63E" stroke-width="2"/>
+          <circle cx="200" cy="506" r="19" stroke="#E0A63E" stroke-width="2" fill="#0E1216"/>
+          <text class="mol-formula" x="200" y="511" text-anchor="middle" fill="#E0A63E">CH<tspan dy="4" font-size="11" letter-spacing="0">3</tspan></text>
+          <line id="para-axis" x1="200" y1="120" x2="200" y2="520" stroke="#55524B" stroke-width="1" stroke-dasharray="3 6" opacity="0"/>
+          <text class="mol-label" x="222" y="86" opacity="0" id="para-label">para — 정반대 자리</text>
+        </g>
+        <!-- 자일렌 이성체 + 에틸벤젠 배지 (혼합자일렌) -->
+        <g id="mx-isomers" opacity="0" text-anchor="middle">
+          <g transform="translate(110,556)">
+            <circle r="24" stroke="#7FA8C9" stroke-width="1.5" fill="#0E1216"/>
+            <text class="mol-label" x="0" y="5" fill="#EDE8DC">o-</text>
+          </g>
+          <g transform="translate(167,556)">
+            <circle r="24" stroke="#7FA8C9" stroke-width="1.5" fill="#0E1216"/>
+            <text class="mol-label" x="0" y="5" fill="#EDE8DC">m-</text>
+          </g>
+          <g transform="translate(224,556)">
+            <circle r="24" stroke="#E0A63E" stroke-width="1.5" fill="#0E1216"/>
+            <text class="mol-label" x="0" y="5" fill="#E0A63E">p-</text>
+          </g>
+          <g transform="translate(281,556)">
+            <circle r="24" stroke="#55524B" stroke-width="1.5" fill="#0E1216"/>
+            <text class="mol-label" x="0" y="5" fill="#9A958A">EB</text>
+          </g>
+        </g>
+        <!-- 중앙 분자명 -->
+        <g text-anchor="middle">
+          <text id="mol-name-0" class="mol-formula" x="200" y="326" opacity="0">C<tspan dy="4" font-size="11" letter-spacing="0">6</tspan><tspan dy="-4">H</tspan><tspan dy="4" font-size="11" letter-spacing="0">6</tspan></text>
+          <text id="mol-name-1" class="mol-formula" x="200" y="326" opacity="0">C<tspan dy="4" font-size="11" letter-spacing="0">7</tspan><tspan dy="-4">H</tspan><tspan dy="4" font-size="11" letter-spacing="0">8</tspan></text>
+          <text id="mol-name-2" class="mol-formula" x="200" y="326" opacity="0">C<tspan dy="4" font-size="11" letter-spacing="0">8</tspan><tspan dy="-4">H</tspan><tspan dy="4" font-size="11" letter-spacing="0">10</tspan></text>
+        </g>
+        <!-- 하단 캡션 -->
+        <text id="mol-cap-0" class="mol-label" x="200" y="600" text-anchor="middle" opacity="0">BENZENE — 벤젠</text>
+        <text id="mol-cap-1" class="mol-label" x="200" y="600" text-anchor="middle" opacity="0">TOLUENE — 톨루엔</text>
+        <text id="mol-cap-2" class="mol-label" x="200" y="600" text-anchor="middle" opacity="0">PARA-XYLENE — 파라자일렌</text>
+        <text id="mol-cap-3" class="mol-label" x="200" y="600" text-anchor="middle" opacity="0">MIXED XYLENE — 혼합자일렌</text>
+      </svg>
+    </div>
+
+    <div class="mol-copy">
+      <div class="mol-step" data-step="0">
+        <p class="label">01 — BENZENE RING · 육각 고리</p>
+        <h3>방향족 화합물의 기본 구조,<br><em>벤젠 고리</em></h3>
+        <p>벤젠은 <strong>6개의 탄소 원자가 고리 형태로 결합</strong>한 대표적인 방향족 화합물입니다. 다양한 화학제품을 생산하는 기초 원료로 활용됩니다.</p>
+      </div>
+      <div class="mol-step" data-step="1">
+        <p class="label">01 — TOLUENE · 톨루엔</p>
+        <h3>다양한 산업에 활용되는<br><em>기초 화학제품</em></h3>
+        <p>톨루엔은 벤젠 고리에 <strong>메틸기(CH₃)가 결합</strong>된 방향족 제품입니다. 도료·잉크·접착제 등의 용제와 폴리우레탄 등의 원료로 활용됩니다.</p>
+      </div>
+      <div class="mol-step" data-step="2">
+        <p class="label">01 — PARA-XYLENE · 파라자일렌</p>
+        <h3>폴리에스터와 PET로 이어지는<br><em>기초 원료</em></h3>
+        <p>파라자일렌은 <strong>테레프탈산(TPA)의 주요 원료</strong>로, 폴리에스터 섬유와 PET 등 다양한 소재 생산에 활용됩니다.</p>
+      </div>
+      <div class="mol-step" data-step="3">
+        <p class="label">01 — MIXED XYLENE · 혼합자일렌</p>
+        <h3>다양한 화학제품의<br><em>원료와 용제</em>로 활용됩니다</h3>
+        <p>혼합자일렌은 여러 <strong>자일렌 이성체와 에틸벤젠</strong> 등이 혼합된 방향족 제품입니다. 도료·농약 등의 용제와 파라자일렌 등 다양한 석유화학 제품의 원료로 활용됩니다.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== 생산능력 ========== -->
+<section class="section capacity" id="capacity" data-nav-target="capacity">
+  <div class="inner">
+    <div class="capacity-head">
+      <p class="label" data-reveal>02 — CAPACITY · 생산능력</p>
+      <h2 data-reveal>4개 주요 제품,<br><em>연간 280만 톤</em>의 생산능력</h2>
+    </div>
+    <div class="capacity-total" data-reveal>
+      <div class="stat-value num"><span data-count="280">0</span><span class="unit">만 톤 / 년</span></div>
+    </div>
+    <div class="prop-bar" data-reveal aria-label="제품별 생산능력 비중">
+      <div class="seg seg--px" style="width:48.2%" data-seg><span>파라자일렌 135</span></div>
+      <div class="seg seg--bz" style="width:33.2%" data-seg><span>벤젠 93</span></div>
+      <div class="seg seg--mx" style="width:12.5%" data-seg><span>혼합자일렌 35</span></div>
+      <div class="seg seg--tl" style="width:6.1%" data-seg><span>톨루엔 17</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== 이미지 밴드: 품질 ========== -->
+<section class="img-band" style="--fade-top: var(--bg); --fade-bottom: var(--bg)" aria-label="품질 연구 사진">
+  <div class="media" data-band style="background-image: url('/aromatics/img/band-lab.jpg')"></div>
+</section>
+
+<!-- ========== 일상으로 ========== -->
+<section class="section life" id="life" data-nav-target="life">
+  <div class="inner">
+    <div class="life-head">
+      <p class="label" data-reveal>03 — INTO EVERYDAY LIFE · 일상으로</p>
+      <h2 data-reveal>방향족 제품은<br><em>다양한 생활·산업 소재</em>의 원료가 됩니다</h2>
+    </div>
+    <div class="trans-list">
+      <div class="trans-row" data-reveal>
+        <div class="from">BENZENE<small>벤젠</small></div>
+        <div class="arrow" aria-hidden="true">→</div>
+        <div class="to">합성수지 · 합성섬유 · 세제<small>합성수지·합성섬유·세제 등 다양한 화학제품의 기초 원료로 활용됩니다</small></div>
+      </div>
+      <div class="trans-row" data-reveal>
+        <div class="from">TOLUENE<small>톨루엔</small></div>
+        <div class="arrow" aria-hidden="true">→</div>
+        <div class="to">도료 · 잉크 · 접착제 · 폴리우레탄<small>도료·잉크·접착제 등의 용제와 폴리우레탄 등의 원료로 활용됩니다</small></div>
+      </div>
+      <div class="trans-row" data-reveal>
+        <div class="from">PARA-XYLENE<small>파라자일렌 → PTA</small></div>
+        <div class="arrow" aria-hidden="true">→</div>
+        <div class="to">폴리에스터 섬유 · PET<small>폴리에스터 섬유와 PET 생산에 사용되는 고순도 테레프탈산(PTA)의 원료로 활용됩니다</small></div>
+      </div>
+      <div class="trans-row" data-reveal>
+        <div class="from">MIXED XYLENE<small>혼합자일렌</small></div>
+        <div class="arrow" aria-hidden="true">→</div>
+        <div class="to">파라자일렌 · 도료 · 농약 등<small>파라자일렌 등 석유화학 제품의 원료와 도료·농약 등의 용제로 활용됩니다</small></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== 이미지 밴드: 출하 ========== -->
+<section class="img-band" style="--fade-top: var(--bg); --fade-bottom: var(--bg)" aria-label="케미칼 제품 출하 사진">
+  <div class="media" data-band style="background-image: url('/aromatics/img/band-harbor.jpg')"></div>
+</section>
+
+<!-- ========== 아우트로 ========== -->
+<section class="section outro" id="outro" data-nav-target="outro">
+  <div class="outro-bg" aria-hidden="true"></div>
+  <div class="inner">
+    <p class="label" data-reveal>NEXT — OLEFINS · 올레핀</p>
+    <h2 class="outro-h" data-reveal>다양한 원료에서<br><em>기초 석유화학 제품으로</em></h2>
+    <p class="outro-line" data-reveal>
+      납사와 LPG, 정유공정의 부생가스 등은 올레핀 생산의 원료로 활용됩니다.
+      다음 장에서는 다양한 원료를 활용해 에틸렌·프로필렌 등을 생산하는 <strong>올레핀 사업</strong>을 살펴봅니다.
+    </p>
+    <div class="next-chapters" data-reveal>
+      <a class="row-item done" href="/process"><span class="name">생산 공정</span><span class="en">CH.00 — Process Map · Read</span></a>
+      <a class="row-item done" href="/refining"><span class="name">정유</span><span class="en">CH.01 — Refining · Read</span></a>
+      <div class="row-item current"><span class="name">방향족</span><span class="en">CH.02 — Aromatics · Now</span></div>
+      <a class="row-item done" href="/olefins"><span class="name">올레핀</span><span class="en">CH.03 — Olefins · Read →</span></a>
+      <a class="row-item done" href="/polymer"><span class="name">폴리머</span><span class="en">CH.04 — Polymer · Read →</span></a>
+      <a class="row-item done" href="/baseoil"><span class="name">베이스오일</span><span class="en">CH.05 — Base Oil · Read →</span></a>
+      <a class="row-item done" href="/lubricants"><span class="name">윤활유</span><span class="en">CH.06 — Lubricants · Read →</span></a>
+    </div>
+    <p class="footer-note">
+      DATA — <a href="https://www.gscaltex.com/kr/Business/Aromatics" target="_blank" rel="noopener">gscaltex.com/kr/Business/Aromatics</a> (제품별 상세 포함) · GS Caltex Sustainability Report 2025<br>
+      방향족 생산능력 280만 톤/년 (파라자일렌 135 · 벤젠 93 · 혼합자일렌 35 · 톨루엔 17) · 세계적 규모의 방향족 생산 경쟁력<br>
+      PHOTO — <a href="https://gscaltexmediahub.com/gsc-exhibition/" target="_blank" rel="noopener">GS칼텍스 미디어허브 사진전</a>
+    </p>
+  </div>
+</section>
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+<script>
+gsap.registerPlugin(ScrollTrigger);
+const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+/* ============ 히어로: 육각 분자 캔버스 ============ */
+(function () {
+  const canvas = document.getElementById('hex-canvas');
+  const ctx = canvas.getContext('2d');
+  let w, h, raf;
+
+  function resize() {
+    const dpr = Math.min(window.devicePixelRatio || 1, 2);
+    w = canvas.clientWidth; h = canvas.clientHeight;
+    canvas.width = w * dpr; canvas.height = h * dpr;
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+  }
+  resize();
+  window.addEventListener('resize', resize);
+
+  const HEX_N = 16;
+  const hexes = Array.from({ length: HEX_N }, (_, i) => ({
+    x: Math.random(), y: Math.random() * 1.2,
+    r: 24 + Math.random() * 90,
+    rot: Math.random() * Math.PI,
+    vr: (Math.random() - 0.5) * 0.0016,
+    vy: 0.00012 + Math.random() * 0.00028,
+    a: 0.05 + Math.random() * 0.13,
+    amber: i % 7 === 0
+  }));
+
+  function hexPath(cx, cy, r, rot) {
+    ctx.beginPath();
+    for (let k = 0; k < 6; k++) {
+      const ang = rot + Math.PI / 2 + k * Math.PI / 3;
+      const x = cx + Math.cos(ang) * r, y = cy + Math.sin(ang) * r;
+      k === 0 ? ctx.moveTo(x, y) : ctx.lineTo(x, y);
+    }
+    ctx.closePath();
+  }
+
+  function draw() {
+    ctx.clearRect(0, 0, w, h);
+    const bg = ctx.createRadialGradient(w / 2, h * 0.45, 0, w / 2, h * 0.45, Math.max(w, h) * 0.8);
+    bg.addColorStop(0, '#0F1216');
+    bg.addColorStop(1, '#0A0B0D');
+    ctx.fillStyle = bg;
+    ctx.fillRect(0, 0, w, h);
+
+    hexes.forEach(hx => {
+      hx.y -= hx.vy; hx.rot += hx.vr;
+      if (hx.y < -0.2) { hx.y = 1.2; hx.x = Math.random(); }
+      hexPath(hx.x * w, hx.y * h, hx.r, hx.rot);
+      ctx.strokeStyle = hx.amber
+        ? 'rgba(224, 166, 62, ' + hx.a * 0.8 + ')'
+        : 'rgba(127, 168, 201, ' + hx.a + ')';
+      ctx.lineWidth = 1;
+      ctx.stroke();
+    });
+    raf = requestAnimationFrame(draw);
+  }
+  if (reduceMotion) { draw(); cancelAnimationFrame(raf); }
+  else draw();
+
+  gsap.to(canvas, {
+    opacity: 0.25, ease: 'none',
+    scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: true }
+  });
+})();
+
+/* ============ 히어로 등장 ============ */
+gsap.from('[data-hero-row]', {
+  yPercent: 110, duration: 1.2, stagger: 0.12, ease: 'power4.out', delay: 0.15
+});
+gsap.from('[data-hero-sub], .hero-eyebrow', {
+  opacity: 0, y: 24, duration: 1, stagger: 0.1, ease: 'power2.out', delay: 0.7
+});
+gsap.to('.hero-content', {
+  yPercent: -18, opacity: 0, ease: 'none',
+  scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom 30%', scrub: true }
+});
+
+/* ============ 매니페스토 ============ */
+gsap.to('[data-manifesto] .w', {
+  color: '#EDE8DC', stagger: 0.6, ease: 'none',
+  scrollTrigger: { trigger: '.manifesto', start: 'top 75%', end: 'bottom 55%', scrub: true }
+});
+
+/* ============ 분자 핀 시퀀스 ============ */
+/* 주의: 핀 이후 요소들의 트리거 위치 보정을 위해 공통 리빌보다 먼저 생성해야 한다 */
+(function () {
+  const steps = gsap.utils.toArray('.mol-step');
+  const ring = document.getElementById('ring');
+  const len = ring.getTotalLength();
+  ring.style.strokeDasharray = len;
+  ring.style.strokeDashoffset = len;
+
+  const tl = gsap.timeline({
+    scrollTrigger: {
+      trigger: '.mol-section',
+      start: 'top top',
+      end: '+=400%',
+      pin: '.mol-stage',
+      scrub: 0.6,
+      anticipatePin: 1
+    }
+  });
+
+  // STEP 0 — 벤젠 고리 드로잉
+  tl.set(steps[0], { autoAlpha: 1 });
+  tl.to(ring, { strokeDashoffset: 0, duration: 2, ease: 'none' }, 0);
+  tl.from('#carbons circle', { scale: 0, transformOrigin: 'center', opacity: 0, stagger: 0.18, duration: 0.5 }, 0.4);
+  tl.to('#dbonds', { opacity: 1, duration: 0.5 }, 1.8);
+  tl.to('#mol-name-0, #mol-cap-0', { opacity: 1, duration: 0.4 }, 2.0);
+
+  // STEP 0 → 1 (톨루엔)
+  tl.to(steps[0], { autoAlpha: 0, y: -28, duration: 0.5 }, 3.0);
+  tl.fromTo(steps[1], { autoAlpha: 0, y: 28 }, { autoAlpha: 1, y: 0, duration: 0.5 }, 3.5);
+  tl.to('#mol-name-0, #mol-cap-0', { opacity: 0, duration: 0.3 }, 3.4);
+  tl.to('#methyl-1', { opacity: 1, duration: 0.6 }, 3.6);
+  tl.to('#mol-name-1, #mol-cap-1', { opacity: 1, duration: 0.4 }, 3.9);
+  tl.to({}, { duration: 1.0 });
+
+  // STEP 1 → 2 (파라자일렌)
+  tl.to(steps[1], { autoAlpha: 0, y: -28, duration: 0.5 }, 5.4);
+  tl.fromTo(steps[2], { autoAlpha: 0, y: 28 }, { autoAlpha: 1, y: 0, duration: 0.5 }, 5.9);
+  tl.to('#mol-name-1, #mol-cap-1', { opacity: 0, duration: 0.3 }, 5.8);
+  tl.to('#methyl-2', { opacity: 1, duration: 0.6 }, 6.0);
+  tl.to('#para-axis', { opacity: 0.7, duration: 0.5 }, 6.4);
+  tl.to('#para-label', { opacity: 1, duration: 0.5 }, 6.6);
+  tl.to('#mol-name-2, #mol-cap-2', { opacity: 1, duration: 0.4 }, 6.3);
+  tl.to({}, { duration: 1.2 });
+
+  // STEP 2 → 3 (혼합자일렌)
+  tl.to(steps[2], { autoAlpha: 0, y: -28, duration: 0.5 }, 8.3);
+  tl.fromTo(steps[3], { autoAlpha: 0, y: 28 }, { autoAlpha: 1, y: 0, duration: 0.5 }, 8.8);
+  tl.to('#mol-cap-2', { opacity: 0, duration: 0.3 }, 8.7);
+  tl.to('#mx-isomers', { opacity: 1, duration: 0.7 }, 8.9);
+  tl.to('#mol-cap-3', { opacity: 1, duration: 0.4 }, 9.2);
+  tl.to({}, { duration: 1.2 });
+})();
+
+/* ============ 이미지 밴드 패럴랙스 ============ */
+gsap.utils.toArray('[data-band]').forEach(m => {
+  gsap.fromTo(m, { yPercent: -7 }, {
+    yPercent: 7, ease: 'none',
+    scrollTrigger: { trigger: m.parentElement, start: 'top bottom', end: 'bottom top', scrub: true }
+  });
+});
+
+/* ============ 공통 리빌 ============ */
+document.querySelectorAll('[data-reveal]').forEach(el => {
+  gsap.from(el, {
+    opacity: 0, y: 44, duration: 1, ease: 'power3.out',
+    scrollTrigger: { trigger: el, start: 'top 82%' }
+  });
+});
+
+/* ============ 비율 바 ============ */
+gsap.utils.toArray('[data-seg]').forEach((seg, i) => {
+  gsap.from(seg, {
+    scaleX: 0, duration: 1.1, delay: i * 0.14, ease: 'power3.inOut',
+    scrollTrigger: { trigger: '.prop-bar', start: 'top 85%' }
+  });
+});
+
+/* ============ 카운트업 ============ */
+document.querySelectorAll('[data-count]').forEach(el => {
+  const target = parseFloat(el.dataset.count);
+  const obj = { v: 0 };
+  const fmt = v => v.toLocaleString('ko-KR', { maximumFractionDigits: 0 });
+  el.textContent = fmt(0);
+  ScrollTrigger.create({
+    trigger: el, start: 'top 85%', once: true,
+    onEnter: () => gsap.to(obj, {
+      v: target, duration: 1.8, ease: 'power2.out',
+      onUpdate: () => { el.textContent = fmt(obj.v); }
+    })
+  });
+});
+
+/* ============ 진행 내비 ============ */
+document.querySelectorAll('[data-nav-target]').forEach(sec => {
+  ScrollTrigger.create({
+    trigger: sec, start: 'top 50%', end: 'bottom 50%',
+    onToggle: self => {
+      if (self.isActive) {
+        document.querySelectorAll('.progress-nav a').forEach(a =>
+          a.classList.toggle('active', a.dataset.nav === sec.dataset.navTarget));
+      }
+    }
+  });
+});
+</script>
+</body>
+</html>
