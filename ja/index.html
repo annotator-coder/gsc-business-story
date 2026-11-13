@@ -399,6 +399,9 @@ body {
   /* 모바일 터치 영역 확대 (상단바) */
   .lang-sw a { padding-top: 8px; padding-bottom: 8px; }
 }
+/* 섹션 타이틀 보강 */
+.label--lg { font-family: var(--font-kr); font-size: clamp(1.2rem, 1.9vw, 1.65rem); font-weight: 700; letter-spacing: .02em; color: var(--ink); }
+.index-head { font-family: var(--font-en); font-variation-settings: "wdth" 75, "wght" 800; font-weight: 800; font-size: clamp(3.4rem, 9vw, 7.5rem); line-height: .9; letter-spacing: .01em; color: var(--ink); margin-bottom: 7vh; }
 </style>
 </head>
 <body>
@@ -450,6 +453,21 @@ body {
   </span>
 </a>
 
+<!-- ========== 넘버스 ========== -->
+<section class="section numbers">
+  <div class="inner">
+    <p class="label label--lg" data-reveal>IN NUMBERS</p>
+    <div class="num-grid">
+      <div class="cell" data-ch="1" data-reveal><div class="v"><span data-count="800">0</span><span class="unit">K bbl/day</span></div><p class="k">原油精製能力</p></div>
+      <div class="cell" data-ch="2" data-reveal><div class="v"><span data-count="2800">0</span><span class="unit">K tons/yr</span></div><p class="k">芳香族生産能力</p></div>
+      <div class="cell" data-ch="3" data-reveal><div class="v"><span data-count="2300">0</span><span class="unit">K tons/yr</span></div><p class="k">オレフィン生産能力</p></div>
+      <div class="cell" data-ch="4" data-reveal><div class="v"><span data-count="980">0</span><span class="unit">K tons/yr</span></div><p class="k">ポリマー生産能力</p></div>
+      <div class="cell" data-ch="5" data-reveal><div class="v"><span data-count="30">0</span><span class="unit">K bbl/day</span></div><p class="k">ベースオイル生産能力</p></div>
+      <div class="cell" data-ch="6" data-reveal><div class="v"><span data-count="9">0</span><span class="unit">K bbl/day</span></div><p class="k">潤滑油生産能力</p></div>
+    </div>
+  </div>
+</section>
+
 <!-- ========== 밸류체인 ========== -->
 <section class="section chain">
   <div class="inner">
@@ -461,7 +479,7 @@ body {
       <p data-reveal>各事業を選択すると、主な生産工程や製品、用途をご覧いただけます。</p>
     </div>
     <div class="chain-svg-wrap" data-reveal>
-      <svg viewBox="0 0 800 900" fill="none" aria-label="事業バリューチェーン図">
+      <svg viewBox="0 0 800 800" fill="none" aria-label="事業バリューチェーン図">
         <!-- 원유 -->
         <text class="cn-label" x="400" y="34" text-anchor="middle">CRUDE — 30+ COUNTRIES · 80+ GRADES</text>
         <!-- 엣지 -->
@@ -521,7 +539,6 @@ body {
           <text class="cn-name" x="400" y="729" text-anchor="middle" style="font-size:17px">日常 — 燃料 · 衣類 · 容器 · エンジン</text>
           <text class="cn-en" x="400" y="750" text-anchor="middle">EVERYDAY</text>
         </g>
-        <text class="cn-label" x="400" y="830" text-anchor="middle" opacity="0.7">芳香族 → 衣類とPET · ポリマー → 容器と部品 · 潤滑油 → エンジン</text>
       </svg>
     </div>
   </div>
@@ -529,6 +546,7 @@ body {
 
 <!-- ========== 챕터 여정 ========== -->
 <section class="section chapters">
+  <div class="inner"><h2 class="index-head" data-reveal>INDEX</h2></div>
   <div class="inner" style="position: relative;">
     <div class="spine" aria-hidden="true"><div class="spine-fill" data-spine></div></div>
 
@@ -632,29 +650,10 @@ body {
   </div>
 </section>
 
-<!-- ========== 넘버스 ========== -->
-<section class="section numbers">
-  <div class="inner">
-    <p class="label" data-reveal>IN NUMBERS</p>
-    <div class="num-grid">
-      <div class="cell" data-ch="1" data-reveal><div class="v"><span data-count="800">0</span><span class="unit">K bbl/day</span></div><p class="k">原油精製能力</p></div>
-      <div class="cell" data-ch="2" data-reveal><div class="v"><span data-count="2800">0</span><span class="unit">K tons/yr</span></div><p class="k">芳香族生産能力</p></div>
-      <div class="cell" data-ch="3" data-reveal><div class="v"><span data-count="2300">0</span><span class="unit">K tons/yr</span></div><p class="k">オレフィン生産能力</p></div>
-      <div class="cell" data-ch="4" data-reveal><div class="v"><span data-count="980">0</span><span class="unit">K tons/yr</span></div><p class="k">ポリマー生産能力</p></div>
-      <div class="cell" data-ch="5" data-reveal><div class="v"><span data-count="30">0</span><span class="unit">K bbl/day</span></div><p class="k">ベースオイル生産能力</p></div>
-      <div class="cell" data-ch="6" data-reveal><div class="v"><span data-count="9">0</span><span class="unit">K bbl/day</span></div><p class="k">潤滑油生産能力</p></div>
-    </div>
-    <div class="num-more" data-reveal>
-      <p>売上高・営業利益・負債比率など、主な経営実績は専用ページでご確認いただけます。</p>
-      <a class="link-btn" href="/ja/company"><span class="t">GS Caltexの成長の歩みと経営実績を見る</span><span class="ar">→</span></a>
-    </div>
-  </div>
-</section>
-
 <!-- ========== 아우트로 ========== -->
 <footer class="outro inner">
-  <p class="start" data-reveal>この旅は、<a href="/ja/refining">原油埠頭</a>から始まります。目次からご覧になりたい方は、<a href="/ja/menu">インデックス</a>へ。</p>
-  <a class="cta-btn" href="/ja/refining" data-reveal><span class="t">石油精製から始める</span><span class="e">CH.01 — REFINING →</span></a>
+  <p class="start" data-reveal>この旅は、<a href="/ja/process">原油埠頭</a>から始まります。目次からご覧になりたい方は、<a href="/ja/menu">インデックス</a>へ。</p>
+  <a class="cta-btn" href="/ja/process" data-reveal><span class="t">生産工程から始める</span><span class="e">CH.00 — PROCESS MAP →</span></a>
   <p class="footer-note" data-reveal>
     DATA — <a href="https://www.gscaltex.com/kr/business" target="_blank" rel="noopener">gscaltex.com/kr/business</a> · GS Caltex Sustainability Report 2025 · gspolymer.com · kixxoil.com · GS Caltex Media Hub<br>
     PHOTO — <a href="https://gscaltexmediahub.com/gsc-exhibition/" target="_blank" rel="noopener">GS Caltex Media Hub photo exhibition</a>

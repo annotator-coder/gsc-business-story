@@ -349,7 +349,7 @@ tbody tr.row-accent td { color: var(--c4); }
     </p>
 
     <div class="chart-scroll" data-reveal>
-      <svg id="growth-chart" viewBox="0 0 1000 660" role="img"
+      <svg id="growth-chart" viewBox="0 0 1000 780" role="img"
            aria-label="Chart of Korea's nominal GDP, GS Caltex revenue, and crude refining capacity from 1967 to 2025">
       </svg>
     </div>
@@ -537,13 +537,13 @@ const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').match
       marks: [[1967,'\u20a91.3T'],[1980,'\u20a940T'],[2000,'\u20a9676T'],[2010,'\u20a91,380T'],[2025,'\u20a92,663T']]
     },
     {
-      key: 'sales', top: 262, bottom: 414, max: 64, color: '#E0A63E',
+      key: 'sales', top: 322, bottom: 474, max: 64, color: '#E0A63E',
       name: 'GS Caltex Revenue', unit: 'KRW trillion · Consolidated',
       data: SALES,
       marks: [[1980,'\u20a91T'],[2000,'\u20a910T'],[2007,'\u20a920T'],[2022,'\u20a958.5T'],[2025,'\u20a944.6T']]
     },
     {
-      key: 'cdu', top: 462, bottom: 578, max: 88, color: '#6FBF9E',
+      key: 'cdu', top: 582, bottom: 698, max: 88, color: '#6FBF9E',
       name: 'Crude Oil Refining Capacity', unit: 'K bbl/day',
       data: CDU, smooth: true, lastAbove: true,
       marks: [[1969,'60K'],[1972,'160K'],[1981,'380K'],[1996,'650K'],[2025,'Now 800K b/d']]
@@ -581,16 +581,18 @@ const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').match
 
   /* Vertical gridlines + year axis */
   const TICKS = [1967, 1980, 1990, 2000, 2010, 2020, 2025];
+  /* 눈금선은 밴드별로 끊어 그려 세 그래프를 분리 */
   const gGrid = el('g', {});
-  TICKS.forEach(t => {
-    gGrid.appendChild(el('line', { class: 'gx-grid', x1: xf(t), y1: 52, x2: xf(t), y2: 600 }));
+  BANDS.forEach((b, i) => {
+    const y2 = i === BANDS.length - 1 ? 720 : b.bottom;
+    TICKS.forEach(t => gGrid.appendChild(el('line', { class: 'gx-grid', x1: xf(t), y1: b.top - 10, x2: xf(t), y2 })));
   });
   svg.appendChild(gGrid);
 
-  svg.appendChild(el('line', { class: 'gx-axis', x1: X0, y1: 606, x2: X1, y2: 606 }));
+  svg.appendChild(el('line', { class: 'gx-axis', x1: X0, y1: 726, x2: X1, y2: 726 }));
   TICKS.forEach(t => {
     const anchor = t === 1967 ? 'start' : (t === 2025 ? 'end' : 'middle');
-    svg.appendChild(el('text', { class: 'gx-tick', x: xf(t), y: 630, 'text-anchor': anchor }, t));
+    svg.appendChild(el('text', { class: 'gx-tick', x: xf(t), y: 750, 'text-anchor': anchor }, t));
   });
 
   BANDS.forEach(b => {
@@ -628,8 +630,8 @@ const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').match
   const NOTES = [[1969, 'No.1 CDU'], [1972, 'No.2 CDU', 1], [1981, 'No.3 CDU'], [1996, 'No.4 CDU']];
   const gN = el('g', { 'data-pts': '', opacity: 0 });
   NOTES.forEach(n => {
-    if (!n[2]) gN.appendChild(el('line', { class: 'gx-grid', x1: xf(n[0]), y1: 590, x2: xf(n[0]), y2: 600 }));
-    gN.appendChild(el('text', { class: 'gb-mark', x: xf(n[0]), y: n[2] ? 601 : 586, 'text-anchor': 'middle' }, n[1]));
+    if (!n[2]) gN.appendChild(el('line', { class: 'gx-grid', x1: xf(n[0]), y1: 710, x2: xf(n[0]), y2: 720 }));
+    gN.appendChild(el('text', { class: 'gb-mark', x: xf(n[0]), y: n[2] ? 721 : 706, 'text-anchor': 'middle' }, n[1]));
   });
   svg.appendChild(gN);
 

@@ -453,6 +453,17 @@ body {
   .lang-sw a { padding-top: 8px; padding-bottom: 8px; }
 }
 </style>
+<style>/* 챕터 아우트로: 다음 장 CTA · 회사 성장과 실적 링크 */
+.next-cta{display:inline-flex;align-items:baseline;gap:14px;margin-top:40px;padding:18px 32px;border:1px solid #E0A63E;text-decoration:none;transition:background .3s}
+.next-cta .t{font-size:clamp(1.05rem,1.5vw,1.25rem);font-weight:700;color:var(--ink);transition:color .3s}
+.next-cta .e{font-family:var(--font-mono);font-weight:500;font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:#E0A63E;transition:color .3s}
+.next-cta:hover{background:#E0A63E}.next-cta:hover .t,.next-cta:hover .e{color:var(--bg)}
+.company-link{display:flex;justify-content:space-between;align-items:baseline;gap:16px;margin-top:28px;padding:26px 28px;background:rgba(224,166,62,.08);border:1px solid rgba(224,166,62,.45);text-decoration:none;color:var(--ink);transition:background .3s,padding .3s}
+.company-link .name{font-size:clamp(1.1rem,2vw,1.6rem);font-weight:600}
+.company-link .en{font-family:var(--font-mono);font-weight:500;font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:#E0A63E;white-space:nowrap}
+.company-link:hover{background:rgba(224,166,62,.16);padding-left:36px}
+@media (max-width:640px){.company-link{flex-direction:column;gap:8px;padding:20px}.company-link .en{white-space:normal}.next-cta{flex-direction:column;gap:6px;padding:16px 22px}}
+</style>
 </head>
 <body>
 
@@ -683,6 +694,7 @@ body {
       <a class="row-item next" href="/en/baseoil"><span class="name">Base Oils</span><span class="en">CH.05 — Read →</span></a>
       <a class="row-item next" href="/en/lubricants"><span class="name">Lubricants</span><span class="en">CH.06 — Read →</span></a>
     </div>
+    <a class="company-link" href="/en/company" data-reveal><span class="name">Explore Growth &amp; Performance</span><span class="en">GS Caltex · Growth &amp; Performance →</span></a>
     <p class="footer-note">
       DATA — <a href="https://www.gscaltex.com/kr/business" target="_blank" rel="noopener">gscaltex.com/kr/business</a> · <a href="https://www.gscaltex.com/kr/business/productionbase" target="_blank" rel="noopener">production process page</a> · GS Caltex Sustainability Report 2025 <br>
       Refining 800K bbl/day · Upgrading 275K bbl/day · Upgrading ratio 34.3% · Crude oil from 30+ countries, 80+ grades · ~2,000 stations · ~330 LPG stations (end of 2025)<br>
